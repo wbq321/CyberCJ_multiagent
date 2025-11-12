@@ -2,9 +2,13 @@
 CyberCJ Website Server - Serves both the main website and multi-agent chat
 """
 
+# Set environment variables for better stability
+import os
+os.environ['TOKENIZERS_PARALLELISM'] = 'false'  # Prevent tokenizer warnings
+os.environ['TRANSFORMERS_CACHE'] = '/tmp/transformers'  # Use tmp for cache
+
 from flask import Flask, request, jsonify, send_from_directory
 from flask_cors import CORS
-import os
 import sys
 import json
 from datetime import datetime

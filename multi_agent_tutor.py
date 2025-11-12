@@ -181,7 +181,7 @@ class UnifiedTutorAgent:
 
         # Enhanced retrieval with topic context
         search_query = f"{user_input} {context.current_topic or ''} {context.learning_objective or ''}"
-        relevant_docs = self.retriever.get_relevant_documents(search_query)
+        relevant_docs = self.retriever.invoke(search_query)  # Updated to use invoke instead of deprecated method
         course_content = "\n\n".join([doc.page_content for doc in relevant_docs[:3]])
 
         # Strategic planning prompt with THINK-PLAN-ACT cycle
@@ -390,7 +390,12 @@ class CyberJusticeMultiAgentTutor:
             text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
             split_docs = text_splitter.split_documents(documents)
 
-            embeddings = HuggingFaceEmbeddings(model_name="sentence-transformers/all-MiniLM-L6-v2")
+            # Use optimized embeddings with reduced memory usage
+            embeddings = HuggingFaceEmbeddings(
+                model_name="sentence-transformers/all-MiniLM-L6-v2",
+                model_kwargs={'device': 'cpu'},  # Force CPU to avoid GPU memory issues
+                encode_kwargs={'normalize_embeddings': True, 'batch_size': 1}  # Small batch size
+            )
 
             # Load or create vectorstore
             if os.path.exists(self.vectorstore_path):
