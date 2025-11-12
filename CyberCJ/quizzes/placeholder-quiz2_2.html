@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defending Against Malware Quiz</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .question { margin-bottom: 20px; }
+        .question h4 { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+     <!-- Module 2.2 Quiz -->
+ <div id="quiz2_2" class="card mt-4 shadow-lg">
+    <div class="card-header">
+        <span class="fs-4">2.1 Quiz </span>
+    </div>
+    <div class="card-body">
+        <form>
+            <!-- Question 1 -->
+            <div class="question">
+                <h4>1. Why is it important to keep software updated?</h4>
+                <input type="radio" id="q1a1" name="q1" value="Updates fix security vulnerabilities">
+                <label for="q1a1">Updates fix security vulnerabilities</label><br>
+                <input type="radio" id="q1a2" name="q1" value="Updates always add new features">
+                <label for="q1a2">Updates always add new features</label><br>
+                <input type="radio" id="q1a3" name="q1" value="Updates slow down the system">
+                <label for="q1a3">Updates slow down the system</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <h4>2. What is the main function of antivirus software?</h4>
+                <input type="radio" id="q2a1" name="q2" value="Speed up the computer">
+                <label for="q2a1">Speed up the computer</label><br>
+                <input type="radio" id="q2a2" name="q2" value="Scan and remove malware">
+                <label for="q2a2">Scan and remove malware</label><br>
+                <input type="radio" id="q2a3" name="q2" value="Manage files">
+                <label for="q2a3">Manage files</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <h4>3. What is the purpose of a firewall?</h4>
+                <input type="checkbox" id="q3a1" name="q3a1">
+                <label for="q3a1">Block unauthorized access</label><br>
+                <input type="checkbox" id="q3a2" name="q3a2">
+                <label for="q3a2">Increase internet speed</label><br>
+                <input type="checkbox" id="q3a3" name="q3a3">
+                <label for="q3a3">Control network traffic</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <h4>4. How can training and awareness help prevent malware infections?</h4>
+                <input type="radio" id="q4a1" name="q4" value="It cannot help">
+                <label for="q4a1">It cannot help</label><br>
+                <input type="radio" id="q4a2" name="q4" value="Helps recognize phishing attempts">
+                <label for="q4a2">Helps recognize phishing attempts</label><br>
+                <input type="radio" id="q4a3" name="q4" value="Makes computers faster">
+                <label for="q4a3">Makes computers faster</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <h4>5. What should be done regularly to ensure data can be recovered after a malware attack?</h4>
+                <input type="radio" id="q5a1" name="q5" value="Delete old files">
+                <label for="q5a1">Delete old files</label><br>
+                <input type="radio" id="q5a2" name="q5" value="Backup important data">
+                <label for="q5a2">Backup important data</label><br>
+                <input type="radio" id="q5a3" name="q5" value="Change passwords">
+                <label for="q5a3">Change passwords</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <h4>6. What is the role of automatic updates in security?</h4>
+                <input type="radio" id="q6a1" name="q6" value="Automatically installs new games">
+                <label for="q6a1">Automatically installs new games</label><br>
+                <input type="radio" id="q6a2" name="q6" value="Keeps security features up-to-date">
+                <label for="q6a2">Keeps security features up-to-date</label><br>
+                <input type="radio" id="q6a3" name="q6" value="None">
+                <label for="q6a3">None</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <h4>7. What should you do if your antivirus detects a virus?</h4>
+                <input type="radio" id="q7a1" name="q7" value="Ignore the warning">
+                <label for="q7a1">Ignore the warning</label><br>
+                <input type="radio" id="q7a2" name="q7" value="Allow the antivirus to remove or quarantine the virus">
+                <label for="q7a2">Allow the antivirus to remove or quarantine the virus</label><br>
+                <input type="radio" id="q7a3" name="q7" value="Turn off the antivirus">
+                <label for="q7a3">Turn off the antivirus</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <h4>8. How can firewalls help protect against malware?</h4>
+                <input type="radio" id="q8a1" name="q8" value="They provide a backup solution">
+                <label for="q8a1">They provide a backup solution</label><br>
+                <input type="radio" id="q8a2" name="q8" value="They control what traffic is allowed in and out">
+                <label for="q8a2">They control what traffic is allowed in and out</label><br>
+                <input type="radio" id="q8a3" name="q8" value="They increase Wi-Fi speed">
+                <label for="q8a3">They increase Wi-Fi speed</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <h4>9. What is an effective strategy for ransomware prevention?</h4>
+                <input type="checkbox" id="q9a1" name="q9a1">
+                <label for="q9a1">Isolating backup storage from the network</label><br>
+                <input type="checkbox" id="q9a2" name="q9a2">
+                <label for="q9a2">Never updating software</label><br>
+                <input type="checkbox" id="q9a3" name="q9a3">
+                <label for="q9a3">Disconnecting unnecessary devices</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <h4>10. What is the benefit of having both application and network firewalls?</h4>
+                <input type="radio" id="q10a1" name="q10" value="Only needed for large networks">
+                <label for="q10a1">Only needed for large networks</label><br>
+                <input type="radio" id="q10a2" name="q10" value="Provides layered security">
+                <label for="q10a2">Provides layered security</label><br>
+                <input type="radio" id="q10a3" name="q10" value="Reduces internet speed">
+                <label for="q10a3">Reduces internet speed</label>
+            </div>
+
+            <button type="button" onclick="submitQuiz('quiz2_2')">Submit Quiz</button>
+        </form>
+    </div>
+</div>
+    <script src="js/quiz.js"></script>
+</body>
+</html>

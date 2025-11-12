@@ -1,0 +1,490 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 2.0-->
+                    <div  class="bg-light border rounded-3 p-3">
+                        <h3>Module 4: Privacy</h3>
+                        <!-- Module 2 Quiz -->
+                        <div id="quiz4" class="card mr-0 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Module 4 Knowledge Check </span>
+                            </div>
+                            <div class="card-body">
+                                <form >
+                                    <!-- Module 4.1 Questions -->
+                                    <!-- Question 4.1.1 -->
+                                    <div class="question">
+                                        <h4>. What is the primary purpose of encrypting data at rest?</h4>
+                                        <input type="radio" id="q1a1" name="q1" value="To speed up data access">
+                                        <label for="q1a1">To speed up data access</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q1a2" name="q1" value="To protect it from unauthorized access">
+                                        <label for="q1a2">To protect it from unauthorized access</label><br>
+                                        <input type="radio" id="q1a3" name="q1" value="To reduce data storage needs">
+                                        <label for="q1a3">To reduce data storage needs</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.1.2 -->
+                                    <div class="question">
+                                        <h4>. Which type of security measure prevents unauthorized physical access to stored data?</h4>
+                                        <input type="radio" id="q2a1" name="q2" value="Data masking">
+                                        <label for="q2a1">Data masking</label><br>
+                                        <input type="radio" id="q2a2" name="q2" value="Regular audits">
+                                        <label for="q2a2">Regular audits</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q2a3" name="q2" value="Physical security measures">
+                                        <label for="q2a3">Physical security measures</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.1.3 -->
+                                    <div class="question">
+                                        <h4>. What is the key difference between data at rest and data in transit?</h4>
+                                        <input type="radio" id="q3a1" name="q3" value="Data at rest is encrypted; data in transit is not">
+                                        <label for="q3a1">Data at rest is encrypted; data in transit is not</label><br>
+                                        <input type="radio" id="q3a2" name="q3" value="Data at rest is stored; data in transit is being transferred" >
+                                        <!--ans below-->
+                                        <label for="q3a2">Data at rest is stored; data in transit is being transferred</label><br>
+                                        <input type="radio" id="q3a3" name="q3" value="Data at rest is less secure than data in transit" >
+                                        <label for="q3a3">Data at rest is less secure than data in transit</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.1.4 -->
+                                    <div class="question">
+                                        <h4>. Which protocol is commonly used to secure data in transit over the internet?</h4>
+                                        <input type="radio" id="q4a1" name="q4" value="HTTP">
+                                        <label for="q4a1">HTTP</label><br>
+                                        <input type="radio" id="q4a2" name="q4" value="TLS">
+                                        <label for="q4a2">TLS</label><br>
+                                        <input type="radio" id="q4a3" name="q4" value="FTP">
+                                        <label for="q4a3">FTP</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.1.5 -->
+                                    <div class="question">
+                                        <h4>. What is the purpose of using end-to-end encryption (E2EE)?</h4>
+                                        <input type="radio" id="q5a1" name="q5" value="To increase the speed of data transmission">
+                                        <label for="q5a1">To increase the speed of data transmission</label><br>
+                                        <input type="radio" id="q5a2" name="q5" value="To allow easy access to data for service providers">
+                                        <label for="q5a2">To allow easy access to data for service providers</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q5a3" name="q5" value="To ensure data is encrypted from the sender to the recipient without intermediary decryption">
+                                        <label for="q5a3">To ensure data is encrypted from the sender to the recipient without intermediary decryption</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.1.6 -->
+                                    <div class="question">
+                                        <h4>. Which type of attack involves an attacker intercepting and possibly altering communications between two parties?</h4>
+                                        <!--ans below-->
+                                        <input type="radio" id="q6a1" name="q6" value="Man-in-the-Middle (MitM) attack">
+                                        <label for="q6a1">Man-in-the-Middle (MitM) attack</label><br>
+                                        <input type="radio" id="q6a2" name="q6" value="Phishing attack">
+                                        <label for="q6a2">Phishing attack</label><br>
+                                        <input type="radio" id="q6a3" name="q6" value="Replay attack">
+                                        <label for="q6a3">Replay attack</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.1.7 -->
+                                    <div class="question">
+                                        <h4>. What role does encryption play in securing data in transit?</h4>
+                                        <input type="radio" id="q7a1" name="q7" value="It confirms the sender's identity definitively">
+                                        <label for="q7a1">It confirms the sender's identity definitively</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q7a2" name="q7" value=" It makes intercepted data unreadable to unauthorized parties">
+                                        <label for="q7a2"> It makes intercepted data unreadable to unauthorized parties</label><br>
+                                        <input type="radio" id="q7a3" name="q7" value="It speeds up data transmission">
+                                        <label for="q7a3">It speeds up data transmission</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.1.8 -->
+                                    <div class="question">
+                                        <h4>. How does data masking contribute to data security?</h4>
+                                        <!--ans below-->
+                                        <input type="radio" id="q8a1" name="q8" value="By changing data so that it cannot be traced back to an individual but remains usable">
+                                        <label for="q8a1">By changing data so that it cannot be traced back to an individual but remains usable</label><br>
+                                        <input type="radio" id="q8a2" name="q8" value="By deleting unnecessary data">
+                                        <label for="q8a2">By deleting unnecessary data</label><br>
+                                        <input type="radio" id="q8a3" name="q8" value="By encrypting all data on a system">
+                                        <label for="q8a3">By encrypting all data on a system</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.1.9 -->
+                                    <div class="question">
+                                        <h4>. What is a potential challenge associated with implementing end-to-end encryption?</h4>
+                                        <input type="checkbox" id="q9a1" name="q9a1" value="It reduces the need for data storage" >
+                                        <label for="q9a1">It reduces the need for data storage</label><br>
+                                        <input type="checkbox" id="q9a2" name="q9a2" value="It can make data transfer faster">
+                                        <label for="q9a2">It can make data transfer faster</label><br>
+                                        <input type="checkbox" id="q9a3" name="q9a3" value="It can make user services less user-friendly">
+                                        <!--ans below-->
+                                        <label for="q9a3">It can make user services less user-friendly</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.1.10 -->
+                                    <div class="question">
+                                        <h4>. Which type of data security management involves setting up user permissions and roles?</h4>
+                                        <input type="radio" id="q10a1" name="q10" value="Encryption">
+                                        <label for="q10a1">Encryption</label><br>
+                                        <input type="radio" id="q10a2" name="q10" value="Physical security">
+                                        <label for="q10a2">Physical security</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q10a3" name="q10" value="Access controls">
+                                        <label for="q10a3">Access controls</label>
+                                        <br><br>
+                                    </div>
+                                    
+                                    
+                                    <!-- Module 4.2 Questions -->
+                                    <!-- Question 4.2.1 -->
+                                    <div class="question">
+                                        <h4>. What is data theft?</h4>
+                                        <input type="radio" id="q11a1" name="q11" value="The process of duplicating data for backup purposes">
+                                        <label for="q11a1">The process of duplicating data for backup purposes</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q11a2" name="q11" value="The illegal access and transfer of data without permission">
+                                        <label for="q11a2">The illegal access and transfer of data without permission</label><br>
+                                        <input type="radio" id="q11a3" name="q11" value="The physical theft of devices containing data">
+                                        <label for="q11a3">The physical theft of devices containing data</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.2.2 -->
+                                    <div class="question">
+                                        <h4>. Which of the following is NOT typically tracked by social media platforms?</h4>
+                                        <input type="radio" id="q12a1" name="q12" value="Browsing history">
+                                        <label for="q12a1">Browsing history</label><br>
+                                        <input type="radio" id="q12a2" name="q12" value="Purchasing habits">
+                                        <label for="q12a2">Purchasing habits</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q12a3" name="q12" value="Blood type">
+                                        <label for="q12a3">Blood type</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.4.3 -->
+                                    <div class="question">
+                                        <h4>. What are Modbile Advertising IDs (MAIDs) primarily used for?</h4>
+                                        <input type="radio" id="q13a1" name="q13" value="To secure mobile devices from theft" >
+                                        <label for="q13a1">To secure mobile devices from theft</label><br>
+                                        <input type="radio" id="q13a2" name="q13" value="To track user activity and location for advertising">
+                                        <!--ans below-->
+                                        <label for="q13a2">To track user activity and location for advertising</label><br>
+                                        <input type="radio" id="q13a3" name="q13" value="To monitor battery usage">
+                                        <label for="q13a3">To monitor battery usage</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.2.4 -->
+                                    <div class="question">
+                                        <h4>. Which of these entities is known for collecting data through surveillance?</h4>
+                                        <input type="radio" id="q14a1" name="q14" value="Fast food restaurants">
+                                        <label for="q14a1">Fast food restaurants</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q14a2" name="q14" value="Advertisers">
+                                        <label for="q14a2">Advertisers</label><br>
+                                        <input type="radio" id="q14a3" name="q14" value="Clothing stores">
+                                        <label for="q14a3">Clothing stores</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.2.5 -->
+                                    <div class="question">
+                                        <h4>. Which is a significant risk associated with personal data theft?</h4>
+                                        <input type="radio" id="q15a1" name="q15" value="Increased internet speeds">
+                                        <label for="q15a1">Increased internet speeds</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q15a2" name="q15" value="Identity theft">
+                                        <label for="q15a2">Identity theft</label><br>
+                                        <input type="radio" id="q15a3" name="q15" value="Enhanced privacy">
+                                        <label for="q15a3">Enhanced privacy</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.2.6 -->
+                                    <div class="question">
+                                        <h4>. How can data theft directly cause financial loss to individuals?</h4>
+                                        <input type="radio" id="q16a1" name="q16" value="By increasing the cost of internet service">
+                                        <label for="q16a1">By increasing the cost of internet service</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q16a2" name="q16" value="By unauthorized transactions using their information">
+                                        <label for="q16a2">By unauthorized transactions using their information</label><br>
+                                        <input type="radio" id="q16a3" name="q16" value="By legally taxing data usage">
+                                        <label for="q16a3">By legally taxing data usage</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.2.7 -->
+                                    <div class="question">
+                                        <h4>. Which consequence is a direct result of data breaches for businesses?</h4>
+                                        <input type="radio" id="q17a1" name="q17" value="Increased customer loyalty">
+                                        <label for="q17a1">Increased customer loyalty</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q17a2" name="q17" value="Reputation damage">
+                                        <label for="q17a2">Reputation damage</label><br>
+                                        <input type="radio" id="q17a3" name="q17" value="Decreased operational cost">
+                                        <label for="q17a3">Decreased operational cost</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.2.8 -->
+                                    <div class="question">
+                                        <h4>. Under which regulation could organizations face severs penalties for failing to protect user data?</h4>
+                                        <!--ans below-->
+                                        <input type="radio" id="q18a1" name="q18" value="The General Data Protection Regulation (GDPR)">
+                                        <label for="q18a1">The General Data Protection Regulation (GDPR)</label><br>
+                                        <input type="radio" id="q18a2" name="q18" value="The American Library Association's Privacy Act">
+                                        <label for="q18a2">The American Library Association's Privacy Act</label><br>
+                                        <input type="radio" id="q18a3" name="q18" value="The Global Data Sharing Initiatives (GDSI)">
+                                        <label for="q18a3">The Global Data Sharing Initiatives (GDSI)</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.2.9 -->
+                                    <div class="question">
+                                        <h4>. What can victims of data theft experience as a psychological impact?</h4>
+                                        <input type="radio" id="q19a1" name="q19" value="Excitement">
+                                        <label for="q19a1">Excitement</label><br>
+                                        <input type="radio" id="q19a2" name="q19" value="Increased social activity">
+                                        <label for="q19a2">Increased social activity</label><br>
+                                        <input type="radio" id="q19a3" name="q19" value="Emotional stress and a sense of vulnerability" >
+                                        <!--ans below-->
+                                        <label for="q19a3">Emotional stress and a sense of vulnerability</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.2.10 -->
+                                    <div class="question">
+                                        <h4>. Which of the following is a mitigation strategy against data theft?</h4>
+                                        <!--ans below-->
+                                        <input type="radio" id="q20a1" name="q20" value="Using strong, unique passwords and enabling two-factor authentication (2FA)">
+                                        <label for="q20a1">Using strong, unique passwords and enabling two-factor authentication (2FA)</label><br>
+                                        <input type="radio" id="q20a2" name="q20" value="Decreasing cybersecurity budgets">
+                                        <label for="q20a2">Decreasing cybersecurity budgets</label><br>
+                                        <input type="radio" id="q20a3" name="q20" value="Limiting internet usage to once a week">
+                                        <label for="q20a3">Limiting internet usage to once a week</label>
+                                        <br><br>
+                                    </div>
+
+                                    <!-- Module 4.3 Questions -->
+                                    <!-- Question 4.3.1 -->
+                                    <div class="question">
+                                        <h4>. What is the primary purpose for cryptology?</h4>
+                                        <!--ans below-->
+                                        <input type="radio" id="q21a1" name="q21" value="To secure communications to prevent unauthorized access">
+                                        <label for="q21a1">To secure communications to prevent unauthorized access</label><br>
+                                        <input type="radio" id="q21a2" name="q21" value="To speed up data transfer">
+                                        <label for="q21a2">To speed up data transfer</label><br>
+                                        <input type="radio" id="q21a3" name="q21" value="To compress data files">
+                                        <label for="q21a3">To compress data files</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.3.2 -->
+                                    <div class="question">
+                                        <h4>. What does the encyrption process do in plaintext?</h4>
+                                        <input type="radio" id="q22a1" name="q22" value="It deletes after reading">
+                                        <label for="q22a1">It deletes after reading</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q22a2" name="q22" value="It converts it into an unreadable format known as ciphertext">
+                                        <label for="q22a2">It converts it into an unreadable format known as ciphertext</label><br>
+                                        <input type="radio" id="q22a3" name="q22" value="It duplicates it for backup">
+                                        <label for="q22a3">It duplicates it for backup</label>
+                                        <br><br>
+                                    </div>                                
+                                    <!-- Question 4.3.3 -->
+                                    <div class="question">
+                                        <h4>. Which analogy best describes the concept of cryptography?</h4>
+                                        <input type="radio" id="q23a1" name="q23" value="Locking a diary with a key">
+                                        <label for="q23a1">Locking a diary with a key</label><br>
+                                        <input type="radio" id="q23a2" name="q23" value="Writing a message with invisible ink">
+                                        <!--ans below-->
+                                        <label for="q23a2">Writing a message with invisible ink</label><br>
+                                        <input type="radio" id="q23a3" name="q23" value="Shouting across a crowded room" >
+                                        <label for="q23a3">Shouting across a crowded room</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.3.4 -->
+                                    <div class="question">
+                                        <h4>. Which of the following is a benefit of cryptography?</h4>
+                                        <input type="radio" id="q24a1" name="q24" value="Increased data transmission speed">
+                                        <label for="q24a1">Increased data transmission speed</label><br>
+                                        <input type="radio" id="q24a2" name="q24" value="Reduced data storage requirements">
+                                        <label for="q24a2">Reduced data storage requirements</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q24a3" name="q24" value="Confidentiality of sensitive data">
+                                        <label for="q24a3">Confidentiality of sensitive data</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.3.5 -->
+                                    <div class="question">
+                                        <h4>. What type of cryptography uses the same key for both encryption and decryption?</h4>
+                                        <!--ans below-->
+                                        <input type="radio" id="q25a1" name="q25" value="Symmetric">
+                                        <label for="q25a1">Symmetric</label><br>
+                                        <input type="radio" id="q25a2" name="q25" value="Asymmetric">
+                                        <label for="q25a2">Asymmetric</label><br>
+                                        <input type="radio" id="q25a3" name="q25" value="Hash function cryptography">
+                                        <label for="q25a3">Hash function cryptography</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.3.6 -->
+                                    <div class="question">
+                                        <h4>. Which key is publicly shared in asymmetric cryptography?</h4>
+                                        <!--ans below-->
+                                        <input type="radio" id="q26a1" name="q26" value="Encryption key">
+                                        <label for="q26a1">Encryption key</label><br>
+                                        <input type="radio" id="q26a2" name="q26" value="Decryption key">
+                                        <label for="q26a2">Decryption key</label><br>
+                                        <input type="radio" id="q26a3" name="q26" value="Both keys are kept private">
+                                        <label for="q26a3">Both keys are kept private</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.3.7 -->
+                                    <div class="question">
+                                        <h4>. What does non-repudiation ensure in the context of cryptography?</h4>
+                                        <input type="radio" id="q27a1" name="q27" value="Data is compressed">
+                                        <label for="q27a1">Data is compressed</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q27a2" name="q27" value="Sender cannot deny sending the data">
+                                        <label for="q27a2">Sender cannot deny sending the data</label><br>
+                                        <input type="radio" id="q27a3" name="q27" value="Data is temporarily stored">
+                                        <label for="q27a3">Data is temporarily stored</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.3.8 -->
+                                    <div class="question">
+                                        <h4>. Which type of attack involves analyzing frequency of elements to break a cipher</h4>
+                                        <input type="radio" id="q28a1" name="q28" value="Differential attack">
+                                        <label for="q28a1">Differential attack</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q28a2" name="q28" value="Frequency analysis">
+                                        <label for="q28a2">Frequency analysis</label><br>
+                                        <input type="radio" id="q28a3" name="q28" value="Side-channel attack">
+                                        <label for="q28a3">Side-channel attack</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.3.9 -->
+                                    <div class="question">
+                                        <h4>. What is the role of hash functions in cryptography?</h4>
+                                        <input type="radio" id="q29a1" name="q29" value="To encrypt large documents">
+                                        <label for="q29a1">To encrypt large documents</label><br>
+                                        <input type="radio" id="q29a2" name="q29" value="To store data efficiently">
+                                        <label for="q29a2">To store data efficiently</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q29a3" name="q29" value="To verify data integrity" >
+                                        <label for="q29a3">To verify data integrity</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.3.10 -->
+                                    <div class="question">
+                                        <h4>. What cryptographic method is essential for e-commerce security</h4>
+                                        <input type="radio" id="q30a1" name="q30" value="Hash functions">
+                                        <label for="q30a1">Hash functions</label><br>
+                                        <input type="radio" id="q30a2" name="q30" value="Symmetric key encryption">
+                                        <label for="q30a2">Symmetric key encryption</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q30a3" name="q30" value="Digital certificates">
+                                        <label for="q30a3">Digital certificates</label>
+                                        <br><br>
+                                    </div>
+
+                                    <!-- Module 4.4 Questions -->
+                                    <!-- Question 4.4.1 -->
+                                    <div class="question">
+                                        <h4>. What is the primary purpose of first-party cookies on a website?</h4>
+                                        <input type="radio" id="q31a1" name="q31" value="To track your visits across multiple websites for advertising">
+                                        <label for="q31a1">To track your visits across multiple websites for advertising</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q31a2" name="q31" value="To remember site-specific preferences like language and login status">
+                                        <label for="q31a2">To remember site-specific preferences like language and login status</label><br>
+                                        <input type="radio" id="q31a3" name="q31" value="To enable external sites to track your site activity">
+                                        <label for="q31a3">To enable external sites to track your site activity</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.4.2 -->
+                                    <div class="question">
+                                        <h4>. Which type of cookie would most likely be used to analyze how users interact with a website?</h4>
+                                        <input type="radio" id="q32a1" name="q32" value="Session cookies">
+                                        <label for="q32a1">Session cookies</label><br>
+                                        <input type="radio" id="q32a2" name="q32" value="Persistent cookies">
+                                        <label for="q32a2">Persistent cookies</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q32a3" name="q32" value="Third-party cookies">
+                                        <label for="q32a3">Third-party cookies</label>
+                                        <br><br>
+                                    </div>                                
+                                    <!-- Question 4.4.3 -->
+                                    <div class="question">
+                                        <h4>. How can disabling third-party cookies enhance your privacy?</h4>
+                                        <input type="radio" id="q33a1" name="q33" value="By reducing the ability of advertisers to track your browsing across multiple sites">
+                                        <!--ans below-->
+                                        <label for="q33a1">By reducing the ability of advertisers to track your browsing across multiple sites</label><br>
+                                        <input type="radio" id="q33a2" name="q33" value="By speeding up your browsing experiencet">
+                                        <label for="q33a2">By speeding up your browsing experiencet</label><br>
+                                        <input type="radio" id="q33a3" name="q33" value="By allowing websites to track user behavior more accurately" >
+                                        <label for="q33a3">By allowing websites to track user behavior more accurately</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.4.4 -->
+                                    <div class="question">
+                                        <h4>. What is a Mobile Advertising ID (MAID) primarily used for?</h4>
+                                        <input type="radio" id="q34a1" name="q34" value="To secure mobile communications">
+                                        <label for="q34a1">To secure mobile communications</label><br>
+                                        <input type="radio" id="q34a2" name="q34" value="To track activity across apps and websites for advertising purposes">
+                                        <label for="q34a2">To track activity across apps and websites for advertising purposes</label><br>
+                                        <input type="radio" id="q34a3" name="q34" value="To enhance the functionality of mobile device hardware">
+                                        <label for="q34a3">To enhance the functionality of mobile device hardware</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 4.4.5 -->
+                                    <div class="question">
+                                        <h4>. How can you manage your MAID on an iOS device to enhance privacy?</h4>
+                                        <input type="radio" id="q35a1" name="q35" value="By enabling location services">
+                                        <label for="q35a1">By enabling location services</label><br>
+                                        <input type="radio" id="q35a2" name="q35" value="By opting out of Ads Personalization">
+                                        <label for="q35a2">By opting out of Ads Personalization</label><br>
+                                        <!--ans below-->
+                                        <input type="radio" id="q35a3" name="q35" value="By limiting ad tracking in the privacy settings">
+                                        <label for="q35a3">By limiting ad tracking in the privacy settings</label>
+                                        <br><br>
+                                    </div>
+                                </form>
+                                <center><button type="button" onclick="submitQuiz('quiz4')">Submit Quiz</button></center>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

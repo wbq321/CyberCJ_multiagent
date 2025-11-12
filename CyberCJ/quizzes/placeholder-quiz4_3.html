@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cryptology Quiz</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .question { margin-bottom: 20px; }
+        .question h4 { margin-bottom: 10px; }
+    </style>
+</head>
+<body id="quiz-body">
+ <!-- Module 4.3 Quiz -->
+ <div id="quiz4_3" class="card mt-4 shadow-lg">
+    <div class="card-header">
+        <span class="fs-4">4.3 Quiz </span>
+    </div>
+    <div class="card-body">
+        <form>
+            <!-- Question 1 -->
+            <div class="question">
+                <h4>1. What is the primary purpose for cryptology?</h4>
+                <!--ans below-->
+                <input type="radio" id="q1a1" name="q1" value="To secure communications to prevent unauthorized access">
+                <label for="q1a1">To secure communications to prevent unauthorized access</label><br>
+                <input type="radio" id="q1a2" name="q1" value="To speed up data transfer">
+                <label for="q1a2">To speed up data transfer</label><br>
+                <input type="radio" id="q1a3" name="q1" value="To compress data files">
+                <label for="q1a3">To compress data files</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <h4>2. What does the encyrption process do in plaintext?</h4>
+                <input type="radio" id="q2a1" name="q2" value="It deletes after reading">
+                <label for="q2a1">It deletes after reading</label><br>
+                <!--ans below-->
+                <input type="radio" id="q2a2" name="q2" value="It converts it into an unreadable format known as ciphertext">
+                <label for="q2a2">It converts it into an unreadable format known as ciphertext</label><br>
+                <input type="radio" id="q2a3" name="q2" value="It duplicates it for backup">
+                <label for="q2a3">It duplicates it for backup</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <h4>3. Which analogy best describes the concept of cryptography?</h4>
+                <input type="checkbox" id="q3a1" name="q3a1">
+                <label for="q3a1">Locking a diary with a key</label><br>
+                <input type="checkbox" id="q3a2" name="q3a2">
+                <!--ans below-->
+                <label for="q3a2">Writing a message with invisible ink</label><br>
+                <input type="checkbox" id="q3a3" name="q3a3">
+                <label for="q3a3">Shouting across a crowded room</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <h4>4. Which of the following is a benefit of cryptography?</h4>
+                <input type="radio" id="q4a1" name="q4" value="Increased data transmission speed">
+                <label for="q4a1">Increased data transmission speed</label><br>
+                <input type="radio" id="q4a2" name="q4" value="Reduced data storage requirements">
+                <label for="q4a2">Reduced data storage requirements</label><br>
+                <!--ans below-->
+                <input type="radio" id="q4a3" name="q4" value="Confidentiality of sensitive data">
+                <label for="q4a3">Confidentiality of sensitive data</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <h4>5. What type of cryptography uses the same key for both encryption and decryption?</h4>
+                <!--ans below-->
+                <input type="radio" id="q5a1" name="q5" value="Symmetric">
+                <label for="q5a1">Symmetric</label><br>
+                <input type="radio" id="q5a2" name="q5" value="Asymmetric">
+                <label for="q5a2">Asymmetric</label><br>
+                <input type="radio" id="q5a3" name="q5" value="Hash function cryptography">
+                <label for="q5a3">Hash function cryptography</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <h4>6. Which key is publicly shared in asymmetric cryptography?</h4>
+                <!--ans below-->
+                <input type="radio" id="q6a1" name="q6" value="Encryption key">
+                <label for="q6a1">Encryption key</label><br>
+                <input type="radio" id="q6a2" name="q6" value="Decryption key">
+                <label for="q6a2">Decryption key</label><br>
+                <input type="radio" id="q6a3" name="q6" value="Both keys are kept private">
+                <label for="q6a3">Both keys are kept private</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <h4>7. What does non-repudiation ensure in the context of cryptography?</h4>
+                <input type="radio" id="q7a1" name="q7" value="Data is compressed">
+                <label for="q7a1">Data is compressed</label><br>
+                <!--ans below-->
+                <input type="radio" id="q7a2" name="q7" value="Sender cannot deny sending the data">
+                <label for="q7a2">Sender cannot deny sending the data</label><br>
+                <input type="radio" id="q7a3" name="q7" value="Data is temporarily stored">
+                <label for="q7a3">Data is temporarily stored</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <h4>8. Which type of attack involves analyzing frequency of elements to break a cipher</h4>
+                <input type="radio" id="q8a1" name="q8" value="Differential attack">
+                <label for="q8a1">Differential attack</label><br>
+                <!--ans below-->
+                <input type="radio" id="q8a2" name="q8" value="Frequency analysis">
+                <label for="q8a2">Frequency analysis</label><br>
+                <input type="radio" id="q8a3" name="q8" value="Side-channel attack">
+                <label for="q8a3">Side-channel attack</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <h4>9. What is the role of hash functions in cryptography?</h4>
+                <input type="checkbox" id="q9a1" name="q9a1">
+                <label for="q9a1">To encrypt large documents</label><br>
+                <input type="checkbox" id="q9a2" name="q9a2">
+                <label for="q9a2">To store data efficiently</label><br>
+                <!--ans below-->
+                <input type="checkbox" id="q9a3" name="q9a3">
+                <label for="q9a3">To verify data integrity</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <h4>10. What cryptographic method is essential for e-commerce security</h4>
+                <input type="radio" id="q10a1" name="q10" value="Hash functions">
+                <label for="q10a1">Hash functions</label><br>
+                <input type="radio" id="q10a2" name="q10" value="Symmetric key encryption">
+                <label for="q10a2">ymmetric key encryption</label><br>
+                <!--ans below-->
+                <input type="radio" id="q10a3" name="q10" value="Digital certificates">
+                <label for="q10a3">Digital certificates</label>
+            </div>
+
+            <button type="button" onclick="submitQuiz('quiz4_3')">Submit Quiz</button>
+        </form>
+    </div>
+ </div>
+    <script src="js/quiz.js"></script>
+    
+</body>
+</html>

@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Defending Against Malware Quiz</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .question { margin-bottom: 20px; }
+        .question h4 { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+     <!-- Module 2.3 Quiz -->
+ <div id="quiz2_3" class="card mt-4 shadow-lg">
+    <div class="card-header">
+        <span class="fs-4">2.1 Quiz </span>
+    </div>
+    <div class="card-body">
+        <form>
+            <!-- Question 1 -->
+            <div class="question">
+                <h4>1. What is the primary goal of an incident response strategy?</h4>
+                <input type="radio" id="q1a1" name="q1" value="To completely eliminate cyber threats">
+                <label for="q1a1">To completely eliminate cyber threats</label><br>
+                <input type="radio" id="q1a2" name="q1" value="To manage the aftermath of security breaches">
+                <label for="q1a2">To manage the aftermath of security breaches</label><br>
+                <input type="radio" id="q1a3" name="q1" value="To monitor employee activities">
+                <label for="q1a3">To monitor employee activities</label>
+            </div>
+        
+            <!-- Question 2 -->
+            <div class="question">
+                <h4>2. Which is not a key area of incident response planning?</h4>
+                <input type="radio" id="q2a1" name="q2" value="Cost management">
+                <label for="q2a1">Cost management</label><br>
+                <input type="radio" id="q2a2" name="q2" value="Detection and Analysis">
+                <label for="q2a2">Detection and Analysis</label><br>
+                <input type="radio" id="q2a3" name="q2" value="Eradication and Recovery">
+                <label for="q2a3">Eradication and Recovery</label>
+            </div>
+        
+            <!-- Question 3 -->
+            <div class="question">
+                <h4>3. What are initial steps in analyzing a breach? (Select all that apply)</h4>
+                <input type="checkbox" id="q3a1" name="q3a1" value="Assessing the scope of the breach">
+                <label for="q3a1">Assessing the scope of the breach</label><br>
+                <input type="checkbox" id="q3a2" name="q3a2" value="Categorize the Incident">
+                <label for="q3a2">Categorize the Incident</label><br>
+                <input type="checkbox" id="q3a3" name="q3a3" value="Analyze the Impact">
+                <label for="q3a3">Analyze the Impact</label>
+            </div>
+        
+        
+            <!-- Question 4 -->
+            <div class="question">
+                <h4>4. What should be immediately done when a breach is detected?</h4>
+                <input type="radio" id="q4a1" name="q4" value="Disconnect the internet">
+                <label for="q4a1">Disconnect the internet</label><br>
+                <input type="radio" id="q4a2" name="q4" value="Isolate infected machines">
+                <label for="q4a2">Isolate infected machines</label><br>
+                <input type="radio" id="q4a3" name="q4" value="Increase network traffic">
+                <label for="q4a3">Increase network traffic</label>
+            </div>
+        
+            <!-- Question 5 -->
+            <div class="question">
+                <h4>5. Which tool is essential for monitoring signs of lateral movement or breaches?</h4>
+                <input type="radio" id="q5a1" name="q5" value="SIEM systems">
+                <label for="q5a1">SIEM systems</label><br>
+                <input type="radio" id="q5a2" name="q5" value="Text editors">
+                <label for="q5a2">Text editors</label><br>
+                <input type="radio" id="q5a3" name="q5" value="Spreadsheets">
+                <label for="q5a3">Spreadsheets</label>
+            </div>
+        
+            <!-- Question 6 -->
+            <div class="question">
+                <h4>6. What is a primary function of digital forensics in cybersecurity?</h4>
+                <input type="radio" id="q6a1" name="q6" value="To advertise security services">
+                <label for="q6a1">To advertise security services</label><br>
+                <input type="radio" id="q6a2" name="q6" value="To uncover how attacks were executed">
+                <label for="q6a2">To uncover how attacks were executed</label><br>
+                <input type="radio" id="q6a3" name="q6" value="To provide entertainment">
+                <label for="q6a3">To provide entertainment</label>
+            </div>
+        
+            <!-- Question 7 -->
+            <div class="question">
+                <h4>7. What should be done with data during a recovery process?</h4>
+                <input type="radio" id="q7a1" name="q7" value="It should be deleted">
+                <label for="q7a1">It should be deleted</label><br>
+                <input type="radio" id="q7a2" name="q7" value="It should be restored from backups">
+                <label for="q7a2">It should be restored from backups</label><br>
+                <input type="radio" id="q7a3" name="q7" value="It should be publicly shared">
+                <label for="q7a3">It should be publicly shared</label>
+            </div>
+        
+            <!-- Question 8 -->
+            <div class="question">
+                <h4>8. Why is documentation important in incident response? (Select all that apply)</h4>
+                <input type="checkbox" id="q8a1" name="q8a1" value="It helps in legal defense and supports insurance claims">
+                <label for="q8a1">It helps in legal defense and supports insurance claims</label><br>
+                <input type="checkbox" id="q8a2" name="q8a2" value="It supports refining incident response procedures">
+                <label for="q8a2">It supports refining incident response procedures</label><br>
+                <input type="checkbox" id="q8a3" name="q8a3" value="It provides a record for compliance and regulations">
+                <label for="q8a3">It provides a record for compliance and regulations</label>
+            </div>
+        
+            <!-- Question 9 -->
+            <div class="question">
+                <h4>9. What should be done after the recovery from a cybersecurity incident?</h4>
+                <input type="radio" id="q9a1" name="q9" value="Nothing, the job is done">
+                <label for="q9a1">Nothing, the job is done</label><br>
+                <input type="radio" id="q9a2" name="q9" value="Conduct a review to identify improvements">
+                <label for="q9a2">Conduct a review to identify improvements</label><br>
+                <input type="radio" id="q9a3" name="q9" value="Plan a party">
+                <label for="q9a3">Plan a party</label>
+            </div>
+        
+            <!-- Question 10 -->
+            <div class="question">
+                <h4>10. Which of the following is a recommended practice for enhancing forensic capabilities?</h4>
+                <input type="radio" id="q10a1" name="q10" value="Reduce training for staff">
+                <label for="q10a1">Reduce training for staff</label><br>
+                <input type="radio" id="q10a2" name="q10" value="Invest in advanced forensic technologies">
+                <label for="q10a2">Invest in advanced forensic technologies</label><br>
+                <input type="radio" id="q10a3" name="q10" value="Ignore new cyber threats">
+                <label for="q10a3">Ignore new cyber threats</label>
+            </div>
+        
+            <button type="button" onclick="submitQuiz('quiz2')">Submit Quiz</button>
+        </form>
+        
+    </div>
+</div>
+    <script src="../js/quiz.js"></script>
+</body>
+</html>

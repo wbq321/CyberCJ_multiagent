@@ -1,0 +1,148 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Intro to Privacy Quiz</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .question { margin-bottom: 20px; }
+        .question h4 { margin-bottom: 10px; }
+    </style>
+</head>
+<body id="quiz-body">
+ <!-- Module 4.1 Quiz -->
+ <div id="quiz4_1" class="card mt-4 shadow-lg">
+    <div class="card-header">
+        <span class="fs-4">Module 4 Quiz </span>
+    </div>
+    <div class="card-body">
+        <form>
+            <!-- Question 1 -->
+            <div class="question">
+                <h4>1. What is the primary purpose of encrypting data at rest?</h4>
+                <input type="radio" id="q1a1" name="q1" value="To speed up data access">
+                <label for="q1a1">To speed up data access</label><br>
+                <!--ans below-->
+                <input type="radio" id="q1a2" name="q1" value="To protect it from unauthorized access">
+                <label for="q1a2">To protect it from unauthorized access</label><br>
+                <input type="radio" id="q1a3" name="q1" value="To reduce data storage needs">
+                <label for="q1a3">To reduce data storage needs</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <h4>2. Which type of security measure prevents unauthorized physical access to stored data?</h4>
+                <input type="radio" id="q2a1" name="q2" value="Data masking">
+                <label for="q2a1">Data masking</label><br>
+                <input type="radio" id="q2a2" name="q2" value="Regular audits">
+                <label for="q2a2">Regular audits</label><br>
+                <!--ans below-->
+                <input type="radio" id="q2a3" name="q2" value=" Physical security measures">
+                <label for="q2a3">Physical security measures</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <h4>3. What is the key difference between data at rest and data in transit?</h4>
+                <input type="checkbox" id="q3a1" name="q3a1">
+                <label for="q3a1">Data at rest is encrypted; data in transit is not</label><br>
+                <input type="checkbox" id="q3a2" name="q3a2">
+                <!--ans below-->
+                <label for="q3a2">Data at rest is stored; data in transit is being transferred</label><br>
+                <input type="checkbox" id="q3a3" name="q3a3">
+                <label for="q3a3">Data at rest is less secure than data in transit</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <h4>4. Which protocol is commonly used to secure data in transit over the internet?</h4>
+                <input type="radio" id="q4a1" name="q4" value="HTTP">
+                <label for="q4a1">HTTP</label><br>
+                <input type="radio" id="q4a2" name="q4" value="TLS">
+                <label for="q4a2">TLS</label><br>
+                <input type="radio" id="q4a3" name="q4" value="FTP">
+                <label for="q4a3">FTP</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <h4>5. What is the purpose of using end-to-end encryption (E2EE)?</h4>
+                <input type="radio" id="q5a1" name="q5" value="To increase the speed of data transmission">
+                <label for="q5a1">To increase the speed of data transmission</label><br>
+                <input type="radio" id="q5a2" name="q5" value="To allow easy access to data for service providers">
+                <label for="q5a2">To allow easy access to data for service providers</label><br>
+                <!--ans below-->
+                <input type="radio" id="q5a3" name="q5" value="To ensure data is encrypted from the sender to the recipient without intermediary decryption">
+                <label for="q5a3">To ensure data is encrypted from the sender to the recipient without intermediary decryption</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <h4>6. Which type of attack involves an attacker intercepting and possibly altering communications between two parties?</h4>
+                <!--ans below-->
+                <input type="radio" id="q6a1" name="q6" value="Man-in-the-Middle (MitM) attack">
+                <label for="q6a1">Man-in-the-Middle (MitM) attack</label><br>
+                <input type="radio" id="q6a2" name="q6" value="Phishing attack">
+                <label for="q6a2">Phishing attack</label><br>
+                <input type="radio" id="q6a3" name="q6" value="Replay attack">
+                <label for="q6a3">Replay attack</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <h4>7. What role does encryption play in securing data in transit?</h4>
+                <input type="radio" id="q7a1" name="q7" value="It confirms the sender's identity definitively">
+                <label for="q7a1">It confirms the sender's identity definitively</label><br>
+                <!--ans below-->
+                <input type="radio" id="q7a2" name="q7" value=" It makes intercepted data unreadable to unauthorized parties">
+                <label for="q7a2"> It makes intercepted data unreadable to unauthorized parties</label><br>
+                <input type="radio" id="q7a3" name="q7" value="It speeds up data transmission">
+                <label for="q7a3">It speeds up data transmission</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <h4>8. How does data masking contribute to data security?</h4>
+                <!--ans below-->
+                <input type="radio" id="q8a1" name="q8" value="By changing data so that it cannot be traced back to an individual but remains usable">
+                <label for="q8a1">By changing data so that it cannot be traced back to an individual but remains usable</label><br>
+                <input type="radio" id="q8a2" name="q8" value="By deleting unnecessary data">
+                <label for="q8a2">By deleting unnecessary data</label><br>
+                <input type="radio" id="q8a3" name="q8" value="By encrypting all data on a system">
+                <label for="q8a3">By encrypting all data on a system</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <h4>9. What is a potential challenge associated with implementing end-to-end encryption?</h4>
+                <input type="checkbox" id="q9a1" name="q9a1">
+                <label for="q9a1">It reduces the need for data storage</label><br>
+                <input type="checkbox" id="q9a2" name="q9a2">
+                <label for="q9a2">It can make data transfer faster</label><br>
+                <input type="checkbox" id="q9a3" name="q9a3">
+                <!--ans below-->
+                <label for="q9a3">It can make user services less user-friendly</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <h4>10. Which type of data security management involves setting up user permissions and roles?</h4>
+                <input type="radio" id="q10a1" name="q10" value="Encryption">
+                <label for="q10a1">Encryption</label><br>
+                <input type="radio" id="q10a2" name="q10" value="Physical security">
+                <label for="q10a2">Physical security</label><br>
+                <!--ans below-->
+                <input type="radio" id="q10a3" name="q10" value="Access controls">
+                <label for="q10a3">Access controls</label>
+            </div>
+
+            <button type="button" onclick="submitQuiz('quiz4_1')">Submit Quiz</button>
+        </form>
+    </div>
+ </div>
+    <script src="js/quiz.js"></script>
+    
+</body>
+</html>

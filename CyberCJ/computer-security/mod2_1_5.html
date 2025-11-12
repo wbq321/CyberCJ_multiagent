@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0" style="width: 100%; height: 100%;">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 2.0-->
+                    <div  class="bg-light border rounded-3 p-3">
+                        <h3>Module 2: Computer Security</h3>
+                        <!-- Module 2.1.5 -->
+                        <div id="2_1_5" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">2.1.5 Sidestepping</span>
+                            </div>
+                            <div class="card-body">
+                                <h3> Sidestepping mostly consists of Backdoors, Logic Bombs, and Rootkits: </h3>
+                                <p><img src="../images/Sidestep.jpg" alt="Sidestepping" style="width: auto; height: 400px; float: right; margin-left: 5%; margin-right: 5%;"/></p>
+                                <p style="margin-left: 40px; margin-right: 40%;"><b>Backdoors:</b>  </br>
+                                    Backdoors are used to bypass normal authentication procedures, thus allowing remote access to a device without the user's knowledge. 
+                                    In the criminal justice field, such vulnerabilities could be exploited to access confidential data, including case files and personal information. 
+                                    Initially, developers may create backdoors for legitimate purposes such as maintenance. 
+                                    However, if not removed, they pose a significant security risk as they can be discovered and used maliciously.
+                                </p>
+                                <p style="margin-left: 40px; margin-right: 40%;"><b>Logic Bombs:</b> </br>
+                                    Logic bombs are pieces of code that have been inserted into software and are designed to execute under specific conditions, 
+                                    such as a specific time or when a certain action is performed. 
+                                    For example, a logic bomb could be set to execute its attack three months after an employee left the firm, or after the 45th email sent by a clerk.
+                                    A logic bomb could potentially be used to destroy data, disrupt system operations, or corrupt essential legal documents. 
+                                    These are often hard to detect and can be planted by insiders who are trusted with access to sensitive systems.
+                                </p>
+                                <p style="margin-left: 40px; margin-right: 40%;"><b>Rootkits:</b> </br>
+                                    Rootkits are programs that hide the existence of malware in a system by intercepting and altering standard operating system processes. 
+                                    Deeply embedded within the operating system, they are extremely difficult to detect and can give attackers full control of the system without the user's knowledge. 
+                                    For criminal justice systems, rootkits represent a serious threat as they can be used to manipulate operations, 
+                                    alter data, or steal information without detection for long periods.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

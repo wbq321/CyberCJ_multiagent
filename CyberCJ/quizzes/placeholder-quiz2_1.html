@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Malware Quiz</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .question { margin-bottom: 20px; }
+        .question h4 { margin-bottom: 10px; }
+    </style>
+</head>
+<body>
+ <!-- Module 2.1 Quiz -->
+ <div id="quiz2_1" class="card mt-4 shadow-lg">
+    <div class="card-header">
+        <span class="fs-4">2.1 Quiz </span>
+    </div>
+    <div class="card-body">
+        <form>
+            <!-- Question 1 -->
+            <div class="question">
+                <h4>1. What is malware?</h4>
+                <input type="radio" id="q1a1" name="q1" value="Software that performs unwanted actions on your computer system">
+                <label for="q1a1">Software that performs unwanted actions on your computer system</label><br>
+                <input type="radio" id="q1a2" name="q1" value="A type of software that helps protect your computer">
+                <label for="q1a2">A type of software that helps protect your computer</label><br>
+                <input type="radio" id="q1a3" name="q1" value="Software that speeds up your computer">
+                <label for="q1a3">Software that speeds up your computer</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <h4>2. Which of these is NOT a primary action of malware?</h4>
+                <input type="radio" id="q2a1" name="q2" value="Kidnap Data">
+                <label for="q2a1">Kidnap Data</label><br>
+                <input type="radio" id="q2a2" name="q2" value="Eavesdrop">
+                <label for="q2a2">Eavesdrop</label><br>
+                <input type="radio" id="q2a3" name="q2" value="Improve Performance">
+                <label for="q2a3">Improve Performance</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <h4>3. What is a common tactic used by Ransomware?</h4>
+                <input type="checkbox" id="q3a1" name="q3a1">
+                <label for="q3a1">Locking the system until a ransom is paid</label><br>
+                <input type="checkbox" id="q3a2" name="q3a2">
+                <label for="q3a2">Stealing user data for identity theft</label><br>
+                <input type="checkbox" id="q3a3" name="q3a3">
+                <label for="q3a3">Encrypting files and demanding payment for decryption</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <h4>4. What does Eavesdropping malware do?</h4>
+                <input type="radio" id="q4a1" name="q4" value="Deletes files randomly">
+                <label for="q4a1">Deletes files randomly</label><br>
+                <input type="radio" id="q4a2" name="q4" value="Captures and transmits data without consent">
+                <label for="q4a2">Captures and transmits data without consent</label><br>
+                <input type="radio" id="q4a3" name="q4" value="Slows down the computer">
+                <label for="q4a3">Slows down the computer</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <h4>5. Which type of malware disguises itself as legitimate software?</h4>
+                <input type="radio" id="q5a1" name="q5" value="Trojan">
+                <label for="q5a1">Trojan</label><br>
+                <input type="radio" id="q5a2" name="q5" value="Virus">
+                <label for="q5a2">Virus</label><br>
+                <input type="radio" id="q5a3" name="q5" value="Worm">
+                <label for="q5a3">Worm</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <h4>6. Which malware is used primarily to launch attacks from the infected host?</h4>
+                <input type="radio" id="q6a1" name="q6" value="Bot">
+                <label for="q6a1">Bot</label><br>
+                <input type="radio" id="q6a2" name="q6" value="Spyware">
+                <label for="q6a2">Spyware</label><br>
+                <input type="radio" id="q6a3" name="q6" value="Adware">
+                <label for="q6a3">Adware</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <h4>7. What type of malware specifically targets bypassing security protocols?</h4>
+                <input type="radio" id="q7a1" name="q7" value="Backdoor">
+                <label for="q7a1">Backdoor</label><br>
+                <input type="radio" id="q7a2" name="q7" value="Rootkit">
+                <label for="q7a2">Rootkit</label><br>
+                <input type="radio" id="q7a3" name="q7" value="Both A and B">
+                <label for="q7a3">Both A and B</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <h4>8. Logic bombs are designed to:</h4>
+                <input type="radio" id="q8a1" name="q8" value="Improve system performance">
+                <label for="q8a1">Improve system performance</label><br>
+                <input type="radio" id="q8a2" name="q8" value="Execute malicious activity under certain conditions">
+                <label for="q8a2">Execute malicious activity under certain conditions</label><br>
+                <input type="radio" id="q8a3" name="q8" value="Provide remote access to the user">
+                <label for="q8a3">Provide remote access to the user</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <h4>9. Which of the following is true about spyware?</h4>
+                <input type="checkbox" id="q9a1" name="q9a1">
+                <label for="q9a1">It can install other malicious software</label><br>
+                <input type="checkbox" id="q9a2" name="q9a2">
+                <label for="q9a2">It only targets financial data</label><br>
+                <input type="checkbox" id="q9a3" name="q9a3">
+                <label for="q9a3">It can monitor user activity without their knowledge</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <h4>10. Rootkits are primarily used for:</h4>
+                <input type="radio" id="q10a1" name="q10" value="Speeding up the operating system">
+                <label for="q10a1">Speeding up the operating system</label><br>
+                <input type="radio" id="q10a2" name="q10" value="Hiding malware presence">
+                <label for="q10a2">Hiding malware presence</label><br>
+                <input type="radio" id="q10a3" name="q10" value="Enhancing user privacy">
+                <label for="q10a3">Enhancing user privacy</label>
+            </div>
+
+            <button type="button" onclick="submitQuiz('quiz2_1')">Submit Quiz</button>
+        </form>
+    </div>
+ </div>
+    <script src="js/quiz.js"></script>
+    
+</body>
+</html>

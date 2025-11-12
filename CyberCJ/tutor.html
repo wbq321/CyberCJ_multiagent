@@ -1,0 +1,651 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberCJ Tutor - AI-Powered Cybersecurity Learning Assistant</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen', 'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            margin: 0;
+            padding: 0;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #0a5640, #0c7c3e);
+            color: white;
+            padding: 20px 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.2);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5rem;
+            font-weight: 600;
+            text-align: center;
+        }
+
+        .header .subtitle {
+            text-align: center;
+            font-size: 1.1rem;
+            opacity: 0.9;
+            margin-top: 5px;
+        }
+
+        .back-button {
+            position: absolute;
+            left: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            background: rgba(255,255,255,0.2);
+            border: 2px solid white;
+            color: white;
+            padding: 10px 20px;
+            border-radius: 25px;
+            text-decoration: none;
+            font-weight: 500;
+            transition: all 0.3s ease;
+        }
+
+        .back-button:hover {
+            background: white;
+            color: #0a5640;
+            text-decoration: none;
+        }
+
+        .chat-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            padding: 0 20px;
+            height: calc(100vh - 140px);
+        }
+
+        .chat-card {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .control-panel {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            padding: 15px 20px;
+            border-bottom: 2px solid #dee2e6;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .module-selector {
+            background: white;
+            border: 2px solid #ced4da;
+            border-radius: 10px;
+            padding: 8px 15px;
+            font-size: 14px;
+            color: #495057;
+            min-width: 200px;
+            transition: border-color 0.2s;
+        }
+
+        .module-selector:focus {
+            outline: none;
+            border-color: #0a5640;
+            box-shadow: 0 0 0 3px rgba(10, 86, 64, 0.1);
+        }
+
+        .module-selector option {
+            color: #495057;
+            background: white;
+        }
+
+        .new-topic-btn {
+            background: linear-gradient(135deg, #17a2b8, #138496);
+            color: white;
+            border: none;
+            border-radius: 10px;
+            padding: 8px 20px;
+            font-size: 14px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+
+        .new-topic-btn:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(23, 162, 184, 0.3);
+        }
+
+        .chat-messages {
+            flex: 1;
+            padding: 20px;
+            overflow-y: auto;
+            background: linear-gradient(to bottom, #fafafa, #ffffff);
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+
+        .message {
+            max-width: 80%;
+            padding: 12px 18px;
+            border-radius: 20px;
+            word-wrap: break-word;
+            line-height: 1.5;
+            animation: fadeIn 0.3s ease-in;
+            position: relative;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        .user-message {
+            background: linear-gradient(135deg, #0a5640, #0c7c3e);
+            color: white;
+            align-self: flex-end;
+            border-bottom-right-radius: 8px;
+            box-shadow: 0 3px 10px rgba(10, 86, 64, 0.3);
+        }
+
+        .bot-message {
+            background: #f8f9fa;
+            color: #2c3e50;
+            align-self: flex-start;
+            border-bottom-left-radius: 8px;
+            border: 1px solid #e9ecef;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        }
+
+        .system-message {
+            background: linear-gradient(135deg, #6c757d, #495057);
+            color: white;
+            align-self: center;
+            font-size: 0.9em;
+            font-style: italic;
+            border-radius: 15px;
+            max-width: 90%;
+            text-align: center;
+        }
+
+        .bot-message.error {
+            background: linear-gradient(135deg, #dc3545, #c82333);
+            color: white;
+            border-color: #bd2130;
+        }
+
+        .bot-message.typing {
+            font-style: italic;
+            color: #6c757d;
+            background-color: #e9ecef;
+        }
+
+        /* Markdown formatting styles */
+        .message-content strong {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .message-content em {
+            font-style: italic;
+            color: #34495e;
+        }
+
+        .message-content code {
+            background: #f1f3f4 !important;
+            padding: 2px 6px !important;
+            border-radius: 4px !important;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+            font-size: 0.9em !important;
+        }
+
+        .message-content h1,
+        .message-content h2,
+        .message-content h3 {
+            font-weight: 600;
+            line-height: 1.3;
+            margin: 10px 0 6px 0;
+        }
+
+        .message-content h1 { font-size: 1.4em; color: #0a5640; }
+        .message-content h2 { font-size: 1.2em; color: #0a5640; }
+        .message-content h3 { font-size: 1.1em; color: #0a5640; }
+
+        .message-content ul {
+            margin: 10px 0 !important;
+            padding-left: 20px !important;
+        }
+
+        .message-content li {
+            margin: 4px 0 !important;
+            line-height: 1.5;
+        }
+
+        .message-content li::marker {
+            color: #0a5640;
+        }
+
+        .input-container {
+            padding: 20px;
+            background: white;
+            border-top: 2px solid #e9ecef;
+            display: flex;
+            gap: 15px;
+            align-items: center;
+        }
+
+        .message-input {
+            flex: 1;
+            padding: 12px 20px;
+            border: 2px solid #dee2e6;
+            border-radius: 25px;
+            font-size: 16px;
+            transition: border-color 0.2s, box-shadow 0.2s;
+            background: #fafafa;
+        }
+
+        .message-input:focus {
+            outline: none;
+            border-color: #0a5640;
+            box-shadow: 0 0 0 4px rgba(10, 86, 64, 0.1);
+            background: white;
+        }
+
+        .send-button {
+            padding: 12px 25px;
+            background: linear-gradient(135deg, #0a5640, #0c7c3e);
+            color: white;
+            border: none;
+            border-radius: 25px;
+            cursor: pointer;
+            font-weight: 600;
+            font-size: 16px;
+            transition: transform 0.2s, box-shadow 0.2s;
+            min-width: 80px;
+        }
+
+        .send-button:hover:not(:disabled) {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(10, 86, 64, 0.3);
+        }
+
+        .send-button:disabled {
+            opacity: 0.6;
+            cursor: not-allowed;
+            transform: none;
+        }
+
+        /* Feedback System Styles */
+        .feedback-container {
+            position: absolute;
+            bottom: 5px;
+            right: 10px;
+            display: flex;
+            gap: 6px;
+            opacity: 0;
+            transition: opacity 0.2s;
+            z-index: 10;
+        }
+
+        .message:hover .feedback-container {
+            opacity: 1;
+        }
+
+        .feedback-btn {
+            background: rgba(255,255,255,0.9);
+            border: 1px solid #dee2e6;
+            cursor: pointer;
+            padding: 4px 8px;
+            border-radius: 15px;
+            font-size: 14px;
+            transition: all 0.2s;
+            backdrop-filter: blur(10px);
+        }
+
+        .feedback-btn:hover {
+            background: white;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            transform: scale(1.1);
+        }
+
+        .feedback-btn.active {
+            background: #0a5640;
+            color: white;
+            border-color: #0a5640;
+        }
+
+        .feedback-status {
+            font-size: 10px;
+            color: #6c757d;
+            margin-left: 8px;
+            white-space: nowrap;
+        }
+
+        @media (max-width: 768px) {
+            .header h1 { font-size: 2rem; }
+            .header .subtitle { font-size: 1rem; }
+            .back-button { position: static; margin-bottom: 10px; display: inline-block; }
+            .chat-container { margin: 10px auto; padding: 0 10px; }
+            .control-panel { flex-direction: column; gap: 10px; align-items: stretch; }
+            .module-selector { min-width: auto; }
+            .message { max-width: 95%; }
+            .input-container { padding: 15px; }
+        }
+    </style>
+</head>
+
+<body>
+    <!-- Header -->
+    <div class="header position-relative">
+        <a href="index.html" class="back-button">
+            <i class="fas fa-arrow-left"></i> Back to Modules
+        </a>
+        <h1><i class="fas fa-robot"></i> CyberCJ Tutor</h1>
+        <div class="subtitle">AI-Powered Cybersecurity Learning Assistant</div>
+    </div>
+
+    <!-- Main Chat Interface -->
+    <div class="chat-container">
+        <div class="chat-card">
+            <!-- Control Panel -->
+            <div class="control-panel">
+                <select class="module-selector" id="module-selector">
+                    <option value="">Select Module for Learning Plan...</option>
+                    <option value="introduction">Introduction to Cybersecurity</option>
+                    <option value="computer-security">Computer Security</option>
+                    <option value="internet-security">Internet Security</option>
+                    <option value="privacy">Privacy</option>
+                </select>
+                <button class="new-topic-btn" id="new-topic-btn">
+                    <i class="fas fa-plus"></i> New Topic
+                </button>
+            </div>
+
+            <!-- Chat Messages -->
+            <div class="chat-messages" id="chat-messages">
+                <!-- Welcome message will be added here -->
+            </div>
+
+            <!-- Input Area -->
+            <div class="input-container">
+                <input type="text" id="user-input" class="message-input"
+                       placeholder="Ask me anything about cybersecurity..."
+                       autocomplete="off">
+                <button id="send-button" class="send-button">
+                    <i class="fas fa-paper-plane"></i>
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const chatMessages = document.getElementById('chat-messages');
+            const userInput = document.getElementById('user-input');
+            const sendButton = document.getElementById('send-button');
+            const moduleSelector = document.getElementById('module-selector');
+            const newTopicBtn = document.getElementById('new-topic-btn');
+
+            // --- API Endpoints ---
+            const API_URL = 'http://127.0.0.1:5001/chat_multi_agent';
+            const FEEDBACK_URL = 'http://127.0.0.1:5001/feedback';
+
+            // --- Global Variables ---
+            let conversationId = generateConversationId();
+            let messageCounter = 0;
+
+            // --- Utility Functions ---
+            function generateConversationId() {
+                return 'conv_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            }
+
+            function formatMarkdownToHtml(text) {
+                let html = text
+                    // Headers
+                    .replace(/^### (.*$)/gm, '<h3>$1</h3>')
+                    .replace(/^## (.*$)/gm, '<h2>$1</h2>')
+                    .replace(/^# (.*$)/gm, '<h1>$1</h1>')
+                    // Bold text
+                    .replace(/\*\*(.*?)\*\*/g, '<strong>$1</strong>')
+                    // Italic text
+                    .replace(/\*(.*?)\*/g, '<em>$1</em>')
+                    // Code snippets
+                    .replace(/`(.*?)`/g, '<code>$1</code>')
+                    // Bullet points
+                    .replace(/^- (.*$)/gm, '<li>$1</li>')
+                    // Convert lists
+                    .replace(/(<li>.*<\/li>)/gs, '<ul>$1</ul>')
+                    // Numbered lists
+                    .replace(/^\d+\. (.*$)/gm, '<li>$1</li>')
+                    // Line breaks
+                    .replace(/\n/g, '<br>');
+
+                return html;
+            }
+
+            // --- Message Management ---
+            function addMessage(text, type, messageId = null) {
+                messageCounter++;
+                const actualMessageId = messageId || `msg_${messageCounter}`;
+
+                const messageDiv = document.createElement('div');
+                messageDiv.classList.add('message', type);
+                messageDiv.setAttribute('data-message-id', actualMessageId);
+
+                const contentDiv = document.createElement('div');
+                contentDiv.classList.add('message-content');
+
+                // Apply Markdown formatting only to bot/system messages
+                if (type === 'bot-message' || type === 'system-message') {
+                    contentDiv.innerHTML = formatMarkdownToHtml(text);
+                } else {
+                    contentDiv.textContent = text;
+                }
+
+                messageDiv.appendChild(contentDiv);
+
+                // Add feedback buttons for bot messages
+                if (type === 'bot-message') {
+                    const feedbackContainer = document.createElement('div');
+                    feedbackContainer.classList.add('feedback-container');
+
+                    const thumbsUp = document.createElement('button');
+                    thumbsUp.classList.add('feedback-btn');
+                    thumbsUp.innerHTML = '👍';
+                    thumbsUp.title = 'Good response';
+                    thumbsUp.onclick = () => submitFeedback(actualMessageId, 'positive', text);
+
+                    const thumbsDown = document.createElement('button');
+                    thumbsDown.classList.add('feedback-btn');
+                    thumbsDown.innerHTML = '👎';
+                    thumbsDown.title = 'Poor response';
+                    thumbsDown.onclick = () => submitFeedback(actualMessageId, 'negative', text);
+
+                    feedbackContainer.appendChild(thumbsUp);
+                    feedbackContainer.appendChild(thumbsDown);
+                    messageDiv.appendChild(feedbackContainer);
+                }
+
+                chatMessages.appendChild(messageDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+
+                return messageDiv;
+            }
+
+            // --- Feedback System ---
+            async function submitFeedback(messageId, rating, responseText) {
+                try {
+                    const response = await fetch(FEEDBACK_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            message_id: messageId,
+                            conversation_id: conversationId,
+                            rating: rating,
+                            response_text: responseText,
+                            timestamp: new Date().toISOString()
+                        }),
+                    });
+
+                    if (response.ok) {
+                        // Update button state
+                        const messageDiv = document.querySelector(`[data-message-id="${messageId}"]`);
+                        if (messageDiv) {
+                            const buttons = messageDiv.querySelectorAll('.feedback-btn');
+                            buttons.forEach(btn => btn.classList.remove('active'));
+
+                            event.target.classList.add('active');
+
+                            // Add feedback status
+                            let statusSpan = messageDiv.querySelector('.feedback-status');
+                            if (!statusSpan) {
+                                statusSpan = document.createElement('span');
+                                statusSpan.classList.add('feedback-status');
+                                messageDiv.appendChild(statusSpan);
+                            }
+                            statusSpan.textContent = rating === 'positive' ? '✓ Helpful' : '✓ Noted';
+                        }
+                    }
+                } catch (error) {
+                    console.error('Feedback submission error:', error);
+                }
+            }
+
+            // --- Typing Indicator ---
+            function showTypingIndicator() {
+                const typingDiv = document.createElement('div');
+                typingDiv.classList.add('message', 'bot-message', 'typing');
+                typingDiv.innerHTML = '<div class="message-content"><i class="fas fa-brain"></i> CJ-Mentor is thinking...</div>';
+                chatMessages.appendChild(typingDiv);
+                chatMessages.scrollTop = chatMessages.scrollHeight;
+                return typingDiv;
+            }
+
+            function removeTypingIndicator(typingDiv) {
+                if (typingDiv && typingDiv.parentNode) {
+                    typingDiv.parentNode.removeChild(typingDiv);
+                }
+            }
+
+            // --- Send Message to API ---
+            async function sendMessage() {
+                const message = userInput.value.trim();
+                if (!message) return;
+
+                addMessage(message, 'user-message');
+                userInput.value = '';
+                userInput.disabled = true;
+                sendButton.disabled = true;
+
+                const typingIndicator = showTypingIndicator();
+
+                try {
+                    const response = await fetch(API_URL, {
+                        method: 'POST',
+                        headers: {
+                            'Content-Type': 'application/json',
+                        },
+                        body: JSON.stringify({
+                            message: message,
+                            conversation_id: conversationId
+                        }),
+                    });
+
+                    removeTypingIndicator(typingIndicator);
+
+                    if (!response.ok) {
+                        const errorData = await response.json().catch(() => ({ error: "An unknown error occurred" }));
+                        console.error('API Error:', response.status, errorData);
+                        addMessage(errorData.error || `Error: ${response.statusText}`, 'bot-message error');
+                        return;
+                    }
+
+                    const data = await response.json();
+
+                    // Handle system messages if present
+                    if (data.system_message) {
+                        addMessage(data.system_message, 'system-message');
+                    }
+
+                    // Add the main response
+                    const responseMessageId = generateConversationId();
+                    addMessage(data.response, 'bot-message', responseMessageId);
+
+                } catch (error) {
+                    removeTypingIndicator(typingIndicator);
+                    console.error('Fetch Error:', error);
+                    addMessage('Sorry, I encountered an error trying to connect. Please try again later.', 'bot-message error');
+                } finally {
+                    userInput.disabled = false;
+                    sendButton.disabled = false;
+                    userInput.focus();
+                }
+            }
+
+            // --- Event Listeners ---
+            sendButton.addEventListener('click', sendMessage);
+            userInput.addEventListener('keypress', (event) => {
+                if (event.key === 'Enter') {
+                    sendMessage();
+                }
+            });
+
+            // Module selector functionality
+            moduleSelector.addEventListener('change', (event) => {
+                const selectedModule = event.target.value;
+                if (selectedModule) {
+                    const moduleMessages = {
+                        'introduction': 'I\'d like to learn about **Introduction to Cybersecurity**. Can you create a learning plan for this module?',
+                        'computer-security': 'I\'d like to learn about **Computer Security**. Can you create a learning plan for this module?',
+                        'internet-security': 'I\'d like to learn about **Internet Security**. Can you create a learning plan for this module?',
+                        'privacy': 'I\'d like to learn about **Privacy**. Can you create a learning plan for this module?'
+                    };
+
+                    if (moduleMessages[selectedModule]) {
+                        userInput.value = moduleMessages[selectedModule];
+                        sendMessage();
+                        event.target.value = ''; // Reset selector
+                    }
+                }
+            });
+
+            // New topic button functionality
+            newTopicBtn.addEventListener('click', () => {
+                conversationId = generateConversationId(); // Start fresh conversation
+                chatMessages.innerHTML = ''; // Clear chat
+                setTimeout(() => {
+                    addMessage('Great! Let\'s start a **new topic**. What cybersecurity concept would you like to explore today?', 'system-message');
+                }, 100);
+            });
+
+            // --- Initialize ---
+            // Add welcome message
+            setTimeout(() => {
+                addMessage('🛡️ **Welcome to CyberCJ Tutor!** 🛡️\n\nI\'m your **AI-powered cybersecurity learning assistant**. I can help you:\n\n- Create **personalized learning plans**\n- Understand **cybersecurity concepts**\n- Answer questions about **computer security**, **internet security**, and **privacy**\n- Provide **step-by-step guidance** for your learning journey\n\nWhat would you like to learn about today?', 'bot-message');
+            }, 500);
+
+            // Focus on input
+            userInput.focus();
+        });
+    </script>
+</body>
+</html>

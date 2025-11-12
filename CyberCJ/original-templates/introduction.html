@@ -1,0 +1,384 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                
+                <main class="col overflow-auto h-100" >
+                    <!--Module 1.0-->
+                    <div  class="bg-light border rounded-3 p-3">
+                        <h3>Module 1: Introduction to Cybersecurity</h3>
+                        <!-- Module 1.0.0 (Introduction) -->
+                        <div id="1_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">The Importance of Cybersecurity for Criminal Justice Professionals</span>
+                            </div>
+                            <div class="card-body">
+                                <p>In today's interconnected world, nearly every aspect of life is tied to digital technology. 
+                                    While this transformation brings convenience, it also exposes us to significant risks. 
+                                    Cybersecurity is an ongoing effort to balance technological advancements with emerging threats. 
+                                    Despite antivirus software and other protective measures, vulnerabilities continue to arise.  
+                                    For criminal justice professionals, it's crucial to understand these vulnerabilities and manage them properly. 
+                                    This overview will help prepare you for the follow-on modules of 
+                                    <a href="computer-security/mod2_0_0.html">computer security</a>, 
+                                    <a href="internet-security.html">internet security</a>, and 
+                                    <a href="privacy/mod4_0_0.html">privacy</a>.
+                                </p>
+                                <ul>
+                                    <li>
+                                        <b>Global Scale of Cyber Threats:</b> <br>
+                                        The consequences of breaches are severe, affecting millions of people and organizations worldwide. 
+                                        Constant vigilance and innovative responses are crucial to stay ahead of evolving threats.
+                                        <center><a href="https://informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/">
+                                            <img src="images/1.3billion.png" alt="1.3 billion" style="width: auto; height: auto;"/>
+                                        </a></center>
+                                        <caption>Interactive graph of the largest data breaches from the past decade.</caption>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Unique Challenges for Criminal Justice Professionals: </b> <br>
+                                        <ul>
+                                            <li><b>Universal Connectivity:</b> Attackers can strike from anywhere, making containment challenging.</li>
+                                            <li><b>Rapid Technological Evolution:</b> Millions of computers can be harnessed quickly to launch coordinated attacks.</li>
+                                            <li><b>Improving Attack Tools:</b> Novices can access advanced malware tools for launching cyberattacks.</li>
+                                            <li><b>Overwhelmed Vendors:</b> Companies struggle to keep up with security updates.</li>
+                                            <li><b>User Confusion:</b> Inadequate understanding of security measures leaves users vulnerable.</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div id="1_1" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Why are Computer Security, Internet Security, and Privacy Important?</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>Computer Security</h3>
+                                <p>Computer security is necessary to protect computer systems and their data from unauthorized access, damage, or theft. <br>
+                                    Key benefits include:</p>
+                                <ul>
+                                    <li><b>Protecting Sensitive Data:</b><br>
+                                        Criminal justice systems handle highly sensitive data such as personal information, investigation details, and national security data. 
+                                        Effective protection is vital to prevent identity theft, compromised investigations, or data misuse.
+                                    </li>
+                                    <li><b>Maintaining Public Trust:</b><br>
+                                        Trust in the criminal justice system hinges on protecting sensitive data. 
+                                        Strong security measures ensure public confidence.
+                                    </li>
+                                    <li><b>Enhancing Investigative Capabilities:</b><br>
+                                        Understanding cybersecurity helps during the investigation of cybercrimes like hacking, identity theft, and cyberstalking, leading to more effective prevention and prosecution.
+                                    </li>
+                                    <li><b>Compliance with Legal Standards:</b><br>
+                                        Agencies must comply with data protection and privacy regulations. 
+                                        Failure to do so leads to legal issues and reputational damage.
+                                    </li>
+                                </ul>
+                                <br>
+                                <h3>Internet Security</h3>
+                                <p>Internet security is critical for criminal justice professionals due to the high risk of cybercriminals exploiting online vulnerabilities. <br>
+                                    Key considerations include:</p>
+                                    <ul>
+                                        <li><b>Network Shared Directories:</b><br>
+                                            Shared directories are commonly used within criminal justice systems. 
+                                            Unauthorized access can compromise investigations and sensitive data.
+                                        </li>
+                                        <li><b>Cloud Storage:</b><br>
+                                            Cloud storage makes data easily accessible but also vulnerable. 
+                                            Any data stored there could be compromised, leading to significant breaches.
+                                        </li>
+                                    </ul>
+                                    <h3>Privacy</h3>
+                                    <p>Criminal justice professionals must ensure that privacy and data management practices safeguard sensitive information.</p>
+                                    <ul>
+                                        <li><b>Backup Strategies:</b><br>
+                                            Effective backups provide an essential safety net for restoring sensitive data after breaches. 
+                                            If compromised data can't be restored, investigations could be at risk.
+                                        </li>
+                                        <li><b>Disconnect and Isolate Devices:</b><br>
+                                            Isolating devices is critical for ensuring that sensitive data remains private. 
+                                            Without physical disconnection, attackers could access data indirectly via connected storage.
+                                        </li>
+                                    </ul>
+                            </div>
+                        </div>
+                        <!-- Module 1.1.0 -->
+                        <div id="1_1" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">1.1 What is Information Security?</span>
+                            </div>
+                            <div class="card-body">
+                                <p> Just as we protect our homes against burglars with a security system, we also protect our personal information against threats (such as identity theft!). 
+                                    Information security is the practice of protecting information with value for people and organizations. 
+                                    As data is transmitted, processed and stored, it must be protected.
+                                </p>
+                    
+                                
+
+                                <h3 style="clear: both;">Information security consists of three layers:</h3>
+                                <p>Products, People and Policy</p>
+                                <ul>
+                                    <li><b>Products:</b> From door locks to sophisticated firewalls, physical products protect information.</li>
+                                    <li><b>People: </b> The folks who implement and properly use security products.</li>
+                                    <li><b>Policy: </b> Established by organizations so people correctly use security products.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 1.2 -->
+                        <div id="1_2" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">1.2: Terminology</span>
+                            </div>
+                            <div class="card-body">
+                                <p><img src="images/Triad.jpg" alt="Threat, Asset, Vulnerability" style="width: auto; height: auto;"/></p>
+                                <h3> Terminology: </h3>
+                                <p style="margin-left: 40px;">Here is a quick rundown of basic cybersecurity jargon. 
+                                    We will use these terms to discuss attacks and defenses.
+                                </p>
+                                <ul>
+                                    <li><b>Threat:</b> action that could cause harm.</li>
+                                    <li><b>Asset: </b> item with value (information in our case!).</li>
+                                    <li><b>Vulnerability: </b>weakness in security.</li>
+                                    <li><b>Risk: </b>exposure to danger.</li>
+                                    <li><b>Threat agent: </b>person who could carry out the threat.</li>
+                                    <li><b>Attack vector: </b>how the attack could occur.</li>
+                                </ul>
+                                <h3> Risks: </h3>
+                                <p style="margin-left: 40px;">Risks have their own associated vocabulary.</p>
+                                <ul>
+                                    <li><b>Risk avoidance:</b> avoid the risk in the first place, such as not storing information that could be stolen.</li>
+                                    <li><b>Risk acceptance: </b> accept there&apos;s a risk and do nothing.</li>
+                                    <li><b>Risk deterrence: </b>deter threat actors by advertising measures such as warnings and legal actions.</li>
+                                    <li><b>Risk mitigation: </b>make the risk less serious, such as by storing information in separate locations.</li>
+                                    <li><b>Risk transference: </b>hand the risk to someone else, such as by buying insurance.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 1.3 -->
+                        <div id="1_3" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">1.3: Attacks and Defenses</span>
+                            </div>
+                            <div class="card-body">
+                                <p>Attacks and attackers come in many forms:</p>
+                                <h3> Attackers: </h3>
+                                <ul>
+                                    <li><b>Cybercriminals:</b>seek fortune, not fame.</li>
+                                    <li><b>Script kiddies: </b> in it for thrills and notoriety.</li>
+                                    <li><b>Brokers: </b>sell vulnerabilities to highest bidder.</li>
+                                    <li><b>Insiders: </b>retaliate against own organization.</li>
+                                    <li><b>Cyberterrorists: </b>seek to cause pani.</li>
+                                    <li><b>Hacktivists: </b>think they are righting wrongs.</li>
+                                    <li><b>State attackers: </b>spy on and disrupt governments and citizens.</li>
+                                </ul>
+                                <h3> Attacks: </h3>
+                                <ul>
+                                    <li><b>Point-of-sale (POS) attacks,</b> where “memory scrapers” steal card information at time of transaction.</li>
+                                    <li><b>Keyless entry system attacks,</b> where threat actors amplify the signal of remote keys inside homes and gain access to vehicles parked outside.</li>
+                                    <li><b>Home wireless network attacks,</b> launching malicious software on home networks through a vulnerability found in 90 major manufacturers&apos; products.</li>
+                                    <li><b>Healthcare breaches</b> are a huge problem and have even shut down hospitals entirely.</li>
+                                </ul>
+                                <h3> Defenses: </h3>
+                                <ul>
+                                    <li><b>Block attacks:</b>A strong security perimeter will protect you. Firewalls, VPNs, strong passwords, and even simple locks on doors can keep your information safer.</li>
+                                    <li><b>Update defenses: </b> Always keep hardware and software updated and install operating system security updates as soon as possible to protect against known threats.</li>
+                                    <li><b>Minimize losses: </b>Keep backup copies of data and have a recovery policy in place in case a successful attack occurs.</li>
+                                    <li><b>Stay alert: </b>Make sure all users know how to safely use the system. Stay motivated and keep your eyes peeled! Information security is the responsibility of all users.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 1.4 -->
+                        <div id="1_4" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">1.4: Personal Security</span>
+                            </div>
+                            <div class="card-body" >
+                                <h3> Password Attacks:</h3>
+                                <p style="margin-left: 40px;">
+                                    Despite being the primary means of authentication for personal security, passwords are not strong defenses against attackers. 
+                                    Users frequently choose weak passwords and use the same password multiple times. 
+                                    With the help of AI, it is easier than ever before to crack poor passwords. 
+                                </p>
+                                <h3>Password Vulnerability:</h3>
+                                <p style="margin-left: 40px;">
+                                    The most frequently used passwords are alarmingly simple:
+                                </p>
+                                <p ><img src="images/Most-Common-Passwords-2023-819x1024.png" alt="passwords" style="width: 500px; height: auto; margin-left: 40px;"/></p>  
+                                <p style="margin-left: 40px;">With easy-to-access AI hardware, those common passwords can be cracked almost instantly:</p>
+                                <img src="images\crackpws.jpeg" alt="password cracking tools" style="width: 500px; height: auto; margin-left: 40px;"/>
+                                <p style="margin-left: 40px;">Password cracking tools exist for anyone to explore:</p>
+                            </div>
+                        </div>
+                        <!DOCTYPE html>
+                        <html>
+                            <head>
+                            <style>
+                            .flip-card {
+                            background-color: transparent;
+                            width: 300px;
+                            height: 200px;
+                            perspective: 1000px;
+
+                            float: left;
+                            margin-right: 20px; /* Adjust the margin as needed */
+                            
+                            }
+                        
+                            .flip-card-inner {
+                            position: relative;
+                            width: 100%;
+                            height: 100%;
+                            text-align: center;
+                            transition: transform 0.6s;
+                            transform-style: preserve-3d;
+                            }
+                        
+                            .flip-card:hover .flip-card-inner {
+                            transform: rotateY(180deg);
+                            }
+                        
+                            .flip-card-front, .flip-card-back {
+                            position: absolute;
+                            width: 100%;
+                            height: 100%;
+                            backface-visibility: hidden;
+                            }
+                        
+                            .flip-card-front {
+                            background-color: #bbb;
+                            color: black;
+                            }
+                        
+                            .flip-card-back {
+                            background-color: #1f5512;
+                            color: white;
+                            transform: rotateY(180deg);
+                            }
+                            .flip-container {
+                                clear: both; /* Clear floats */
+                                margin-bottom: 20px; /* Add spacing between containers */
+                            }
+                            </style>
+                            </head>
+                            <body >
+                                <div class="flip-container">
+                                    <h3>CIA: The Three Protections</h3>
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Confidentiality</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Confidentiality</h2>
+                                                <p>Only authorized parties should be able to view the information (example: credit card information).</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Integrity</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Integrity</h2>
+                                                <p>Information should be free from tampering (example: amount of purchase).</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Availability</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Availability</h2>
+                                                <p>The right people need to be able to access data as needed (example: security not so complex that merchant can’t access order information).</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="flip-container">
+                                    <h3>AAA: Three Considerations</h3>
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Authentication</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Authentication</h2>
+                                                <p>Ensures user is not an impostor (example: 2FA to log on)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Authorization</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Authorization</h2>
+                                                <p>Permission to use technology resources (example: clerk allowed to see order history for customer)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Accounting</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Accounting</h2>
+                                                <p>Tracks events (example: who accessed server when)</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </body>
+                        </html>
+
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

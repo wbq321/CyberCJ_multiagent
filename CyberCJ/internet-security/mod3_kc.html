@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 3.0-->
+                    <div  class="bg-light border rounded-3 p-3 ">
+                        <h3>Module 3: Internet Security</h3>
+                        <!-- Module 2 Quiz -->
+                        <div id="quiz3" class="card mr-0 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Module 3 Knowledge Check </span>
+                            </div>
+                            <div class="card-body ">
+                                <form >
+                                    <!-- Module 3 Questions -->
+                                    <!-- Question 3.1 -->
+                                    <div class="question">
+                                        <h4>. What is one of the key reasons digital evidence collection is important for internet security and law enforcement?</h4>
+                                        <input type="radio" id="q1a1" name="q1" value="To create backups of digital data">
+                                        <label for="q1a1">To create backups of digital data</label><br>
+                                        <input type="radio" id="q1a2" name="q1" value="To investigate cybercrimes and uphold legal requirements">
+                                        <label for="q1a2">To investigate cybercrimes and uphold legal requirements</label><br>
+                                        <input type="radio" id="q1a3" name="q1" value="To encrypt sensitive information">
+                                        <label for="q1a3">To encrypt sensitive information</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.1 -->
+                                    <div class="question">
+                                        <h4>. How does digital evidence collection contribute to incident response and forensics?</h4>
+                                        <input type="radio" id="q2a1" name="q2" value="It helps identify attack vectors">
+                                        <label for="q2a1">It helps identify attack vectors</label><br>
+                                        <input type="radio" id="q2a2" name="q2" value="It enables forensic analysis of digital devices">
+                                        <label for="q2a2">It enables forensic analysis of digital devices</label><br>
+                                        <input type="radio" id="q2a3" name="q2" value="It protects against future cyber attacks">
+                                        <label for="q2a3">It protects against future cyber attacks</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.1 -->
+                                    <div class="question">
+                                        <h4>. What role does understanding attack vectors play in enhancing internet security?</h4>
+                                        <input type="radio" id="q3a1" name="q3" value="It ensures compliance with legal and regulatory requirements">
+                                        <label for="q3a1">It ensures compliance with legal and regulatory requirements</label><br>
+                                        <input type="radio" id="q3a2" name="q3" value="It assists in the attribution and prosecution of cybercrimes">
+                                        <label for="q3a2">It assists in the attribution and prosecution of cybercrimes</label><br>
+                                        <input type="radio" id="q3a3" name="q3" value="It helps organizations identify potential threats">
+                                        <label for="q3a3">It helps organizations identify potential threats</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.1 -->
+                                    <div class="question">
+                                        <h4>. Why is attribution important in cybercrime investigations?</h4>
+                                        <input type="radio" id="q4a1" name="q4" value="To identify the perpetrators accurately">
+                                        <label for="q4a1">To identify the perpetrators accurately</label><br>
+                                        <input type="radio" id="q4a2" name="q4" value="To comply with data protection laws">
+                                        <label for="q4a2">To comply with data protection laws</label><br>
+                                        <input type="radio" id="q4a3" name="q4" value="To create backups of digital data">
+                                        <label for="q4a3">To create backups of digital data</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.2 -->
+                                    <div class="question">
+                                        <h4>. Which layer of the internet includes websites accessible through standard search engines like Google and Bing?</h4>
+                                        <input type="radio" id="q5a1" name="q5" value="The Deep Web">
+                                        <label for="q5a1">The Deep Web</label><br>
+                                        <input type="radio" id="q5a2" name="q5" value="The Surface Web">
+                                        <label for="q5a2">The Surface Web</label><br>
+                                        <input type="radio" id="q5a3" name="q5" value="The Shadow Web">
+                                        <label for="q5a3">The Shadow Web</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.2 -->
+                                    <div class="question">
+                                        <h4>. What distinguishes the Deep Web from the Surface Web?</h4>
+                                        <input type="radio" id="q6a1" name="q6" value="It is indexed by traditional search engines.">
+                                        <label for="q6a1">It is indexed by traditional search engines.</label><br>
+                                        <input type="radio" id="q6a2" name="q6" value="It requires specific software or permissions to access.">
+                                        <label for="q6a2">It requires specific software or permissions to access.</label><br>
+                                        <input type="radio" id="q6a3" name="q6" value="It contains illegal content and marketplaces.">
+                                        <label for="q6a3">It contains illegal content and marketplaces.</label><br>
+                                        <input type="radio" id="q6a4" name="q6" value="It is easily accessible through standard web browsers.">
+                                        <label for="q6a4">It is easily accessible through standard web browsers.</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.2 -->
+                                    <div class="question">
+                                        <h4>. What role does the Dark Web play in criminal activities?</h4>
+                                        <input type="radio" id="q7a1" name="q7" value="Provides access to academic databases and private intranets">
+                                        <label for="q7a1"> Provides access to academic databases and private intranets</label><br>
+                                        <input type="radio" id="q7a2" name="q7" value="Enables secure communication for government agencies">
+                                        <label for="q7a2"> Enables secure communication for government agencies</label><br>
+                                        <input type="radio" id="q7a3" name="q7" value="Serves as a hub for underground transactions and illicit activities">
+                                        <label for="q7a3"> Serves as a hub for underground transactions and illicit activities</label><br>
+                                        <input type="radio" id="q7a4" name="q7" value="Offers a platform for legitimate businesses and services">
+                                        <label for="q7a4"> Offers a platform for legitimate businesses and services</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.2.8 -->
+                                    <div class="question">
+                                        <h4>. How is the Dark Web accessed?</h4>
+                                        <input type="radio" id="q8a1" name="q8" value="Through standard web browsers like Chrome or Firefox">
+                                        <label for="q8a1">Through standard web browsers like Chrome or Firefox</label><br>
+                                        <input type="radio" id="q8a2" name="q8" value="By using specialized software like Tor (The Onion Router) browser">
+                                        <label for="q8a2">By using specialized software like Tor (The Onion Router) browser</label><br>
+                                        <input type="radio" id="q8a3" name="q8" value="By requesting permission from internet service providers">
+                                        <label for="q8a3">By requesting permission from internet service providers</label><br>
+                                        <input type="radio" id="q8a4" name="q8" value="Through subscription-based access provided by tech companies">
+                                        <label for="q8a4">Through subscription-based access provided by tech companies</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.3.9 -->
+                                    <div class="question">
+                                        <h4>. What are "malvertisements"?</h4>
+                                        <input type="radio" id="q9a1" name="q9" value="Ads that promote malware removal software">
+                                        <label for="q9a1">Ads that promote malware removal software</label><br>
+                                        <input type="radio" id="q9a2" name="q9" value="Ads targeting specific demographics based on browsing history">
+                                        <label for="q9a2">Ads targeting specific demographics based on browsing history</label><br>
+                                        <input type="radio" id="q9a3" name="q9" value="Ads promoting legitimate products or services">
+                                        <label for="q9a3">Ads promoting legitimate products or services</label><br>
+                                        <input type="radio" id="q9a4" name="q9" value="Random ads seen on popular websites that may contain malware">
+                                        <label for="q9a4">Random ads seen on popular websites that may contain malware</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.3.10 -->
+                                    <div class="question">
+                                        <h4>. What is the primary risk associated with "drive-by downloads"?</h4>
+                                        <input type="radio" id="q10a1" name="q10" value="Unauthorized access to user devices">
+                                        <label for="q10a1">Unauthorized access to user devices</label><br>
+                                        <input type="radio" id="q10a2" name="q10" value="Theft of sensitive information through email">
+                                        <label for="q10a2">Theft of sensitive information through email</label><br>
+                                        <input type="radio" id="q10a3" name="q10" value="Infection of user devices with malware from infected websites">
+                                        <label for="q10a3">Infection of user devices with malware from infected websites</label>
+                                        <br><br>
+                                    </div>
+                                    
+                                
+                                    <!-- Question 3.3.11 -->
+                                    <div class="question">
+                                        <h4>. What is "spoofing" in the context of online security?</h4>
+                                        <input type="radio" id="q11a1" name="q11" value="Sending legitimate emails from trusted sources">
+                                        <label for="q11a1">Sending legitimate emails from trusted sources</label><br>
+                                        <input type="radio" id="q11a2" name="q11" value="Forging the sender's email address to make it appear from a trusted source">
+                                        <label for="q11a2">Forging the sender's email address to make it appear from a trusted source</label><br>
+                                        <input type="radio" id="q11a3" name="q11" value="Analyzing website traffic for potential security threats">
+                                        <label for="q11a3">Analyzing website traffic for potential security threats</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.3.12 -->
+                                    <div class="question">
+                                        <h4>. What is the primary goal of a "phishing" attack?</h4>
+                                        <input type="radio" id="q12a1" name="q12" value="To trick recipients into revealing sensitive information">
+                                        <label for="q12a1">To trick recipients into revealing sensitive information</label><br>
+                                        <input type="radio" id="q12a2" name="q12" value="Scan and remove malware">
+                                        <label for="q12a2">Scan and remove malware</label><br>
+                                        <input type="radio" id="q12a3" name="q12" value="To prevent access to legitimate websites">
+                                        <label for="q12a3">To prevent access to legitimate websites</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.3.13 -->
+                                    <div class="question">
+                                        <h4>. What characterizes a Distributed Denial of Service (DDoS) attack?</h4>
+                                        <input type="checkbox" id="q13a1" name="q13a1" value="A prolonged and stealthy infiltration of a target's network">
+                                        <label for="q13a1">A prolonged and stealthy infiltration of a target's network</label><br>
+                                        <input type="checkbox" id="q13a2" name="q13a2" value="Manipulation of human psychology to trick individuals into divulging sensitive information">
+                                        <label for="q13a2">Manipulation of human psychology to trick individuals into divulging sensitive information</label><br>
+                                        <input type="checkbox" id="q13a3" name="q13a3" value="Overwhelming a target system with a flood of traffic from multiple sources">
+                                        <label for="q13a3">Overwhelming a target system with a flood of traffic from multiple sources</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.3.14 -->
+                                    <div class="question">
+                                        <h4>. What are Advanced Persistent Threats (APTs)?</h4>
+                                        <input type="radio" id="q14a1" name="q14" value="Malware that encrypts a victim's files until a ransom is paid">
+                                        <label for="q14a1">Malware that encrypts a victim's files until a ransom is paid</label><br>
+                                        <input type="radio" id="q14a2" name="q14" value="Sophisticated and targeted cyberattacks typically carried out by nation-state actors or organized cybercriminal groups">
+                                        <label for="q14a2">Sophisticated and targeted cyberattacks typically carried out by nation-state actors or organized cybercriminal groups</label><br>
+                                        <input type="radio" id="q14a3" name="q14" value="Attacks that exploit vulnerabilities in IoT devices to gain access to networks">
+                                        <label for="q14a3">Attacks that exploit vulnerabilities in IoT devices to gain access to networks</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.3.15 -->
+                                    <div class="question">
+                                        <h4>. What do Zero-Day exploits target?</h4>
+                                        <input type="radio" id="q15a1" name="q15" value="Vulnerabilities in software or hardware that are unknown to the vendor or have not been patched yet">
+                                        <label for="q15a1">Vulnerabilities in software or hardware that are unknown to the vendor or have not been patched yet</label><br>
+                                        <input type="radio" id="q15a2" name="q15" value="Manipulation of human psychology to trick individuals into divulging sensitive information">
+                                        <label for="q15a2">Manipulation of human psychology to trick individuals into divulging sensitive information</label><br>
+                                        <input type="radio" id="q15a3" name="q15" value="Overwhelming a target system with a flood of traffic from multiple sources">
+                                        <label for="q15a3">Overwhelming a target system with a flood of traffic from multiple sources</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.3.16 -->
+                                    <div class="question">
+                                        <h4>. What characterizes a Ransomware attack?</h4>
+                                        <input type="radio" id="q16a1" name="q16" value="Manipulation of human psychology to compromise security">
+                                        <label for="q16a1">Manipulation of human psychology to compromise security</label><br>
+                                        <input type="radio" id="q16a2" name="q16" value="Encryption of a victim's files or locking them out of their systems until a ransom is paid">
+                                        <label for="q16a2">Encryption of a victim's files or locking them out of their systems until a ransom is paid</label><br>
+                                        <input type="radio" id="q16a3" name="q16" value="Targeting vulnerabilities in software or hardware that are unknown to the vendor">
+                                        <label for="q16a3">Targeting vulnerabilities in software or hardware that are unknown to the vendor</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.3.17 -->
+                                    <div class="question">
+                                        <h4>. What are security-related indicators in the context of internet security?</h4>
+                                        <input type="radio" id="q17a1" name="q17" value="Signs or signals that indicate potential security threats, vulnerabilities, or suspicious activities">
+                                        <label for="q17a1">Signs or signals that indicate potential security threats, vulnerabilities, or suspicious activities</label><br>
+                                        <input type="radio" id="q17a2" name="q17" value="Automated systems that monitor network traffic for anomalies">
+                                        <label for="q17a2">Automated systems that monitor network traffic for anomalies</label><br>
+                                        <input type="radio" id="q17a3" name="q17" value="Security protocols used to encrypt sensitive data">
+                                        <label for="q17a3">Security protocols used to encrypt sensitive data</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.4.18 -->
+                                    <div class="question">
+                                        <h4>. Who monitors security-related indicators to detect and respond to security incidents effectively?</h4>
+                                        <input type="radio" id="q18a1" name="q18" value="Users themselves">
+                                        <label for="q18a1">Users themselves</label><br>
+                                        <input type="radio" id="q18a2" name="q18" value="Cybercriminals seeking to exploit vulnerabilities">
+                                        <label for="q18a2">Cybercriminals seeking to exploit vulnerabilities</label><br>
+                                        <input type="radio" id="q18a3" name="q18" value="Automated systems only">
+                                        <label for="q18a3">Automated systems only</label><br>
+                                        <input type="radio" id="q18a4" name="q18" value="Security professionals, automated systems, or users">
+                                        <label for="q18a4">Security professionals, automated systems, or users</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.4.19 -->
+                                    <div class="question">
+                                        <h4>. What is the purpose of monitoring security-related indicators?</h4>
+                                        <input type="checkbox" id="q19a1" name="q19a1" value="To encrypt sensitive data">
+                                        <label for="q19a1">To encrypt sensitive data</label><br>
+                                        <input type="checkbox" id="q19a2" name="q19a2" value="To detect and respond to security incidents effectively">
+                                        <label for="q19a2">To detect and respond to security incidents effectively</label><br>
+                                        <input type="checkbox" id="q19a3" name="q19a3" value="To create backups of digital data">
+                                        <label for="q19a3">To create backups of digital data</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.4.20 -->
+                                    <div class="question">
+                                        <h4>. What role do security-related indicators play in internet defense?</h4>
+                                        <input type="radio" id="q20a1" name="q20" value="They help identify potential security threats and vulnerabilities">
+                                        <label for="q20a1">They help identify potential security threats and vulnerabilities</label><br>
+                                        <input type="radio" id="q20a2" name="q20" value="They assist in securing physical access to servers">
+                                        <label for="q20a2">They assist in securing physical access to servers</label><br>
+                                        <input type="radio" id="q20a3" name="q20" value="They enable automated systems to monitor network traffic">
+                                        <label for="q20a3">They enable automated systems to monitor network traffic</label>
+                                        <br><br>
+                                    </div>
+
+                                    <!-- Question 3.4.21 -->
+                                    <div class="question">
+                                        <h4>. What might unexpected logins or access attempts to sensitive criminal justice databases indicate?</h4>
+                                        <input type="radio" id="q21a1" name="q21" value="Routine system maintenance">
+                                        <label for="q21a1">Routine system maintenance</label><br>
+                                        <input type="radio" id="q21a2" name="q21" value="Authorized user activity">
+                                        <label for="q21a2">Authorized user activity</label><br>
+                                        <input type="radio" id="q21a3" name="q21" value="Unauthorized access or potential security breaches">
+                                        <label for="q21a3">Unauthorized access or potential security breaches</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.4.22 -->
+                                    <div class="question">
+                                        <h4>. What could anomalies in network traffic, such as unusual data transfers or connections to suspicious IP addresses, signal?</h4>
+                                        <input type="radio" id="q22a1" name="q22" value="Routine network activity">
+                                        <label for="q22a1">Routine network activity</label><br>
+                                        <input type="radio" id="q22a2" name="q22" value="Attempted cyber-attacks or data exfiltration">
+                                        <label for="q22a2">Attempted cyber-attacks or data exfiltration</label><br>
+                                        <input type="radio" id="q22a3" name="q22" value="Secure data transfers">
+                                        <label for="q22a3">Secure data transfers</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.4.23 -->
+                                    <div class="question">
+                                        <h4>. What might instances of unauthorized access to confidential case files or evidence repositories indicate?</h4>
+                                        <input type="checkbox" id="q23a1" name="q23a1" value="Routine file management">
+                                        <label for="q23a1">The file owner changed data</label><br>
+                                        <input type="checkbox" id="q23a2" name="q23a2" value="Routine file management">
+                                        <label for="q23a2">Routine file management</label><br>
+                                        <input type="checkbox" id="q23a3" name="q23a3" value="Insider threats or compromised user accounts">
+                                        <label for="q23a3">Insider threats or compromised user accounts</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.4.24 -->
+                                    <div class="question">
+                                        <h4>. What could emails or messages requesting sensitive information, such as login credentials or personal details, indicate?</h4>
+                                        <input type="radio" id="q24a1" name="q24" value="Phishing attempts targeting criminal justice personnel">
+                                        <label for="q24a1">Phishing attempts targeting criminal justice personnel</label><br>
+                                        <input type="radio" id="q24a2" name="q24" value="Compliance with data protection regulations">
+                                        <label for="q24a2">Compliance with data protection regulations</label><br>
+                                        <input type="radio" id="q24a3" name="q24" value="Routine communication">
+                                        <label for="q24a3">Routine communication</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.4.25 -->
+                                    <div class="question">
+                                        <h4>. What is the primary function of a Virtual Private Network (VPN)?</h4>
+                                        <input type="radio" id="q25a1" name="q25" value="Blocking unwanted advertisements">
+                                        <label for="q25a1">Blocking unwanted advertisements</label><br>
+                                        <input type="radio" id="q25a2" name="q25" value="Encrypting web traffic for secure transmission">
+                                        <label for="q25a2">Encrypting web traffic for secure transmission</label><br>
+                                        <input type="radio" id="q25a3" name="q25" value="Configuring email security settings">
+                                        <label for="q25a3">Configuring email security settings</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.4.26 -->
+                                    <div class="question">
+                                        <h4>. What is one security risk associated with browser extensions?</h4>
+                                        <input type="radio" id="q26a1" name="q26" value="Enhancing browser performance">
+                                        <label for="q26a1">Enhancing browser performance</label><br>
+                                        <input type="radio" id="q26a2" name="q26" value="Providing additional functionality like ad blocking or password management">
+                                        <label for="q26a2">Providing additional functionality like ad blocking or password management</label><br>
+                                        <input type="radio" id="q26a3" name="q26" value="Exposing users to malware or other security threats if not managed properly">
+                                        <label for="q26a3">Exposing users to malware or other security threats if not managed properly</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.4.27 -->
+                                    <div class="question">
+                                        <h4>. What do web browser security settings help users protect against?</h4>
+                                        <input type="radio" id="q27a1" name="q27" value="Hardware vulnerabilities">
+                                        <label for="q27a1">Hardware vulnerabilities</label><br>
+                                        <input type="radio" id="q27a2" name="q27" value="Unauthorized access to sensitive information">
+                                        <label for="q27a2">Unauthorized access to sensitive information</label><br>
+                                        <input type="radio" id="q27a3" name="q27" value="Physical theft of devices">
+                                        <label for="q27a3">Physical theft of devices</label><br>
+                                        <input type="radio" id="q27a4" name="q27" value="Internet service provider (ISP) limitations">
+                                        <label for="q27a4">Internet service provider (ISP) limitations</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.4.28 -->
+                                    <div class="question">
+                                        <h4>. How can organizations mitigate the risks associated with email attachments?</h4>
+                                        <input type="checkbox" id="q28a1" name="q28a1" value="Implementing robust email security measures and educating users">
+                                        <label for="q28a1">Implementing robust email security measures and educating users</label><br>
+                                        <input type="checkbox" id="q28a2" name="q28a2" value="Increasing the number of email attachments sent and received">
+                                        <label for="q28a2">Increasing the number of email attachments sent and received</label><br>
+                                        <input type="checkbox" id="q28a2" name="q28a2" value="Disabling email security settings to simplify email management">
+                                        <label for="q28a2">Disabling email security settings to simplify email management</label><br>
+                                        <input type="checkbox" id="q28a3" name="q28a3" value="Reducing spam filters to allow more emails through">
+                                        <label for="q28a3">Reducing spam filters to allow more emails through</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.0.29 -->
+                                    <div class="question">
+                                        <h4>. What is a common strategy for protecting against phishing attempts targeting criminal justice personnel?</h4>
+                                        <input type="radio" id="q29a1" name="q29" value="Disabling email security settings">
+                                        <label for="q29a1">Disabling email security settings</label><br>
+                                        <input type="radio" id="q29a2" name="q29" value="Increasing attachment awareness">
+                                        <label for="q29a2">Increasing attachment awareness</label><br>
+                                        <input type="radio" id="q29a3" name="q29" value="Decreasing spam filter sensitivity">
+                                        <label for="q29a3">Decreasing spam filter sensitivity</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 3.0.30 -->
+                                    <div class="question">
+                                        <h4>. How do spam filters contribute to internet defense?</h4>
+                                        <input type="radio" id="q30a1" name="q30" value="By encrypting web traffic">
+                                        <label for="q30a1">By encrypting web traffic</label><br>
+                                        <input type="radio" id="q30a2" name="q30" value="By managing browser extensions">
+                                        <label for="q30a2">By managing browser extensions</label><br>
+                                        <input type="radio" id="q30a3" name="q30" value="By blocking unwanted or harmful emails">
+                                        <label for="q30a3">By blocking unwanted or harmful emails</label>
+                                        <br><br>
+                                    </div>
+                                </form>
+                                <center><button type="button" onclick="submitQuiz('quiz3')">Submit Quiz</button></center>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

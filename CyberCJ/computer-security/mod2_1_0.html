@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <style>
+            body,
+            html {
+                border-radius: 5px;
+            }
+
+            body.thumb {
+                transform: scale(0.4);
+                box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+            }
+
+            main {
+                min-height: 80vh;
+            }
+
+            [class*='container'] {
+
+                background-clip: content-box;
+            }
+
+            .row [class*='col'] {
+                background-color: #efefef;
+                background-clip: content-box;
+            }
+
+            .nav-item {
+                background-color: #eeeeff;
+                background-clip: content-box;
+            }
+
+
+            .nav-link {
+                color: #000;
+                transition: color 0.3s ease;
+            }
+
+            .nav-link:hover {
+                color: #0c7c3e;
+            }
+
+            header {
+                background-color: #0a5640; /* NDSU Green */
+                color: white;
+                padding: 10px 20px; /* Increased padding */
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+        </style>
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0" style="width: 100%; height: 100%;">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 2.0-->
+                    <div  class="bg-light border rounded-3 p-3">
+                        <h3>Module 2: Computer Security</h3>
+                            <!-- Module 2.1.0 -->
+                        <div id="2_1_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">2.1 What is Malware?</span>
+                            </div>
+                            <div class="card-body">
+                                <p> Malware is software that enters your computer system, without your knowledge, and carries out unwanted actions.
+                                    Often, these actions damage, disrupt, or steal data on your computer; but they can even include planting a foothold for future access to your computer.
+                                    If we think of your computer as a fortress, holding and protecting all of your valuable goods and information, then we can view malware as any type of non-human invader 
+                                    that is trying to control access to those valuables.
+                                </p>
+                                
+                                
+                                <center>
+                                    <p>As there are many types of malware, it can be difficult to categorize them. 
+                                    So, a common practice is to categorize them based on their primary action.
+                                    <h5>These primary actions are:</h5>
+                                </p>
+                                    <table>
+                                        <thead>
+                                            <th><center>Kidnap Data</center></th>
+                                            <th><center>Eavesdrop</center></th>
+                                            <th><center>Masquerade</center></th>
+                                            <th><center>Serve as Launchpad</center></th>
+                                            <th><center>Sidestep</center></th>
+                                        </thead>
+                                        <tbody>
+                                            <td><a href="11" class="navBar-target" ><img src="../images/DataKidnap.png" style="height: 200px; width: 200px;"></a></td>
+                                            <td><a href="12" class="navBar-target" ><img src="../images/Eavesdrop.jpg" style="height: 200px; width: 200px;"></a></td>
+                                            <td><a href="13" class="navBar-target" ><img src="../images/Masquerade.jpg" style="height: 200px; width: 200px;"></a></td>
+                                            <td><a href="14" class="navBar-target" ><img src="../images/Launchpad.jpg" style="height: 200px; width: 200px;"></a></td>
+                                            <td><a href="15" class="navBar-target" ><img src="../images/Sidestep.jpg" style="height: 200px; width: 200px;"></a></td>
+                                        </tbody>
+                                    </table>
+                                </center>
+                                <br><br>                                                        
+                                <!-- External Resource Link -->
+                                <p>External Resource Link: <a href="https://www.cisa.gov/sites/default/files/publications/Malware_1.pdf" class="popupLink">
+                                    Cybersecurity & infrastructure Security Agency Malware Tip Card</a>
+                                </p>
+                                    <h3>Malware Primary Actions</h3>
+
+                                <p><strong>Kidnap Data:</strong> <br>
+                                    This type of malware specifically targets and restricts access to critical data, systems, or devices. 
+                                    The predominant form, ransomware, encrypts essential files and systems, demanding payment for decryption keys. 
+                                    Such attacks can cripple the operational capabilities of law enforcement departments, courts, corrections facilities, and legal firms, 
+                                    resulting in substantial operational disruptions and significant financial losses.
+                                </p>
+                                    
+                                <p><strong>Eavesdrop:</strong> <br>
+                                    Eavesdropping malware captures and transmits user data without consent. 
+                                    Examples include keyloggers that record keystrokes, spyware that monitors user activities, and other software that can access device cameras and microphones. 
+                                    These tools are used for stealing sensitive information, such as passwords, financial details, and personal identification information.
+                                </p>
+                                
+                                <p><strong>Masquerade:</strong> <br>
+                                    This category includes malware that impersonates legitimate software, deceiving users into installing it under false pretenses. 
+                                    Once operational, it executes malicious activities that can compromise legal investigations and sensitive data. 
+                                    Specifically, criminal justice professionals should be wary of Potentially Unwanted Programs (PUPs) and Trojans. 
+                                    These often come bundled with legitimate software or misrepresent their functionality, posing significant risks to the integrity of criminal justice systems and operations.
+                                </p>
+                                
+                                <p><strong>Serve as Launchpad:</strong> <br>
+                                    Launchpad malware hijacks infected devices to initiate additional cyberattacks. 
+                                    This includes viruses and worms that autonomously replicate and circulate across multiple systems, as well as bots that integrate into botnets. 
+                                    These botnets are orchestrated to execute coordinated large-scale assaults such as DDoS attacks and spam campaigns, 
+                                    which can severely compromise public safety and justice processes.
+                                </p>
+                                        
+                                <p><strong>Sidestep Security:</strong> <br>
+                                    This type of malware is strategically crafted to circumvent or neutralize security protocols. 
+                                    Techniques include deploying rootkits to obscure the presence of malicious software, implementing backdoors to gain unauthorized access, 
+                                    and programming logic bombs that execute harmful functions under specific conditions. 
+                                    Such tactics pose significant threats to the integrity of criminal justice data and the secure operation of related information systems.
+                                </p>
+                            </div>
+                        </div>
+                </main>
+            </div>
+        </div>
+    </div>
+<script src="../js/navBar.js"></script>
+</body>
+</html>

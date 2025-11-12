@@ -1,0 +1,149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Theft Quiz</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .question { margin-bottom: 20px; }
+        .question h4 { margin-bottom: 10px; }
+    </style>
+</head>
+<body id="quiz-body">
+ <!-- Module 4.2 Quiz -->
+ <div id="quiz2_1" class="card mt-4 shadow-lg">
+    <div class="card-header">
+        <span class="fs-4">4.2 Quiz </span>
+    </div>
+    <div class="card-body">
+        <form>
+            <!-- Question 1 -->
+            <div class="question">
+                <h4>1. What is data theft?</h4>
+                <input type="radio" id="q1a1" name="q1" value="The process of duplicating data for backup purposes">
+                <label for="q1a1">The process of duplicating data for backup purposes</label><br>
+                <!--ans below-->
+                <input type="radio" id="q1a2" name="q1" value="The illegal access and transfer of data without permission">
+                <label for="q1a2">The illegal access and transfer of data without permission</label><br>
+                <input type="radio" id="q1a3" name="q1" value="The physical theft of devices containing data">
+                <label for="q1a3">The physical theft of devices containing data</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <h4>2. Which of the following is NOT typically tracked by social media platforms?</h4>
+                <input type="radio" id="q2a1" name="q2" value="Browsing history">
+                <label for="q2a1">Browsing history</label><br>
+                <input type="radio" id="q2a2" name="q2" value="Purchasing habits">
+                <label for="q2a2">Purchasing habits</label><br>
+                <!--ans below-->
+                <input type="radio" id="q2a3" name="q2" value="Blood type">
+                <label for="q2a3">Blood type</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <h4>3. What are Modbile Advertising IDs (MAIDs) primarily used for?</h4>
+                <input type="checkbox" id="q3a1" name="q3a1">
+                <label for="q3a1">To secure mobile devices from theft</label><br>
+                <input type="checkbox" id="q3a2" name="q3a2">
+                <!--ans below-->
+                <label for="q3a2">To track user activity and location for advertising</label><br>
+                <input type="checkbox" id="q3a3" name="q3a3">
+                <label for="q3a3">To monitor battery usage</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <h4>4. Which of these entities is known for collecting data through surveillance?</h4>
+                <input type="radio" id="q4a1" name="q4" value="Fast food restaurants">
+                <label for="q4a1">Fast food restaurants</label><br>
+                <!--ans below-->
+                <input type="radio" id="q4a2" name="q4" value="Advertisers">
+                <label for="q4a2">Advertisers</label><br>
+                <input type="radio" id="q4a3" name="q4" value="Clothing stores">
+                <label for="q4a3">Clothing stores</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <h4>5. Which is a significant risk associated with personal data theft?</h4>
+                <input type="radio" id="q5a1" name="q5" value="Increased internet speeds">
+                <label for="q5a1">Increased internet speeds</label><br>
+                <!--ans below-->
+                <input type="radio" id="q5a2" name="q5" value="Identity theft">
+                <label for="q5a2">Identity theft</label><br>
+                <input type="radio" id="q5a3" name="q5" value="Enhanced privacy">
+                <label for="q5a3">Enhanced privacy</label>
+            </div>
+
+            <!-- Question 6 -->
+            <div class="question">
+                <h4>6. How can data theft directly cause financial loss to individuals?</h4>
+                <input type="radio" id="q6a1" name="q6" value="By increasing the cost of internet service">
+                <label for="q6a1">By increasing the cost of internet service</label><br>
+                <!--ans below-->
+                <input type="radio" id="q6a2" name="q6" value="By unauthorized transactions using their information">
+                <label for="q6a2">By unauthorized transactions using their information</label><br>
+                <input type="radio" id="q6a3" name="q6" value="By legally taxing data usage">
+                <label for="q6a3">By legally taxing data usage</label>
+            </div>
+
+            <!-- Question 7 -->
+            <div class="question">
+                <h4>7. Which consequence is a direct result of data breaches for businesses?</h4>
+                <input type="radio" id="q7a1" name="q7" value="Increased customer loyalty">
+                <label for="q7a1">Increased customer loyalty</label><br>
+                <!--ans below-->
+                <input type="radio" id="q7a2" name="q7" value="Reputation damage">
+                <label for="q7a2">Reputation damage</label><br>
+                <input type="radio" id="q7a3" name="q7" value="Decreased operational cost">
+                <label for="q7a3">Decreased operational cost</label>
+            </div>
+
+            <!-- Question 8 -->
+            <div class="question">
+                <h4>8. Under which regulation could organizations face severs penalties for failing to protect user data?</h4>
+                <!--ans below-->
+                <input type="radio" id="q8a1" name="q8" value="The General Data Protection Regulation (GDPR)">
+                <label for="q8a1">The General Data Protection Regulation (GDPR)</label><br>
+                <input type="radio" id="q8a2" name="q8" value="The American Library Association's Privacy Act">
+                <label for="q8a2">The American Library Association's Privacy Act</label><br>
+                <input type="radio" id="q8a3" name="q8" value="The Global Data Sharing Initiatives (GDSI)">
+                <label for="q8a3">The Global Data Sharing Initiatives (GDSI)</label>
+            </div>
+
+            <!-- Question 9 -->
+            <div class="question">
+                <h4>9. What can victims of data theft experience as a psychological impact?</h4>
+                <input type="checkbox" id="q9a1" name="q9a1">
+                <label for="q9a1">Excitement</label><br>
+                <input type="checkbox" id="q9a2" name="q9a2">
+                <label for="q9a2">Increased social activity</label><br>
+                <input type="checkbox" id="q9a3" name="q9a3">
+                <!--ans below-->
+                <label for="q9a3">Emotional stress and a sense of vulnerability</label>
+            </div>
+
+            <!-- Question 10 -->
+            <div class="question">
+                <h4>10. Which of the following is a mitigation strategy against data theft?</h4>
+                <!--ans below-->
+                <input type="radio" id="q10a1" name="q10" value="Using strong, unique passwords and enabling two-factor authentication (2FA)">
+                <label for="q10a1">Using strong, unique passwords and enabling two-factor authentication (2FA)</label><br>
+                <input type="radio" id="q10a2" name="q10" value="Decreasing cybersecurity budgets">
+                <label for="q10a2">Decreasing cybersecurity budgets</label><br>
+                <input type="radio" id="q10a3" name="q10" value="Limiting internet usage to once a week">
+                <label for="q10a3">Limiting internet usage to once a week</label>
+            </div>
+
+            <button type="button" onclick="submitQuiz('quiz4_2')">Submit Quiz</button>
+        </form>
+    </div>
+ </div>
+    <script src="js/quiz.js"></script>
+    
+</body>
+</html>

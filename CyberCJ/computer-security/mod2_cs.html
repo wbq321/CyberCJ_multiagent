@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0" style="width: 100%; height: 100%;">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 2.0-->
+                    <div  class="bg-light border rounded-3 p-3" >
+                        <h3>Module 2: Computer Security</h3>
+                        <!-- Module 2.0.0 (Introduction) -->
+                        <div id="2_0" class="card shadow-lg" >
+                            <div class="card-header">
+                                <span class="fs-4">Case Study</span>
+                            </div>
+                            <div class="card-body" style="max-width: 60em;">
+                                <h2>A Construction Company Gets Hammered by A Keylogger:</h2>
+                                <h3>Scenario: </h3>
+                                <p >
+                                    A small family-owned construction company made extensive use of online banking and automated clearing house (ACH) transfers. 
+                                    Employees logged in with both a company and user-specific ID and password. Two challenge questions had to be answered for transactions over $1,000.
+                                    <br>
+                                    <br>
+                                    The owner was notified that an ACH transfer of $10,000 was initiated by an unknown source. 
+                                    They contacted the bank and identified that in just one week cyber criminals had made six transfers from the company bank accounts, totaling $550,000. 
+                                    How? One of their employees had opened an email from what they thought was a materials supplier but was instead a malicious email laced with malware from an imposter account.
+                                </p>
+                                <h3>Attack:</h3>
+                                <p>
+                                    <b>Cyber criminals were able to install malware onto the company&apos;s computers, using a keylogger to capture the banking credentials.</b>
+                                    <br>
+                                    <em style="font-size: .8em;">
+                                        A keylogger is software that silently monitors computer keystrokes and sends the information to a cyber criminal. 
+                                        They can then access banking and other financial services online, using valid account numbers and passwords.
+                                    </em>
+                                </p>
+                                <h3>Response:</h3>
+                                <p>
+                                    The bank was able to retrieve only $200,000 of the stolen money in the first weeks, leaving a loss of $350,000. 
+                                    The bank even drew over $220,000 on the business&apos; line of credit to cover the fraudulent transfers. 
+                                    Not having a cybersecurity plan in place delayed the company response to the fraud.
+                                    <br>
+                                    <br>
+                                    The company also sought a cybersecurity forensics firm to:
+                                    <ul>
+                                        <li>
+                                            Help them complete a full cybersecurity review of their systems.
+                                        </li>
+                                        <li>
+                                            Identify what the source of the incident was.
+                                        </li>
+                                        <li>
+                                            Recommend upgrades to their security software.
+                                        </li>
+                                    </ul>
+                                </p>
+                                <h3>Impact</h3>
+                                <p>
+                                    The company shut down their bank account and pursued legal action to recover its losses. 
+                                    The business recovered the remaining $350,000 with interest. No money for time and legal fees was recovered.
+                                </p>
+                                <h3>Lessons Learned</h3>
+                                <ol>
+                                    <li>Get notified - set up transaction alerts on all credit, debit cards and bank accounts.</li>
+                                    <li>Restrict access to sensitive accounts to only those employees who need access; change passwords often.</li>
+                                    <li>Companies should evaluate their risk and evaluate cyber liability insurance options.</li>
+                                    <li>Choose banks that offer multiple layers of authentication to access accounts and transactions.</li>
+                                    <li>Create, maintain, and practice a cyber incident response plan that is rapidly implementable.</li>
+                                    <li>Cyber criminals deliver and install malicious software via email. Train employees on email security.</li>
+                                </ol>
+                                <h3>Discussion:</h3>
+                                <ul>
+                                    <li>Knowing how the firm responded, what would you have done differently?</li>
+                                    <li>What are some steps you think the firm could have taken to prevent this incident?</li>
+                                    <li>Is your business susceptible? How are you going to reduce your risk?</li>
+                                </ul>
+                                <h3>Resources:</h3>
+                                <ul>
+                                    <li>A Construction Company Gets Hammered by A Keylogger: <br>
+                                        <a href="https://www.nist.gov/system/files/documents/2020/09/30/Cybersecurity-Case-2.pdf" target="_blank">https://www.nist.gov/system/files/documents/2020/09/30/Cybersecurity-Case-2.pdf</a>
+                                    </li>
+                                    <li>
+                                        Small Business Cybersecurity Case Study Series: <br>
+                                        <a href="https://www.nist.gov/itl/smallbusinesscyber/cybersecurity-basics/case-study-series" target="_blank">https://www.nist.gov/itl/smallbusinesscyber/cybersecurity-basics/case-study-series</a>
+                                    </li>
+                                    <li>
+                                        NIST Small Business Cybersecurity Corner: <br>
+                                        <a href="https://www.nist.gov/itl/smallbusinesscyber" target="_blank">https://www.nist.gov/itl/smallbusinesscyber</a>
+                                    </li>
+                                    <li>
+                                        National Cybersecurity Alliance: <br> 
+                                        <a href="https://staysafeonline.org/cybersecure-business/" target="_blank">https://staysafeonline.org/cybersecure-business/</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

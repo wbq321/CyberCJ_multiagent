@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0" style="width: 100%; height: 100%;">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 1.0-->
+                    <div  class="bg-light border rounded-3 p-3 ">
+                        <h3>Module 1: Introduction to Cybersecurity</h3>
+                        <!-- Module 1 Quiz -->
+                        <div id="quiz1" class="card mr-0 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Module 1 Knowledge Check </span>
+                            </div>
+                            <div class="card-body ">
+                                <form >
+                                    <!-- Module 1.0 Questions -->
+                                    <!-- Question 1.0.1 -->
+                                    <div class="question">
+                                        <h4>. Why is cybersecurity important for criminal justice professionals?</h4>
+                                        <input type="radio" id="q1a1" name="q1" value="To manage technological advancements and emerging threats">
+                                        <label for="q1a1">To manage technological advancements and emerging threats</label><br>
+                                        <input type="radio" id="q1a2" name="q1" value="To improve public relations">
+                                        <label for="q1a2">To improve public relations</label><br>
+                                        <input type="radio" id="q1a3" name="q1" value="To increase the number of legal cases">
+                                        <label for="q1a3">To increase the number of legal cases</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.0.2 -->
+                                    <div class="question">
+                                        <h4>. What is a major challenge in cybersecurity for criminal justice professionals?</h4>
+                                        <input type="radio" id="q2a2" name="q2" value="Limited technological resources">
+                                        <label for="q2a2">Limited technological resources</label><br>
+                                        <input type="radio" id="q2a1" name="q2" value="Universal connectivity">
+                                        <label for="q2a1">Universal connectivity</label><br>
+                                        <input type="radio" id="q2a3" name="q2" value="Low user engagement">
+                                        <label for="q2a3">Low user engagement</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.1.1 -->
+                                    <div class="question">
+                                        <h4>. What is the focus of computer security?</h4>
+                                        <input type="radio" id="q3a2" name="q3" value="To increase computer speed">
+                                        <label for="q3a2">To increase computer speed</label><br>
+                                        <input type="radio" id="q3a3" name="q3" value="To allow public access to systems">
+                                        <label for="q3a3">To allow public access to systems</label><br>
+                                        <input type="radio" id="q3a1" name="q3" value="To safeguard computer systems and data from unauthorized access">
+                                        <label for="q3a1">To safeguard computer systems and data from unauthorized access</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.1.2 -->
+                                    <div class="question">
+                                        <h4>. What is the focus of internet security?</h4>
+                                        <input type="radio" id="q4a1" name="q4" value="Protecting data that flows across networks">
+                                        <label for="q4a1">Protecting data that flows across networks</label><br>
+                                        <input type="radio" id="q4a2" name="q4" value="Increasing internet speed">
+                                        <label for="q4a2">Increasing internet speed</label><br>
+                                        <input type="radio" id="q4a3" name="q4" value="Allowing unrestricted access to websites">
+                                        <label for="q4a3">Allowing unrestricted access to websites</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.1.3 -->
+                                    <div class="question">
+                                        <h4>. Why is privacy important in criminal justice?</h4>
+                                        <input type="radio" id="q5a2" name="q5" value="To share personal data freely">
+                                        <label for="q5a2">To share personal data freely</label><br>
+                                        <input type="radio" id="q5a1" name="q5" value="To handle sensitive information carefully and adhere to legal requirements">
+                                        <label for="q5a1">To handle sensitive information carefully and adhere to legal requirements</label><br>
+                                        <input type="radio" id="q5a3" name="q5" value="To increase transparency in investigations">
+                                        <label for="q5a3">To increase transparency in investigations</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.2.1 -->
+                                    <div class="question">
+                                        <h4>. What is a threat in cybersecurity terminology?</h4>
+                                        <input type="radio" id="q6a2" name="q6" value="An item with value">
+                                        <label for="q6a2">An item with value</label><br>
+                                        <input type="radio" id="q6a3" name="q6" value="A weakness in security">
+                                        <label for="q6a3">A weakness in security</label><br>
+                                        <input type="radio" id="q6a1" name="q6" value="An action that could cause harm">
+                                        <label for="q6a1">An action that could cause harm</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.2.2 -->
+                                    <div class="question">
+                                        <h4>. What is an asset in cybersecurity terminology?</h4>
+                                        <input type="radio" id="q7a2" name="q7" value="A weakness in security">
+                                        <label for="q7a2">A weakness in security</label><br>
+                                        <input type="radio" id="q7a1" name="q7" value="An item with value">
+                                        <label for="q7a1">An item with value</label><br>
+                                        <input type="radio" id="q7a3" name="q7" value="A person who could carry out a threat">
+                                        <label for="q7a3">A person who could carry out a threat</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.2.3 -->
+                                    <div class="question">
+                                        <h4>. What is a vulnerability in cybersecurity terminology?</h4>
+                                        <input type="radio" id="q8a1" name="q8" value="A weakness in security">
+                                        <label for="q8a1">A weakness in security</label><br>
+                                        <input type="radio" id="q8a2" name="q8" value="An item with value">
+                                        <label for="q8a2">An item with value</label><br>
+                                        <input type="radio" id="q8a3" name="q8" value="An action that could cause harm">
+                                        <label for="q8a3">An action that could cause harm</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.2.4 -->
+                                    <div class="question">
+                                        <h4>. What is risk in cybersecurity terminology?</h4>
+                                        <input type="radio" id="q9a2" name="q9" value="An item with value">
+                                        <label for="q9a2">An item with value</label><br>
+                                        <input type="radio" id="q9a3" name="q9" value="A weakness in security">
+                                        <label for="q9a3">A weakness in security</label><br>
+                                        <input type="radio" id="q9a1" name="q9" value="Exposure to danger">
+                                        <label for="q9a1">Exposure to danger</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.2.5 -->
+                                    <div class="question">
+                                        <h4>. What is a threat agent in cybersecurity terminology?</h4>
+                                        <input type="radio" id="q10a2" name="q10" value="An item with value">
+                                        <label for="q10a2">An item with value</label><br>
+                                        <input type="radio" id="q10a1" name="q10" value="A person who could carry out a threat">
+                                        <label for="q10a1">A person who could carry out a threat</label><br>
+                                        <input type="radio" id="q10a3" name="q10" value="A weakness in security">
+                                        <label for="q10a3">A weakness in security</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.2.6 -->
+                                    <div class="question">
+                                        <h4>. What is an attack vector in cybersecurity terminology?</h4>
+                                        <input type="radio" id="q11a2" name="q11" value="An item with value">
+                                        <label for="q11a2">An item with value</label><br>
+                                        <input type="radio" id="q11a3" name="q11" value="A person who could carry out a threat">
+                                        <label for="q11a3">A person who could carry out a threat</label><br>
+                                        <input type="radio" id="q11a1" name="q11" value="How the attack could occur">
+                                        <label for="q11a1">How the attack could occur</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.2.7 -->
+                                    <div class="question">
+                                        <h4>. What is risk avoidance in cybersecurity?</h4>
+                                        <input type="radio" id="q12a2" name="q12" value="Accepting there's a risk and doing nothing">
+                                        <label for="q12a2">Accepting there's a risk and doing nothing</label><br>
+                                        <input type="radio" id="q12a3" name="q12" value="Transferring the risk to someone else, such as by buying insurance">
+                                        <label for="q12a3">Transferring the risk to someone else, such as by buying insurance</label><br>
+                                        <input type="radio" id="q12a1" name="q12" value="Avoiding the risk in the first place, such as not storing information that could be stolen">
+                                        <label for="q12a1">Avoiding the risk in the first place, such as not storing information that could be stolen</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.2.8 -->
+                                    <div class="question">
+                                        <h4>. What is risk transference in cybersecurity?</h4>
+                                        <input type="radio" id="q13a1" name="q13" value="Transferring the risk to someone else, such as by buying insurance">
+                                        <label for="q13a1">Transferring the risk to someone else, such as by buying insurance</label><br>
+                                        <input type="radio" id="q13a2" name="q13" value="Avoiding the risk in the first place, such as not storing information that could be stolen">
+                                        <label for="q13a2">Avoiding the risk in the first place, such as not storing information that could be stolen</label><br>
+                                        <input type="radio" id="q13a3" name="q13" value="Accepting there's a risk and doing nothing">
+                                        <label for="q13a3">Accepting there's a risk and doing nothing</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.2.9 -->
+                                    <div class="question">
+                                        <h4>. Who are cybercriminals?</h4>
+                                        <input type="radio" id="q14a2" name="q14" value="People who exploit vulnerabilities for thrills and notoriety">
+                                        <label for="q14a2">People who exploit vulnerabilities for thrills and notoriety</label><br>
+                                        <input type="radio" id="q14a1" name="q14" value="People who exploit vulnerabilities to acquire wealth rather than to seek fame">
+                                        <label for="q14a1">People who exploit vulnerabilities to acquire wealth rather than to seek fame</label><br>
+                                        <input type="radio" id="q14a3" name="q14" value="People who sell vulnerabilities to the highest bidder">
+                                        <label for="q14a3">People who sell vulnerabilities to the highest bidder</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.2.10 -->
+                                    <div class="question">
+                                        <h4>. Who are state actors in cybersecurity?</h4>
+                                        <input type="radio" id="q15a2" name="q15" value="People who think they are righting wrongs">
+                                        <label for="q15a2">People who think they are righting wrongs</label><br>
+                                        <input type="radio" id="q15a3" name="q15" value="People who exploit vulnerabilities to retaliate against their own organization">
+                                        <label for="q15a3">People who exploit vulnerabilities to retaliate against their own organization</label><br>
+                                        <input type="radio" id="q15a1" name="q15" value="Those who spy on and disrupt governments and citizens">
+                                        <label for="q15a1">Those who spy on and disrupt governments and citizens</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.3.1 -->
+                                    <div class="question">
+                                        <h4>. Why are passwords often weak?</h4>
+                                        <input type="checkbox" id="q16a1" name="q16a1">
+                                        <label for="q16a1">Passwords are often too simple or easily guessable</label><br>
+                                        <input type="checkbox" id="q16a2" name="q16a2">
+                                        <label for="q16a2">People tend to reuse passwords across multiple accounts</label><br>
+                                        <input type="checkbox" id="q16a3" name="q16a3">
+                                        <label for="q16a3">Passwords are often short and lack complexity</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.3.2 -->
+                                    <div class="question">
+                                        <h4>. What is a best practice for creating strong passwords?</h4>
+                                        <input type="radio" id="q17a2" name="q17" value="Use simple and easily guessable passwords">
+                                        <label for="q17a2">Use simple and easily guessable passwords</label><br>
+                                        <input type="radio" id="q17a1" name="q17" value="Use a minimum of 12-16 characters">
+                                        <label for="q17a1">Use a minimum of 12-16 characters</label><br>
+                                        <input type="radio" id="q17a3" name="q17" value="Reuse passwords across multiple accounts">
+                                        <label for="q17a3">Reuse passwords across multiple accounts</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.3.3 -->
+                                    <div class="question">
+                                        <h4>. What is multi-factor authentication (MFA)?</h4>
+                                        <input type="radio" id="q18a1" name="q18" value="Combining passwords with another authentication method like SMS codes, authentication apps, or biometrics">
+                                        <label for="q18a1">Combining passwords with another authentication method like SMS codes, authentication apps, or biometrics</label><br>
+                                        <input type="radio" id="q18a2" name="q18" value="Using the same password for multiple accounts">
+                                        <label for="q18a2">Using the same password for multiple accounts</label><br>
+                                        <input type="radio" id="q18a3" name="q18" value="Using a weak password with no special characters">
+                                        <label for="q18a3">Using a weak password with no special characters</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.3.4 -->
+                                    <div class="question">
+                                        <h4>. How can password managers help enhance security?</h4>
+                                        <input type="radio" id="q19a2" name="q19" value="They simplify passwords to make them easier to remember">
+                                        <label for="q19a2">They simplify passwords to make them easier to remember</label><br>
+                                        <input type="radio" id="q19a1" name="q19" value="They generate and store strong, unique passwords securely">
+                                        <label for="q19a1">They generate and store strong, unique passwords securely</label><br>
+                                        <input type="radio" id="q19a3" name="q19" value="They allow password reuse across multiple accounts">
+                                        <label for="q19a3">They allow password reuse across multiple accounts</label>
+                                        <br><br>
+                                    </div>
+                                    <!-- Question 1.3.5 -->
+                                    <div class="question">
+                                        <h4>. What is the benefit of using passphrases instead of traditional passwords?</h4>
+                                        <input type="radio" id="q20a1" name="q20" value="Passphrases are longer and can be harder to guess while still being easy to remember">
+                                        <label for="q20a1">Passphrases are longer and can be harder to guess while still being easy to remember</label><br>
+                                        <input type="radio" id="q20a2" name="q20" value="Passphrases are shorter and simpler">
+                                        <label for="q20a2">Passphrases are shorter and simpler</label><br>
+                                        <input type="radio" id="q20a3" name="q20" value="Passphrases use only letters and numbers">
+                                        <label for="q20a3">Passphrases use only letters and numbers</label>
+                                        <br><br>
+                                    </div>
+                                </form>
+                                <center><button type="button" onclick="submitQuiz('quiz1')">Submit Quiz</button></center>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+<script src="../js/quiz.js"></script>
+</body>
+</html>

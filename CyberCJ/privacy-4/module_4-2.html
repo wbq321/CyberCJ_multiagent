@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <link rel="stylesheet" href="./module_4_styles.css">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                <main class="col overflow-auto h-100" >
+                    <!-- 4.2 -->
+                    <div class="bg-light border rounded-3 p-3">
+                        <!-- Module 4.1.0 -->
+                        <div id="4_1_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">4.2 What is Data Theft?</span>
+                            </div>
+                            <div class="card-body">
+                                <p> Data theft occurs when information is collected and used without the knowledge or permission of the owner. This can include personal information, browsing habits, location data, and more.
+                                </p>
+                    
+                                <p>As individuals go about their day, various entities collect data on them. For example, when someone shops online, their browsing and purchasing history can be tracked. Similarly, social media platforms track interactions and preferences to tailor advertisements.
+                                </p>
+                                <p>Smartphones, which are less customizable than computers, often come with pre-installed potentially unwanted programs (PUPs) and have enabled location services and Mobile Advertising IDs (MAIDs) that track user activity and location.</p>
+                                <p>Surveillance-Based Advertisers and Governments (e.g., through laws like CALEA in the United States) are key players in data collection. Data Miners aggregate and analyze data for patterns, while Schools collect data on students for educational and administrative purposes.</p>
+                                    <!-- image of the different primary actions for malware -->
+                                    <center><img class="gif" src="" alt="Image of PUPs" /></center>
+                    
+                                <!-- External Resource Link -->
+                                <p>External Resource Link: <a href="https://www.calea.org/" target="_blank">
+                                    CALEA</a>
+                                </p>
+                                    <h3>Risks Associated with Data Theft:</h3>
+                                <p>Data theft can lead to a wide range of risks and consequences for individuals and organizations alike. Understanding these risks is crucial for implementing effective security measures and privacy practices.</p>
+                                <p><strong>Identity Theft:</strong> <br>
+                                    One of the most immediate and severe risks of personal data theft is identity theft. When thieves access personal information such as Social Security numbers, driver’s licenses, or bank account details, they can impersonate victims to commit fraud, open new accounts in their name, or make unauthorized purchases.
+                                </p>
+                                    
+                                <p><strong>Financial Loss:</strong> <br>
+                                    Data theft can lead to direct financial loss. This can occur through unauthorized transactions, draining of bank accounts, or using stolen credit card information. Businesses may also face significant financial impacts due to theft of proprietary information or customer data, leading to loss of competitive advantage, regulatory fines, and compensation costs.
+                                </p>
+                                
+                                <p><strong>Reputation Damage:</strong> <br>
+                                    For businesses, a data breach can severely damage their reputation, leading to lost customer trust and loyalty. For individuals, the exposure of personal or sensitive information can lead to embarrassment or reputational harm, especially if private photos, messages, or personal details are leaked.
+                                </p>
+                                
+                                <p><strong>Legal and Regulatory Consequences:</strong> <br>
+                                    Data breaches often result in legal action from affected parties, as well as fines and sanctions from regulatory bodies. Organizations that fail to protect user data can face severe penalties under regulations such as the General Data Protection Regulation (GDPR) in the European Union or the California Consumer Privacy Act (CCPA) in the United States.
+                                </p>
+                                        
+                                <p><strong>Emotional Stress and Privacy Invasion: </strong> <br>
+                                    Victims of data theft may experience significant emotional distress, feeling violated after their personal information is exposed or misused. The psychological impact, including stress, anxiety, and a sense of vulnerability, can be profound and long-lasting.
+                                </p>
+                                <p><strong>Loss of Intellectual Property: </strong> <br>
+                                    For organizations, the theft of intellectual property, such as trade secrets, patents, and proprietary information, can have devastating effects on their competitive edge, innovation capacity, and market position.
+                                </p>
+                                
+                                <p><strong>Operational Disruption: </strong> <br>
+                                    Data theft can lead to operational disruptions for businesses. If critical data is stolen or tampered with, operations can grind to a halt, leading to loss of productivity and potentially significant financial losses.
+                                </p>
+                                        
+                                <p><strong>Unintended Data Sharing and Cross-Pollination: </strong> <br>
+                                    Stolen data can be shared across different platforms and with unintended parties, leading to a loss of control over how personal or sensitive information is used or disseminated.
+                                </p>
+                                <p><strong>Targeted Phishing Attacks: </strong> <br>
+                                    With access to personal information, cybercriminals can craft highly convincing phishing emails and messages, leading to further data breaches or financial theft.
+                                </p>
+                                        
+                                <p><strong>Perpetuation of Cybercrime: </strong> <br>
+                                    Data theft can fuel further criminal activities. Stolen data is often sold on the dark web, providing resources and funding for other cybercrimes, creating a cycle of theft and exploitation.
+                                </p>
+                                <br>
+                                <p>Mitigating these risks involves a combination of strong cybersecurity measures, awareness and education, regulatory compliance, and proactive monitoring and response strategies. For individuals, practicing good data hygiene, such as using strong, unique passwords, enabling two-factor authentication, and being cautious about sharing personal information online, can significantly reduce the risk of data theft.</p>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

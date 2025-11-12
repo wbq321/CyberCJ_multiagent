@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 2.0-->
+                    <div  class="bg-light border rounded-3 p-3">
+                        <h3>Module 3: Internet Security</h3>
+                        <!-- Module 2.0.0 (Introduction) -->
+                        <div id="2_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">3.4.2 Strategies for Internet Defense</span>
+                            </div>
+                            <div class="card-body">
+                                <ol>
+                                    <li>
+                                        <b>Virtual Private Networks (VPNs): </b> <br>
+                                        A VPN functions as a fortified conduit, establishing a secure connection between your device and the internet. In 
+                                        this secure tunnel, your web traffic is rendered invisible to the prying eyes of hackers, shielding it from any 
+                                        interception attempts. <br>
+                                        <br>
+                                        When you access the internet, your web traffic embarks on a journey that begins with its transmission to the Internet 
+                                        Service Provider (ISP). En route, the traffic takes a detour through the VPN client software, where encryption wraps 
+                                        your data in a protective cloak. This encrypted data then travels a secure tunnel, a virtual passageway safeguarded 
+                                        against unauthorized access, until it reaches the VPN server. At this point, a transformation occurs where your 
+                                        device's IP address and true location undergo a covert change, obscuring your digital footprint. The encrypted 
+                                        message continues its journey through the secure tunnel until it reaches its final destination. It is at this 
+                                        point that the encrypted layers are decrypted, revealing the original web traffic. This thorough process ensures 
+                                        that your online activities remain concealed and secure, sealed from the probing eyes of potential cyber adversaries.<br>
+                                        <br>
+                                        <img src="../images/vpnIMG.webp" alt="vpnDiagram">
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Managing Browser Extensions: </b><br>
+                                        Managing browser extensions refers to controlling and overseeing the various add-ons, plugins, or extensions installed 
+                                        in your web browser. These extensions can provide additional functionality, such as ad blocking, password management,
+                                        or productivity tools. However, they can also pose security risks if not managed properly. <br>
+                                        <br>
+                                        <img src="../images/manage-xtnIMG.png" alt="Managing Extensions Example" width="700" height="450">
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Web Browser Security Settings: </b><br>
+                                        Web browser security settings refer to the configurable options and features within a web browser that help users 
+                                        protect themselves against various online threats and enhance their overall internet security. These settings are 
+                                        designed to mitigate risks such as malware infections, phishing attacks, data breaches, and unauthorized access to 
+                                        sensitive information.<br>
+                                    <br>
+                                    <img src="../images/BrowserSecurity.jpg" alt="Browser Security">
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Attachment Awareness:  </b><br>
+                                        Attachments are considered risky because they can be used as effective vectors for delivering malware, conducting 
+                                        phishing attacks, exploiting software vulnerabilities, leaking sensitive data, and manipulating users through social 
+                                        engineering tactics. To mitigate these risks, organizations must implement robust email security measures, educate 
+                                        users about the dangers of email attachments, and employ best practices for handling and verifying attachments before 
+                                        opening them. <br>
+                                        <br>
+                                        <a href="https://phishingquiz.withgoogle.com/"> <b>Phishing Quiz</b></a>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Spam Filters: </b><br>
+                                        Spam filters are like gatekeepers for your email inbox. They're software tools that help keep out unwanted or harmful 
+                                        emails, like spam. They work by looking at things like who sent the email, what's in the email, and whether it looks suspicious.</p>
+                                    </li>
+                                    <li>
+                                        <b>Email Security Settings:  </b><br>
+                                        Email security settings are configurations and features that help protect your email account from various threats, such as unauthorized 
+                                        access, phishing attacks, malware, and spam. These settings are essential for safeguarding sensitive information and ensuring the 
+                                        integrity and confidentiality of your email communications. <br><br>
+                                        Here are some common email security settings:<br>
+                                        <br>
+                                        <ol>
+                                            <li>Strong Passwords</li>
+                                            <li>Two-Factor Authentication</li>
+                                            <li>Account Recovery Options</li>
+                                            <li>Email Encryption</li>
+                                            <li>Spam Filtering</li>
+                                            <li>Attachment Scanning</li>
+                                            <li>Email Forwarding and Filtering</li>
+                                            <li>Safe Browsing and Lin Protection</li>
+                                            <li>Device Management</li>
+                                            <li>Security Alerts and Notifications</li>
+                                        </ol>
+                                    
+                                    </li>
+                                    <br>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+<script src="../js/navBar.js"></script>
+</body>
+</html>

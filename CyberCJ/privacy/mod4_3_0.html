@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <link rel="stylesheet" href="./module_4_styles.css">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+               <!-- MODULES -->
+               <main class="col overflow-auto h-100" >
+                <!--Module 4.4.0-->
+                <div id="4_3_0" class="bg-light border rounded-3 p-3">
+                    <h3>4.3: Understanding Cookies</h3>
+                    <p>
+                        Imagine you're visiting a friend's house for the first time. When you arrive, they give you a small, unique sticker to put on your shirt. This sticker has a number on it that doesn't mean much to you, but to your friend, it tells them how many times you've visited, what your favorite snacks are, and where you like to sit. The next time you visit, they see your sticker right away, remember all those details, and can make your visit more comfortable and enjoyable based on what they know about you.
+                    </p>
+                    <p>
+                        In the digital world, when you visit a website, it can give your web browser (like Chrome, Firefox, or Safari) a small piece of data called a "cookie." This cookie acts like the sticker in our analogy. It helps the website remember information about your visit, making your next visit easier and the site more useful to you.
+                    </p>
+                    <!-- Brief Overview -->
+                    <div class="card shadow-lg">
+                        <div class="card-header">
+                            <span class="fs-4">Types of Cookies</span>
+                        </div>
+                        <div class="card-body">
+                            <ol>
+                                <li>
+
+                                 <b>Session Cookies: </b> <br>
+                                    These are temporary cookies that are used to remember you during your visit to a website. They store information used to maintain your browsing session, such as your login status or what you've put in a shopping cart. When you close your browser, session cookies are deleted.
+                                </li>
+                                <br>
+                                <li>
+                                    <b>Persistent Cookies: </b><br>
+                                    Unlike session cookies, persistent cookies stay on your browser for a set period, even after you've left the site. They remember your preferences and actions across a site (or sometimes across different sites) to make your future visits more convenient. For example, a website might use a persistent cookie to remember your language preference.
+                                </li>
+                                <br>
+                                <li>
+                                    <b>First-party Cookies: </b><br>
+                                    These are set by the website you're visiting directly. They help the site remember things like your login status, language preferences, and other settings.
+                                </li>
+                                <br>
+                                <li>
+                                    <b>Third-party Cookies:</b><br>
+                                    These are set by a domain other than the one you are visiting. They're often used for online advertising purposes. For instance, an advertiser might use third-party cookies to track your visits across multiple websites to show you targeted ads based on your browsing history.
+                                </li>
+                                </ul>
+                            </ol>
+                        </div>
+                    </div>
+                </div>
+                <!--Module 4.4.1-->
+
+                    <!-- Module 4.3.0 -->
+                    <div id="4_3_1" class="card shadow-lg">
+                        <div class="card-header">
+                            <span class="fs-4">4.3.1: Why Cookies Matter</span>
+                        </div>
+                        <div class="card-body">
+                            <p>
+                                Cookies play a crucial role in making the web experience smooth and more personalized. They can:
+                            </p>
+                            <ul><ul>
+                                <li>
+                                    <b>Improve Website Functionality: </b> <br>
+                                    Cookies allow websites to remember your settings (like preferences, login status) so you don't have to re-enter information every time you visit a site.
+                                </li>
+                                <br>
+                                <li>
+                                    <b>Analyze Website Usage:</b><br>
+                                    Websites use cookies to understand how users interact with their pages, which helps them improve content and functionality.
+                                </li>
+                                <br>
+                                <li>
+                                    <b>Personalize Advertising: </b><br>
+                                    Advertisers use cookies to collect information about your browsing habits, allowing them to show you ads that are more relevant to your interests.
+                                </li>
+                                <br>
+                            </ul></ul>
+                            <h3>
+                                Privacy Concerns
+                            </h3>
+                            <p>
+                                While cookies enhance browsing, they also raise privacy concerns because they track your behavior across the web. This tracking is why you might see ads for a product you looked at on one site appear on another site. Due to these concerns, laws and regulations now require websites to get your consent before they can store cookies on your browser, giving you more control over your online privacy.
+                            </p>
+                            <p>
+                                Mobile Advertising IDs (MAIDs) are unique, resettable identifiers assigned to your mobile device or tablet by its operating system—iOS (Apple) assigns the Identifier for Advertisers (IDFA), and Android assigns the Google Advertising ID (AAID). These identifiers allow app developers and advertisers to track your activity across apps and websites for advertising purposes, like cookies in web browsers but for mobile environments. Disabling or resetting these IDs can enhance your privacy by making it more difficult for companies to collect and share data about your online behaviors.
+                            </p>
+                        </div>
+                    </div>
+                    
+
+              
+                </div>
+            </main>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

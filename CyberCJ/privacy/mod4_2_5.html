@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <link rel="stylesheet" href="./module_4_styles.css">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 4.3-->
+                    <div id="4_0" class="bg-light border rounded-3 p-3">
+                        <h3>Module 4: Privacy</h3>
+                        <!-- Module 4.3.5 -->
+                        <div class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">4.2.5 End-to-End Encryption</span>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    End-to-end encryption (E2EE) is a method of secure communication that prevents third parties from accessing data while it's transferred from one end system or device to another. In E2EE, the data is encrypted on the sender's system or device and only the recipient can decrypt it. Nobody in between, be it internet service providers, hackers, or even the platform provider itself, can read or access the decrypted data.
+                                </p>
+                                <h3>How End-to-End Encryption Works</h3>
+                                <p>Disconnecting devices can significantly reduce the risk of ransomware infection.</p>
+                                <ul><ul>
+                                    <li><b>Encryption: </b><br>
+                                        The process begins when a message is encrypted at the sender's device. The message is transformed into a scrambled format using an encryption algorithm and a key. This ensures that the content is unreadable to anyone except the intended recipient.
+                                    </li>
+                                    <li><b>Transmission:  </b><br>
+                                        The encrypted data is then transmitted across the internet or any other network. Despite the data passing through various servers and nodes, it remains encrypted and inaccessible to others.
+                                    </li>
+                                    <li><b>Decryption:  </b><br>
+                                        Once the encrypted data reaches the recipient's device, it is decrypted using a corresponding decryption key. The recipient can now read the original message.
+                                    </li>
+                                </ul></ul>
+                                <h3>Key Characteristics</h3>
+                                <p></p>
+                                <ul><ul>
+                                    <li><b>Keys:  </b><br>
+                                        E2EE typically uses a pair of cryptographic keys, a public key, and a private key, in what is known as asymmetric encryption. The public key is used to encrypt the message, and the private key is used to decrypt it. The private key is kept secret, while the public key may be distributed widely.
+                                    </li>
+                                    <li><b>Security:  </b><br>
+                                        Because the decryption key is only held by the recipient, E2EE provides a high level of security. It ensures that the data remains confidential between the communicating users.
+                                    </li>
+                                    <li><b>Privacy:   </b><br>
+                                        E2EE is a crucial tool for protecting privacy in digital communications, as it prevents potential eavesdroppers from accessing the contents of the communication, including service providers themselves.
+                                    </li>
+                                </ul></ul>
+                                <h3>Applications of End-to-End Encryption</h3>
+                                <p></p>
+                                <ul><ul>
+                                    <li><b>Messaging Apps: </b><br>
+                                        Many modern messaging apps, such as WhatsApp, Signal, and Telegram, use E2EE to secure messages between users.
+                                    </li>
+                                    <li><b>Email Encryption:  </b><br>
+                                        Services like ProtonMail offer E2EE for email, ensuring that only the sender and the recipient can read the contents of an email.
+                                    </li>
+                                    <li><b>File Storage and Sharing: </b><br>
+                                        Some cloud storage services use E2EE to protect files, photos, and documents stored and shared through their platforms.
+                                    </li>
+                                    <li><b>Video and Voice Calls: </b><br>
+                                        Encrypted video and voice calling features are increasingly common, providing secure, private communication channels.
+                                    </li>
+                                </ul></ul>
+                                <h3>Challenges and Considerations</h3>
+                                <p>While E2EE is a powerful tool for privacy and security, it also presents challenges:</p>
+                                <ul><ul>
+                                    <li><b>Key Management</b><br>
+                                        The security of E2EE depends on the proper management of encryption keys. If a private key is lost, the data encrypted with the corresponding public key cannot be decrypted.
+                                    </li>
+                                    <li><b>Legal and Regulatory Issues  </b><br>
+                                        Governments and law enforcement agencies have raised concerns that E2EE can obstruct legal investigations. This has led to debates about creating backdoors or ways to bypass encryption, which security experts argue would undermine the security and privacy benefits of E2EE.
+                                    </li>
+                                    <li><b>User Experience </b><br>
+                                        Implementing E2EE can sometimes make services less user-friendly. For example, recovering data without the private key becomes impossible, which could lead to data loss if users lose their keys and haven't backed them up.
+                                    </li>
+
+                                </ul></ul>
+                             </div>
+                         </div>
+                     </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

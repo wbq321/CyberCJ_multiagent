@@ -1,0 +1,381 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <link rel="stylesheet" href="./module_4_styles.css">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 4.3-->
+                    <div id="4_0" class="bg-light border rounded-3 p-3">
+                        <h3>4.3 Introduction to Cryptology</h3>
+                        <p><strong>Cryptography</strong> is the practice of securing communications to prevent unauthorized access. It includes encryption (converting plaintext to ciphertext) and decryption (converting ciphertext back to plaintext).
+                        </p>
+                        <!-- Brief Overview -->
+                        <div class="card shadow-lg">
+                            <div class="card-header">
+                           <!--     <span class="fs-4"></span>-->
+                            </div>
+                            <div class="card-body">
+                                <ol>
+                                    <p>
+                                        Cryptography, in the simplest terms, is the art of writing or solving codes. It's like the science of secret communication. Its purpose is to ensure privacy and security by transforming readable information, known as plaintext, into an unreadable format, known as ciphertext. This process, called encryption, helps protect sensitive data from being accessed by unauthorized individuals.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        Imagine you have a postcard that you want to send to a friend, but you don't want anyone else who might see the postcard along the way to read its message. Cryptography is like a special invisible ink that only you and your friend know how to make visible. You write your message with this ink, and to anyone else who sees the postcard, it appears blank. Only your friend, who knows the secret to make the ink visible again, can read the message.
+                                    </p>
+                                    <br>
+                                    <p>
+                                        Cryptography doesn't just hide data; it can also verify that data hasn't been altered and confirm the identity of the sender and receiver. This is essential for tasks like securely accessing websites, signing digital documents, or even verifying that a software update comes from a legitimate source.
+                                    </p>
+                                    <br>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Module 4.3-->
+                    <div  class="bg-light border rounded-3 p-3">
+                        <!-- Module 4.2.0 -->
+                        <div id="4_2_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">4.3.1 Benefits of Cryptology</span>
+                            </div>
+                            <div class="card-body">
+                               </p>
+                                <ol>
+                                    <h3>Confidentiality</h3>
+                                    <ul><b>Privacy Protection:  </b><br>
+                                        Cryptology ensures that information is kept confidential, allowing sensitive data like personal messages, financial information, and business secrets to be transmitted securely.
+                                    </ul>
+                                    <ul><b>Data Protection:  </b><br>
+                                        By encrypting data, cryptology protects it from unauthorized access, ensuring that only the intended recipients can read it.
+                                    </ul>
+                                    <h3>Integrity </h3>
+                                    <ul><b>Data Integrity Verification: </b><br>
+                                        Cryptology provides mechanisms, such as digital signatures and hash functions, to verify that data has not been tampered with during transmission. This means recipients can be confident that the information they receive is exactly what the sender intended.
+                                    </ul>
+                                    <h3>Authentication </h3>
+                                    <ul><b>Identity Verification:  </b><br>
+                                        Through techniques like digital signatures and public key infrastructure (PKI), cryptology can confirm the identity of the parties involved in a communication. This helps prevent impersonation and fraud.
+                                    </ul>
+                                    <ul><b>Source Authentication:  </b><br>
+                                        It ensures that the origin of a message or transaction can be reliably verified, important in financial transactions and secure communications.
+                                    </ul>
+                                    <h3>Non-repudiation </h3>
+                                    <ul><b>Proof of Origin:  </b><br>
+                                        Cryptology ensures that a sender cannot deny the authenticity of the message they sent, as digital signatures provide cryptographic proof of origin. This is crucial for legal and financial documents.
+                                    </ul>
+                                    <h3>Access Control</h3>
+                                    <ul><b>Secure Access:  </b><br>
+                                        Encryption can be used to restrict access to sensitive information, ensuring that only authorized individuals can view or use it. This is essential for personal privacy and corporate security.
+                                    </ul>
+                                    <h3>Obfuscation</h3>
+                                    <ul><b>Protection of Intellectual Property:  </b><br>
+                                        By obfuscating code or data, cryptology helps protect intellectual property from being easily understood and misused by unauthorized parties.
+                                    </ul>
+                                    <h3>Secure Communication</h3>
+                                    <ul><b>End-to-End Encryption:  </b><br>
+                                        Cryptology enables secure communication channels over insecure networks, such as the internet, ensuring that messages remain private and secure from eavesdroppers.
+                                    </ul>
+                                    <h3>E-commerce Security</h3>
+                                    <ul><b>Transaction Security: </b><br>
+                                        Cryptology is fundamental in securing online transactions, providing the backbone for protocols like SSL/TLS, which protect online shopping, banking, and more.
+                                    </ul>
+                                    <h3>Digital Certificates and Signatures</h3>
+                                    <ul><b>Trust Establishment: </b><br>
+                                        By using digital certificates and signatures, cryptology helps establish trust between parties in digital environments, crucial for online business and government transactions.
+                                    </ul>
+                                    <h3>Regulatory Compliance</h3>
+                                    <ul><b>Meeting Legal Standards: </b><br>
+                                        Cryptology helps organizations comply with privacy laws and regulations by providing the necessary tools to protect sensitive information.
+                                    </ul>
+                                </ol>
+                            </div>
+                        </div>
+
+                        <!-- Module 4.3.2 -->
+                        <div id="4_2_1" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">4.3.2 Types of Cryptology</span>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    Cryptology encompasses two primary disciplines: cryptography and cryptanalysis. Within these disciplines, there are various types and methods used to secure communications and break codes. 
+                                    Cryptography is the practice of designing algorithms and systems for secure communication in the presence of third parties with potentially malicious intent. It involves creating methods 
+                                    to encrypt and decrypt information, ensuring that data can be securely transmitted, stored, and accessed only by intended parties. 
+                                    <p><strong>Symmetric-Key Cryptography</strong></p>
+                                    <ul><ul>
+                                    <li><b>Definition: </b><br>
+                                        <p>In symmetric-key cryptography, the same key is used for both encryption and decryption. This key must be shared between the communicating parties in a secure manner.
+                                    </p>
+                                    <li><b>Use Case: </b><br>
+                                        <p>Symmetric-key cryptography is fast and efficient, making it suitable for encrypting large volumes of data or for use in systems where processing power is limited.
+                                    </p>
+                                    <li><b>Examples: </b><br>
+                                        <p>AES (Advanced Encryption Standard) and DES (Data Encryption Standard).
+                                    </p>
+                                        </li>
+                                    </ul></ul>
+                                            <p><strong>Asymmetric-Key Cryptography (Public Key Cryptography)</strong></p>
+                                           <ul><ul>
+                                            <li><b>Definition: </b><br>
+                                                <p>Asymmetric-key cryptography uses a pair of keys: a public key, which can be shared openly, for encryption, and a private key, kept secret by the owner, for decryption. This solves the problem of key distribution that plagues symmetric-key cryptography.
+                                            </p>
+                                            <li><b>Use Case: </b><br>
+                                                <p>It's widely used for secure key exchange, digital signatures, and encrypting small amounts of data.
+                                            </p>
+                                            <li><b>Examples: </b><br>
+                                                <p>RSA (Rivest-Shamir-Adleman), ECC (Elliptic Curve Cryptography).
+                                            </p>
+                                                </li>
+                                            </ul></ul>
+                                                    <p><strong>Hash Functions</strong></p>
+                                                    <ul><ul>
+                                                    <li><b>Definition: </b><br>
+                                                        <p>Hash functions take an input (or 'message') and return a fixed-size string of bytes, typically a digest that is unique to each unique input. They are designed to be one-way functions, making it infeasible to invert or find two different inputs that produce the same output.
+                                                    </p>
+                                                    <li><b>Use Case: </b><br>
+                                                        <p>Hash functions are used for integrity verification, password storage, and digital signatures.
+                                                    </p>
+                                                    <li><b>Examples: </b><br>
+                                                        <p>SHA-256 (Secure Hash Algorithm 256-bit), MD5 (though considered insecure for many purposes now).
+                                                    </p>
+                                                        </li>
+                                                    </ul></ul>
+
+                                    <li><b>Instructional Resources:</b>
+                                        <li>For Windows users, updates can be managed and reviewed at the 
+                                            <a href="https://support.microsoft.com/en-us/windows/get-the-latest-windows-update-7d20e88c-0568-483a-37bc-c3885390d212#WindowsVersion=Windows_11">Windows Update page</a>
+                                        </li>
+                                        <li>For MacOS users, guidance on updates is available at th
+                                            <a href="https://support.apple.com/guide/mac-help/keep-your-mac-up-to-date-mchlpx1065/mac">MacOS Update Guide</a>
+                                        </li>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+
+                        <!-- Module 4.3.3 -->
+                        <div id="4_2_2" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">4.3.3 Cryptoanalysis</span>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    Cryptanalysis is the art and science of analyzing and breaking cryptographic schemes. It's essentially the flip side of cryptography, focusing on uncovering weaknesses in cryptographic algorithms and finding methods to decrypt information without access to the secret key. 
+                                </p>
+                                <p><strong>Frequency Analysis</strong></p>
+                                <ul><ul>
+                                <li><b>Use: </b><br>
+                                    <p>Primarily used against classical ciphers, such as the Caesar cipher, where the frequency of letters in a ciphertext is analyzed to deduce the likely plaintext.
+                                </p>
+                                </ul></ul>
+                                <p><strong>Known-Plaintext Attack</strong></p>
+                                <ul><ul>
+                                <li><b>Use: </b><br>
+                                    <p>The attacker has access to both the plaintext (original message) and its corresponding ciphertext and attempts to derive the key used in the encryption process.
+                                </p>
+                                </ul></ul>
+                                <p><strong>Chosen-Plaintext Attack</strong></p>
+                                <ul><ul>
+                                <li><b>Use: </b><br>
+                                    <p>The attacker can choose arbitrary plaintexts to be encrypted and obtain the corresponding ciphertexts. The goal is to exploit this capability to determine the key or uncover a weakness in the encryption algorithm.
+                                </p>
+                                </ul></ul>
+                                <p><strong>Differential Cryptanalysis</strong></p>
+                                <ul><ul>
+                                <li><b>Use: </b><br>
+                                    <p>A more sophisticated method that involves studying how differences in the input to a cryptographic algorithm affect the resultant difference at the output. It's often used against block ciphers.
+                                </p>
+                                </ul></ul>
+                                <p><strong>Side-Channel Attacks</strong></p>
+                                <ul><ul>
+                                <li><b>Use: </b><br>
+                                    <p>These attacks do not target the cryptographic algorithm directly but instead exploit physical implementations of the algorithm to extract key information. This can include timing information, power consumption, electromagnetic leaks, etc.
+                                </p>
+                                </ul></ul>
+                                <p>Cryptology, through these types and techniques, forms the backbone of modern secure communication and data protection strategies. While cryptography focuses on building robust encryption methods, cryptanalysis plays the crucial role of testing and ensuring their security against potential attacks.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Module 4.3.4 -->
+                        <div id="4_2_3" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">4.3.4 Protections Through Cryptology</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>Security Measures for Data at Rest</h3>
+                                <p>
+                                   <b>Data at Rest:</b> Encrypting stored data to protect it from unauthorized access. Data at rest refers to data that is stored on a physical medium and is not actively being accessed or processed. It contrasts with data in transit, which is data being actively transferred from one location to another, and data in use, which is data being processed or accessed by applications. Data at rest can be found in various forms and on different types of storage devices, including hard drives, solid-state drives, USB drives, backup tapes, and cloud storage.
+                                </p>
+                                <p>The security of data at rest is crucial because it represents a static target for unauthorized access or theft. If an attacker can gain access to stored data, they can potentially extract sensitive information, such as personal details, financial records, intellectual property, or login credentials. This risk is especially significant for organizations that store large volumes of sensitive data.
+                                </p>
+                                <ul><ul>
+                                    <li><b>Encryption:</b><br>
+                                        This is the most effective way to protect the confidentiality of data at rest. By encrypting the data, it is rendered unreadable to anyone who does not have the decryption key. Even if an attacker gains physical access to the storage medium, the data will remain inaccessible without the key. Encryption can be applied at different levels, including individual files, entire databases, or full disks.
+                                    </li>
+                                    <li><b>Access Controls: </b><br>
+                                        Implementing strict access controls ensures that only authorized users and systems can access or modify the stored data. This includes setting up user permissions and roles within an organization's IT systems.
+                                    </li>
+                                    <li><b>Data Masking: </b><br>
+                                        For certain types of data, masking or anonymization can be used to protect sensitive information. This involves altering the data in a way that it remains usable for processing but cannot be traced back to any individual.
+                                    </li>
+                                    <li><b>Physical Security: </b><br>
+                                        Protecting the physical security of the devices or data centers where data is stored is essential. This can include measures such as locks, biometric security, security guards, and surveillance cameras.
+                                    </li>
+                                    <li><b>Regular Audits and Monitoring: </b><br>
+                                        Regular security audits and continuous monitoring of access logs can help identify and mitigate unauthorized access attempts or other security incidents involving data at rest.
+                                    </li>
+                                    <li><b>Data Lifecycle Management </b><br>
+                                        Implementing policies for the regular review, archiving, and secure deletion of data that is no longer needed can reduce the volume of data at risk and ensure compliance with data protection regulations.
+                                    </li>
+                                </ul></ul>
+                                <p>Protecting data at rest is a fundamental aspect of information security and privacy practices. It helps prevent data breaches and the resulting financial loss, reputational damage, and legal consequences. As threats evolve and storage technologies change, the strategies and tools for securing data at rest also need to be continually updated and refined.
+                                </p>
+                                <h3>Security Measures for Data in Transit</h3>
+                                <p>Data in transit refers to any data that is being moved from one location to another across a network. This can include data being transferred over the internet, between devices in a local network, or through wireless connections such as Wi-Fi or Bluetooth. Data in transit can be contrasted with data at rest, which is data that is not actively moving and is stored on a device or network, and data in use, which is data being processed or accessed by applications.
+                                </p>
+                                <p>The protection of data in transit is critical because, during transmission, data can be more vulnerable to interception, eavesdropping, or manipulation by unauthorized parties. If sensitive information such as personal details, financial transactions, or confidential communications is intercepted, it can lead to privacy violations, financial fraud, and other security breaches.</p>
+                                <p>Common risks to data in transit:</p>
+                                <ul><ul>
+                                    <li><b>Interception and Eavesdropping:</b><br>
+                                        Attackers may capture sensitive information as it travels across a network.
+                                    </li>
+                                    <li><b>Man-in-the-Middle Attacks (MitM): </b><br>
+                                        An attacker secretly relays and possibly alters the communication between two parties who believe they are directly communicating with each other.
+                                    </li>
+                                    <li><b>Replay Attacks:  </b><br>
+                                        An attacker captures data in transit and retransmits it to attempt unauthorized access or execute a transaction.
+                                    </li></ul></ul>
+                                    <p>Security measures for Data in Transit:</p>
+                                    <ul><ul>
+                                    <li><b>Encryption: </b><br>
+                                        Encrypting data before it is transmitted ensures that even if the data is intercepted, it cannot be read or used by unauthorized parties. Protocols such as TLS (Transport Layer Security) and SSL (Secure Sockets Layer) are commonly used to secure web traffic, while VPNs (Virtual Private Networks) can secure data over untrusted networks.
+                                    </li>
+                                    <li><b>Secure Protocols:  </b><br>
+                                        Using secure communication protocols like HTTPS (instead of HTTP), SFTP (Secure File Transfer Protocol), and SSH (Secure Shell) can provide encryption and secure authentication mechanisms.
+                                    </li>
+                                    <li><b>Authentication and Integrity Checks: </b><br>
+                                        Implementing strong authentication methods and integrity checks (such as digital signatures) ensures that the data is sent and received by the intended parties without being tampered with.
+                                    </li>
+                                    <li><b>Virtual Private Networks (VPNs): </b><br>
+                                        VPNs create a secure, encrypted tunnel for data to travel through, which can protect the data from eavesdropping and interception over untrusted networks like public Wi-Fi.
+                                    </li>
+                                    <li><b>End-to-End Encryption (E2EE): </b><br>
+                                        Ensuring that data is encrypted from the sender to the recipient without intermediary decryption.
+                                    </li>
+                                </ul></ul>
+                                <p>Securing data in transit is a fundamental aspect of network security and privacy protection. It involves a combination of technologies, protocols, and best practices designed to ensure that data remains confidential and intact from its point of origin to its destination. As cyber threats evolve, maintaining high standards of security for data in transit remains a constant challenge for individuals and organizations alike.
+                                </p>
+                            </div>
+                        </div>
+
+                        <!-- Module 4.3.5 -->
+                        <div id="4_2_4" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">4.3.5 End-to-End Encryption</span>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    End-to-end encryption (E2EE) is a method of secure communication that prevents third parties from accessing data while it's transferred from one end system or device to another. In E2EE, the data is encrypted on the sender's system or device and only the recipient can decrypt it. Nobody in between, be it internet service providers, hackers, or even the platform provider itself, can read or access the decrypted data.
+                                </p>
+                                <h3>How End-to-End Encryption Works</h3>
+                                <p>Disconnecting devices can significantly reduce the risk of ransomware infection.</p>
+                                <ul><ul>
+                                    <li><b>Encryption: </b><br>
+                                        The process begins when a message is encrypted at the sender's device. The message is transformed into a scrambled format using an encryption algorithm and a key. This ensures that the content is unreadable to anyone except the intended recipient.
+                                    </li>
+                                    <li><b>Transmission:  </b><br>
+                                        The encrypted data is then transmitted across the internet or any other network. Despite the data passing through various servers and nodes, it remains encrypted and inaccessible to others.
+                                    </li>
+                                    <li><b>Decryption:  </b><br>
+                                        Once the encrypted data reaches the recipient's device, it is decrypted using a corresponding decryption key. The recipient can now read the original message.
+                                    </li>
+                                </ul></ul>
+                                <h3>Key Characteristics</h3>
+                                <p></p>
+                                <ul><ul>
+                                    <li><b>Keys:  </b><br>
+                                        E2EE typically uses a pair of cryptographic keys, a public key, and a private key, in what is known as asymmetric encryption. The public key is used to encrypt the message, and the private key is used to decrypt it. The private key is kept secret, while the public key may be distributed widely.
+                                    </li>
+                                    <li><b>Security:  </b><br>
+                                        Because the decryption key is only held by the recipient, E2EE provides a high level of security. It ensures that the data remains confidential between the communicating users.
+                                    </li>
+                                    <li><b>Privacy:   </b><br>
+                                        E2EE is a crucial tool for protecting privacy in digital communications, as it prevents potential eavesdroppers from accessing the contents of the communication, including service providers themselves.
+                                    </li>
+                                </ul></ul>
+                                <h3>Applications of End-to-End Encryption</h3>
+                                <p></p>
+                                <ul><ul>
+                                    <li><b>Messaging Apps: </b><br>
+                                        Many modern messaging apps, such as WhatsApp, Signal, and Telegram, use E2EE to secure messages between users.
+                                    </li>
+                                    <li><b>Email Encryption:  </b><br>
+                                        Services like ProtonMail offer E2EE for email, ensuring that only the sender and the recipient can read the contents of an email.
+                                    </li>
+                                    <li><b>File Storage and Sharing: </b><br>
+                                        Some cloud storage services use E2EE to protect files, photos, and documents stored and shared through their platforms.
+                                    </li>
+                                    <li><b>Video and Voice Calls: </b><br>
+                                        Encrypted video and voice calling features are increasingly common, providing secure, private communication channels.
+                                    </li>
+                                </ul></ul>
+                                <h3>Challenges and Considerations</h3>
+                                <p>While E2EE is a powerful tool for privacy and security, it also presents challenges:</p>
+                                <ul><ul>
+                                    <li><b>Key Management</b><br>
+                                        The security of E2EE depends on the proper management of encryption keys. If a private key is lost, the data encrypted with the corresponding public key cannot be decrypted.
+                                    </li>
+                                    <li><b>Legal and Regulatory Issues  </b><br>
+                                        Governments and law enforcement agencies have raised concerns that E2EE can obstruct legal investigations. This has led to debates about creating backdoors or ways to bypass encryption, which security experts argue would undermine the security and privacy benefits of E2EE.
+                                    </li>
+                                    <li><b>User Experience </b><br>
+                                        Implementing E2EE can sometimes make services less user-friendly. For example, recovering data without the private key becomes impossible, which could lead to data loss if users lose their keys and haven't backed them up.
+                                    </li>
+
+                                </ul></ul>
+                             </div>
+                         </div>
+                     </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

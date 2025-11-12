@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+    <style>
+        .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 200px;
+        perspective: 1000px;
+
+        float: left;
+        margin: 20px; /* Adjust the margin as needed */
+        
+        }
+    
+        .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        }
+    
+        .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+        }
+    
+        .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        }
+    
+        .flip-card-front {
+        background-color: #bbb;
+        color: black;
+        }
+    
+        .flip-card-back {
+        background-color: #1f5512;
+        color: white;
+        transform: rotateY(180deg);
+        }
+        .flip-container {
+            clear: both; /* Clear floats */
+            margin-bottom: 20px; /* Add spacing between containers */
+        }
+        </style>
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 2.0-->
+                    <div  class="bg-light border rounded-3 p-3">
+                        <h3>Module 4: Privacy</h3>
+                        <div class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Module 1 Review</span>
+                            </div>
+                            <!-- Flip card areas -->
+                            <div class="card-body">
+                                <!-- Data Theft -->
+                                <div class="flip-container">
+                                    <h3>Data Theft</h3>
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>What is Data Theft?</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>What is Data Theft?</h2>
+                                                <p>When information is collected and used without the knowledge or permission of the owner.</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Data Theft Risks</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Data Theft Risks</h2>
+                                                <p>
+                                                    Identity theft, Financial loss, Reputation damage, Legal consequences, 
+                                                    Emotional stress, Privacy invasion, Loss of intellectual property, Operational disruption, 
+                                                    Unintentional data sharing, Targeted phishing attacks, Perpetual cybercrime.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Cryptography -->
+                                <div class="flip-container">
+                                    <h3>Cryptography</h3>
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>What is Cryptography?</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>What is Cryptography?</h2>
+                                                <p>
+                                                    The practice of securing communications to prevent unauthorized access by encrypting data into unintelligible ciphertext, 
+                                                    and the decrypting with a key to recover teh original data.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Benefits of Cryptography</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Benefits of Cryptography</h2>
+                                                <p>
+                                                    Confidentiality, Integrity, Authentication, Non-repudiation, Access Control, Obfuscation,
+                                                    Secure Communication, E-commerce Security, Digital Certificates and Signatures, and Regulatory Compliance.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Types of Cryptography</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Types of Cryptography</h2>
+                                                <p>
+                                                    Symmetric-Key Cryptography, Asymmetric-Key Cryptography (Public Key Cryptography), Hash Functions.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Cryptoanalysis</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Cryptoanalysis</h2>
+                                                <p>
+                                                    The art and science of analyzing and breaking cryptographic schemes.
+                                                    Focuses on uncovering weaknesses in cryptographic algorithms to decrypt without a key.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Cryptoanalysis Methods</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Cryptoanalysis Methods</h2>
+                                                <p>
+                                                    Frequency Analysis, Known-Plaintext Attack, Chosen-Plaintext Attack, Differential Cryptanalysis, Side-Channel Attacks.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Protecting Data at Rest</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Protecting Data at Rest</h2>
+                                                <p> 
+                                                    Encryption, Access Controls, Data Masking, Physical Security, Regular Audits and Monitoring, and Data Lifecycle Management. 
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Protecting Data in Transit</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Protecting Data in Transit</h2>
+                                                <p> 
+                                                    Encryption, Secure Protocols, Authentication and Integrity Checks, Virtual Private Networks (VPNs), and End-to-End Encryption (E2EE).
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>End-to-end encryption (E2EE)</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>End-to-end encryption (E2EE)</h2>
+                                                <p> 
+                                                    A method of secure communication where data is encrypted on the sender's system or device and only the recipient can decrypt it.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Cookies -->
+                                <div class="flip-container">
+                                    <h3>Cookies</h3>
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>What are Cookies?</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>What are Cookies?</h2>
+                                                <p>
+                                                    Data tokens that help websites remember information about your visit, making your next visit easier, and the site more useful to you.    
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Types of Cookies</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Types of Cookies</h2>
+                                                <p>
+                                                    Session Cookies, Persistent Cookies, First-Party Cookies, Third-Party Cookies.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Session Cookies </h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Session Cookies </h2>
+                                                <p>
+                                                    Store information for maintaining your browsing session, such as login status or items in a shopping cart. 
+                                                    Closing your browser deletes session cookies.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Persistent Cookies</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Persistent Cookies</h2>
+                                                <p>
+                                                    Remember your preferences and actions across a site to make your future visits more convenient.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>First-Party Cookies</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>First-Party Cookies</h2>
+                                                <p>
+                                                    Set by the website you're visiting, they help the site remember things like your login status, language preferences, and other settings. 
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h1>Third-Party Cookies</h1>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Third-Party Cookies</h2>
+                                                <p>
+                                                    Set by a domain other than the one you are visiting, they're often used for online advertising purposes.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+<script src="../js/navBar.js"></script>
+</body>
+</html>

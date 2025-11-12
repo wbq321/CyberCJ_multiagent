@@ -1,0 +1,912 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberJustice Multi-Agent Tutor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            width: 95%;
+            max-width: 1500px;
+            height: 90vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .profile-selector {
+            background: rgba(255,255,255,0.1);
+            border: none;
+            color: white;
+            padding: 8px 16px;
+            border-radius: 20px;
+            margin: 0 10px;
+            cursor: pointer;
+        }
+
+        .profile-selector option {
+            background: white;
+            color: black;
+            padding: 5px;
+        }
+
+        .status-bar {
+            background: #ecf0f1;
+            padding: 10px 20px;
+            border-bottom: 1px solid #bdc3c7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        .agent-indicator {
+            padding: 4px 8px;
+            border-radius: 12px;
+            font-weight: bold;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        .agent-tutor { background: #3498db; color: white; }
+        .agent-technical_explainer { background: #e74c3c; color: white; }
+        .agent-assessment { background: #f39c12; color: white; }
+
+        .chat-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px 40px;
+            background: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 20px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .message.bot {
+            position: relative;
+            margin-bottom: 28px;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 85%;
+            padding: 15px;
+            border-radius: 18px;
+            line-height: 1.5;
+        }
+
+        .message.user .message-content {
+            background: #007bff;
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+
+        .message.bot .message-content {
+            background: white;
+            color: #333;
+            border: 1px solid #e9ecef;
+            border-bottom-left-radius: 5px;
+        }
+
+        .message-meta {
+            font-size: 11px;
+            color: #6c757d;
+            margin-top: 5px;
+        }
+
+        .input-container {
+            padding: 20px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+            display: flex;
+            gap: 10px;
+        }
+
+        .input-field {
+            flex: 1;
+            padding: 15px;
+            border: 2px solid #e9ecef;
+            border-radius: 20px;
+            outline: none;
+            font-size: 16px;
+            min-height: 50px;
+            max-height: 150px;
+            resize: vertical;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.4;
+        }
+
+        .input-field:focus {
+            border-color: #007bff;
+        }
+
+        .send-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 25px;
+            padding: 15px 25px;
+            cursor: pointer;
+            font-weight: bold;
+        }
+
+        .send-btn:hover {
+            background: #0056b3;
+        }
+
+        .send-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 20px;
+            color: #6c757d;
+        }
+
+        .progress-bar {
+            height: 4px;
+            background: #e9ecef;
+            border-radius: 2px;
+            overflow: hidden;
+            margin-top: 5px;
+        }
+
+        .progress-fill {
+            height: 100%;
+            background: linear-gradient(90deg, #007bff, #0056b3);
+            border-radius: 2px;
+            transition: width 0.3s ease;
+        }
+
+        .new-topic-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 8px 16px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .new-topic-btn:hover {
+            background: #218838;
+        }
+
+        .module-selector {
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 15px;
+            padding: 8px 16px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 12px;
+        }
+
+        .module-selector:hover {
+            background: #218838;
+        }
+
+        .module-selector option {
+            background: white;
+            color: black;
+            padding: 5px;
+        }
+
+        .feedback-buttons {
+            position: absolute;
+            bottom: -8px;
+            right: 15px;
+            display: flex;
+            gap: 6px;
+            align-items: center;
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(4px);
+            border-radius: 12px;
+            padding: 4px 8px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+
+        .feedback-btn {
+            background: none;
+            border: none;
+            border-radius: 8px;
+            padding: 3px 6px;
+            cursor: pointer;
+            font-size: 10px;
+            transition: all 0.2s;
+            display: flex;
+            align-items: center;
+            gap: 2px;
+            color: #6c757d;
+        }
+
+        .feedback-btn:hover {
+            background: rgba(0, 123, 255, 0.1);
+            transform: scale(1.05);
+        }
+
+        .feedback-btn.helpful {
+            color: #28a745;
+        }
+
+        .feedback-btn.helpful:hover {
+            background: rgba(40, 167, 69, 0.1);
+            color: #1e7e34;
+        }
+
+        .feedback-btn.flag {
+            color: #dc3545;
+        }
+
+        .feedback-btn.flag:hover {
+            background: rgba(220, 53, 69, 0.1);
+            color: #c82333;
+        }
+
+        .feedback-btn.selected {
+            opacity: 0.7;
+            cursor: default;
+        }
+
+        .feedback-status {
+            font-size: 9px;
+            color: #6c757d;
+            margin-left: 4px;
+            white-space: nowrap;
+        }
+
+        /* Markdown formatting styles */
+        .message-content strong {
+            font-weight: 600;
+            color: #2c3e50;
+        }
+
+        .message-content em {
+            font-style: italic;
+            color: #34495e;
+        }
+
+        .message-content code {
+            background: #f1f3f4 !important;
+            padding: 2px 4px !important;
+            border-radius: 3px !important;
+            font-family: 'Monaco', 'Menlo', 'Ubuntu Mono', monospace !important;
+            font-size: 0.9em !important;
+        }
+
+        .message-content h1,
+        .message-content h2,
+        .message-content h3 {
+            font-weight: 600;
+            line-height: 1.3;
+        }
+
+        .message-content ul {
+            margin: 8px 0 !important;
+            padding-left: 18px !important;
+        }
+
+        .message-content li {
+            margin: 3px 0 !important;
+            line-height: 1.4;
+        }
+
+        .message-content li::marker {
+            color: #007bff;
+        }
+
+        /* Table styles for better markdown table display */
+        .message-content table {
+            border-collapse: collapse !important;
+            width: 100% !important;
+            margin: 10px 0 !important;
+            border: 1px solid #ddd !important;
+            font-size: 14px !important;
+            overflow-x: auto;
+            display: block;
+            white-space: nowrap;
+        }
+
+        .message-content th,
+        .message-content td {
+            border: 1px solid #ddd !important;
+            padding: 8px 12px !important;
+            text-align: left !important;
+            vertical-align: top !important;
+        }
+
+        .message-content th {
+            background-color: #f8f9fa !important;
+            font-weight: 600 !important;
+            color: #2c3e50 !important;
+        }
+
+        .message-content tr:nth-child(even) {
+            background-color: #f9f9f9 !important;
+        }
+
+        .message-content tr:hover {
+            background-color: #f1f3f5 !important;
+        }
+
+        /* Responsive table wrapper */
+        .message-content table {
+            display: table;
+            white-space: normal;
+            overflow-x: auto;
+        }
+
+        @media (max-width: 768px) {
+            .message-content table {
+                font-size: 12px !important;
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+            }
+
+            .message-content th,
+            .message-content td {
+                padding: 6px 8px !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 CyberJustice Multi-Agent Tutor</h1>
+            <div>
+                <label>Your Role:</label>
+                <select class="profile-selector" id="userProfile">
+                    <option value="general">General User</option>
+                    <option value="cj_student">Criminal Justice Student</option>
+                    <option value="police_officer">Police Officer</option>
+                </select>
+                <select class="module-selector" id="moduleSelector" onchange="startModuleTopic()">
+                    <option value="">Select Module</option>
+                    <option value="introduction">📚 Introduction to CyberCJ</option>
+                    <option value="computer-security">🔒 Computer Security</option>
+                    <option value="internet-security">🌐 Internet Security</option>
+                    <option value="privacy">🛡️ Privacy Protection</option>
+                    <option value="custom">✏️ Custom Topic</option>
+                </select>
+            </div>
+        </div>
+
+        <div class="status-bar">
+            <div>
+                <span>Agent: </span>
+                <span class="agent-indicator" id="currentAgent">initializing</span>
+                <span style="margin-left: 15px;">Session: </span>
+                <span id="sessionId">default</span>
+            </div>
+        </div>
+
+        <div class="chat-container" id="chatContainer">
+            <div class="message bot">
+                <div class="message-content">
+                    <strong>Welcome to CJ-Mentor! 🎓</strong><br><br>
+                    I'm your strategic AI learning tutor for Cyber Criminal Justice. I use advanced planning capabilities to create personalized learning paths just for you.
+                    <br><br>
+                    <strong>🎯 How I Help:</strong>
+                    <ul style="margin: 10px 0; padding-left: 20px;">
+                        <li><strong>Strategic Planning:</strong> I create step-by-step learning plans tailored to your goals</li>
+                        <li><strong>Adaptive Support:</strong> I adjust my teaching style based on your progress and needs</li>
+                        <li><strong>Module-Based Learning:</strong> Choose from structured modules or explore custom topics</li>
+                    </ul>
+                    <strong>🚀 Getting Started:</strong><br>
+                    1. Select your role above (Student, Police Officer, or General User)<br>
+                    2. Choose a learning module from the dropdown, or<br>
+                    3. Simply ask me about any cybersecurity topic!<br><br>
+                    Ready to start your strategic learning journey? 💪
+                </div>
+                <div class="message-meta">CJ-Mentor Strategic Learning System • Ready</div>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div>🤖 Thinking...</div>
+        </div>
+
+        <div class="input-container">
+            <textarea id="messageInput" class="input-field"
+                   placeholder="Ask about cybersecurity concepts, explore learning modules, or discuss any topic..."
+                   onkeydown="handleKeyPress(event)" rows="2"></textarea>
+            <button onclick="sendMessage()" class="send-btn" id="sendBtn">Send</button>
+        </div>
+    </div>
+
+    <script>
+        let sessionId = 'session_' + Date.now();
+        let isWaiting = false;
+
+        // Initialize session ID display
+        document.getElementById('sessionId').textContent = sessionId;
+
+        // Generate random session ID
+        function generateSessionId() {
+            return 'session_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+        }
+
+        // Start module topic
+        function startModuleTopic() {
+            const moduleSelector = document.getElementById('moduleSelector');
+            const selectedModule = moduleSelector.value;
+
+            if (!selectedModule) return;
+
+            // Reset selector to default
+            moduleSelector.value = '';
+
+            if (selectedModule === 'custom') {
+                // For custom topics, use the original prompt behavior
+                startNewTopic();
+                return;
+            }
+
+            // Define module topics and descriptions
+            const moduleTopics = {
+                'introduction': {
+                    name: 'Introduction to CyberCJ',
+                    description: 'Fundamentals of cybersecurity in criminal justice, overview of digital evidence, and basic concepts'
+                },
+                'computer-security': {
+                    name: 'Computer Security',
+                    description: 'Malware analysis, system vulnerabilities, access controls, and computer forensics'
+                },
+                'internet-security': {
+                    name: 'Internet Security',
+                    description: 'Network security, web threats, online investigations, and internet protocols'
+                },
+                'privacy': {
+                    name: 'Privacy Protection',
+                    description: 'Data privacy laws, encryption, anonymity tools, and privacy rights in digital investigations'
+                }
+            };
+
+            const topic = moduleTopics[selectedModule];
+            if (topic) {
+                fetch('/new_topic', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        session_id: sessionId,
+                        topic: topic.name
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    addMessage('system', `🎯 Started learning module: <strong>${topic.name}</strong><br><br>📋 <em>${topic.description}</em><br><br>What specific aspect of this module would you like to explore first?`);
+                })
+                .catch(error => {
+                    console.error('Error starting module topic:', error);
+                    addMessage('system', `❌ Error starting module: ${topic.name}`);
+                });
+            }
+        }
+
+        // Start custom topic (original function)
+        function startNewTopic() {
+            const topicName = prompt("Enter the new topic you'd like to learn about:");
+            if (topicName) {
+                fetch('/new_topic', {
+                    method: 'POST',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify({
+                        session_id: sessionId,
+                        topic: topicName
+                    })
+                })
+                .then(response => response.json())
+                .then(data => {
+                    addMessage('system', `Started new topic: ${topicName}. What would you like to know about this topic?`);
+                })
+                .catch(error => {
+                    console.error('Error starting new topic:', error);
+                });
+            }
+        }
+
+        // Convert Markdown formatting to HTML
+        function formatMarkdownToHtml(text) {
+            if (!text) return text;
+
+            // Convert **bold** to <strong>
+            text = text.replace(/\*\*([^*]+)\*\*/g, '<strong>$1</strong>');
+
+            // Convert *italic* to <em>
+            text = text.replace(/\*([^*]+)\*/g, '<em>$1</em>');
+
+            // Convert `code` to <code>
+            text = text.replace(/`([^`]+)`/g, '<code style="background: #f1f3f4; padding: 2px 4px; border-radius: 3px; font-family: monospace;">$1</code>');
+
+            // Convert ### Headers to <h3>
+            text = text.replace(/^### ([^\n]+)/gm, '<h3 style="margin: 10px 0 5px 0; color: #2c3e50;">$1</h3>');
+
+            // Convert ## Headers to <h2>
+            text = text.replace(/^## ([^\n]+)/gm, '<h2 style="margin: 12px 0 6px 0; color: #2c3e50;">$1</h2>');
+
+            // Convert # Headers to <h1>
+            text = text.replace(/^# ([^\n]+)/gm, '<h1 style="margin: 15px 0 8px 0; color: #2c3e50;">$1</h1>');
+
+            // Convert Markdown tables to HTML
+            text = convertMarkdownTables(text);
+
+            // Convert bullet points - item to <li>
+            text = text.replace(/^[\s]*[-*+]\s+(.+)$/gm, '<li style="margin: 2px 0;">$1</li>');
+
+            // Wrap consecutive <li> elements in <ul>
+            text = text.replace(/(<li[^>]*>.*<\/li>(?:\s*<li[^>]*>.*<\/li>)*)/gs, '<ul style="margin: 5px 0; padding-left: 20px;">$1</ul>');
+
+            // Convert numbered lists 1. item to <li>
+            text = text.replace(/^[\s]*\d+\.\s+(.+)$/gm, '<li style="margin: 2px 0;">$1</li>');
+
+            // Convert line breaks
+            text = text.replace(/\n/g, '<br>');
+
+            return text;
+        }
+
+        // Convert Markdown tables to HTML tables
+        function convertMarkdownTables(text) {
+            // Split text into lines for table processing
+            const lines = text.split('\n');
+            let result = [];
+            let inTable = false;
+            let tableRows = [];
+
+            for (let i = 0; i < lines.length; i++) {
+                const line = lines[i].trim();
+
+                // Check if this line looks like a table row (contains pipes)
+                if (line.includes('|') && line.split('|').length > 2) {
+                    if (!inTable) {
+                        inTable = true;
+                        tableRows = [];
+                    }
+
+                    // Skip separator lines (---|---|---)
+                    if (!line.match(/^\s*\|?\s*[-:]+\s*\|\s*[-:]+/)) {
+                        tableRows.push(line);
+                    }
+                } else {
+                    // End of table
+                    if (inTable && tableRows.length > 0) {
+                        result.push(convertTableRowsToHTML(tableRows));
+                        tableRows = [];
+                        inTable = false;
+                    }
+                    result.push(line);
+                }
+            }
+
+            // Handle table at end of text
+            if (inTable && tableRows.length > 0) {
+                result.push(convertTableRowsToHTML(tableRows));
+            }
+
+            return result.join('\n');
+        }
+
+        // Convert table rows to HTML table
+        function convertTableRowsToHTML(tableRows) {
+            if (tableRows.length === 0) return '';
+
+            let html = '<table style="border-collapse: collapse; width: 100%; margin: 10px 0; border: 1px solid #ddd;">';
+
+            // Process header row (first row)
+            const headerCells = parseTableRow(tableRows[0]);
+            html += '<thead><tr style="background-color: #f8f9fa;">';
+            headerCells.forEach(cell => {
+                html += `<th style="border: 1px solid #ddd; padding: 8px 12px; text-align: left; font-weight: 600;">${cell}</th>`;
+            });
+            html += '</tr></thead>';
+
+            // Process data rows (remaining rows)
+            if (tableRows.length > 1) {
+                html += '<tbody>';
+                for (let i = 1; i < tableRows.length; i++) {
+                    const dataCells = parseTableRow(tableRows[i]);
+                    html += '<tr>';
+                    dataCells.forEach(cell => {
+                        html += `<td style="border: 1px solid #ddd; padding: 8px 12px; vertical-align: top;">${cell}</td>`;
+                    });
+                    html += '</tr>';
+                }
+                html += '</tbody>';
+            }
+
+            html += '</table>';
+            return html;
+        }
+
+        // Parse a table row and clean up cells
+        function parseTableRow(row) {
+            // Split by pipe and clean up each cell
+            const cells = row.split('|').map(cell => cell.trim());
+
+            // Remove empty first/last cells if they exist (from leading/trailing pipes)
+            if (cells.length > 0 && cells[0] === '') cells.shift();
+            if (cells.length > 0 && cells[cells.length - 1] === '') cells.pop();
+
+            return cells;
+        }
+
+        // Update agent indicator
+        function updateAgentIndicator(agentType) {
+            const indicator = document.getElementById('currentAgent');
+            const safeAgentType = agentType || 'tutor';
+            indicator.textContent = safeAgentType.replace('_', ' ');
+            indicator.className = 'agent-indicator agent-' + safeAgentType;
+        }
+
+        // Add message to chat
+        function addMessage(sender, content, meta = '', isAiResponse = false, userQuery = '') {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+
+            const messageId = 'msg_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+            messageDiv.id = messageId;
+
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+
+            // Format content based on sender type
+            if (sender === 'bot' || sender === 'system') {
+                // Apply markdown formatting for AI responses
+                contentDiv.innerHTML = formatMarkdownToHtml(content);
+            } else {
+                // Keep user messages simple
+                contentDiv.innerHTML = content.replace(/\n/g, '<br>');
+            }
+
+            const metaDiv = document.createElement('div');
+            metaDiv.className = 'message-meta';
+            metaDiv.textContent = meta;
+
+            messageDiv.appendChild(contentDiv);
+            if (meta) messageDiv.appendChild(metaDiv);
+
+            // Add feedback buttons for AI responses
+            if (isAiResponse && sender === 'bot') {
+                const feedbackDiv = document.createElement('div');
+                feedbackDiv.className = 'feedback-buttons';
+                feedbackDiv.innerHTML = `
+                    <button class="feedback-btn helpful" onclick="provideFeedback('${messageId}', 'helpful', '${userQuery.replace(/'/g, "\\'")}', '${content.replace(/'/g, "\\'").replace(/"/g, '\\"')}')">
+                        👍 Helpful
+                    </button>
+                    <button class="feedback-btn flag" onclick="provideFeedback('${messageId}', 'flag', '${userQuery.replace(/'/g, "\\'")}', '${content.replace(/'/g, "\\'").replace(/"/g, '\\"')}')">
+                        🚩 Flag Issue
+                    </button>
+                    <span class="feedback-status" id="status_${messageId}"></span>
+                `;
+                messageDiv.appendChild(feedbackDiv);
+            }
+
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        // Provide feedback on AI responses
+        function provideFeedback(messageId, feedbackType, userQuery, aiResponse) {
+            // Disable buttons to prevent double-clicking
+            const messageDiv = document.getElementById(messageId);
+            const buttons = messageDiv.querySelectorAll('.feedback-btn');
+            buttons.forEach(btn => {
+                btn.disabled = true;
+                btn.style.opacity = '0.6';
+            });
+
+            // Show feedback status
+            const statusSpan = document.getElementById('status_' + messageId);
+            statusSpan.textContent = 'Sending feedback...';
+
+            // Send feedback to backend
+            fetch('/feedback', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    message_id: messageId,
+                    feedback_type: feedbackType,
+                    user_query: userQuery,
+                    ai_response: aiResponse,
+                    session_id: sessionId,
+                    timestamp: new Date().toISOString(),
+                    user_profile: document.getElementById('userProfile').value
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.success) {
+                    statusSpan.textContent = feedbackType === 'helpful' ? 'Thank you!' : 'Flagged for review';
+                    statusSpan.style.color = feedbackType === 'helpful' ? '#28a745' : '#dc3545';
+
+                    // Highlight the selected button
+                    const selectedBtn = messageDiv.querySelector(`.feedback-btn.${feedbackType}`);
+                    selectedBtn.classList.add('selected');
+                    selectedBtn.style.opacity = '1';
+                    selectedBtn.style.fontWeight = 'bold';
+                } else {
+                    statusSpan.textContent = 'Failed to send feedback';
+                    statusSpan.style.color = '#dc3545';
+                    // Re-enable buttons
+                    buttons.forEach(btn => {
+                        btn.disabled = false;
+                        btn.style.opacity = '1';
+                    });
+                }
+            })
+            .catch(error => {
+                console.error('Error sending feedback:', error);
+                statusSpan.textContent = 'Error sending feedback';
+                statusSpan.style.color = '#dc3545';
+                // Re-enable buttons
+                buttons.forEach(btn => {
+                    btn.disabled = false;
+                    btn.style.opacity = '1';
+                });
+            });
+        }
+
+        // Handle key press
+        function handleKeyPress(event) {
+            if (event.key === 'Enter' && !event.shiftKey && !isWaiting) {
+                event.preventDefault(); // Prevent default Enter behavior
+                sendMessage();
+            }
+            // Shift+Enter will create a new line (default behavior)
+        }
+
+        // Send message
+        function sendMessage() {
+            if (isWaiting) return;
+
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            const userProfile = document.getElementById('userProfile').value;
+
+            // Store user question for feedback purposes
+            const userQuestion = message;
+
+            // Add user message
+            addMessage('user', message);
+            input.value = '';
+
+            // Show loading
+            isWaiting = true;
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('sendBtn').disabled = true;
+
+            // Send to backend
+            fetch('/ask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    question: message,
+                    session_id: sessionId,
+                    user_profile: userProfile
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    addMessage('bot', `❌ Error: ${data.error}`, 'System Error');
+                } else {
+                    // Handle both multi-agent and simple response formats
+                    const agentType = data.agent_type || 'tutor';
+                    const userProfile = data.user_profile || 'general';
+                    const agentLabel = agentType.replace('_', ' ').toUpperCase();
+
+                    // Create meta info based on available data
+                    let metaInfo = `${agentLabel} Agent`;
+                    if (data.input_intent) {
+                        metaInfo += ` • Intent: ${data.input_intent.toUpperCase()}`;
+                    }
+                    if (userProfile !== 'general') {
+                        metaInfo += ` • ${userProfile}`;
+                    }
+
+                    // Add bot message with feedback buttons
+                    addMessage('bot', data.answer, metaInfo, true, userQuestion);
+
+                    // Update UI indicators
+                    updateAgentIndicator(agentType);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                addMessage('bot', '❌ Connection error. Please check if the server is running.', 'Connection Error');
+            })
+            .finally(() => {
+                // Hide loading
+                isWaiting = false;
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('sendBtn').disabled = false;
+                input.focus();
+            });
+        }
+
+        // Profile change handler
+        document.getElementById('userProfile').addEventListener('change', function() {
+            const newProfile = this.value;
+            fetch('/set_profile', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    session_id: sessionId,
+                    user_profile: newProfile
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                addMessage('system', `Profile updated to: ${newProfile.replace('_', ' ')}`);
+            })
+            .catch(error => {
+                console.error('Error updating profile:', error);
+            });
+        });
+
+        // Focus input on load
+        window.onload = function() {
+            document.getElementById('messageInput').focus();
+        };
+    </script>
+</body>
+</html>

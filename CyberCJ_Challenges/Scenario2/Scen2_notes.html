@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+            integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+            integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+          integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+<div class="container-fluid ">
+    <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+        <div class="row flex-grow-sm-1 flex-grow-0">
+            <main class="col overflow-auto h-100" >
+                <!--Module 2.0-->
+                <div  class="bg-light border rounded-3 p-3">
+                    <h3>Scenario 2: Segregation of Duties</h3>
+                    <!-- Module 2.0.0 (Introduction) -->
+                    <div id="2_0" class="card shadow-lg">
+                        <!--                            <div class="card-header">-->
+                        <!--                                <span class="fs-4">Objectives</span>-->
+                        <!--                            </div>-->
+                        <div class="card-body">
+                            <h3><strong>Applications of AI in Key Areas</strong></h3>
+
+                            <h6><strong>1. Automation of Routine Tasks</strong></h6>
+                            <ul>
+                                <li><strong>Data Collection & Analysis:</strong> AI can help automate the gathering of data from various systems, logs, and files that are relevant to investigations, such as access permissions, transaction records, or communications. This reduces manual work and speeds up investigations.</li>
+                                <li><strong>Monitoring & Alerts:</strong> AI can continuously monitor activities in real-time and automatically alert investigators to potential SoD violations, fraud, or other suspicious activity.</li>
+                            </ul>
+
+                            <h6><strong>2. Anomaly Detection</strong></h6>
+                            <ul>
+                                <li><strong>Pattern Recognition:</strong> AI systems can be trained to recognize patterns and flag unusual behaviors. For example, if a person typically only modifies records but suddenly gains approval rights, AI could identify this as an anomaly and trigger an alert.</li>
+                                <li><strong>Behavioral Analysis:</strong> Machine learning algorithms can be used to detect deviations in behavior or access patterns that may indicate a violation of segregation of duties or internal controls.</li>
+                            </ul>
+
+                            <h6><strong>3. Fraud Detection & Prevention</strong></h6>
+                            <ul>
+                                <li><strong>Predictive Analytics:</strong> AI can use historical data to predict potential fraud or SoD violations. This proactive approach allows organizations to mitigate risks before a violation occurs.</li>
+                                <li><strong>Cross-Referencing Data:</strong> AI can cross-reference various databases and systems to find correlations between activities that might indicate collusion or unauthorized access.</li>
+                            </ul>
+
+                            <h6><strong>4. Risk Assessment & Profiling</strong></h6>
+                            <ul>
+                                <li><strong>Risk Scoring:</strong> AI can calculate risk scores based on an individual's access rights, transaction history, or actions. This helps prioritize which cases or individuals require deeper investigation.</li>
+                                <li><strong>Profiling for Investigations:</strong> AI can develop profiles based on historical case data to assist investigators in identifying high-risk users, roles, or departments that might be violating SoD principles.</li>
+                            </ul>
+
+                            <h6><strong>5. Access Management Optimization</strong></h6>
+                            <ul>
+                                <li><strong>Role Mining:</strong> AI can analyze user roles and permissions across an organization to identify redundancies or inconsistencies. It can recommend more efficient role assignments to ensure clear separation of duties.</li>
+                                <li><strong>Automated Role Enforcement:</strong> AI can be integrated with access management systems to enforce SoD policies automatically. For example, it can block an individual from gaining approval access if they already have create/modify/delete rights.</li>
+                            </ul>
+
+                            <h6><strong>6. Investigation Support</strong></h6>
+                            <ul>
+                                <li><strong>Case Prioritization:</strong> AI can help law enforcement or auditors prioritize SoD investigations by assessing which violations pose the highest risk based on impact, frequency, and other factors.</li>
+                                <li><strong>Document and Evidence Review:</strong> AI tools, like natural language processing (NLP), can assist in scanning through vast amounts of documentation (emails, logs, etc.) to find relevant evidence and reduce time spent on manual review.</li>
+                            </ul>
+
+                            <h6><strong>7. Digital Forensics</strong></h6>
+                            <ul>
+                                <li><strong>Log Analysis:</strong> AI can analyze large sets of system logs to pinpoint when and where a SoD violation or unauthorized access occurred, providing investigators with precise timelines and details.</li>
+                                <li><strong>Transaction Audits:</strong> AI can automatically audit and investigate transaction records, flagging irregularities such as unauthorized approvals, improper changes, or suspicious deletions.</li>
+                            </ul>
+
+                            <h6><strong>8. Simulation & Testing</strong></h6>
+                            <ul>
+                                <li><strong>Stress Testing Controls:</strong> AI can simulate various scenarios to test the strength of an organization’s internal controls. This includes "what-if" analyses to see how systems respond to unauthorized access attempts or improper segregation of duties.</li>
+                                <li><strong>Compliance Audits:</strong> AI can simulate audit scenarios to ensure compliance with policies and regulations. This helps reduce the risk of accidental SoD violations.</li>
+                            </ul>
+
+                            <h6><strong>9. Collaboration with Human Investigators</strong></h6>
+                            <ul>
+                                <li><strong>Augmented Decision-Making:</strong> AI can assist law enforcement by providing data-driven insights and recommendations. Human investigators can then use this information to make more informed decisions about where to focus efforts.</li>
+                                <li><strong>Enhanced Reporting:</strong> AI can automatically generate detailed reports that highlight potential risks, violations, and anomalies, allowing investigators to take action faster.</li>
+                            </ul>
+
+                            <h6><strong>10. Predictive Policing & Crime Prevention (in Law Enforcement)</strong></h6>
+                            <ul>
+                                <li><strong>Crime Pattern Identification:</strong> AI can analyze historical crime data to predict where and when crimes, such as financial fraud or internal sabotage, are likely to occur. This allows law enforcement to be more proactive in investigations and SoD enforcement.</li>
+                                <li><strong>Resource Allocation:</strong> AI can help law enforcement allocate resources more efficiently by predicting high-risk areas or individuals that may require closer surveillance or investigation.</li>
+                            </ul>
+
+                            <h3><strong>Benefits</strong></h3>
+                            <ul>
+                                <li><strong>Efficiency:</strong> AI reduces the time it takes to conduct investigations by automating repetitive tasks and analyzing large datasets quickly.</li>
+                                <li><strong>Accuracy:</strong> AI systems reduce human error and improve the accuracy of investigations by identifying patterns and anomalies that might be missed in manual reviews.</li>
+                                <li><strong>Cost-Effectiveness:</strong> Automated monitoring and investigation tools reduce the cost of manual audits and investigations, making SoD enforcement more cost-efficient.</li>
+                            </ul>
+
+                            <h3><strong>Challenges</strong></h3>
+                            <ul>
+                                <li><strong>Bias and Ethics:</strong> AI systems may inherit biases from the data they are trained on, which can impact fairness in investigations.</li>
+                                <li><strong>Privacy:</strong> There is a need to balance the use of AI for investigations with privacy concerns, especially when handling sensitive personal data.</li>
+                                <li><strong>Complexity:</strong> Implementing AI for SoD investigations can require technical expertise, robust data infrastructure, and proper integration into existing systems.</li>
+                            </ul>
+
+                            <h3><strong>Conclusion</strong></h3>
+                            <ul>
+                                AI can significantly enhance the effectiveness of segregation of duties investigations and law enforcement activities by providing tools for continuous monitoring, automated auditing, and anomaly detection.
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+<script src="../js/navBar.js"></script>
+</body>
+</html>

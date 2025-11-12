@@ -1,0 +1,527 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+            integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+            integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+          integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            padding: 20px;
+        }
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container-fluid ">
+    <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+        <div class="row flex-grow-sm-1 flex-grow-0">
+            <main class="col overflow-auto h-100" >
+                <!--Module 2.0-->
+                <div  class="bg-light border rounded-3 p-3">
+                    <h3>Scenario 3: Fraud Detection</h3>
+                    <!-- Module 2.0.0 (Introduction) -->
+                    <div id="2_0" class="card shadow-lg">
+                        <div class="card-header">
+                            <span class="fs-4">Example</span>
+                        </div>
+                        <div class="card-body">
+                            <!--                                <h3>Introduction</h3>-->
+                            <p><img src="../images/Fraud_Detection%20.webp" alt="Computer Security for Criminal Justice" style="width: auto; height: 150px; float: right; margin-left: 15%; margin-right: 15%;"/></p>
+                            <p>The scenario developed to discuss fraud detection is based on the analysis of credit card transactions that appear on a credit card bill. It is a small sample but should be illustrative of the types of analysis possible without involving the development of complex transactions or algorithms.
+                                The data created includes multiple transactions that may appear on a credit card statement. This data was generated and uploaded to ChatGPT for analysis. Fictional data was used since ChatGPT is a public system, and the data uploaded can be accessible by others.</p>
+                            <br>
+
+                            <!-- Table section -->
+                            <section class="mt-4">
+                                <h3>Data set</h3>
+
+                                <table border="1">
+                                    <tr>
+                                        <th>Card Holder Name</th>
+                                        <th>Vendor</th>
+                                        <th>Date</th>
+                                        <th>Purchase Amount</th>
+                                        <th>City</th>
+                                        <th>State</th>
+                                        <th>Zip</th>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Tijuana Flats</td>
+                                        <td>8/1/2024</td>
+                                        <td>15.86</td>
+                                        <td>Daytona Beach</td>
+                                        <td>FL</td>
+                                        <td>32114</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>WaWa</td>
+                                        <td>8/1/2024</td>
+                                        <td>22.47</td>
+                                        <td>Daytona Beach</td>
+                                        <td>FL</td>
+                                        <td>32114</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Publix</td>
+                                        <td>8/2/2024</td>
+                                        <td>23.45</td>
+                                        <td>Sanford</td>
+                                        <td>FL</td>
+                                        <td>32773</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Jimmy Hula's</td>
+                                        <td>8/3/2024</td>
+                                        <td>16.86</td>
+                                        <td>Lake Mary</td>
+                                        <td>FL</td>
+                                        <td>32746</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>WaWa</td>
+                                        <td>8/5/2024</td>
+                                        <td>27.89</td>
+                                        <td>Sanford</td>
+                                        <td>FL</td>
+                                        <td>32773</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Publix</td>
+                                        <td>8/6/2024</td>
+                                        <td>95.30</td>
+                                        <td>Sanford</td>
+                                        <td>FL</td>
+                                        <td>32773</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Publix</td>
+                                        <td>8/7/2024</td>
+                                        <td>37.89</td>
+                                        <td>Sanford</td>
+                                        <td>FL</td>
+                                        <td>32773</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Tijuana Flats</td>
+                                        <td>8/8/2024</td>
+                                        <td>9.99</td>
+                                        <td>Daytona Beach</td>
+                                        <td>FL</td>
+                                        <td>32114</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>WaWa</td>
+                                        <td>8/9/2024</td>
+                                        <td>31.56</td>
+                                        <td>Daytona Beach</td>
+                                        <td>FL</td>
+                                        <td>32114</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Jimmy Hula's</td>
+                                        <td>8/10/2024</td>
+                                        <td>19.99</td>
+                                        <td>Lake Mary</td>
+                                        <td>FL</td>
+                                        <td>32746</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Publix</td>
+                                        <td>8/12/2024</td>
+                                        <td>45.67</td>
+                                        <td>Sanford</td>
+                                        <td>FL</td>
+                                        <td>32773</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>WaWa</td>
+                                        <td>8/13/2024</td>
+                                        <td>24.13</td>
+                                        <td>Sanford</td>
+                                        <td>FL</td>
+                                        <td>32773</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Jimmy Hula's</td>
+                                        <td>8/14/2024</td>
+                                        <td>30.55</td>
+                                        <td>Lake Mary</td>
+                                        <td>FL</td>
+                                        <td>32746</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>WaWa</td>
+                                        <td>8/15/2024</td>
+                                        <td>33.22</td>
+                                        <td>Valdosta</td>
+                                        <td>GA</td>
+                                        <td>31601</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Publix</td>
+                                        <td>8/16/2024</td>
+                                        <td>52.10</td>
+                                        <td>Sanford</td>
+                                        <td>FL</td>
+                                        <td>32773</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>WaWa</td>
+                                        <td>8/16/2024</td>
+                                        <td>27.89</td>
+                                        <td>Columbus</td>
+                                        <td>GA</td>
+                                        <td>31906</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Tijuana Flats</td>
+                                        <td>8/17/2024</td>
+                                        <td>8.50</td>
+                                        <td>Daytona Beach</td>
+                                        <td>FL</td>
+                                        <td>32114</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>WaWa</td>
+                                        <td>8/17/2024</td>
+                                        <td>33.22</td>
+                                        <td>Daytona Beach</td>
+                                        <td>FL</td>
+                                        <td>32114</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Jimmy Hula's</td>
+                                        <td>8/18/2024</td>
+                                        <td>25.16</td>
+                                        <td>Lake Mary</td>
+                                        <td>FL</td>
+                                        <td>32746</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Publix</td>
+                                        <td>8/19/2024</td>
+                                        <td>63.25</td>
+                                        <td>Sanford</td>
+                                        <td>FL</td>
+                                        <td>32773</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>WaWa</td>
+                                        <td>8/20/2024</td>
+                                        <td>25.91</td>
+                                        <td>Valdosta</td>
+                                        <td>GA</td>
+                                        <td>31906</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Jimmy Hula's</td>
+                                        <td>8/21/2024</td>
+                                        <td>14.30</td>
+                                        <td>Lake Mary</td>
+                                        <td>FL</td>
+                                        <td>32746</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>WaWa</td>
+                                        <td>8/21/2024</td>
+                                        <td>27.89</td>
+                                        <td>Sanford</td>
+                                        <td>FL</td>
+                                        <td>32773</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>WaWa</td>
+                                        <td>8/21/2024</td>
+                                        <td>26.23</td>
+                                        <td>Columbus</td>
+                                        <td>GA</td>
+                                        <td>31601</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Publix</td>
+                                        <td>8/22/2024</td>
+                                        <td>71.40</td>
+                                        <td>Sanford</td>
+                                        <td>FL</td>
+                                        <td>32773</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Tijuana Flats</td>
+                                        <td>8/24/2024</td>
+                                        <td>15.86</td>
+                                        <td>Daytona Beach</td>
+                                        <td>FL</td>
+                                        <td>32114</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Publix</td>
+                                        <td>8/25/2024</td>
+                                        <td>84.99</td>
+                                        <td>Sanford</td>
+                                        <td>FL</td>
+                                        <td>32773</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>WaWa</td>
+                                        <td>8/27/2024</td>
+                                        <td>31.56</td>
+                                        <td>Daytona Beach</td>
+                                        <td>FL</td>
+                                        <td>32114</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Publix</td>
+                                        <td>8/29/2024</td>
+                                        <td>28.75</td>
+                                        <td>Sanford</td>
+                                        <td>FL</td>
+                                        <td>32773</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Pizza Hut</td>
+                                        <td>8/30/2024</td>
+                                        <td>60.00</td>
+                                        <td>Shenyang</td>
+                                        <td>China</td>
+                                        <td>110000</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Jimmy Hula's</td>
+                                        <td>8/31/2024</td>
+                                        <td>8.50</td>
+                                        <td>Lake Mary</td>
+                                        <td>FL</td>
+                                        <td>32746</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Publix</td>
+                                        <td>8/31/2024</td>
+                                        <td>55.60</td>
+                                        <td>Sanford</td>
+                                        <td>FL</td>
+                                        <td>32773</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>WaWa</td>
+                                        <td>8/31/2024</td>
+                                        <td>34.22</td>
+                                        <td>Sanford</td>
+                                        <td>FL</td>
+                                        <td>32773</td>
+                                    </tr>
+                                </table>
+                            </section>
+
+                            <!-- ChatGPT Interaction Section -->
+                            <section class="mt-4">
+                                <h3>ChatGPT Request</h3>
+                                <p><strong>The following request was entered into ChatGPT:</strong></p>
+                                <p class="highlight">Based on the information provided can you provide a list of transactions that are anomalies? Factor out records that occur within 300 miles of each other.</p>
+
+                                <p><strong>ChatGPT response:</strong></p>
+                                <div class="highlight">
+                                    <p>
+                                        To identify anomalous transactions based on location, we need to factor out records that occur within 300 miles of each other.
+                                        Transactions that occur farther than 300 miles apart within a short time frame can be considered anomalies.
+                                    </p>
+
+                                    <h4>Steps to Identify Anomalies:</h4>
+                                    <ol>
+                                        <li><strong>Identify Locations:</strong> Group transactions based on geographical proximity.</li>
+                                        <li><strong>Compare Dates and Locations:</strong> Check if transactions happen within a short time but involve distant locations (more than 300 miles apart).</li>
+                                    </ol>
+
+                                    <h4>Key Locations:</h4>
+                                    <ul>
+                                        <li>Daytona Beach, FL</li>
+                                        <li>Sanford, FL</li>
+                                        <li>Lake Mary, FL</li>
+                                        <li>Valdosta, GA</li>
+                                        <li>Columbus, GA</li>
+                                        <li>Shenyang, China <em>(definitely an outlier)</em></li>
+                                    </ul>
+
+                                    <h4>Transactions Likely to Be Anomalies:</h4>
+                                    <p>
+                                        <strong>August 15, 2024 – WaWa (Valdosta, GA 31601)</strong> <br>
+                                        &rarr; <strong>August 16, 2024 – WaWa (Columbus, GA 31906)</strong> <br>
+                                        These two locations (Valdosta and Columbus, GA) are more than 300 miles apart but occur within a day. This is suspicious.
+                                    </p>
+                                    <p>
+                                        <strong>August 20, 2024 – WaWa (Valdosta, GA 31906)</strong> <br>
+                                        &rarr; <strong>August 21, 2024 – WaWa (Columbus, GA 31601)</strong> <br>
+                                        Similarly, Valdosta and Columbus (GA) transactions occur within a day, which seems like an anomaly.
+                                    </p>
+                                    <p>
+                                        <strong>August 30, 2024 – Pizza Hut (Shenyang, China 110000)</strong> <br>
+                                        &rarr; Transactions before and after this date happen in Florida and Georgia, making this transaction a significant anomaly,
+                                        as China is much farther than 300 miles from these locations.
+                                    </p>
+
+                                    <h4>Summary of Anomalies:</h4>
+                                    <ul>
+                                        <li>August 15, 2024 – Valdosta, GA</li>
+                                        <li>August 16, 2024 – Columbus, GA</li>
+                                        <li>August 20, 2024 – Valdosta, GA</li>
+                                        <li>August 21, 2024 – Columbus, GA</li>
+                                        <li>August 30, 2024 – Shenyang, China</li>
+                                    </ul>
+                                </div>
+                                <br>
+
+                                <p>These transactions are flagged as anomalies based on distance. Would you like a more detailed breakdown or additional analysis?</p>
+                                <p><strong>The modified query was entered into ChatGPT:</strong></p>
+                                <p class="highlight">Can you reanalyze this data and factor out transactions that occur in close time proximity and can be reached within a day’s drive?</p>
+
+                                <p><strong>ChatGPT response:</strong></p>
+                                <div class="highlight">
+                                    <p>
+                                        Let's reanalyze the data while factoring out transactions that can be reasonably reached within a day's drive, which typically would include locations within approximately 300-400 miles.
+                                    </p>
+
+                                    <h4>Locations Breakdown:</h4>
+                                    <ul>
+                                        <li>Daytona Beach, FL (32114)</li>
+                                        <li>Sanford, FL (32773)</li>
+                                        <li>Lake Mary, FL (32746)</li>
+                                        <li>Valdosta, GA (31601) – About 200 miles from Daytona Beach, within a day's drive.</li>
+                                        <li>Columbus, GA (31906) – About 300 miles from Valdosta, GA; could also be within a day's drive from Daytona Beach, FL.</li>
+                                        <li>Shenyang, China (110000) – Clearly outside the scope of a day's drive from any of the U.S. locations.</li>
+                                    </ul>
+
+                                    <h4>Analysis:</h4>
+                                    <p>
+                                        <strong>1. August 15, 2024 – WaWa (Valdosta, GA 31601)</strong><br>
+                                        &rarr; <strong>August 16, 2024 – WaWa (Columbus, GA 31906)</strong><br>
+                                        These two transactions are within a day's drive (approx. 3-4 hours apart). These could be regular transactions and are not anomalies.
+                                    </p>
+                                    <p>
+                                        <strong>2. August 20, 2024 – WaWa (Valdosta, GA 31601)</strong><br>
+                                        &rarr; <strong>August 21, 2024 – WaWa (Columbus, GA 31906)</strong><br>
+                                        Similar situation: these two locations are within driving distance. These are also not considered anomalies.
+                                    </p>
+                                    <p>
+                                        <strong>3. August 30, 2024 – Pizza Hut (Shenyang, China 110000)</strong><br>
+                                        This is the standout anomaly, as travel to China from Florida or Georgia would take significantly more than a day's drive (or even a direct flight). No transactions around this date suggest that Michael Johnson could have traveled back to the U.S. on the same day. Therefore, this transaction is highly anomalous.
+                                    </p>
+
+                                    <h4>Final List of Anomalies:</h4>
+                                    <p>
+                                        After considering proximity and time, only one transaction stands out as a significant anomaly:
+                                    </p>
+                                    <ul>
+                                        <li>August 30, 2024 – Pizza Hut (Shenyang, China 110000)</li>
+                                    </ul>
+                                </div>
+                            </section>
+                            <br>
+
+                            <h3>Conclusion</h3>
+                            <!--                                <p><img src="../images/gpt_logo.png" alt="Computer Security for Criminal Justice" style="width: auto; height: 150px; float: right; margin-left: 15%; margin-right: 15%;"/></p>-->
+                            <p>ChatGPT analyzed a list of transactions, providing a breakdown by activity and reasonableness. It factored in travel times and accounted for this in the analysis, even incorporating possible air travel as an option. As a result, it identified a transaction that was reasonable and recommended for review.</p>
+                            <p>This simple use case underscores the possibilities of ease of use and analysis. It demonstrates the power of AI to work with data and generate useful and insightful analysis that aids investigations. A query was generated in question form and run against a sample dataset. AI processed the supplied data and identified transactions based on location and activity context. ChatGPT modeled the distance between each location without user guidance and expanded its analysis to include air travel times. It also identified possible false positives and provided an analysis, all without requiring formal programming or database knowledge.</p>
+                            <p>AI offers law enforcement a tool that is easy to learn and delivers investigative results. The AI-generated analysis serves as a strong starting point for investigations, helping to identify suspicious activity while filtering out false positives based on user-supplied criteria. The response provides insightful, human-readable analysis, offering an excellent foundation for further investigation.</p>
+                            <br>
+
+                            <h3>Takeaways</h3>
+                            <ul>
+                                <li>A query was generated in English and applied to the data set.</li>
+                                <li>No need arose to incorporate regular expressions, a programming language, or database skills.</li>
+                                <li>The AI engine quickly assembled a response with insightful analysis.</li>
+                                <li>The initial results were accurate but could be refined further.</li>
+                                <li>A secondary query was made to further refine the results.</li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+<script src="../js/navBar.js"></script>
+</body>
+</html>

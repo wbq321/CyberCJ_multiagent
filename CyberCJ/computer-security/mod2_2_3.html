@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0" style="width: 100%; height: 100%;">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 2.0-->
+                    <div  class="bg-light border rounded-3 p-3">
+                        <h3>Module 2: Computer Security</h3>
+                        <!-- Module 2.2.3 -->
+                        <div id="2_2_3" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">2.2.3 Firewalls</span>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    Monitoring and managing firewalls is a vital component of a proper cybersecurity posture, 
+                                    particularly for safeguarding the networks and computers used in sensitive sectors like criminal justice. 
+                                    Firewalls act as the first line of defense, controlling incoming and outgoing network traffic based on predetermined security rules. 
+                                    This includes not only blocking unauthorized access but also managing data packets that might carry potential threats. 
+                                    Effective firewall management involves regular updates and audits to ensure that all security protocols are up to date and functioning as intended.
+                                </p>
+                                <div style="float: right; margin-left: 5%; margin-right: 5%;">
+                                    <p><a class="navBar-target" href="https://www.softwaretestinghelp.com/firewall-security/">
+                                            <h4>A Complete Guide to Firewall: How to Build A Secure Networking System</h4>
+                                            <img src="https://www.softwaretestinghelp.com/wp-content/qa/uploads/2018/07/firewall-img.png" alt="Defending Against Malware" style="width: auto; height: 400px; float: right; margin-left: 5%; margin-right: 5%;"/>
+                                        </a>
+                                    </p>
+                                </div>
+                                <h3>Personal Firewalls</h3>
+                                <ul>
+                                    <li><b>Function:</b><br>
+                                        Personal firewalls act as packet filters that control the traffic entering or exiting a personal computer.
+                                    </li>
+                                    <li><b>Application Firewalls: These </b><br>
+                                        These are typically pre-installed on modern operating systems and are designed to allow traffic through only for specific, approved programs. 
+                                        This helps to prevent an infected computer from spreading malware to other machines.
+                                    </li>
+                                    <li><b>Traffic Control: </b><br>
+                                        By default, these firewalls block all inbound traffic unless it has been explicitly allowed, while generally permitting outbound traffic unless specifically blocked.
+                                    </li>
+                                </ul>
+                                <h3>Network Firewalls</h3>
+                                <ul>
+                                    <li><b>Hardware-Based: </b><br>
+                                        Network firewalls are usually hardware devices placed at the edge of a network.
+                                    </li>
+                                    <li><b>Scope: </b><br>
+                                        They are designed to protect the entire network by inspecting all incoming and outgoing traffic to decide whether to deny or allow it.
+                                    </li>
+                                    <li><b>Location: </b><br>
+                                        Often integrated into the routers provided by Internet Service Providers (ISP), they serve as the first line of defense for all devices connected to the network.
+                                    </li>
+                                </ul>
+                                <h3>Best Practices for Firewall Management</h3>
+                                <ul>
+                                    <li><b>Regular Inspections:</b><br>
+                                        Periodically check firewalls to ensure they are active and functioning as expected. 
+                                        This includes verifying that no unauthorized changes have been made to the rules—a common target for malware designed to weaken network defenses.
+                                    </li>
+                                    <li><b>Dual Use: </b><br>
+                                        For enhanced security, it is best to use both application and network firewalls. 
+                                        This layered approach helps to secure individual machines as well as the entire network, contributing to a defense-in-depth approach to cybersecurity.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    <script src="../js/navBar.js"></script>
+</body>
+</html>

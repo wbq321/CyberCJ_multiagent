@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+    <!--chatbot-->
+    <link rel="stylesheet" href="../CyberCJ/css/chatbot.css">
+
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <style>
+            body,
+            html {
+                border-radius: 5px;
+            }
+
+            body.thumb {
+                transform: scale(0.4);
+                box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+            }
+
+            main {
+                min-height: 80vh;
+            }
+
+            [class*='container'] {
+
+                background-clip: content-box;
+            }
+
+            .row [class*='col'] {
+                background-color: #efefef;
+                background-clip: content-box;
+            }
+
+            .nav-item {
+                background-color: #eeeeff;
+                background-clip: content-box;
+            }
+
+
+            .nav-link {
+                color: #000;
+                transition: color 0.3s ease;
+            }
+
+            .nav-link:hover {
+                color: #0c7c3e;
+            }
+
+            header {
+                background-color: #0a5640; /* NDSU Green */
+                color: white;
+                padding: 10px 20px; /* Increased padding */
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+
+            .dropdown-submenu .dropdown-menu {
+                top: 0;
+                left: 100%; /* Position to the right of the parent item */
+                margin-top: -1px; /* Align the submenu exactly with the parent */
+                position: absolute;
+            }
+
+            .dropdown-submenu:hover > .dropdown-menu {
+                display: block;
+            }
+
+
+        </style>
+
+        <header class="py-3 mb-4 border-bottom shadow">
+            <div class="container-fluid align-items-center d-flex">
+                <div class="flex-shrink-1">
+                    <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none">
+                        <i class="bi bi-bootstrap fs-2 text-dark"></i>
+                    </a>
+                </div>
+                <!-- Header Nav Bar -->
+                <div class="flex-grow-1 d-flex justify-content-center align-items-center" >
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="index.html" style="font-size: 2em;">Cyber Challenges for Criminal Justice</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item bg-dark">
+                                        <a class="nav-link active" aria-current="page" href="../index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item dropdown bg-dark">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" role="button"
+                                           data-bs-toggle="dropdown" aria-expanded="false">
+                                            Scenarios
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink" data-bs-auto-close="outside">
+                                            <li class="dropdown-submenu">
+                                                <a class="dropdown-item dropdown-toggle" href="#" id="navbarDropdownSubMenuLink" role="button"
+                                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Data Loss and Misuse
+                                                </a>
+                                                <!-- Submenu items for Scenario 1 -->
+                                                <ul class="dropdown-menu dropdown-submenu-right" aria-labelledby="navbarDropdownSubMenuLink">
+                                                    <li><a class="dropdown-item navBar-target" href="0">Introduction</a></li>
+                                                    <li><a class="dropdown-item navBar-target" href="1">Example</a></li>
+                                                    <li><a class="dropdown-item navBar-target" href="2">References and Resources</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                                <a class="dropdown-item dropdown-toggle" href="#" id="navbarDropdownSubMenuLink" role="button"
+                                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Segregation of Duties
+                                                </a>
+                                                <!-- Submenu items for Computer Security -->
+                                                <ul class="dropdown-menu dropdown-submenu-right" aria-labelledby="navbarDropdownSubMenuLink">
+                                                    <li><a class="dropdown-item navBar-target" href="3">Introduction</a></li>
+                                                    <li><a class="dropdown-item navBar-target" href="4">Example</a></li>
+                                                    <li><a class="dropdown-item navBar-target" href="5">Notes</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="dropdown-submenu">
+                                                <a class="dropdown-item dropdown-toggle" href="#" id="navbarDropdownSubMenuLink" role="button"
+                                                   data-bs-toggle="dropdown" aria-expanded="false">
+                                                    Fraud Detection
+                                                </a>
+                                                <!-- Submenu items for Internet Security -->
+                                                <ul class="dropdown-menu dropdown-submenu-right" aria-labelledby="navbarDropdownSubMenuLink">
+                                                    <li><a class="dropdown-item navBar-target" href="6">Introduction</a></li>
+                                                    <li><a class="dropdown-item navBar-target" href="7">Example</a></li>
+                                                </ul>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="nav-item bg-dark"><a href="contact.html" class="nav-link navBar-target">Contact Us</a></li>
+                                    <li class="nav-item bg-dark">
+                                        <a href="../multi_agent_chat.html" class="nav-link" target="_blank">
+                                            🤖 CyberCJ Tutor
+                                        </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                <!-- Side Nav Menu -->
+                <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3" >
+                    <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
+                        <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                            <!-- Module 1 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module1Submenu">
+                                    <i class="fas fa-user-secret"></i>
+                                    <span class="d-none d-sm-inline">Scenario 1: Data Loss and Misuse</span>
+                                </a>
+                                <div class="collapse" id="module1Submenu">
+                                    <ul class="nav flex-column" style="margin-left: 15px;">
+                                        <li class="nav-item"><a href="0" class="nav-link navBar-target">Introduction</a></li>
+                                        <li class="nav-item"><a href="1" class="nav-link navBar-target">Example</a></li>
+                                        <li class="nav-item"><a href="2" class="nav-link navBar-target">References and Resources</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Module 2 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module2Submenu">
+                                    <i class="fas fa-columns"></i>
+                                    <span class="d-none d-sm-inline">Scenario 2: Segregation of Duties</span>
+                                </a>
+                                <div class="collapse" id="module2Submenu">
+                                    <ul class="nav flex-column" style="margin-left: 15px;">
+                                        <li class="nav-item"><a href="3" class="nav-link navBar-target" >Introduction</a></li>
+                                        <li class="nav-item"><a href="4" class="nav-link navBar-target" >Example</a></li>
+                                        <li class="nav-item"><a href="5" class="nav-link navBar-target" >Notes</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Module 3 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module3Submenu">
+                                    <i class="fas fa-eye"></i>
+                                    <span class="d-none d-sm-inline">Scenario 3: Fraud Detection</span>
+                                </a>
+                                <div class="collapse" id="module3Submenu">
+                                    <ul class="nav flex-column" style="margin-left: 15px;">
+                                        <li class="nav-item"><a href="6" class="nav-link navBar-target">Introduction</a></li>
+                                        <li class="nav-item"><a href="7" class="nav-link navBar-target">Example</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                <main class="col h-98" style="width: 98vw;" >
+                    <iframe id="module" src="Scenario1/intro1.html" frameborder="0" style="height: 100%; width: 100%;"></iframe>
+                </main>
+                <div class="shadow-lg" style="position: fixed; bottom: 0; background-color: white;">
+                    <center>
+                        <button id="back" class="btn btn-primary btn-lg" style="background-color: #0a5640;margin-right: 20%; "> <b>Back</b> </button>
+                        <button id="next" class="btn btn-primary btn-lg" style="background-color: #0a5640;" ><b>Next</b> </button>
+                    </center>
+                </div>
+            </div>
+        </div>
+    </div>
+            <!-- Chatbot Widget Container -->
+    <div id="chatbot-widget">
+        <div id="chatbot-header">
+            <span>CyberCJ Bot</span>
+            <button id="chatbot-close">-</button>
+        </div>
+        <div id="chatbot-messages">
+            <!-- Messages will appear here -->
+            <div class="message bot-message">Hello! How can I help you today?</div>
+        </div>
+        <div id="chatbot-input-container">
+            <input type="text" id="chatbot-input" placeholder="Ask a question...">
+            <button id="chatbot-send">Send</button>
+        </div>
+    </div>
+    <button id="chatbot-toggle">Chat</button> <!-- Button to open/close widget -->
+<script src="js/navBar.js"></script>
+<script src="../CyberCJ/js/chatbot.js"></script>
+</body>
+</html>

@@ -1,0 +1,243 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            padding: 20px;
+        }
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 2.0-->
+                    <div  class="bg-light border rounded-3 p-3">
+                        <h3>Scenario 1: Data Loss and Misuse</h3>
+                        <!-- Module 2.0.0 (Introduction) -->
+                        <div id="2_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Example</span>
+                            </div>
+                            <div class="card-body">
+<!--                                <h3>Introduction</h3>-->
+                                <p><img src="../images/gpt_logo.png" alt="Computer Security for Criminal Justice" style="width: auto; height: 150px; float: right; margin-left: 15%; margin-right: 15%;"/></p>
+                                <p>A letter was generated using ChatGPT with user-defined “sensitive” data inserted in the “included the following” section. The goal was to test ChatGPT's ability to identify sensitive data and generate a response suitable for alerts or audit log capture.</p>
+                                <br>
+
+                                <!-- Letter Section -->
+                                <section class="mt-4">
+                                    <h3>Letter</h3>
+                                    <div class="highlight">
+                                        <p>Dear Samuel,</p>
+                                        <p>I hope this letter finds you well. I wanted to extend my heartfelt thanks for inviting me to your party celebration on July 1st.</p>
+                                        <p>I am genuinely honored to have been included in such a wonderful occasion. Your thoughtful invitation was much appreciated, and I’m truly looking forward to the event. It’s always a pleasure to catch up with friends and celebrate together, and I’m excited to see what you have planned for the evening.</p>
+                                        <p>I have also included the following:</p>
+                                        <ul>
+                                            <li>Name, Date of Birth, Personal Identifier</li>
+                                            <li>Liam Thompson, 1/12/1954, D7E8F9G0H1I2J3K4L</li>
+                                            <li>Sophia Reynolds, 3/23/1978, M5N6O7P8Q9R0S1T2U</li>
+                                            <li>Ethan Mitchell, 6/5/1982, V3W4X5Y6Z7A8B9C0D</li>
+                                            <li>Ava Parker, 9/17/1969, E1F2G3H4I5J6K7L8M</li>
+                                            <li>Noah Carter, 2/8/1995, N9O0P1Q2R3S4T5U6V</li>
+                                            <li>Olivia Hayes, 7/30/1987, W7X8Y9Z0A1B2C3D4E</li>
+                                            <li>Jackson Lee, 10/14/1948, F5G6H7I8J9K0L1M2N</li>
+                                            <li>Mia Davis, 4/22/1990, O3P4Q5R6S7T8U9V0W</li>
+                                            <li>Lucas Robinson, 11/6/1974, X1Y2Z3A4B5C6D7E8F</li>
+                                            <li>Isabella Wilson, 8/19/1961, G9H0I1J2K3L4M5N6O</li>
+                                        </ul>
+                                        <p>Please let me know if there is anything I can contribute to the celebration or if there are any details, I should be aware of beforehand.</p>
+                                        <p>Once again, thank you for thinking of me and including me in your special day. Looking forward to seeing you on July 1st!</p>
+                                        <p>Warmest regards,<br>Alex</p>
+                                    </div>
+                                </section>
+
+                                <!-- ChatGPT Interaction Section -->
+                                <section class="mt-4">
+                                    <h3>ChatGPT Request</h3>
+                                    <p><strong>The following request was entered into ChatGPT:</strong></p>
+                                    <p class="highlight">Can ChatGPT identify the following data structure: alphabetical characters, date, and string of alternating numeric and alphabetic characters in the following text?</p>
+
+                                    <p><strong>The following response was generated by ChatGPT:</strong></p>
+                                    <div class="highlight">
+                                        <p>In the provided text, the following data structures were identified:</p>
+                                        <h4>1. Alphabetical Characters (Names):</h4>
+                                        <ul>
+                                            <li>Liam Thompson</li>
+                                            <li>Sophia Reynolds</li>
+                                            <li>Ethan Mitchell</li>
+                                            <li>Ava Parker</li>
+                                            <li>Noah Carter</li>
+                                            <li>Olivia Hayes</li>
+                                            <li>Jackson Lee</li>
+                                            <li>Mia Davis</li>
+                                            <li>Lucas Robinson</li>
+                                            <li>Isabella Wilson</li>
+                                        </ul>
+
+                                        <h4>2. Dates (Date of Birth or Event Dates):</h4>
+                                        <ul>
+                                            <li>July 1st (mentioned twice for the event)</li>
+                                            <li>1/12/1954 (Liam Thompson)</li>
+                                            <li>3/23/1978 (Sophia Reynolds)</li>
+                                            <li>6/5/1982 (Ethan Mitchell)</li>
+                                            <li>9/17/1969 (Ava Parker)</li>
+                                            <li>2/8/1995 (Noah Carter)</li>
+                                            <li>7/30/1987 (Olivia Hayes)</li>
+                                            <li>10/14/1948 (Jackson Lee)</li>
+                                            <li>4/22/1990 (Mia Davis)</li>
+                                            <li>11/6/1974 (Lucas Robinson)</li>
+                                            <li>8/19/1961 (Isabella Wilson)</li>
+                                        </ul>
+
+                                        <h4>3. Strings of Alternating Numeric and Alphabetic Characters (Personal Identifiers):</h4>
+                                        <ul>
+                                            <li>D7E8F9G0H1I2J3K4L (Liam Thompson)</li>
+                                            <li>M5N6O7P8Q9R0S1T2U (Sophia Reynolds)</li>
+                                            <li>V3W4X5Y6Z7A8B9C0D (Ethan Mitchell)</li>
+                                            <li>E1F2G3H4I5J6K7L8M (Ava Parker)</li>
+                                            <li>N9O0P1Q2R3S4T5U6V (Noah Carter)</li>
+                                            <li>W7X8Y9Z0A1B2C3D4E (Olivia Hayes)</li>
+                                            <li>F5G6H7I8J9K0L1M2N (Jackson Lee)</li>
+                                            <li>O3P4Q5R6S7T8U9V0W (Mia Davis)</li>
+                                            <li>X1Y2Z3A4B5C6D7E8F (Lucas Robinson)</li>
+                                            <li>G9H0I1J2K3L4M5N6O (Isabella Wilson)</li>
+                                        </ul>
+
+                                        <p><strong>Summary:</strong></p>
+                                        <ul>
+                                            <li><strong>Alphabetical Characters:</strong> Names of the individuals.</li>
+                                            <li><strong>Dates:</strong> The date of birth for each person, and the event date "July 1st."</li>
+                                            <li><strong>Alternating Numeric and Alphabetic Characters:</strong> Personal identifiers (strings that alternate between numbers and letters).</li>
+                                        </ul>
+                                    </div>
+                                    <br>
+
+                                    <p><strong>The modified query was entered into ChatGPT:</strong></p>
+                                    <p class="highlight">Can chatgpt identify the following data structure alphabetical characters, date, and string of alternating numeric and alphabetic characters in the following text? Can the output be formatted as records in JSON format?</p>
+
+                                    <p><strong>The following response was generated by ChatGPT:</strong></p>
+                                    <div class="highlight">
+                                        <p><strong>Identified data in JSON format:</strong></p>
+                                        <pre><code>{
+  "records": [
+    {
+      "name": "Liam Thompson",
+      "date_of_birth": "1/12/1954",
+      "personal_identifier": "D7E8F9G0H1I2J3K4L"
+    },
+    {
+      "name": "Sophia Reynolds",
+      "date_of_birth": "3/23/1978",
+      "personal_identifier": "M5N6O7P8Q9R0S1T2U"
+    },
+    {
+      "name": "Ethan Mitchell",
+      "date_of_birth": "6/5/1982",
+      "personal_identifier": "V3W4X5Y6Z7A8B9C0D"
+    },
+    {
+      "name": "Ava Parker",
+      "date_of_birth": "9/17/1969",
+      "personal_identifier": "E1F2G3H4I5J6K7L8M"
+    },
+    {
+      "name": "Noah Carter",
+      "date_of_birth": "2/8/1995",
+      "personal_identifier": "N9O0P1Q2R3S4T5U6V"
+    },
+    {
+      "name": "Olivia Hayes",
+      "date_of_birth": "7/30/1987",
+      "personal_identifier": "W7X8Y9Z0A1B2C3D4E"
+    },
+    {
+      "name": "Jackson Lee",
+      "date_of_birth": "10/14/1948",
+      "personal_identifier": "F5G6H7I8J9K0L1M2N"
+    },
+    {
+      "name": "Mia Davis",
+      "date_of_birth": "4/22/1990",
+      "personal_identifier": "O3P4Q5R6S7T8U9V0W"
+    },
+    {
+      "name": "Lucas Robinson",
+      "date_of_birth": "11/6/1974",
+      "personal_identifier": "X1Y2Z3A4B5C6D7E8F"
+    },
+    {
+      "name": "Isabella Wilson",
+      "date_of_birth": "8/19/1961",
+      "personal_identifier": "G9H0I1J2K3L4M5N6O"
+    }
+  ]
+}</code></pre>
+                                    </div>
+                                </section>
+                                <br>
+
+                                <h3>Conclusion</h3>
+<!--                                <p><img src="../images/gpt_logo.png" alt="Computer Security for Criminal Justice" style="width: auto; height: 150px; float: right; margin-left: 15%; margin-right: 15%;"/></p>-->
+                                <p>This is impressive. With a couple of queries, ChatGPT was able to analyze a document and provide output that can be sent to another process, such as an alert or audit log. This scenario demonstrates an initial step in exploring how AI can be used to identify sensitive data that may be stored in unexpected locations. It highlights AI's potential in improving usability for end users and its ability to detect data patterns indicating sensitive information.</p>
+                                <p>The process was intuitive, allowing queries in sentence form that produced actionable results without requiring knowledge of a programming language. It was quick to generate the query and obtain feedback. The flexibility of adjusting queries based on the results also made evolving the use case seamless. The deliverable produced was actionable and met the required needs swiftly. AI is proving to be a powerful tool and resource that can help mitigate the risk of data loss and misuse within an organization, and this is only scratching the surface of its capabilities.</p>
+                                <br>
+
+                                <h3>Takeaways</h3>
+                                <ul>
+                                    <li>Create a file with text and add sensitive data that is broken up to see if ChatGPT can be used to identify data that is being hidden.</li>
+                                    <li>Try creating other types of sensitive data to see if it can pick up on it as well. (Please note that you should not use real sensitive data).</li>
+                                    <li>Try different output formats to see what ChatGPT can create.</li>
+                                </ul>
+
+
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+<script src="../js/navBar.js"></script>
+</body>
+</html>

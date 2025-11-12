@@ -1,0 +1,292 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+    <style>
+        .hover-image {
+          position: absolute;
+          display: none;
+          border: 1px solid black ;
+          background-color: white;
+          z-index: 1000; /* Make sure it's on top */
+        }
+      </style>
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0" style="width: 100%; height: 100%;">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 2.0-->
+                    <div  class="bg-light border rounded-3 p-3">
+                        <h3>Module 4: Computer Privacy</h3>
+                        <!-- Module 4 references -->
+                        <div class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">References and Resources</span>
+                            </div>
+                            <div class="card-body" style="max-width: 60em; ">
+                                <section>
+                                    <h2>References</h2>
+                                    <!--
+                                    What are Cookies? (2023, April 19). Usa.kaspersky.com. https://usa.kaspersky.com/resource-center/definitions/cookies-->
+                                    <ul>
+                                        
+                                            <!--cryptology. (n.d.). Cs.lmu.edu. https://cs.lmu.edu/~ray/notes/cryptology/DevGlan. (n.d.). -->
+                                            <li>
+                                                Anon. (n.d.). <em>Cryptology</em> 
+                                                <a href="https://cs.lmu.edu/~ray/notes/cryptology/DevGlan" target="_blank">https://cs.lmu.edu/~ray/notes/cryptology/DevGlan</a> 
+                                            </li>
+                                            <br>
+                                            <li>
+                                            Ciampa, M. D. (2024). <em>Security awareness: Applying practical cybersecurity in your world</em>. Cengage. <br>
+                                            <a href="https://faculty.cengage.com/titles/9780357883761" target="_blank">https://faculty.cengage.com/titles/9780357883761
+                                            </a>
+                                        </li>
+                                        <br>
+
+                                        
+                                            
+                                                <!--Encrypt and Decrypt Text or String Online. Devglan. https://www.devglan.com/online-tools/text-encryption-decryptionEnd to End Encryption (E2EE) in Computer Networks. (2018, October 15). -->
+                                                <li>
+                                                    Devglan. (2018). 
+                                                    <em>End to End Encryption (E2EE) in Computer Networks.</em>. <br> 
+                                                    <a href="https://www.devglan.com/online-tools/text-encryption-decryption" target="_blank">https://www.devglan.com/online-tools/text-encryption-decryption</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <br>
+                                        
+                                            <ul>
+                                                <!--GeeksforGeeks. https://www.geeksforgeeks.org/end-to-end-encryption-e2ee-in-computer-networks/Gillis, A. S. (n.d.).-->
+                                                <li>
+                                                    GeeksforGeeks. (n.d.). 
+                                                    <em>End to End Encryption (E2EE) in Computer Networks</em>. <br>
+                                                    <a href="https://www.geeksforgeeks.org/end-to-end-encryption-e2ee-in-computer-networks/Gillis" target="_blank">https://www.geeksforgeeks.org/end-to-end-encryption-e2ee-in-computer-networks/Gillis</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <br>
+                                        
+                                            <ul>
+                                                <!-- What is a PUP? How to Remove Potentially Unwanted Programs. Security. https://www.techtarget.com/searchsecurity/definition/PUPModular conversion, encoding and encryption online. (n.d.). -->
+                                                <li>
+                                                    Tech Target. (2018). 
+                                                    <em>What is a PUP? How to Remove Potentially Unwanted Programs.</em>. <br>
+                                                    <a href="https://www.techtarget.com/searchsecurity/definition/PUP" target="_blank">https://www.techtarget.com/searchsecurity/definition/PUP</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <br>
+                                       
+                                            <ul>
+                                                <!--Cryptii. https://cryptii.com/SimpliLearn. (2023, March 2). The Ultimate Guide to Symmetric Encryption.-->
+                                                <li>
+                                                    Cryptii. (2023). 
+                                                    <em>The Ultimate Guide to Symmetric Encryption.</em>. <br>
+                                                    <a href="https://cryptii.com/SimpliLearn" target="_blank">https://cryptii.com/SimpliLearn</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <br>
+                                        
+                                            <ul>
+                                                <!--Simplilearn.com. https://www.simplilearn.com/tutorials/cryptography-tutorial/symmetric-encryptionWessler, N. (2019, June 28). -->
+                                                <li>
+                                                    Simplilearn. (2019). 
+                                                    <em>Cryptography</em>. <br>
+                                                    <a href="https://www.simplilearn.com/" target="_blank">https://www.simplilearn.com/</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <br>
+                                       
+                                            <ul>
+                                                <!--The Supreme Court’s Most Consequential Ruling for Privacy in the Digital Age, One Year In | News & Commentary. American Civil Liberties Union. https://www.aclu.org/news/privacy-technology/supreme-courts-most-consequential-ruling-privacy-digital-->
+                                                <li>
+                                                    American Civil Liberties Union, ALCU. (2019). 
+                                                    <em>The Supreme Court’s Most Consequential Ruling for Privacy in the Digital Age, One Year In | News & Commentary.</em>. <br>
+                                                    <a href="https://www.aclu.org/news/privacy-technology/supreme-courts-most-consequential-ruling-privacy-digital" target="_blank">https://www.aclu.org/news/privacy-technology/supreme-courts-most-consequential-ruling-privacy-digital</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                        <br>
+                                        <!--What are Cookies? (2023, April 19). Usa.kaspersky.com. https://usa.kaspersky.com/resource-center/definitions/cookies-->
+                                        <ul>
+                                        <li>
+                                            Kaspersky. (2023). <em>What are Cookies?</em>. <br> 
+                                            <a href="https://usa.kaspersky.com/resource-center/definitions/cookies" target="_blank">https://usa.kaspersky.com/resource-center/definitions/cookies</a> 
+                                        </li>
+                                    </ul>
+                                </section>
+                        
+                                <!-- Technologies Used -->
+                            <!--    <section>
+                                    <h2>Technologies Used</h2>
+                                    <ul>
+                                        <li>Bootstrap - <a href="https://getbootstrap.com/">https://getbootstrap.com/</a></li>
+                                        <li>JQuery - <a href="https://jquery.com/">https://jquery.com/</a></li>
+                                        <li>DataTables - <a href="https://cdnjs.cloudflare.com/">https://cdnjs.cloudflare.com/</a></li>
+                                        <li>Font Awesome - <a href="https://fontawesome.com/">https://fontawesome.com/</a></li>
+                                    </ul>
+                                </section>-->
+                        
+                                <!-- External Content References -->
+                                <section>
+                                    <h2>Media</h2>
+                                    <ul>
+                                        <li>
+                                        <b>Images:</b>
+                                        </li>
+                                            <ul>
+                                                
+                                            <br>
+                                                <li class="hover-trigger" data-img="../images/cryptosystem.png">
+                                                    Anon. (nd). <em>Cryptosystem </em>[Image]. <br> Retrieved from
+                                                    <a href="https://cs.lmu.edu/~ray/notes/cryptology/" target="_blank">https://cs.lmu.edu/~ray/notes/cryptology/</a>
+                                                </li>
+                                                <br>
+                                                <li class="hover-trigger" data-img="../images/E2E.jpg">
+                                                    Geeksforgeeks. (2018). <em>Untitled </em>[Image]. <br> Retrieved from
+                                                    <a href="https://www.geeksforgeeks.org/end-to-end-encryption-e2ee-in-computer-networks/" target="_blank">https://www.geeksforgeeks.org/end-to-end-encryption-e2ee-in-computer-networks/</a>
+                                                </li>
+                                            <br>
+
+                                                    <li class="hover-trigger" data-img="../images/types_of_pups-f.png">
+                                                        Tech Target. (2022). <em>Types of PUPs </em>[Image].   <br> Retrieved from
+                                                        <a href="https://cdn.ttgtmedia.com/rms/onlineimages/types_of_pups-f_mobile.png" target="_blank">https://cdn.ttgtmedia.com/rms/onlineimages/types_of_pups-f_mobile.png</a>
+                                                    </li>
+                                                
+                                                <br>
+                                                <li class="hover-trigger" data-img="../images/cyber-detective.png">
+                                                    GraphicMama. (2016) <em>Detective-searching-man-search-1424831. </em>[Image].   <br> Retrieved from
+                                                    <a href="https://pixabay.com/vectors/detective-searching-man-search-1424831/" target="_blank">https://pixabay.com/vectors/detective-searching-man-search-1424831/</a>
+                                                </li>
+                                                <br>
+                                                <li class="hover-trigger" data-img="../images/CJ-privacy.jpg">
+                                                    Enyeart-Youngblood, Ryan using Adobe Firefly. <em>2024 </em>[Image]. <br>
+                                                    <a href="" target=""></a> 
+                                                </li>
+                                                <br>
+                                                <li class="hover-trigger" data-img="../images/data-theft.png">
+                                                    Shekawat, S. (2022) <em>Cybersecurity-computer-security-6949298. </em>[Image]. <br> Retrieved from 
+                                                    <a href="https://pixabay.com/vectors/cybersecurity-computer-security-6949298/" target="_blank">https://pixabay.com/vectors/cybersecurity-computer-security-6949298/</a> 
+                                                </li>
+                                                <br>
+                                                <!--
+                                                <li class="hover-trigger" data-img="../images/crypto-benefits.png">
+                                                    PixaBay. (?). <em>?? </em>[Image]. <br> Retrieved from
+                                                    <a href="" target="_blank"></a>
+                                                </li>
+                                            -->
+                                               
+                                                
+                                                
+                                                
+                                                                        
+                                                
+                                                
+                                            <br>
+                                                
+                                            </ul>
+                                            <div class="hover-image"></div>
+                                        </li>
+                                        <br>
+                                     <!--   <li>
+                                            <b>AI generated images:</b>
+                                            <ul>
+                                                <li class="hover-trigger" data-img="../images/CJ-comp-sec.jpg">
+                                                        Enyeart-Youngblood, R. using Adobe Firefly. (2024). <em> CJ-comp-sec </em>[Digital image]. Generated image.
+                                                </li>
+                                                <li class="hover-trigger" data-img="../images/CJ-inet-sec.jpg">
+                                                        Enyeart-Youngblood, R. using Adobe Firefly. (2024). <em> CJ-inet-sec </em>[Digital image]. Generated image.
+                                                </li>
+                                                <li class="hover-trigger" data-img="../images/CJ-privacy.jpg">    
+                                                        Enyeart-Youngblood, R. using Adobe Firefly. (2024). <em> CJ-privacy-sec </em>[Digital image]. Generated image.
+                                                </li>
+                                                <li class="hover-trigger" data-img="../images/DataKidnap.png">    
+                                                        Enyeart-Youngblood, R. using Adobe Firefly. (2024). <em> DataKidnap </em>[Digital image]. Generated image.
+                                                </li>
+                                                <li class="hover-trigger" data-img="../images/Eavesdrop.jpg">    
+                                                        Enyeart-Youngblood, R. using Adobe Firefly. (2024). <em> Eavesdrop </em>[Digital image]. Generated image.
+                                                </li>
+                                                <li class="hover-trigger" data-img="../images/Launchpad.jpg">    
+                                                        Enyeart-Youngblood, R. using Adobe Firefly. (2024). <em> Launchpad </em>[Digital image]. Generated image.
+                                                </li>
+                                                <li class="hover-trigger" data-img="../images/malware-defense.jpg">    
+                                                        Enyeart-Youngblood, R. using Adobe Firefly. (2024). <em> Malware-defense </em>[Digital image]. Generated image.
+                                                </li>
+                                                <li class="hover-trigger" data-img="../images/Masquerade.jpg">    
+                                                        Enyeart-Youngblood, R. using Adobe Firefly. (2024). <em> Masquerade </em>[Digital image]. Generated image.
+                                                </li>
+                                                <li class="hover-trigger" data-img="../images/sec-update.jpeg">    
+                                                        Enyeart-Youngblood, R. using Adobe Firefly. (2024). <em> Sec-update </em>[Digital image]. Generated image.
+                                                </li>
+                                                <li class="hover-trigger" data-img="../images/Sidestep.jpg">    
+                                                        Enyeart-Youngblood, R. using Adobe Firefly. (2024). <em> Sidestep </em>[Digital image]. Generated image.
+                                                </li>
+                                            </ul>
+                                        </li>-->
+                                        <li>
+                                            <b>YouTube Videos:</b>
+                                            <ul><br>
+                                                <li>
+                                                    Oracle Mind. (2016, May 1). <em>This is how hackers hack you using simple social engineering </em>[Video]. <br>
+                                                    <a href="https://www.youtube.com/embed/lc7scxvKQOo?si=NhIKGKIa5g8t_LMq" target="_blank">https://www.youtube.com/embed/lc7scxvKQOo?si=NhIKGKIa5g8t_LMq</a>
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Eye on Tech. (2019, December 24). <em>What is Cryptography? The Importance of Cryptography </em>[Video]. <br>
+                                                    <a href="https://www.youtube.com/embed/aOdxWtqibCI" target="_blank">https://www.youtube.com/embed/aOdxWtqibCI</a>
+                                                </li>
+                                                <br>
+                                                <li>
+                                                    Eye on Tech. (2021, November 8). <em>RSA Algorithm - How does it work? - I'll PROVE it with an Example! -- Cryptography - Practical TLS </em>[Video]. <br>
+                                                    <a href="https://www.youtube.com/embed/Pq8gNbvfaoM?si=Xe7-srHdl8iZgiB_" target="_blank">https://www.youtube.com/embed/Pq8gNbvfaoM?si=Xe7-srHdl8iZgiB_</a>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </section>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+    <script src="../js/popup.js"></script>
+</body>
+</html>

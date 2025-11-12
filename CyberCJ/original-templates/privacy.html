@@ -1,0 +1,906 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <style>
+            body,
+            html {
+                border-radius: 5px;
+            }
+
+            body.thumb {
+                transform: scale(0.4);
+                box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+            }
+
+            main {
+                min-height: 80vh;
+            }
+
+            [class*='container'] {
+
+                background-clip: content-box;
+            }
+
+            .row [class*='col'] {
+                background-color: #efefef;
+                background-clip: content-box;
+            }
+
+            .nav-item {
+                background-color: #eeeeff;
+                background-clip: content-box;
+            }
+
+
+            .nav-link {
+                color: #000;
+                transition: color 0.3s ease;
+            }
+
+            .nav-link:hover {
+                color: #0c7c3e;
+            }
+
+            header {
+                background-color: #0a5640; /* NDSU Green */
+                color: white;
+                padding: 10px 20px; /* Increased padding */
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+        </style>
+        <header class="py-3 mb-4 border-bottom shadow">
+            <div class="container-fluid align-items-center d-flex">
+                <div class="flex-shrink-1">
+                    <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none">
+                        <i class="bi bi-bootstrap fs-2 text-dark"></i>
+                    </a>
+                </div>
+                <!-- Header Nav Bar -->
+                <div class="flex-grow-1 d-flex flexalign-items-center" >
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="index.html">Cybersecurity for Criminal Justice</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item bg-dark">
+                                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item bg-dark">
+                                        <a class="nav-link" href="#">Modules</a>
+                                    </li>
+                                    <!--<li class="nav-item dropdown bg-light">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Virtual Lab
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                            <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                            <li><a class="dropdown-item" href="#">Link 3</a></li>
+                                        </ul>
+                                    </li>-->
+                                    <li class="nav-item bg-dark"><a href="#" class="nav-link">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                <!-- Side Nav Menu -->
+                <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3" >
+                    <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
+                        <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                            <!-- Module 1 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module1Submenu">
+                                    <i class="fas fa-home"></i>
+                                    <span class="d-none d-sm-inline">Module 1: Introduction to Cybersecurity</span>
+                                </a>
+                                <div class="collapse" id="module1Submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a href="index.html" class="nav-link navBar-target">1.0: Cybersecurity is Ongoing</a></li>
+                                        <li class="nav-item"><a href="index.html" class="nav-link navBar-target">1.1: What is Information Security?</a></li>
+                                        <li class="nav-item"><a href="index.html" class="nav-link navBar-target">1.2: Terminology</a></li>
+                                        <li class="nav-item"><a href="index.html" class="nav-link navBar-target">1.3: Attacks and Defenses</a></li>
+                                        <li class="nav-item"><a href="index.html" class="nav-link navBar-target">1.4: Personal Security</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Module 2 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module2Submenu">
+                                    <i class="fa-regular fa-address-book"></i>
+                                    <span class="d-none d-sm-inline">Module 2: Computer Security</span>
+                                </a>
+                                <div class="collapse" id="module2Submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="0" >2.0: Introduction to Computer Security</a></li>
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="1" >2.1: Malware</a></li>
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="7" >2.1 Quiz</a></li>
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="8" >2.2: Defending Against Malware</a></li>
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="13" >2.2 Quiz</a></li>
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="14">2.3: Incident Response</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Module 3 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module3Submenu">
+                                    <i class="fa-regular fa-square-plus"></i>
+                                    <span class="d-none d-sm-inline">Module 3: Internet Security</span>
+                                </a>
+                                <div class="collapse" id="module3Submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a href="internet-security.html" class="nav-link">3.1 Introduction to Internet Security</a></li>
+                                        <li class="nav-item"><a href="internet-security.html" class="nav-link">3.2 Internet Security Risks</a></li>
+                                        <li class="nav-item"><a href="internet-security.html" class="nav-link">3.3 Internet Defenses</a></li>
+                                        <li class="nav-item"><a href="internet-security.html" class="nav-link">3.4 Cybercrime and Law Enforcement</a></li>
+                                        <li class="nav-item"><a href="internet-security.html" class="nav-link">3.5 Helpful Security Tools</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Module 4 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module4Submenu">
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                    <span class="d-none d-sm-inline">Module 4: Privacy</span>
+                                </a>
+                                <div class="collapse" id="module4Submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a href="privacy.html" class="nav-link">4.1: Introduction to Privacy</a></li>
+                                        <li class="nav-item"><a href="privacy.html" class="nav-link">4.2: Understanding Data Theft</a></li>
+                                        <li class="nav-item"><a href="privacy.html" class="nav-link">4.3: Intro to Cryptography</a></li>
+                                        <li class="nav-item"><a href="privacy.html" class="nav-link">4.4: Cookies</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Module 5 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module5Submenu">
+                                    <i class="fa-regular fa-face-tired"></i>
+                                    <span class="d-none d-sm-inline">Module 5: IS THERE A MODULE 5?????</span>
+                                </a>
+                                <div class="collapse" id="module5Submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a href="#" class="nav-link">Sublink 1</a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link">Sublink 2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                <main class="col overflow-auto h-100" >
+                    <!--Module 2.0-->
+                    <div id="2_0" class="bg-light border rounded-3 p-3">
+                        <h3>What is Computer Security?</h3>
+                        <p>Computer security is an aspect of cybersecurity that focuses on the protection of computer systems and the data they store from unauthorized access, damage, or theft. 
+                            This is critical not only for preserving the confidentiality, integrity, 
+                            and availability of information but also for safeguarding the infrastructure that supports our legal and governmental institutions.
+                        </p>
+                        <!-- Brief Overview -->
+                        <div class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Why is Computer Security Important in Criminal Justice?</span>
+                            </div>
+                            <div class="card-body">
+                                <ol>
+                                    <li>
+                                        <b>Protecting Sensitive Data:</b> <br>
+                                        Criminal justice systems handle sensitive data, including personal information about citizens, details of ongoing investigations, and national security information. 
+                                        Ensuring the security of this data helps to prevent negative consequences caused by unintentional oversight.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Maintaining Public Trust:</b><br>
+                                        Effective computer security measures help maintain public confidence in the criminal justice system's ability to safeguard sensitive information.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Enhancing Investigative Capabilities:</b><br>
+                                        Knowledge of computer security can enhance your ability to investigate cybercrimes like hacking, identity theft, and cyberstalking. 
+                                        Insight into the methods used in these crimes facilitates more efficient measures for prevention, detection, and prosecution.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Compliance with Legal Standards:</b><br>
+                                        Criminal justice agencies must comply with various legal standards and regulations regarding data protection and privacy. 
+                                        Non-compliance can lead to legal ramifications and harm to the institution&apos;s reputation.
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- <div class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Course Outcome</span>
+                            </div>
+                            <div class="card-body">
+                                <p>By a thorough examination of artificial intelligence's impact and implications, your
+                                    Artificial Intelligence for Cyber Security course is designed to equip you with the
+                                    skills to:</p>
+                                <ul>
+                                    <li>Explore the fundamentals of AI and ML, including a concise history.</li>
+                                    <li>Differentiate between supervised and unsupervised learning paradigms.</li>
+                                    <li>Gain insights into the workings of Generative AI.</li>
+                                    https://cybercj.tacoma.uw.edu/tacoma/chapter5
+                                    <li>Assess your understanding through interactive quizzes.</li>
+                                    <li>Engage with Virtual labs to experience practical applications of AI and ML in
+                                        common scenarios.</li>
+                                    <li>Understand and discuss the crucial concerns surrounding AI and machine learning,
+                                        particularly their influence on cybersecurity.</li>
+                                    <li>Recognize and address biases inherent in AI systems.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Course Outcome</span>
+                            </div>
+                            <div class="card-body">
+                                <p>By a thorough examination of artificial intelligence's impact and implications, your
+                                    Artificial Intelligence for Cyber Security course is designed to equip you with the
+                                    skills to:</p>
+                                <ul>
+                                    <li>Explore the fundamentals of AI and ML, including a concise history.</li>
+                                    <li>Differentiate between supervised and unsupervised learning paradigms.</li>
+                                    <li>Gain insights into the workings of Generative AI.</li>
+                                    https://cybercj.tacoma.uw.edu/tacoma/chapter5
+                                    <li>Assess your understanding through interactive quizzes.</li>
+                                    <li>Engage with Virtual labs to experience practical applications of AI and ML in
+                                        common scenarios.</li>
+                                    <li>Understand and discuss the crucial concerns surrounding AI and machine learning,
+                                        particularly their influence on cybersecurity.</li>
+                                    <li>Recognize and address biases inherent in AI systems.</li>
+                                </ul>
+                            </div>
+                        </div> -->
+                    </div>
+                     
+                    <!--Module 2.1-->
+                     <div class="bg-light border rounded-3 p-3">
+                        <!-- Module 2.1.0 -->
+                        <div id="2_1_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">2.1 What is Malware?</span>
+                            </div>
+                            <div class="card-body">
+                                <p> Malware is software that enters your computer system, without your knowledge, and carries out unwanted actions.
+                                    Often, these actions damage, disrupt, or steal data on your computer; but they can even include planting a foothold for future access to your computer.
+                                    If we think of your computer as a fortress, holding and protecting all of your valuable goods and information, then we can view malware as any type of non-human invader 
+                                    that is trying to control access to those valuables.
+                                </p>
+                    
+                                <p>As there are many types of malware, it can be difficult to categorize them. 
+                                    So, a common practice is to categorize them based on their primary action.
+                                    These can be broken down into:
+                                </p>
+                                <ul>
+                                    <li>Kidnap Data</li>
+                                    <li>Eavesdrop</li>
+                                    <li>Masquerade</li>
+                                    <li>Serve as Launchpad</li>
+                                    <li>Sidestep</li>
+                                </ul>
+                                    <!-- image of the different primary actions for malware -->
+                                    <center><img class="gif" src="" alt="Image of Malware Primary Actions" /></center>
+                    
+                                <!-- External Resource Link -->
+                                <p>External Resource Link: <a href="https://www.cisa.gov/sites/default/files/publications/Malware_1.pdf" target="_blank">
+                                    Cybersecurity & infrastructure Security Agency Malware Tip Card</a>
+                                </p>
+                                    <h3>Malware Primary Actions</h3>
+
+                                <p><strong>Kidnap Data:</strong> <br>
+                                    This type of malware specifically targets and restricts access to critical data, systems, or devices. 
+                                    The predominant form, ransomware, encrypts essential files and systems, demanding payment for decryption keys. 
+                                    Such attacks can cripple the operational capabilities of law enforcement departments, courts, corrections facilities, and legal firms, 
+                                    resulting in substantial operational disruptions and significant financial losses.
+                                </p>
+                                    
+                                <p><strong>Eavesdrop:</strong> <br>
+                                    Eavesdropping malware captures and transmits user data without consent. 
+                                    Examples include keyloggers that record keystrokes, spyware that monitors user activities, and other software that can access device cameras and microphones. 
+                                    These tools are used for stealing sensitive information, such as passwords, financial details, and personal identification information.
+                                </p>
+                                
+                                <p><strong>Masquerade:</strong> <br>
+                                    This category includes malware that impersonates legitimate software, deceiving users into installing it under false pretenses. 
+                                    Once operational, it executes malicious activities that can compromise legal investigations and sensitive data. 
+                                    Specifically, criminal justice professionals should be wary of Potentially Unwanted Programs (PUPs) and Trojans. 
+                                    These often come bundled with legitimate software or misrepresent their functionality, posing significant risks to the integrity of criminal justice systems and operations.
+                                </p>
+                                
+                                <p><strong>Serve as Launchpad:</strong> <br>
+                                    Launchpad malware hijacks infected devices to initiate additional cyberattacks. 
+                                    This includes viruses and worms that autonomously replicate and circulate across multiple systems, as well as bots that integrate into botnets. 
+                                    These botnets are orchestrated to execute coordinated large-scale assaults such as DDoS attacks and spam campaigns, 
+                                    which can severely compromise public safety and justice processes.
+                                </p>
+                                        
+                                <p><strong>Sidestep Security:</strong> <br>
+                                    This type of malware is strategically crafted to circumvent or neutralize security protocols. 
+                                    Techniques include deploying rootkits to obscure the presence of malicious software, implementing backdoors to gain unauthorized access, 
+                                    and programming logic bombs that execute harmful functions under specific conditions. 
+                                    Such tactics pose significant threats to the integrity of criminal justice data and the secure operation of related information systems.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Module 2.1.1 -->
+                        <div id="2_1_1" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">2.1.1 Data Kidnapping</span>
+                            </div>
+                            <div class="card-body">
+                                <h3> Data kidnapping mostly consists of Ransomware and Cryptomalware: </h3>
+                                <p style="margin-left: 40px;"><b>Ransomware:</b>  <br>
+                                    Ransomware is a type of malicious software that prevents users from accessing their computer by locking the system. 
+                                    It often demands a ransom, typically in cryptocurrency, for the decryption key. 
+                                    Variants of ransomware may display deceitful messages claiming to be from law enforcement or software vendors, 
+                                    alleging illegal activities or expired licenses to justify the lockdown. 
+                                    This tactic can be particularly confusing and alarming for professionals in criminal justice, as it mimics legitimate legal authorities. 
+                                    The ransomware may skip pretenses and straightforwardly demand payment to unlock the device. 
+                                    Robust backup solutions and anti-malware systems are crucial for law enforcement agencies to mitigate the risk of such attacks.
+                                </p>
+                                <p style="margin-left: 40px;"><b>Cryptomalware:</b> <br>
+                                    As a more severe form of ransomware, Cryptomalware encrypts all accessible files, rendering them inaccessible without a decryption key. 
+                                    It may threaten to increase the ransom amount with each passing hour or day, adding urgency to its demands. 
+                                    Newer variants are capable of spreading across network-connected devices, potentially crippling entire criminal justice systems. 
+                                    Learning to recognize and avoid phishing attempts, which often distribute cryptomalware, is essential for protecting sensitive data and operational integrity.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Module 2.1.2 -->
+                        <div id="2_1_2" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">2.1.2 Eavesdropping</span>
+                            </div>
+                            <div class="card-body">
+                                <h3> Eavesdropping mostly consists of Keyloggers and Spyware: </h3>
+                                <p style="margin-left: 40px;"><b>Keyloggers:</b>  <br>
+                                    Keyloggers are tools that capture and store every keystroke made on a computer. 
+                                    They can capture sensitive information such as passwords, credit card numbers, and personal identifiable information (PII), 
+                                    posing a significant threat to privacy and security. Keyloggers can be software-based or hardware-based. 
+                                    Software-based keyloggers are capable of taking screenshots and activating web cameras to capture images of the user.  
+                                    They do not require physical access to be installed and can transmit captured data through the network. 
+                                    Conversely, hardware-based keyloggers are usually small USB devices that are connected between a keyboard and computer, 
+                                    typically in public locations where they are easier to install and retrieve later. 
+                                    As they are external to the computer&apos;s operating system, they cannot be detected by standard antimalware software.
+                                </p>
+                                <p style="margin-left: 40px;"><b>Spyware:</b> <br>
+                                    Spyware is malicious software that gathers information from a user's computer without their knowledge and sends it to third parties. 
+                                    It can come in the form of automatic download software that self-installs without user interaction, potentially resulting in the installation of unauthorized software.
+                                    Other forms include passive tracking technologies that collect data on user activities, system modifying software that changes user settings without permission, 
+                                    and tracking software that monitors user behavior and collects data such as PII, increasing the risk of fraud and identity theft. 
+                                    These aspects make spyware particularly dangerous for professionals in the criminal justice field, 
+                                    where confidentiality and integrity of information are of the utmost importance.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Module 2.1.3 -->
+                        <div id="2_1_3" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">2.1.3 Masquerading</span>
+                            </div>
+                            <div class="card-body">
+                                <h3> Masquerading mostly consists of Potentially Unwanted Programs, Trojans, and Remote Access Trojans (RATs): </h3>
+                                <p style="margin-left: 40px;"><b>Potentially Unwanted Programs (PUPs):</b>  <br>
+                                    PUPs are applications that may be unwanted, despite often being bundled with software that users download and install. 
+                                    Known for being hard to uninstall, these programs can slow down systems, display intrusive ads, and modify browser settings without clear approval. 
+                                    They are frequently bundled as bloatware on new devices or installed unwittingly by users through default installation settings. 
+                                    For criminal justice systems, such programs can undermine operational efficiency and compromise security protocols.
+                                </p>
+                                <p style="margin-left: 40px;"><b>Trojans:</b> </br>
+                                    Trojans masquerade as legitimate and useful software but perform malicious activities in the background. 
+                                    They might come in the form of a seemingly harmless scheduling software that, once installed, 
+                                    can secretly scan the system and transmit sensitive data like passwords and case files to unauthorized parties. 
+                                    This capability makes Trojans particularly dangerous, as they can lead to breaches of confidential and critical information.
+                                </p>
+                                <p style="margin-left: 40px;"><b>Remote Access Trojans (RATs):</b> </br>
+                                    RATs are a type of Trojan that provide an attacker with remote control of the infected computer. 
+                                    They are more invasive than basic Trojans, allowing attackers to engage directly with the system&apos;s files, 
+                                    observe user behavior via keylogging or webcam access, and execute arbitrary commands. 
+                                    This type of malware poses a severe risk to law enforcement agencies and other criminal justice entities by 
+                                    potentially allowing unauthorized access to sensitive operations and data.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Module 2.1.4 -->
+                        <div id="2_1_4" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">2.1.4 Serving as a Launchpad</span>
+                            </div>
+                            <div class="card-body">
+                                <h3> Serving as a Launchpad mostly consists of Viruses, Worms, and Bots: </h3>
+                                <p style="margin-left: 40px;"><b>Viruses:</b>  </br>
+                                    A virus is malicious software that attaches to another program or file, enabling it to spread from one computer to another and leave infections as it travels. 
+                                    Almost any program or file type can be a target for viruses. 
+                                    They are capable of deleting or corrupting files, stealing data, hijacking core computing functions, and spreading across networks. 
+                                    However, before a virus can spread and infect other files, it must be interacted with, as is the case when opening an infected file or downloading from unsecured websites. 
+                                    This increases the chance of criminal justice professionals encountering viruses due to the investigative nature of their work.
+                                </p>
+                                <p style="margin-left: 40px;"><b>Worms:</b> </br>
+                                    Unlike viruses, worms are self-replicating and do not require a host program or human interaction to spread. 
+                                    They exploit vulnerabilities in operating systems or other software to spread across networks and can carry payloads designed to steal data, 
+                                    install backdoors, or cause damage to systems they infect. 
+                                    Their ability to spread rapidly can lead to significant disruptions in services, including the overload of web servers and the breach of sensitive information.
+                                </p>
+                                <p style="margin-left: 40px;"><b>Bots:</b> </br>
+                                    Bots are software applications that run automated tasks over the internet. 
+                                    They can create networks called botnets, which can be used by threat actors to perform large-scale malicious activities such as sending spam, 
+                                    spreading malware, or executing DDoS attacks. 
+                                    Bot herders control these botnets by issuing commands from a remote location, often masking their activities through third-party servers to evade detection. 
+                                    Criminal justice systems need robust cybersecurity measures to detect and respond to botnet activities, 
+                                    which often target and exploit both public and private sector resources.
+                                </p>
+                            </div>
+                        </div>
+                        <!-- Module 2.1.5 -->
+                        <div id="2_1_5" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">2.1.5 Sidestepping</span>
+                            </div>
+                            <div class="card-body">
+                                <h3> Sidestepping mostly consists of Backdoors, Logic Bombs, and Rootkits: </h3>
+                                <p style="margin-left: 40px;"><b>Backdoors:</b>  </br>
+                                    Backdoors are used of bypass normal authentication procedures, thus allowing remote access to a device without the user's knowledge. 
+                                    In the criminal justice field, such vulnerabilities could be exploited to access confidential data, including case files and personal information. 
+                                    Initially, developers may create backdoors for legitimate purposes such as maintenance. 
+                                    However, if not removed, they pose a significant security risk as they can be discovered and used maliciously.
+                                </p>
+                                <p style="margin-left: 40px;"><b>Logic Bombs:</b> </br>
+                                    Logic bombs are pieces of code that have been inserted into software and are designed to execute under specific conditions, 
+                                    such as a specific time or when a certain action is performed. 
+                                    For example, a logic bomb could be set to execute its attack three months after an employee left the firm, or after the 45th email sent by a clerk.
+                                    A logic bomb could potentially be used to destroy data, disrupt system operations, or corrupt essential legal documents. 
+                                    These are often hard to detect and can be planted by insiders who are trusted with access to sensitive systems.
+                                </p>
+                                <p style="margin-left: 40px;"><b>Rootkits:</b> </br>
+                                    Rootkits are programs that hide the existence of malware in a system by intercepting and altering standard operating system processes. 
+                                    Deeply embedded within the operating system, they are extremely difficult to detect and can give attackers full control of the system without the user's knowledge. 
+                                    For criminal justice systems, rootkits represent a serious threat as they can be used to manipulate operations, 
+                                    alter data, or steal information without detection for long periods.
+                                </p>
+                            </div>
+                            <center><button  onclick="window.location.href='/quiz2_1'" type="button" style="margin-right: 10px;">Quiz 2.1</button></center>
+                        </div>
+                    </div>
+
+                    <!--Module 2.2-->
+                     <div  class="bg-light border rounded-3 p-3">
+                        <!-- Module 2.2.0 -->
+                        <div id="2_2_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">2.2 Defending Against Malware</span>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    As criminal justice professionals, safeguarding the integrity and confidentiality of your computer systems is paramount. 
+                                    Malware poses a significant threat to your data, potentially leading to unauthorized access, data theft, or even disruption of your essential services. 
+                                    Fortunately, you have several defensive strategies at your disposal:
+                                </p>
+                                <ol>
+                                    <li><b>Regular Software Updates: </b><br>
+                                        Keeping your operating system and applications up-to-date is crucial. 
+                                        Updates often include patches for security vulnerabilities that could be exploited by malware.
+                                    </li>
+                                    <li><b>Antivirus and Anti-malware Software: </b><br>
+                                        Using antivirus and anti-malware programs provides a critical first line of defense, actively scanning and removing threats before they can cause harm.
+                                    </li>
+                                    <li><b>Monitor Firewalls: </b><br>
+                                        Configuring firewalls to control incoming and outgoing network traffic can prevent malicious activities and block unauthorized access
+                                    </li>
+                                    <li><b>Training and Awareness: </b><br>
+                                        Regular training sessions for all employees can help recognize phishing attempts and suspicious links, which are common vectors for malware.
+                                    </li>
+                                    <li><b>Backup and Recovery Plans: </b><br>
+                                        Maintaining regular backups of important data ensures that you can restore your system to a clean state in case of a malware attack, minimizing downtime and data loss.
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- Module 2.2.1 -->
+                        <div id="2_2_1" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">2.2.1 Security Updates</span>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    Regularly Updating software and security is a crucial to maintaining a proper cybersecurity posture. 
+                                    It requires the systematic updating of software on computers to protect against vulnerabilities. 
+                                </p>
+                                <ul>
+                                    <li><b>Automatic Updates: </b><br>
+                                        Both Windows and macOS operating systems feature built-in mechanisms that regularly check for software updates over the internet. 
+                                        These services ensure that your computer system is always equipped with the latest security features and fixes.
+                                    </li>
+                                    <li><b>Update Services:</b><br>
+                                        For a computer to receive these updates, it must be configured to interact with the vendor&apos;s update service. 
+                                        This ensures that any patches released by the vendor are automatically applied to your system.
+                                    </li>
+                                    <li><b>Security Patches: </b><br>
+                                        Often referred to simply as patches, these updates target specific vulnerabilities within the system. 
+                                        By addressing these vulnerabilities, patches play a critical role in fortifying the system against potential exploits and malware infections.
+                                    </li>
+                                    <li><b>Instructional Resources:</b>
+                                        <li>For Windows users, updates can be managed and reviewed at the 
+                                            <a href="https://support.microsoft.com/en-us/windows/get-the-latest-windows-update-7d20e88c-0568-483a-37bc-c3885390d212#WindowsVersion=Windows_11">Windows Update page</a>
+                                        </li>
+                                        <li>For MacOS users, guidance on updates is available at th
+                                            <a href="https://support.apple.com/guide/mac-help/keep-your-mac-up-to-date-mchlpx1065/mac">MacOS Update Guide</a>
+                                        </li>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 2.2.2 -->
+                        <div id="2_2_2" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">2.2.2 Antimalware Software</span>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    Antimalware and antivirus software are essential tools designed to protect computers and networks from malware. 
+                                    These security programs scan, detect, and remove threats by monitoring system activity and checking files against databases of known malware signatures. 
+                                    They also employ heuristic and behavior-based detection methods to identify unknown malware based on suspicious behavior. 
+                                    Additionally, these tools provide real-time protection by blocking potentially harmful programs and files before they can cause damage, 
+                                    ensuring that digital environments remain secure and operational.
+                                </p>
+                                <h3>Antivirus Software</h3>
+                                <p>Antivirus software is designed to:</p>
+                                <ul>
+                                    <li><b>Scan and Monitor: </b><br>
+                                        It continuously scans the computer and monitors activities to identify potential threats.
+                                    </li>
+                                    <li><b>Examine Files: </b><br>
+                                        New documents are inspected when they are opened, created, or closed to detect any signs of infection
+                                    </li>
+                                    <li><b>Virus Detection: </b><br>
+                                        Uses a scanning engine and a database of known virus signatures to detect infections. 
+                                        Keeping the signature file updated is crucial as outdated signatures can lead to security breaches.
+                                    </li>
+                                    <li><b>Response Actions:</b><br>
+                                        Upon detecting a virus, the software can remove the virus, quarantine the infected file, or delete the file outright.
+                                    </li>
+                                    <li><b>Limitations:</b><br>
+                                        While antivirus software provides a valid means of security, it should not be seen as a comprehensive solution to all security threats.
+                                    </li>
+                                </ul>
+                                <h3>Comprehensive Antimalware Software</h3>
+                                <p>Beyond basic antivirus functions, comprehensive antimalware includes:</p>
+                                <ul>
+                                    <li><b>Intrusion Prevention: </b><br>
+                                        Analyzes incoming data from the network, actively blocking potential threats before they enter the computer.
+                                    </li>
+                                    <li><b>Reputation Protection: </b><br>
+                                        Classifies software and files as “dangerous,” “risky,” or “safe” based on information gathered from a global network, enhancing proactive security measures.
+                                    </li>
+                                    <li><b>Behavioral Protection: </b><br>
+                                        Watches for unusual behavior in software and automatically intervenes to block potentially malicious activities.
+                                    </li>
+                                </ul>
+                                <h3>Built-in Antimalware</h3>
+                                <p>Both Windows and MacOS provide built-in antimalware solutions:</p>
+                                <ul>
+                                    <li><b>Windows:</b><br>
+                                        Microsoft Defender Antivirus offers integrated security right out of the box.
+                                    </li>
+                                    <li><b>MacOS</b><br>
+                                        Apple XProtect provides a basic level of protection against malware.
+                                    </li>
+                                    <li><b>Compatibility Warning: </b><br>
+                                        When considering third-party antimalware software, it&apos;s important to ensure there are no conflicts between it and built-in systems. 
+                                        Always verify compatibility to avoid potential security gaps or performance issues.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 2.2.3 -->
+                        <div id="2_2_3" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">2.2.3 Firewalls</span>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    Monitoring and managing firewalls is a vital component of a proper cybersecurity posture, 
+                                    particularly for safeguarding the networks and computers used in sensitive sectors like criminal justice. 
+                                    Firewalls act as the first line of defense, controlling incoming and outgoing network traffic based on predetermined security rules. 
+                                    This includes not only blocking unauthorized access but also managing data packets that might carry potential threats. 
+                                    Effective firewall management involves regular updates and audits to ensure that all security protocols are up to date and functioning as intended.
+                                </p>
+                                <h3>Personal Firewalls</h3>
+                                <ul>
+                                    <li><b>Function:</b><br>
+                                        Personal firewalls act as packet filters that control the traffic entering or exiting a personal computer.
+                                    </li>
+                                    <li><b>Application Firewalls: These </b><br>
+                                        These are typically pre-installed on modern operating systems and are designed to allow traffic through only for specific, approved programs. 
+                                        This helps to prevent an infected computer from spreading malware to other machines.
+                                    </li>
+                                    <li><b>Traffic Control: </b><br>
+                                        By default, these firewalls block all inbound traffic unless it has been explicitly allowed, while generally permitting outbound traffic unless specifically blocked.
+                                    </li>
+                                </ul>
+                                <h3>Network Firewalls</h3>
+                                <ul>
+                                    <li><b>Hardware-Based: </b><br>
+                                        Network firewalls are usually hardware devices placed at the edge of a network.
+                                    </li>
+                                    <li><b>Scope: </b><br>
+                                        They are designed to protect the entire network by inspecting all incoming and outgoing traffic to decide whether to deny or allow it.
+                                    </li>
+                                    <li><b>Location: </b><br>
+                                        Often integrated into the routers provided by Internet Service Providers (ISP), they serve as the first line of defense for all devices connected to the network.
+                                    </li>
+                                </ul>
+                                <h3>Best Practices for Firewall Management</h3>
+                                <ul>
+                                    <li><b>Regular Inspections:</b><br>
+                                        Periodically check firewalls to ensure they are active and functioning as expected. 
+                                        This includes verifying that no unauthorized changes have been made to the rules—a common target for malware designed to weaken network defenses.
+                                    </li>
+                                    <li><b>Dual Use: </b><br>
+                                        For enhanced security, it is best to use both application and network firewalls. 
+                                        This layered approach helps to secure individual machines as well as the entire network, contributing to a defense-in-depth approach to cybersecurity.
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 2.2.4 -->
+                        <div id="2_2_4" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">2.2.4 Ransonmware Prevention</span>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    Effectively preventing ransomware involves a strategic combination of disconnecting potential entry points and maintaining secure backups.
+                                </p>
+                                <h3>Disconnect and Isolate Devices</h3>
+                                <p>Disconnecting devices can significantly reduce the risk of ransomware infection.</p>
+                                <ul>
+                                    <li><b>Local and Networked Devices: </b><br>
+                                        Any device with a drive letter (C:\, D:\, etc.) or networked storage that syncs automatically poses a risk if compromised. 
+                                        Using air gaps, or physical separations, between computers and storage devices can be an effective deterrent.
+                                    </li>
+                                    <li><b>USB and External Drives: </b><br>
+                                        Physically unplugging USB storage devices and unmounting secondary hard drives when not in use can make them invisible to ransomware attacks.
+                                    </li>
+                                    <li><b>Network Shared Directories: </b><br>
+                                        Limiting access to these directories by requiring login credentials from specific user accounts adds an additional layer of security.
+                                    </li>
+                                    <li><b>Cloud Storage: </b><br>
+                                        Turning off automatic synchronization and requiring manual login for cloud services decreases the vulnerability of cloud-stored data.
+                                    </li>
+                                </ul>
+                                <h3>Backup Data</h3>
+                                <p>Backups are essential for recovery in the event of a ransomware attack.</p>
+                                <ul>
+                                    <li><b>Data Copies: </b><br>
+                                        Regularly updated backups should be stored in secure locations, isolated from the network. 
+                                        This prevents ransomware from accessing both primary and backup data, allowing for recovery without paying the ransom.
+                                    </li>
+                                </ul>
+                            </div>
+                            <center><button  onclick="window.location.href='/quiz2_2'" type="button" style="margin-right: 10px;">Quiz 2.2</button></center>
+                        </div>
+                    </div>
+
+                    <!--Module 2.3-->
+                     <div id="2_3" class="bg-light border rounded-3 p-3">
+                        <h3>What is Computer Security?</h3>
+                        <p>Computer security is an aspect of cybersecurity that focuses on the protection of computer systems and the data they store from unauthorized access, damage, or theft. 
+                            This is critical not only for preserving the confidentiality, integrity, 
+                            and availability of information but also for safeguarding the infrastructure that supports our legal and governmental institutions.
+                        </p>
+                        <!-- Module 2.3.0 -->
+                        <div id="2_3_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Why is Computer Security Important in Criminal Justice?</span>
+                            </div>
+                            <div class="card-body">
+                                <ol>
+                                    <li>
+                                        <b>Protecting Sensitive Data:</b> <br>
+                                        Criminal justice systems handle sensitive data, including personal information about citizens, details of ongoing investigations, and national security information. 
+                                        Ensuring the security of this data helps to prevent negative consequences caused by unintentional oversight.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Maintaining Public Trust:</b><br>
+                                        Effective computer security measures help maintain public confidence in the criminal justice system's ability to safeguard sensitive information.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Enhancing Investigative Capabilities:</b><br>
+                                        Knowledge of computer security can enhance your ability to investigate cybercrimes like hacking, identity theft, and cyberstalking. 
+                                        Insight into the methods used in these crimes facilitates more efficient measures for prevention, detection, and prosecution.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Compliance with Legal Standards:</b><br>
+                                        Criminal justice agencies must comply with various legal standards and regulations regarding data protection and privacy. 
+                                        Non-compliance can lead to legal ramifications and harm to the institution&apos;s reputation.
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- Module 2.3.1 -->
+                        <div id="2_3_1" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Course Outcome</span>
+                            </div>
+                            <div class="card-body">
+                                <p>By a thorough examination of artificial intelligence's impact and implications, your
+                                    Artificial Intelligence for Cyber Security course is designed to equip you with the
+                                    skills to:</p>
+                                <ul>
+                                    <li>Explore the fundamentals of AI and ML, including a concise history.</li>
+                                    <li>Differentiate between supervised and unsupervised learning paradigms.</li>
+                                    <li>Gain insights into the workings of Generative AI.</li>
+                                    https://cybercj.tacoma.uw.edu/tacoma/chapter5
+                                    <li>Assess your understanding through interactive quizzes.</li>
+                                    <li>Engage with Virtual labs to experience practical applications of AI and ML in
+                                        common scenarios.</li>
+                                    <li>Understand and discuss the crucial concerns surrounding AI and machine learning,
+                                        particularly their influence on cybersecurity.</li>
+                                    <li>Recognize and address biases inherent in AI systems.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 2.3.2 -->
+                        <div id="2_3_2" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Course Outcome</span>
+                            </div>
+                            <div class="card-body">
+                                <p>By a thorough examination of artificial intelligence's impact and implications, your
+                                    Artificial Intelligence for Cyber Security course is designed to equip you with the
+                                    skills to:</p>
+                                <ul>
+                                    <li>Explore the fundamentals of AI and ML, including a concise history.</li>
+                                    <li>Differentiate between supervised and unsupervised learning paradigms.</li>
+                                    <li>Gain insights into the workings of Generative AI.</li>
+                                    https://cybercj.tacoma.uw.edu/tacoma/chapter5
+                                    <li>Assess your understanding through interactive quizzes.</li>
+                                    <li>Engage with Virtual labs to experience practical applications of AI and ML in
+                                        common scenarios.</li>
+                                    <li>Understand and discuss the crucial concerns surrounding AI and machine learning,
+                                        particularly their influence on cybersecurity.</li>
+                                    <li>Recognize and address biases inherent in AI systems.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 2.3.3 -->
+                        <div id="2_3_3" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Course Outcome</span>
+                            </div>
+                            <div class="card-body">
+                                <p>By a thorough examination of artificial intelligence's impact and implications, your
+                                    Artificial Intelligence for Cyber Security course is designed to equip you with the
+                                    skills to:</p>
+                                <ul>
+                                    <li>Explore the fundamentals of AI and ML, including a concise history.</li>
+                                    <li>Differentiate between supervised and unsupervised learning paradigms.</li>
+                                    <li>Gain insights into the workings of Generative AI.</li>
+                                    https://cybercj.tacoma.uw.edu/tacoma/chapter5
+                                    <li>Assess your understanding through interactive quizzes.</li>
+                                    <li>Engage with Virtual labs to experience practical applications of AI and ML in
+                                        common scenarios.</li>
+                                    <li>Understand and discuss the crucial concerns surrounding AI and machine learning,
+                                        particularly their influence on cybersecurity.</li>
+                                    <li>Recognize and address biases inherent in AI systems.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 2.3.4 -->
+                        <div id="2_3_4" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Course Outcome</span>
+                            </div>
+                            <div class="card-body">
+                                <p>By a thorough examination of artificial intelligence's impact and implications, your
+                                    Artificial Intelligence for Cyber Security course is designed to equip you with the
+                                    skills to:</p>
+                                <ul>
+                                    <li>Explore the fundamentals of AI and ML, including a concise history.</li>
+                                    <li>Differentiate between supervised and unsupervised learning paradigms.</li>
+                                    <li>Gain insights into the workings of Generative AI.</li>
+                                    https://cybercj.tacoma.uw.edu/tacoma/chapter5
+                                    <li>Assess your understanding through interactive quizzes.</li>
+                                    <li>Engage with Virtual labs to experience practical applications of AI and ML in
+                                        common scenarios.</li>
+                                    <li>Understand and discuss the crucial concerns surrounding AI and machine learning,
+                                        particularly their influence on cybersecurity.</li>
+                                    <li>Recognize and address biases inherent in AI systems.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 2.3.5 -->
+                        <div id="2_3_5" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Course Outcome</span>
+                            </div>
+                            <div class="card-body">
+                                <p>By a thorough examination of artificial intelligence's impact and implications, your
+                                    Artificial Intelligence for Cyber Security course is designed to equip you with the
+                                    skills to:</p>
+                                <ul>
+                                    <li>Explore the fundamentals of AI and ML, including a concise history.</li>
+                                    <li>Differentiate between supervised and unsupervised learning paradigms.</li>
+                                    <li>Gain insights into the workings of Generative AI.</li>
+                                    https://cybercj.tacoma.uw.edu/tacoma/chapter5
+                                    <li>Assess your understanding through interactive quizzes.</li>
+                                    <li>Engage with Virtual labs to experience practical applications of AI and ML in
+                                        common scenarios.</li>
+                                    <li>Understand and discuss the crucial concerns surrounding AI and machine learning,
+                                        particularly their influence on cybersecurity.</li>
+                                    <li>Recognize and address biases inherent in AI systems.</li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow-lg">
+                        <button id="back" class="btn btn-primary btn-lg" style="background-color: #0a5640;"> <b>Back</b> </button><p></p>
+                        <button id="next" class="btn-primary btn-lg" style="background-color: #0a5640;" ><b> Next</b> </button>
+                        <center><button onclick="redirectToQuiz()" type="button">Module 2 Quiz</button></center>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+<script src="navBar.js"></script>
+</body>
+
+</html>

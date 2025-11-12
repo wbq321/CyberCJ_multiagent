@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cookies Quiz</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body { font-family: Arial, sans-serif; padding: 20px; }
+        .question { margin-bottom: 20px; }
+        .question h4 { margin-bottom: 10px; }
+    </style>
+</head>
+<body id="quiz-body">
+ <!-- Module 4.4 Quiz -->
+ <div id="quiz4_4" class="card mt-4 shadow-lg">
+    <div class="card-header">
+        <span class="fs-4">4.4 Quiz </span>
+    </div>
+    <div class="card-body">
+        <form>
+            <!-- Question 1 -->
+            <div class="question">
+                <h4>1. What is the primary purpose of first-party cookies on a website?</h4>
+                <input type="radio" id="q1a1" name="q1" value="To track your visits across multiple websites for advertising">
+                <label for="q1a1">To track your visits across multiple websites for advertising</label><br>
+                <!--ans below-->
+                <input type="radio" id="q1a2" name="q1" value="To remember site-specific preferences like language and login status">
+                <label for="q1a2">To remember site-specific preferences like language and login status</label><br>
+                <input type="radio" id="q1a3" name="q1" value="To enable external sites to track your site activity">
+                <label for="q1a3">To enable external sites to track your site activity</label>
+            </div>
+
+            <!-- Question 2 -->
+            <div class="question">
+                <h4>2. Which type of cookie would most likely be used to analyze how users interact with a website?</h4>
+                <input type="radio" id="q2a1" name="q2" value="Session cookies">
+                <label for="q2a1">Session cookies</label><br>
+                <input type="radio" id="q2a2" name="q2" value="Persistent cookies">
+                <label for="q2a2">Persistent cookies</label><br>
+                <!--ans below-->
+                <input type="radio" id="q2a3" name="q2" value="Third-party cookies">
+                <label for="q2a3">Third-party cookies</label>
+            </div>
+
+            <!-- Question 3 -->
+            <div class="question">
+                <h4>3. How can disabling third-party cookies enhance your privacy?</h4>
+                <input type="checkbox" id="q3a1" name="q3a1">
+                <!--ans below-->
+                <label for="q3a1">By reducing the ability of advertisers to track your browsing across multiple sites</label><br>
+                <input type="checkbox" id="q3a2" name="q3a2">
+                <label for="q3a2">By speeding up your browsing experiencet</label><br>
+                <input type="checkbox" id="q3a3" name="q3a3">
+                <label for="q3a3">By allowing websites to track user behavior more accurately</label>
+            </div>
+
+            <!-- Question 4 -->
+            <div class="question">
+                <h4>4. What is a Mobile Advertising ID (MAID) primarily used for?</h4>
+                <input type="radio" id="q4a1" name="q4" value="To secure mobile communications">
+                <label for="q4a1">To secure mobile communications</label><br>
+                <input type="radio" id="q4a2" name="q4" value="To track activity across apps and websites for advertising purposes">
+                <label for="q4a2">To track activity across apps and websites for advertising purposes</label><br>
+                <input type="radio" id="q4a3" name="q4" value="To enhance the functionality of mobile device hardware">
+                <label for="q4a3">To enhance the functionality of mobile device hardware</label>
+            </div>
+
+            <!-- Question 5 -->
+            <div class="question">
+                <h4>5. WHow can you manage your MAID on an iOS device to enhance privacy?</h4>
+                <input type="radio" id="q5a1" name="q5" value="By enabling location services">
+                <label for="q5a1">By enabling location services</label><br>
+                <input type="radio" id="q5a2" name="q5" value="By opting out of Ads Personalization">
+                <label for="q5a2">By opting out of Ads Personalization</label><br>
+                <!--ans below-->
+                <input type="radio" id="q5a3" name="q5" value="By limiting ad tracking in the privacy settings">
+                <label for="q5a3">By limiting ad tracking in the privacy settings</label>
+            </div>
+
+            <button type="button" onclick="submitQuiz('quiz4_4')">Submit Quiz</button>
+        </form>
+    </div>
+ </div>
+    <script src="js/quiz.js"></script>
+    
+</body>
+</html>

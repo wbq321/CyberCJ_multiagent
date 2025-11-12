@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CyberJustice Improved Tutor</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .container {
+            background: white;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0,0,0,0.1);
+            width: 90%;
+            max-width: 700px;
+            height: 85vh;
+            display: flex;
+            flex-direction: column;
+            overflow: hidden;
+        }
+
+        .header {
+            background: linear-gradient(135deg, #2c3e50, #34495e);
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+
+        .header h1 {
+            font-size: 20px;
+            margin-bottom: 5px;
+        }
+
+        .header p {
+            font-size: 12px;
+            opacity: 0.9;
+        }
+
+        .status-bar {
+            background: #ecf0f1;
+            padding: 8px 20px;
+            border-bottom: 1px solid #bdc3c7;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            font-size: 12px;
+            color: #7f8c8d;
+        }
+
+        .intent-indicator {
+            padding: 3px 8px;
+            border-radius: 10px;
+            font-weight: bold;
+            font-size: 10px;
+            text-transform: uppercase;
+        }
+
+        .intent-answering { background: #27ae60; color: white; }
+        .intent-new_question { background: #3498db; color: white; }
+        .intent-unclear { background: #f39c12; color: white; }
+
+        .chat-container {
+            flex: 1;
+            overflow-y: auto;
+            padding: 20px;
+            background: #f8f9fa;
+        }
+
+        .message {
+            margin-bottom: 15px;
+            display: flex;
+            align-items: flex-start;
+        }
+
+        .message.user {
+            justify-content: flex-end;
+        }
+
+        .message-content {
+            max-width: 75%;
+            padding: 12px 15px;
+            border-radius: 18px;
+            line-height: 1.4;
+        }
+
+        .message.user .message-content {
+            background: #007bff;
+            color: white;
+            border-bottom-right-radius: 5px;
+        }
+
+        .message.bot .message-content {
+            background: white;
+            color: #333;
+            border: 1px solid #e9ecef;
+            border-bottom-left-radius: 5px;
+        }
+
+        .message-meta {
+            font-size: 10px;
+            color: #6c757d;
+            margin-top: 3px;
+        }
+
+        .input-container {
+            padding: 15px;
+            background: white;
+            border-top: 1px solid #e9ecef;
+            display: flex;
+            gap: 8px;
+        }
+
+        .input-field {
+            flex: 1;
+            padding: 12px;
+            border: 2px solid #e9ecef;
+            border-radius: 20px;
+            outline: none;
+            font-size: 14px;
+        }
+
+        .input-field:focus {
+            border-color: #007bff;
+        }
+
+        .send-btn {
+            background: #007bff;
+            color: white;
+            border: none;
+            border-radius: 20px;
+            padding: 12px 20px;
+            cursor: pointer;
+            font-weight: bold;
+            font-size: 14px;
+        }
+
+        .send-btn:hover {
+            background: #0056b3;
+        }
+
+        .send-btn:disabled {
+            background: #6c757d;
+            cursor: not-allowed;
+        }
+
+        .loading {
+            display: none;
+            text-align: center;
+            padding: 15px;
+            color: #6c757d;
+            font-size: 12px;
+        }
+
+        .new-topic-btn {
+            background: #28a745;
+            color: white;
+            border: none;
+            border-radius: 12px;
+            padding: 6px 12px;
+            margin-left: 10px;
+            cursor: pointer;
+            font-size: 11px;
+        }
+
+        .new-topic-btn:hover {
+            background: #218838;
+        }
+
+        .progress-info {
+            font-size: 11px;
+            color: #6c757d;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="header">
+            <h1>🎓 CyberJustice Improved Tutor</h1>
+            <p>Intelligent Conversation Flow & Completion Recognition</p>
+        </div>
+
+        <div class="status-bar">
+            <div>
+                <span>Intent: </span>
+                <span class="intent-indicator" id="currentIntent">ready</span>
+                <span style="margin-left: 15px;">Session: </span>
+                <span id="sessionId">default</span>
+                <button class="new-topic-btn" onclick="startNewTopic()">New Topic</button>
+            </div>
+            <div class="progress-info">
+                <span>Stage: </span>
+                <span id="learningStage">0</span>
+                <span style="margin-left: 10px;">Correct: </span>
+                <span id="correctAnswers">0</span>
+            </div>
+        </div>
+
+        <div class="chat-container" id="chatContainer">
+            <div class="message bot">
+                <div class="message-content">
+                    <strong>Welcome to CyberJustice Improved Tutor! 🚀</strong><br><br>
+                    I now have enhanced conversation awareness:
+                    <ul style="margin: 8px 0; padding-left: 18px;">
+                        <li>🎯 <strong>Smart Intent Detection:</strong> I can tell if you're answering my question or asking something new</li>
+                        <li>📈 <strong>Learning Progression:</strong> I track your progress and recognize when you've mastered a topic</li>
+                        <li>✅ <strong>Completion Recognition:</strong> I'll conclude topics appropriately instead of endless questioning</li>
+                    </ul>
+                    Try the examples that were problematic before: ask about data theft, then provide answers to see the improved flow!
+                </div>
+                <div class="message-meta">Improved Pedagogical System • Ready</div>
+            </div>
+        </div>
+
+        <div class="loading" id="loading">
+            <div>🤖 Analyzing conversation context...</div>
+        </div>
+
+        <div class="input-container">
+            <input type="text" id="messageInput" class="input-field"
+                   placeholder="Ask: 'what is data theft' to test the improved conversation flow..."
+                   onkeypress="handleKeyPress(event)">
+            <button onclick="sendMessage()" class="send-btn" id="sendBtn">Send</button>
+        </div>
+    </div>
+
+    <script>
+        let sessionId = 'session_' + Date.now();
+        let isWaiting = false;
+
+        // Initialize session ID display
+        document.getElementById('sessionId').textContent = sessionId.slice(-8);
+
+        // Start new topic
+        function startNewTopic() {
+            fetch('/new_topic', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    session_id: sessionId
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                updateProgress(0, 0);
+                updateIntentIndicator('ready');
+                addMessage('system', '🔄 Started new topic. Learning progress reset. What would you like to learn about?');
+            })
+            .catch(error => {
+                console.error('Error starting new topic:', error);
+            });
+        }
+
+        // Update progress indicators
+        function updateProgress(stage, correct) {
+            document.getElementById('learningStage').textContent = stage;
+            document.getElementById('correctAnswers').textContent = correct;
+        }
+
+        // Update intent indicator
+        function updateIntentIndicator(intent) {
+            const indicator = document.getElementById('currentIntent');
+            indicator.textContent = intent.replace('_', ' ');
+            indicator.className = 'intent-indicator intent-' + intent;
+        }
+
+        // Add message to chat
+        function addMessage(sender, content, meta = '') {
+            const chatContainer = document.getElementById('chatContainer');
+            const messageDiv = document.createElement('div');
+            messageDiv.className = `message ${sender}`;
+
+            const contentDiv = document.createElement('div');
+            contentDiv.className = 'message-content';
+            contentDiv.innerHTML = content.replace(/\n/g, '<br>');
+
+            const metaDiv = document.createElement('div');
+            metaDiv.className = 'message-meta';
+            metaDiv.textContent = meta;
+
+            messageDiv.appendChild(contentDiv);
+            if (meta) messageDiv.appendChild(metaDiv);
+
+            chatContainer.appendChild(messageDiv);
+            chatContainer.scrollTop = chatContainer.scrollHeight;
+        }
+
+        // Handle key press
+        function handleKeyPress(event) {
+            if (event.key === 'Enter' && !isWaiting) {
+                sendMessage();
+            }
+        }
+
+        // Send message
+        function sendMessage() {
+            if (isWaiting) return;
+
+            const input = document.getElementById('messageInput');
+            const message = input.value.trim();
+
+            if (!message) return;
+
+            // Add user message
+            addMessage('user', message);
+            input.value = '';
+
+            // Show loading
+            isWaiting = true;
+            document.getElementById('loading').style.display = 'block';
+            document.getElementById('sendBtn').disabled = true;
+
+            // Send to backend
+            fetch('/ask', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify({
+                    question: message,
+                    session_id: sessionId
+                })
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.error) {
+                    addMessage('bot', `❌ Error: ${data.error}`, 'System Error');
+                } else {
+                    const intent = data.input_intent || 'unknown';
+                    const stage = data.learning_stage || 0;
+                    const correct = data.correct_answers || 0;
+
+                    // Create meta info
+                    let metaInfo = `Intent: ${intent.toUpperCase()}`;
+                    if (stage >= 3 && correct >= 2) {
+                        metaInfo += ' • COMPLETION CRITERIA MET ✅';
+                    }
+
+                    addMessage('bot', data.answer, metaInfo);
+
+                    // Update UI indicators
+                    updateIntentIndicator(intent);
+                    updateProgress(stage, correct);
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                addMessage('bot', '❌ Connection error. Make sure the server is running with: python app.py', 'Connection Error');
+            })
+            .finally(() => {
+                // Hide loading
+                isWaiting = false;
+                document.getElementById('loading').style.display = 'none';
+                document.getElementById('sendBtn').disabled = false;
+                input.focus();
+            });
+        }
+
+        // Focus input on load
+        window.onload = function() {
+            document.getElementById('messageInput').focus();
+        };
+    </script>
+</body>
+</html>

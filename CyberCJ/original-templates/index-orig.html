@@ -1,0 +1,654 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <style>
+            body,
+            html {
+                border-radius: 5px;
+            }
+
+            body.thumb {
+                transform: scale(0.4);
+                box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+            }
+
+            main {
+                min-height: 80vh;
+            }
+
+            [class*='container'] {
+
+                background-clip: content-box;
+            }
+
+            .row [class*='col'] {
+                background-color: #efefef;
+                background-clip: content-box;
+            }
+
+            .nav-item {
+                background-color: #eeeeff;
+                background-clip: content-box;
+            }
+
+
+            .nav-link {
+                color: #000;
+                transition: color 0.3s ease;
+            }
+
+            .nav-link:hover {
+                color: #0c7c3e;
+            }
+
+            header {
+                background-color: #0a5640; /* NDSU Green */
+                color: white;
+                padding: 10px 20px; /* Increased padding */
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+        </style>
+        <header class="py-3 mb-4 border-bottom shadow">
+            <div class="container-fluid align-items-center d-flex">
+                <div class="flex-shrink-1">
+                    <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none">
+                        <i class="bi bi-bootstrap fs-2 text-dark"></i>
+                    </a>
+                </div>
+                <!-- Header Nav Bar -->
+                <div class="flex-grow-1 d-flex flexalign-items-center" >
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="index.html">Cybersecurity for Criminal Justice</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item bg-dark">
+                                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item bg-dark">
+                                        <a class="nav-link" href="#">Modules</a>
+                                    </li>
+                                    <!--<li class="nav-item dropdown bg-light">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Virtual Lab
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                            <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                            <li><a class="dropdown-item" href="#">Link 3</a></li>
+                                        </ul>
+                                    </li>-->
+                                    <li class="nav-item bg-dark"><a href="#" class="nav-link">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                <!-- Side Nav Menu -->
+                <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3" >
+                    <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
+                        <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                            <!-- Module 1 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module1Submenu">
+                                    <i class="fas fa-home"></i>
+                                    <span class="d-none d-sm-inline">Module 1: Introduction to Cybersecurity</span>
+                                </a>
+                                <div class="collapse" id="module1Submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a href="index.html" class="nav-link navBar-target">1.0: Cybersecurity is Ongoing</a></li>
+                                        <li class="nav-item"><a href="index.html" class="nav-link navBar-target">1.1: What is Information Security?</a></li>
+                                        <li class="nav-item"><a href="index.html" class="nav-link navBar-target">1.2: Terminology</a></li>
+                                        <li class="nav-item"><a href="index.html" class="nav-link navBar-target">1.3: Attacks and Defenses</a></li>
+                                        <li class="nav-item"><a href="index.html" class="nav-link navBar-target">1.4: Personal Security</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Module 2 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module2Submenu">
+                                    <i class="fa-regular fa-address-book"></i>
+                                    <span class="d-none d-sm-inline">Module 2: Computer Security</span>
+                                </a>
+                                <div class="collapse" id="module2Submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="0" >2.0: Introduction to Computer Security</a></li>
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="1" >2.1: Malware</a></li>
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="7" >2.1 Quiz</a></li>
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="8" >2.2: Defending Against Malware</a></li>
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="13" >2.2 Quiz</a></li>
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="14">2.3: Incident Response</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Module 3 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module3Submenu">
+                                    <i class="fa-regular fa-square-plus"></i>
+                                    <span class="d-none d-sm-inline">Module 3: Internet Security</span>
+                                </a>
+                                <div class="collapse" id="module3Submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a href="internet-security.html" class="nav-link">3.1 Introduction to Internet Security</a></li>
+                                        <li class="nav-item"><a href="internet-security.html" class="nav-link">3.2 Internet Security Risks</a></li>
+                                        <li class="nav-item"><a href="internet-security.html" class="nav-link">3.3 Internet Defenses</a></li>
+                                        <li class="nav-item"><a href="internet-security.html" class="nav-link">3.4 Cybercrime and Law Enforcement</a></li>
+                                        <li class="nav-item"><a href="internet-security.html" class="nav-link">3.5 Helpful Security Tools</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Module 4 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module4Submenu">
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                    <span class="d-none d-sm-inline">Module 4: Privacy</span>
+                                </a>
+                                <div class="collapse" id="module4Submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a href="privacy.html" class="nav-link">4.1: Introduction to Privacy</a></li>
+                                        <li class="nav-item"><a href="privacy.html" class="nav-link">4.2: Understanding Data Theft</a></li>
+                                        <li class="nav-item"><a href="privacy.html" class="nav-link">4.3: Intro to Cryptography</a></li>
+                                        <li class="nav-item"><a href="privacy.html" class="nav-link">4.4: Cookies</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Module 5 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module5Submenu">
+                                    <i class="fa-regular fa-face-tired"></i>
+                                    <span class="d-none d-sm-inline">Module 5: IS THERE A MODULE 5?????</span>
+                                </a>
+                                <div class="collapse" id="module5Submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a href="#" class="nav-link">Sublink 1</a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link">Sublink 2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                <main class="col overflow-auto h-100" >
+                    <!--Module 1.0-->
+                    <div  class="bg-light border rounded-3 p-3">
+                        <h3>Module 1: Introduction to Cybersecurity</h3>
+                        <!-- Module 1.0.0 (Introduction) -->
+                        <div id="1_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">1.0: Cybersecurity is Ongoing </span>
+                            </div>
+                            <div class="card-body">
+                                <p>Everything we do these days is online. You would think we could download antivirus 
+                                    software by now and have protection covered, right? Unfortunately, the reality is 
+                                    not that simple. As quickly as protections are developed, new vulnerabilities are 
+                                    exposed. No single product guarantees online security.</p>
+                                <p>Instead, cybersecurity is an ongoing balancing act. Technologies emerge and new vulnerabilities 
+                                    are discovered. Those vulnerabilities are addressed, and as attacker tools improve, 
+                                    more risks arise. Cybersecurity professionals are constantly identifying and 
+                                    reacting to new threats.</p>
+                                <p>As you can see below, A SINGLE ATTACK hit 1.3 billion
+                                    targets. That's more than 1 in 8 people impacted globally by one threat actor! Click
+                                    the image to see the full interactive version from Information is Beautiful.</p>
+                                <a href="https://informationisbeautiful.net/visualizations/worlds-biggest-data-breaches-hacks/">
+                                    <img src="images/1.3billion.png" alt="1.3 billion" style="width: auto; height: auto;"/>
+                                </a></p>
+                                <p>The scale of cyber threats is massive. The stakes are high, and the consequences of a breach can be catastrophic. 
+                                    That's why cybersecurity is a critical field that requires constant vigilance and innovation to stay ahead of the threats.
+                                </p>
+                                <h3>Challenges of Cybersecurity</h3>
+                                <p>These are a few of the reasons why cybersecurity is tough to implement:</p>
+                                <ul>
+                                    <li>
+                                        <b>Devices are universally connected:</b> <br>
+                                        Attackers can come from anywhere across the globe.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Technology keeps improving: </b> <br>
+                                        Attackers can now launch attacks against millions of computers within minutes. 
+                                        Vast networks of attacker-controlled computers can easily overwhelm targets.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Attack tools are also improving: </b> <br>
+                                        Attack software is available to novices and pros alike. 
+                                        Attack tools can vary their behavior, so the same attack looks different each time.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Vendors can&apos;t keep up: </b> <br>
+                                        Vulnerabilities are detected quickly with these sophisticated tools. 
+                                        Vendors are overwhelmed trying to keep up with updating products, and security updates are challenging to implement in a timely fashion.
+                                    </li>
+                                    <li>
+                                        <b>User confusion: </b><br>
+                                        Users are forced to make difficult security decisions with little instruction. 
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                       
+                        <!-- Module 1.1.0 -->
+                        <div id="1_1" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">1.1 What is Information Security?</span>
+                            </div>
+                            <div class="card-body">
+                                <p> Just as we protect our homes against burglars with a security system, we also protect our personal information against threats (such as identity theft!). 
+                                    Information security is the practice of protecting information with value for people and organizations. 
+                                    As data is transmitted, processed and stored, it must be protected.
+                                </p>
+                    
+                                <!DOCTYPE html>
+                                <html>
+                                    <head>
+                                    <style>
+                                    .flip-card {
+                                    background-color: transparent;
+                                    width: 300px;
+                                    height: 200px;
+                                    perspective: 1000px;
+
+                                    float: left;
+                                    margin-right: 20px; /* Adjust the margin as needed */
+                                    
+                                    }
+                                
+                                    .flip-card-inner {
+                                    position: relative;
+                                    width: 100%;
+                                    height: 100%;
+                                    text-align: center;
+                                    transition: transform 0.6s;
+                                    transform-style: preserve-3d;
+                                    }
+                                
+                                    .flip-card:hover .flip-card-inner {
+                                    transform: rotateY(180deg);
+                                    }
+                                
+                                    .flip-card-front, .flip-card-back {
+                                    position: absolute;
+                                    width: 100%;
+                                    height: 100%;
+                                    backface-visibility: hidden;
+                                    }
+                                
+                                    .flip-card-front {
+                                    background-color: #bbb;
+                                    color: black;
+                                    }
+                                
+                                    .flip-card-back {
+                                    background-color: #1f5512;
+                                    color: white;
+                                    transform: rotateY(180deg);
+                                    }
+                                    .flip-container {
+                                        clear: both; /* Clear floats */
+                                        margin-bottom: 20px; /* Add spacing between containers */
+                                    }
+                                    </style>
+                                    </head>
+                                    <body >
+                                        <div class="flip-container">
+                                            <h3>CIA: The Three Protections</h3>
+                                            <div class="flip-card">
+                                                <div class="flip-card-inner">
+                                                    <div class="flip-card-front">
+                                                        <h1>Confidentiality</h1>
+                                                    </div>
+                                                    <div class="flip-card-back">
+                                                        <h2>Confidentiality</h2>
+                                                        <p>Only authorized parties should be able to view the information (example: credit card information).</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="flip-card">
+                                                <div class="flip-card-inner">
+                                                    <div class="flip-card-front">
+                                                        <h1>Integrity</h1>
+                                                    </div>
+                                                    <div class="flip-card-back">
+                                                        <h2>Integrity</h2>
+                                                        <p>Information should be free from tampering (example: amount of purchase).</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        
+                                            <div class="flip-card">
+                                                <div class="flip-card-inner">
+                                                    <div class="flip-card-front">
+                                                        <h1>Availability</h1>
+                                                    </div>
+                                                    <div class="flip-card-back">
+                                                        <h2>Availability</h2>
+                                                        <p>The right people need to be able to access data as needed (example: security not so complex that merchant can’t access order information).</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="flip-container">
+                                            <h3>AAA: Three Considerations</h3>
+                                            <div class="flip-card">
+                                                <div class="flip-card-inner">
+                                                    <div class="flip-card-front">
+                                                        <h1>Authentication</h1>
+                                                    </div>
+                                                    <div class="flip-card-back">
+                                                        <h2>Authentication</h2>
+                                                        <p>Ensures user is not an impostor (example: 2FA to log on)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                
+                                            <div class="flip-card">
+                                                <div class="flip-card-inner">
+                                                    <div class="flip-card-front">
+                                                        <h1>Authorization</h1>
+                                                    </div>
+                                                    <div class="flip-card-back">
+                                                        <h2>Authorization</h2>
+                                                        <p>Permission to use technology resources (example: clerk allowed to see order history for customer)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                                
+                                            <div class="flip-card">
+                                                <div class="flip-card-inner">
+                                                    <div class="flip-card-front">
+                                                        <h1>Accounting</h1>
+                                                    </div>
+                                                    <div class="flip-card-back">
+                                                        <h2>Accounting</h2>
+                                                        <p>Tracks events (example: who accessed server when)</p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </body>
+                                </html>
+
+                                <h3 style="clear: both;">Information security consists of three layers:</h3>
+                                <p>Products, People and Policy</p>
+                                <ul>
+                                    <li><b>Products:</b> From door locks to sophisticated firewalls, physical products protect information.</li>
+                                    <li><b>People: </b> The folks who implement and properly use security products.</li>
+                                    <li><b>Policy: </b> Established by organizations so people correctly use security products.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 1.2 -->
+                        <div id="1_2" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">1.2: Terminology</span>
+                            </div>
+                            <div class="card-body">
+                                <p><img src="images/Triad.jpg" alt="Threat, Asset, Vulnerability" style="width: auto; height: auto;"/></p>
+                                <h3> Terminology: </h3>
+                                <p style="margin-left: 40px;">Here&apos;s a quick rundown of basic cybersecurity jargon. We will use these terms to discuss attacks and defenses.</p>
+                                <ul>
+                                    <li><b>Threat:</b> action that could cause harm.</li>
+                                    <li><b>Asset: </b> item with value (information in our case!).</li>
+                                    <li><b>Vulnerability: </b>weakness in security.</li>
+                                    <li><b>Risk: </b>exposure to danger.</li>
+                                    <li><b>Threat agent: </b>person who could carry out the threat.</li>
+                                    <li><b>Attack vector: </b>how the attack could occur.</li>
+                                </ul>
+                                <h3> Risks: </h3>
+                                <p style="margin-left: 40px;">Risks have their own associated vocabulary.</p>
+                                <ul>
+                                    <li><b>Risk avoidance:</b> avoid the risk in the first place, such as not storing information that could be stolen.</li>
+                                    <li><b>Risk acceptance: </b> accept there&apos;s a risk and do nothing.</li>
+                                    <li><b>Risk deterrence: </b>deter threat actors by advertising measures such as warnings and legal actions.</li>
+                                    <li><b>Risk mitigation: </b>make the risk less serious, such as by storing information in separate locations.</li>
+                                    <li><b>Risk transference: </b>hand the risk to someone else, such as by buying insurance.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 1.3 -->
+                        <div id="1_3" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">1.3: Attacks and Defenses</span>
+                            </div>
+                            <div class="card-body">
+                                <p>Attacks and attackers come in many forms:</p>
+                                <h3> Attackers: </h3>
+                                <ul>
+                                    <li><b>Cybercriminals:</b>seek fortune, not fame.</li>
+                                    <li><b>Script kiddies: </b> in it for thrills and notoriety.</li>
+                                    <li><b>Brokers: </b>sell vulnerabilities to highest bidder.</li>
+                                    <li><b>Insiders: </b>retaliate against own organization.</li>
+                                    <li><b>Cyberterrorists: </b>seek to cause pani.</li>
+                                    <li><b>Hacktivists: </b>think they are righting wrongs.</li>
+                                    <li><b>State attackers: </b>spy on and disrupt governments and citizens.</li>
+                                </ul>
+                                <h3> Attacks: </h3>
+                                <ul>
+                                    <li><b>Point-of-sale (POS) attacks,</b> where “memory scrapers” steal card information at time of transaction.</li>
+                                    <li><b>Keyless entry system attacks,</b> where threat actors amplify the signal of remote keys inside homes and gain access to vehicles parked outside.</li>
+                                    <li><b>Home wireless network attacks,</b> launching malicious software on home networks through a vulnerability found in 90 major manufacturers&apos; products.</li>
+                                    <li><b>Healthcare breaches</b> are a huge problem and have even shut down hospitals entirely.</li>
+                                </ul>
+                                <h3> Defenses: </h3>
+                                <ul>
+                                    <li><b>Block attacks:</b>A strong security perimeter will protect you. Firewalls, VPNs, strong passwords, and even simple locks on doors can keep your information safer.</li>
+                                    <li><b>Update defenses: </b> Always keep hardware and software updated and install operating system security updates as soon as possible to protect against known threats.</li>
+                                    <li><b>Minimize losses: </b>Keep backup copies of data and have a recovery policy in place in case a successful attack occurs.</li>
+                                    <li><b>Stay alert: </b>Make sure all users know how to safely use the system. Stay motivated and keep your eyes peeled! Information security is the responsibility of all users.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 1.4 -->
+                        <div id="1_4" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">1.4: Personal Security</span>
+                            </div>
+                            <div class="card-body" >
+                                <h3> Password Attacks:</h3>
+                                <p style="margin-left: 40px;">
+                                    Despite being the primary means of authentication for personal security, passwords are not strong defenses against attackers. 
+                                    Users frequently choose weak passwords and use the same password multiple times. 
+                                    With the help of AI, it is easier than ever before to crack poor passwords. 
+                                </p>
+                                <h3>Password Vulnerability:</h3>
+                                <p style="margin-left: 40px;">
+                                    The most frequently used passwords are alarmingly simple:
+                                </p>
+                                <p ><img src="images/Most-Common-Passwords-2023-819x1024.png" alt="passwords" style="width: 500px; height: auto; margin-left: 40px;"/></p>  
+                                <p style="margin-left: 40px;">With easy-to-access AI hardware, those common passwords can be cracked almost instantly:</p>
+                                <img src="images\crackpws.jpeg" alt="password cracking tools" style="width: 500px; height: auto; margin-left: 40px;"/>
+                                <p style="margin-left: 40px;">Password cracking tools exist for anyone to explore:</p>
+                            </div>
+                        </div>
+
+                        <!-- Module 1 Quiz -->
+                        <div id="quiz1" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">2.1 Quiz </span>
+                            </div>
+                            <div class="card-body">
+                                <form >
+                                    <!-- Question 1 -->
+                                    <div class="question">
+                                        <h4>1. What is malware?</h4>
+                                        <input type="radio" id="q1a1" name="q1" value="Software that performs unwanted actions on your computer system">
+                                        <label for="q1a1">Software that performs unwanted actions on your computer system</label><br>
+                                        <input type="radio" id="q1a2" name="q1" value="A type of software that helps protect your computer">
+                                        <label for="q1a2">A type of software that helps protect your computer</label><br>
+                                        <input type="radio" id="q1a3" name="q1" value="Software that speeds up your computer">
+                                        <label for="q1a3">Software that speeds up your computer</label>
+                                    </div>
+                                    <br>
+                                    <!-- Question 2 -->
+                                    <div class="question">
+                                        <h4>2. Which of these is NOT a primary action of malware?</h4>
+                                        <input type="radio" id="q2a1" name="q2" value="Kidnap Data">
+                                        <label for="q2a1">Kidnap Data</label><br>
+                                        <input type="radio" id="q2a2" name="q2" value="Eavesdrop">
+                                        <label for="q2a2">Eavesdrop</label><br>
+                                        <input type="radio" id="q2a3" name="q2" value="Improve Performance">
+                                        <label for="q2a3">Improve Performance</label>
+                                    </div>
+                                    <br>
+                                    <!-- Question 3 -->
+                                    <div class="question">
+                                        <h4>3. What is a common tactic used by Ransomware?</h4>
+                                        <input type="checkbox" id="q3a1" name="q3a1">
+                                        <label for="q3a1">Locking the system until a ransom is paid</label><br>
+                                        <input type="checkbox" id="q3a2" name="q3a2">
+                                        <label for="q3a2">Stealing user data for identity theft</label><br>
+                                        <input type="checkbox" id="q3a3" name="q3a3">
+                                        <label for="q3a3">Encrypting files and demanding payment for decryption</label>
+                                    </div>
+                                    <br>
+                                    <!-- Question 4 -->
+                                    <div class="question">
+                                        <h4>4. What does Eavesdropping malware do?</h4>
+                                        <input type="radio" id="q4a1" name="q4" value="Deletes files randomly">
+                                        <label for="q4a1">Deletes files randomly</label><br>
+                                        <input type="radio" id="q4a2" name="q4" value="Captures and transmits data without consent">
+                                        <label for="q4a2">Captures and transmits data without consent</label><br>
+                                        <input type="radio" id="q4a3" name="q4" value="Slows down the computer">
+                                        <label for="q4a3">Slows down the computer</label>
+                                    </div>
+                                    <br>
+                                    <!-- Question 5 -->
+                                    <div class="question">
+                                        <h4>5. Which type of malware disguises itself as legitimate software?</h4>
+                                        <input type="radio" id="q5a1" name="q5" value="Trojan">
+                                        <label for="q5a1">Trojan</label><br>
+                                        <input type="radio" id="q5a2" name="q5" value="Virus">
+                                        <label for="q5a2">Virus</label><br>
+                                        <input type="radio" id="q5a3" name="q5" value="Worm">
+                                        <label for="q5a3">Worm</label>
+                                    </div>
+                                    <br>
+                                    <!-- Question 6 -->
+                                    <div class="question">
+                                        <h4>6. Which malware is used primarily to launch attacks from the infected host?</h4>
+                                        <input type="radio" id="q6a1" name="q6" value="Bot">
+                                        <label for="q6a1">Bot</label><br>
+                                        <input type="radio" id="q6a2" name="q6" value="Spyware">
+                                        <label for="q6a2">Spyware</label><br>
+                                        <input type="radio" id="q6a3" name="q6" value="Adware">
+                                        <label for="q6a3">Adware</label>
+                                    </div>
+                                    <br>
+                                    <!-- Question 7 -->
+                                    <div class="question">
+                                        <h4>7. What type of malware specifically targets bypassing security protocols?</h4>
+                                        <input type="radio" id="q7a1" name="q7" value="Backdoor">
+                                        <label for="q7a1">Backdoor</label><br>
+                                        <input type="radio" id="q7a2" name="q7" value="Rootkit">
+                                        <label for="q7a2">Rootkit</label><br>
+                                        <input type="radio" id="q7a3" name="q7" value="Both A and B">
+                                        <label for="q7a3">Both A and B</label>
+                                    </div>
+                                    <br>
+                                    <!-- Question 8 -->
+                                    <div class="question">
+                                        <h4>8. Logic bombs are designed to:</h4>
+                                        <input type="radio" id="q8a1" name="q8" value="Improve system performance">
+                                        <label for="q8a1">Improve system performance</label><br>
+                                        <input type="radio" id="q8a2" name="q8" value="Execute malicious activity under certain conditions">
+                                        <label for="q8a2">Execute malicious activity under certain conditions</label><br>
+                                        <input type="radio" id="q8a3" name="q8" value="Provide remote access to the user">
+                                        <label for="q8a3">Provide remote access to the user</label>
+                                    </div>
+                                    <br>
+                                    <!-- Question 9 -->
+                                    <div class="question">
+                                        <h4>9. Which of the following is true about spyware?</h4>
+                                        <input type="checkbox" id="q9a1" name="q9a1">
+                                        <label for="q9a1">It can install other malicious software</label><br>
+                                        <input type="checkbox" id="q9a2" name="q9a2">
+                                        <label for="q9a2">It only targets financial data</label><br>
+                                        <input type="checkbox" id="q9a3" name="q9a3">
+                                        <label for="q9a3">It can monitor user activity without their knowledge</label>
+                                    </div>
+                                    <br>
+                                    <!-- Question 10 -->
+                                    <div class="question">
+                                        <h4>10. Rootkits are primarily used for:</h4>
+                                        <input type="radio" id="q10a1" name="q10" value="Speeding up the operating system">
+                                        <label for="q10a1">Speeding up the operating system</label><br>
+                                        <input type="radio" id="q10a2" name="q10" value="Hiding malware presence">
+                                        <label for="q10a2">Hiding malware presence</label><br>
+                                        <input type="radio" id="q10a3" name="q10" value="Enhancing user privacy">
+                                        <label for="q10a3">Enhancing user privacy</label>
+                                    </div>
+                                    <br>
+                                    <center><button type="button" onclick="submitQuiz('quiz1')">Submit Quiz</button></center>
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow-lg">
+                        <button id="back" class="btn btn-primary btn-lg" style="background-color: #0a5640;"> <b>Back</b> </button><p></p>
+                        <button id="next" class="btn-primary btn-lg" style="background-color: #0a5640;" ><b> Next</b> </button>
+                        <center><button onclick="redirectToQuiz()" type="button">Module 2 Quiz</button></center>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+<script src="js/navBar.js"></script>
+<script src="js/quiz.js"></script>
+</body>
+</html>

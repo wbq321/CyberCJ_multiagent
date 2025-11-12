@@ -1,0 +1,27 @@
+.container-fluid {
+    /* background: blue; */
+}
+
+/* NAVIGATION */
+
+.nav-item a {
+    color: black
+}
+
+.nav-item a:hover {
+    color: green;
+}
+
+
+/* QUIZZES */
+#quiz-body {
+    font-family: Arial, sans-serif; padding: 20px;
+}
+
+.question { 
+    margin-bottom: 20px; 
+}
+
+.question h4 { 
+    margin-bottom: 10px; 
+}

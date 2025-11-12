@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <link rel="stylesheet" href="./module_4_styles.css">
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+</head>
+<body>
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 4.3-->
+                    <div id="4_0" class="bg-light border rounded-3 p-3">
+                        <h3>Module 4: Privacy</h3>
+                        <!-- Module 4.3.4 -->
+                        <div class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">4.2.4 Protections Through Cryptology</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>Security Measures for Data at Rest</h3>
+                                <p>
+                                   <b>Data at Rest:</b> Encrypting stored data to protect it from unauthorized access. Data at rest refers to data that is stored on a physical medium and is not actively being accessed or processed. It contrasts with data in transit, which is data being actively transferred from one location to another, and data in use, which is data being processed or accessed by applications. Data at rest can be found in various forms and on different types of storage devices, including hard drives, solid-state drives, USB drives, backup tapes, and cloud storage.
+                                </p>
+                                <p>The security of data at rest is crucial because it represents a static target for unauthorized access or theft. If an attacker can gain access to stored data, they can potentially extract sensitive information, such as personal details, financial records, intellectual property, or login credentials. This risk is especially significant for organizations that store large volumes of sensitive data.
+                                </p>
+                                <ul><ul>
+                                    <li><b>Encryption:</b><br>
+                                        This is the most effective way to protect the confidentiality of data at rest. By encrypting the data, it is rendered unreadable to anyone who does not have the decryption key. Even if an attacker gains physical access to the storage medium, the data will remain inaccessible without the key. Encryption can be applied at different levels, including individual files, entire databases, or full disks.
+                                    </li>
+                                    <br>
+                                    <li><b>Access Controls: </b><br>
+                                        Implementing strict access controls ensures that only authorized users and systems can access or modify the stored data. This includes setting up user permissions and roles within an organization's IT systems.
+                                    </li>
+                                    <br>
+                                    <li><b>Data Masking: </b><br>
+                                        For certain types of data, masking or anonymization can be used to protect sensitive information. This involves altering the data in a way that it remains usable for processing but cannot be traced back to any individual.
+                                    </li>
+                                    <br>
+                                    <li><b>Physical Security: </b><br>
+                                        Protecting the physical security of the devices or data centers where data is stored is essential. This can include measures such as locks, biometric security, security guards, and surveillance cameras.
+                                    </li>
+                                    <br>
+                                    <li><b>Regular Audits and Monitoring: </b><br>
+                                        Regular security audits and continuous monitoring of access logs can help identify and mitigate unauthorized access attempts or other security incidents involving data at rest.
+                                    </li>
+                                    <br>
+                                    <li><b>Data Lifecycle Management </b><br>
+                                        Implementing policies for the regular review, archiving, and secure deletion of data that is no longer needed can reduce the volume of data at risk and ensure compliance with data protection regulations.
+                                    </li>
+                                </ul></ul>
+                                <p>Protecting data at rest is a fundamental aspect of information security and privacy practices. It helps prevent data breaches and the resulting financial loss, reputational damage, and legal consequences. As threats evolve and storage technologies change, the strategies and tools for securing data at rest also need to be continually updated and refined.
+                                </p>
+                                <h3>Security Measures for Data in Transit</h3>
+                                <p>Data in transit refers to any data that is being moved from one location to another across a network. This can include data being transferred over the internet, between devices in a local network, or through wireless connections such as Wi-Fi or Bluetooth. Data in transit can be contrasted with data at rest, which is data that is not actively moving and is stored on a device or network, and data in use, which is data being processed or accessed by applications.
+                                </p>
+                                <p>The protection of data in transit is critical because, during transmission, data can be more vulnerable to interception, eavesdropping, or manipulation by unauthorized parties. If sensitive information such as personal details, financial transactions, or confidential communications is intercepted, it can lead to privacy violations, financial fraud, and other security breaches.</p>
+                                <p>Common risks to data in transit:</p>
+                                <ul><ul>
+                                    <li><b>Interception and Eavesdropping:</b><br>
+                                        Attackers may capture sensitive information as it travels across a network.
+                                    </li>
+                                    <li><b>Man-in-the-Middle Attacks (MitM): </b><br>
+                                        An attacker secretly relays and possibly alters the communication between two parties who believe they are directly communicating with each other.
+                                    </li>
+                                    <li><b>Replay Attacks:  </b><br>
+                                        An attacker captures data in transit and retransmits it to attempt unauthorized access or execute a transaction.
+                                    </li></ul></ul>
+                                    <p>Security measures for Data in Transit:</p>
+                                    <ul><ul>
+                                    <li><b>Encryption: </b><br>
+                                        Encrypting data before it is transmitted ensures that even if the data is intercepted, it cannot be read or used by unauthorized parties. Protocols such as TLS (Transport Layer Security) and SSL (Secure Sockets Layer) are commonly used to secure web traffic, while VPNs (Virtual Private Networks) can secure data over untrusted networks.
+                                    </li>
+                                    <li><b>Secure Protocols:  </b><br>
+                                        Using secure communication protocols like HTTPS (instead of HTTP), SFTP (Secure File Transfer Protocol), and SSH (Secure Shell) can provide encryption and secure authentication mechanisms.
+                                    </li>
+                                    <li><b>Authentication and Integrity Checks: </b><br>
+                                        Implementing strong authentication methods and integrity checks (such as digital signatures) ensures that the data is sent and received by the intended parties without being tampered with.
+                                    </li>
+                                    <li><b>Virtual Private Networks (VPNs): </b><br>
+                                        VPNs create a secure, encrypted tunnel for data to travel through, which can protect the data from eavesdropping and interception over untrusted networks like public Wi-Fi.
+                                    </li>
+                                    <li><b>End-to-End Encryption (E2EE): </b><br>
+                                        Ensuring that data is encrypted from the sender to the recipient without intermediary decryption.
+                                    </li>
+                                    <br>
+                                
+                                <center><img class="gif" src="../images/E2E.jpg" alt="Image of PUPs" style="width: auto; height: 300px;"/></center>
+                            </ul></ul>
+                                <p>Securing data in transit is a fundamental aspect of network security and privacy protection. It involves a combination of technologies, protocols, and best practices designed to ensure that data remains confidential and intact from its point of origin to its destination. As cyber threats evolve, maintaining high standards of security for data in transit remains a constant challenge for individuals and organizations alike.
+                                </p>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

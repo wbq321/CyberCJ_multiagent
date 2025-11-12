@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+    <style>
+        .iframe-container {
+            position: relative;
+            width: 600px; /* Adjust as needed */
+            height: 400px; /* Adjust as needed */
+            cursor: pointer; /* Indicates clickable */
+        }
+    
+        #IframePreview, #staticPreview {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+    </style>
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 2.0-->
+                    <div  class="bg-light border rounded-3 p-3">
+                        <h3>Module 3: Internet Security</h3>
+                        <!-- Module 2.0.0 (Introduction) -->
+                        <div id="2_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">3.3.2 Protecting Devices and Servers: Understanding Online Attacks</span>
+                            </div>
+                            <div class="card-body">
+                                <h3>Ever Wonder About the Risks Lurking Behind your Devices and Favorite Websites?</h3>
+                                <p>In an increasingly interconnected world, ensuring the security of both user devices and 
+                                    web servers is paramount. From the smartphones we carry in our pockets to the servers hosting our favorite websites, 
+                                    understanding the threats they face is essential for safeguarding our digital lives.
+                                </p>
+                                <ol>
+                                    <li>
+                                        <b>Distributed Denial of Service (DDoS) Attacks: </b> <br>
+                                        DDoS attacks overwhelm a target system, network, or service with a flood of traffic from multiple sources, 
+                                        rendering it inaccessible to legitimate users. These attacks can disrupt operations, cause financial losses, and damage reputation.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Advanced Persistent Threats (APTs): </b><br>
+                                        APTs are sophisticated and targeted cyberattacks typically carried out by nation-state actors, organized cybercriminal groups, or 
+                                        well-funded adversaries. APTs involve a prolonged and stealthy infiltration of a target's network to steal sensitive information, 
+                                        disrupt operations, or cause damage over an extended period.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Zero-Day Exploits: </b><br>
+                                        Zero-day exploits target vulnerabilities in software or hardware that are unknown to the vendor or have not been patched yet. 
+                                        Attackers exploit these vulnerabilities to gain unauthorized access to systems, install malware, or steal data before security patches are released.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Ransomware Attacks:  </b><br>
+                                        Ransomware is a type of malware that encrypts a victim's files or locks them out of their systems until a ransom is paid. Ransomware attacks can 
+                                        cause widespread disruption, financial losses, and data breaches, making them particularly damaging to businesses, organizations, and individuals.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Supply Chain Attacks: </b><br>
+                                        Supply chain attacks target vulnerabilities in the software, hardware, or services provided by third-party vendors or suppliers. Attackers exploit 
+                                        these vulnerabilities to infiltrate a target organization's network, steal data, or launch further attacks, often with far-reaching 
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Cyber Espionage:  </b><br>
+                                        Cyber espionage involves the unauthorized acquisition of sensitive information or intellectual property for espionage purposes. 
+                                        Nation-state actors, cybercriminal groups, or competitors may conduct cyber espionage to gain strategic, economic, or military advantages.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>IoT-based Attacks: </b><br>
+                                        Internet of Things (IoT) devices, such as smart cameras, thermostats, and industrial sensors, are increasingly targeted in cyberattacks. 
+                                        Attackers may exploit vulnerabilities in IoT devices to gain access to networks, launch DDoS attacks, or compromise critical infrastructure systems.
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>Social Engineering Attacks:  </b><br>
+                                        Social engineering attacks manipulate human psychology to trick individuals into divulging sensitive information, performing actions, or 
+                                        compromising security. Techniques such as phishing, pretexting, baiting, and tailgating are commonly used in social engineering attacks.
+                                    </li>
+                                    <br>
+                                    <a href="https://livethreatmap.radware.com/"><b>LIVE THREAT MAP - View live cyber threats across the globe</b></a>
+                                    <div class="iframe-container">
+                                        <iframe id="IframePreview" src="https://livethreatmap.radware.com/" style="display:none;" width="100%" height="100%"></iframe>
+                                        <img id="staticPreview" src="../images/live-threat-map.png" alt="Preview of External Website">
+                                    </div>
+                                      
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+<script src="../js/navBar.js"></script>
+</body>
+</html>

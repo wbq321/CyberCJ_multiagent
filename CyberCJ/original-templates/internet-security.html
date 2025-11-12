@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <style>
+            body,
+            html {
+                border-radius: 5px;
+            }
+
+            body.thumb {
+                transform: scale(0.4);
+                box-shadow: 0 .5rem 1rem rgba(0, 0, 0, .15) !important;
+            }
+
+            main {
+                min-height: 80vh;
+            }
+
+            [class*='container'] {
+
+                background-clip: content-box;
+            }
+
+            .row [class*='col'] {
+                background-color: #efefef;
+                background-clip: content-box;
+            }
+
+            .nav-item {
+                background-color: #eeeeff;
+                background-clip: content-box;
+            }
+
+
+            .nav-link {
+                color: #000;
+                transition: color 0.3s ease;
+            }
+
+            .nav-link:hover {
+                color: #0c7c3e;
+            }
+
+            header {
+                background-color: #0a5640; /* NDSU Green */
+                color: white;
+                padding: 10px 20px; /* Increased padding */
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+            }
+            
+        </style>
+        <header class="py-3 mb-4 border-bottom shadow">
+            <div class="container-fluid align-items-center d-flex">
+                <div class="flex-shrink-1">
+                    <a href="#" class="d-flex align-items-center col-lg-4 mb-2 mb-lg-0 link-dark text-decoration-none">
+                        <i class="bi bi-bootstrap fs-2 text-dark"></i>
+                    </a>
+                </div>
+                <!-- Header Nav Bar -->
+                <div class="flex-grow-1 d-flex flexalign-items-center" >
+                    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+                        <div class="container-fluid">
+                            <a class="navbar-brand" href="index.html">Cybersecurity for Criminal Justice</a>
+                            <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                                data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false"
+                                aria-label="Toggle navigation">
+                                <span class="navbar-toggler-icon"></span>
+                            </button>
+                            <div class="collapse navbar-collapse" id="navbarNav">
+                                <ul class="navbar-nav">
+                                    <li class="nav-item bg-dark">
+                                        <a class="nav-link active" aria-current="page" href="index.html">Home</a>
+                                    </li>
+                                    <li class="nav-item bg-dark">
+                                        <a class="nav-link" href="#">Modules</a>
+                                    </li>
+                                    <!--<li class="nav-item dropdown bg-light">
+                                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button"
+                                            data-bs-toggle="dropdown" aria-expanded="false">
+                                            Virtual Lab
+                                        </a>
+                                        <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
+                                            <li><a class="dropdown-item" href="#">Link 1</a></li>
+                                            <li><a class="dropdown-item" href="#">Link 2</a></li>
+                                            <li><a class="dropdown-item" href="#">Link 3</a></li>
+                                        </ul>
+                                    </li>-->
+                                    <li class="nav-item bg-dark"><a href="#" class="nav-link">Contact Us</a></li>
+                                </ul>
+                            </div>
+                        </div>
+                    </nav>
+                </div>
+            </div>
+        </header>
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                <!-- Side Nav Menu -->
+                <aside class="col-sm-3 flex-grow-sm-1 flex-shrink-1 flex-grow-0 sticky-top pb-sm-0 pb-3" >
+                    <div class="bg-light border rounded-3 p-1 h-100 sticky-top">
+                        <ul class="nav nav-pills flex-sm-column flex-row mb-auto justify-content-between text-truncate">
+                            <!-- Module 1 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module1Submenu">
+                                    <i class="fas fa-home"></i>
+                                    <span class="d-none d-sm-inline">Module 1: Introduction to Cybersecurity</span>
+                                </a>
+                                <div class="collapse" id="module1Submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a href="index.html" class="nav-link navBar-target">1.0: Cybersecurity is Ongoing</a></li>
+                                        <li class="nav-item"><a href="index.html" class="nav-link navBar-target">1.1: What is Information Security?</a></li>
+                                        <li class="nav-item"><a href="index.html" class="nav-link navBar-target">1.2: Terminology</a></li>
+                                        <li class="nav-item"><a href="index.html" class="nav-link navBar-target">1.3: Attacks and Defenses</a></li>
+                                        <li class="nav-item"><a href="index.html" class="nav-link navBar-target">1.4: Personal Security</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Module 2 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module2Submenu">
+                                    <i class="fa-regular fa-address-book"></i>
+                                    <span class="d-none d-sm-inline">Module 2: Computer Security</span>
+                                </a>
+                                <div class="collapse" id="module2Submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="0" >2.0: Introduction to Computer Security</a></li>
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="1" >2.1: Malware</a></li>
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="7" >2.1 Quiz</a></li>
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="8" >2.2: Defending Against Malware</a></li>
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="13" >2.2 Quiz</a></li>
+                                        <li class="nav-item "><a href="computer-security.html" class="nav-link navBar-target" data-target="14">2.3: Incident Response</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Module 3 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module3Submenu">
+                                    <i class="fa-regular fa-square-plus"></i>
+                                    <span class="d-none d-sm-inline">Module 3: Internet Security</span>
+                                </a>
+                                <div class="collapse" id="module3Submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a href="internet-security.html" class="nav-link">3.1 Introduction to Internet Security</a></li>
+                                        <li class="nav-item"><a href="internet-security.html" class="nav-link">3.2 Internet Security Risks</a></li>
+                                        <li class="nav-item"><a href="internet-security.html" class="nav-link">3.3 Internet Defenses</a></li>
+                                        <li class="nav-item"><a href="internet-security.html" class="nav-link">3.4 Cybercrime and Law Enforcement</a></li>
+                                        <li class="nav-item"><a href="internet-security.html" class="nav-link">3.5 Helpful Security Tools</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Module 4 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module4Submenu">
+                                    <i class="fa-regular fa-calendar-days"></i>
+                                    <span class="d-none d-sm-inline">Module 4: Privacy</span>
+                                </a>
+                                <div class="collapse" id="module4Submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a href="privacy.html" class="nav-link">4.1: Introduction to Privacy</a></li>
+                                        <li class="nav-item"><a href="privacy.html" class="nav-link">4.2: Understanding Data Theft</a></li>
+                                        <li class="nav-item"><a href="privacy.html" class="nav-link">4.3: Intro to Cryptography</a></li>
+                                        <li class="nav-item"><a href="privacy.html" class="nav-link">4.4: Cookies</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                            <!-- Module 5 links -->
+                            <li class="nav-item bg-light">
+                                <a href="#" class="nav-link px-2 text-truncate" data-bs-toggle="collapse"
+                                    data-bs-target="#module5Submenu">
+                                    <i class="fa-regular fa-face-tired"></i>
+                                    <span class="d-none d-sm-inline">Module 5: IS THERE A MODULE 5?????</span>
+                                </a>
+                                <div class="collapse" id="module5Submenu">
+                                    <ul class="nav flex-column">
+                                        <li class="nav-item"><a href="#" class="nav-link">Sublink 1</a></li>
+                                        <li class="nav-item"><a href="#" class="nav-link">Sublink 2</a></li>
+                                    </ul>
+                                </div>
+                            </li>
+                        </ul>
+                    </div>
+                </aside>
+                <main class="col overflow-auto h-100" >
+                    <!--Module 3.0-->
+                    <div id="2_0" class="bg-light border rounded-3 p-3">
+                        <h3>3.0: What is Internet Security?</h3>
+                        <p>Internet Security is the protection of digital information and systems from unauthorized access, data breaches, and cyber threats 
+                            specifically related to online activities. Internet Security is important because it emphasizes the critical role of internet 
+                            security in safeguarding sensitive information, preventing cybercrimes, and maintaining public safety in the digital realm.
+                            
+                        </p>
+                        <!-- Brief Overview -->
+                        <div class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Navigating the Web: Exploring Internet Security and Beyond. </span>
+                            </div>
+                            <div class="card-body">
+                                <ol>
+                                    <li>
+                                        <b>Surface Web:</b> <br>
+                                        The world wide web or surface web is the part of the internet that is easily accessible and searchable through standard search engines 
+                                        like Google, Bing, or Yahoo. It's the web that most people interact with on a daily basis. <br>
+                                        <br>
+                                        The surface web itself is not vulnerable, but the vulnerability of individual websites or online platforms depends on certain factors, 
+                                        including their security measures, updates, and how well they protect against potential threats. <br>
+                                        <br>
+                                        On the defensive side, cybersecurity pros use tools to check the WWW for signs of trouble, like leaked passwords or discussions about 
+                                        cyber attacks. This helps them track down and be on top of problems before they become serious.
+                                        <br>
+                                        Attackers also use the WWW to share hacking tools, plan attacks, and exchange information. This means security teams must always be 
+                                        alert and ready to adapt to new methods coming from attackers.<br>
+                                        <br>
+                                        <img src="./images/wwwIMG.jpg" alt="Surface Web Image">
+
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>The Deep Web:</b><br>
+                                        The deep web refers to the portion of the internet that isn't indexed by traditional search engines like Google, Bing, or Yahoo. 
+                                        It's comprised of websites that are not accessible through standard web browsers and often require specific software, configurations, 
+                                        or permissions to access. This part of the internet includes paywalls, databases, password-protected sites, and other content that isn't meant for 
+                                        public consumption. <br>
+                                        <br>
+                                        Now, the deep web itself isn't inherently criminal. It includes things like academic databases, private company intranets, and other 
+                                        legitimate platforms that aren't designed to be indexed by search engines. However, it also harbors elements of the internet that are 
+                                        used for illegal activities, which is where the term "dark web" often comes into play. <br>
+                                        <br>
+                                        In terms of criminal justice, the deep web is pertinent for a few reasons:
+                                        <br>
+                                        <ol>
+                                            <li>Hidden Information: <br> Criminals may use the deep web to hide information, such as their identities, communication, and 
+                                                illicit transactions. This hidden nature poses challenges for law enforcement agencies trying to track criminal activities 
+                                                and gather evidence.</li>
+                                            
+                                            <li>Investigative Leads: <br> Despite being hidden, the deep web can provide valuable leads for criminal investigations. Law 
+                                                enforcement agencies can use specialized tools and techniques to access certain parts of the deep web, uncovering information 
+                                                crucial to solving cases. </li>
+
+                                            <li>Cybercrime Infrastructure: <br> Elements of cybercrime, such as botnets, malware distribution networks, and hacking forums, may operate 
+                                                within the deep web. Understanding and infiltrating these networks are essential for combating cyber threats and safeguarding digital infrastructure. </li>
+                                        </ol>
+                                        <br>
+                                        <iframe width="560" height="315" src="https://youtu.be/_UOK7aRmUtw?si=7tRz8DDOzPZsoQDr" frameborder="0" allowfullscreen></iframe>
+                                    </li>
+                                    <br>
+                                    <li>
+                                        <b>The Dark Web:</b><br>
+                                        The dark web is a hidden portion of the internet that requires specific software, configurations, or permissions to access. Unlike the deep web, which 
+                                        includes all unindexed content, the dark web specifically refers to websites and content that exist on overlay networks and can only be accessed with 
+                                        specialized tools like Tor (The Onion Router) browser.<br>
+                                        <br>
+                                        Renowned for its notorious mask of anonymity, the Dark Web emerges as a focal point for underground transactions and illicit activities making it a hub of 
+                                        criminal commerce. <br> 
+                                        <br>
+                                        The inception of the Dark Web can be traced back to the strategic endeavors of the United States (US) Department of Defense, which 
+                                        sought to establish a secret and secure communication channel for its intelligence operatives.
+                                        <br>
+                                        <ol>
+                                            <li>Illegal Marketplaces</li>
+                                            <li>Anonumity and Encryption</li>
+                                            <li>Cybercrime</li>
+                                            <li>Extremism and Illegal Content</li>
+                                        </ol>
+                                        <br>
+                                        <iframe width="560" height="315" src="https://youtu.be/fDR8J34Kfws?si=G3RYXw0xmgdIJ7tk" frameborder="0" allowfullscreen></iframe>
+
+                                    </li>
+                                    <br>
+                                    <center><button  onclick="window.location.href='/quiz2_2'" type="button" style="margin-right: 10px;">Quiz 3.0</button></center>
+                                   <!-- <li>
+                                        <b>Compliance with Legal Standards:</b><br>
+                                        
+                                    </li> -->
+                                </ol>
+                            </div>
+                        </div>
+                        <!-- <div class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Course Outcome</span>
+                            </div>
+                            <div class="card-body">
+                                <p>By a thorough examination of artificial intelligence's impact and implications, your
+                                    Artificial Intelligence for Cyber Security course is designed to equip you with the
+                                    skills to:</p>
+                                <ul>
+                                    <li>Explore the fundamentals of AI and ML, including a concise history.</li>
+                                    <li>Differentiate between supervised and unsupervised learning paradigms.</li>
+                                    <li>Gain insights into the workings of Generative AI.</li>
+                                    https://cybercj.tacoma.uw.edu/tacoma/chapter5
+                                    <li>Assess your understanding through interactive quizzes.</li>
+                                    <li>Engage with Virtual labs to experience practical applications of AI and ML in
+                                        common scenarios.</li>
+                                    <li>Understand and discuss the crucial concerns surrounding AI and machine learning,
+                                        particularly their influence on cybersecurity.</li>
+                                    <li>Recognize and address biases inherent in AI systems.</li>
+                                </ul>
+                            </div>
+                        </div>
+                        <div class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Course Outcome</span>
+                            </div>
+                            <div class="card-body">
+                                <p>By a thorough examination of artificial intelligence's impact and implications, your
+                                    Artificial Intelligence for Cyber Security course is designed to equip you with the
+                                    skills to:</p>
+                                <ul>
+                                    <li>Explore the fundamentals of AI and ML, including a concise history.</li>
+                                    <li>Differentiate between supervised and unsupervised learning paradigms.</li>
+                                    <li>Gain insights into the workings of Generative AI.</li>
+                                    https://cybercj.tacoma.uw.edu/tacoma/chapter5
+                                    <li>Assess your understanding through interactive quizzes.</li>
+                                    <li>Engage with Virtual labs to experience practical applications of AI and ML in
+                                        common scenarios.</li>
+                                    <li>Understand and discuss the crucial concerns surrounding AI and machine learning,
+                                        particularly their influence on cybersecurity.</li>
+                                    <li>Recognize and address biases inherent in AI systems.</li>
+                                </ul>
+                            </div>
+                        </div> -->
+                    </div>
+                     
+
+                    
+                    <!--Module 3.2-->
+                     <div  class="bg-light border rounded-3 p-3">
+                        <!-- Module 3.1 -->
+                        <div id="2_2_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">3.1 Internet Security Risks</span>
+                            </div>
+                            <div class="card-body">
+                                <p></p>
+
+                                <!-- Module 3.1.1 -->
+                        <div id="2_2_1" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">3.1.1 User Device Threats</span>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                </p>
+                                <ul>
+                                    <li><b>Browser Dangers</b><br>
+                                    <p></p>
+                                    </li>
+                                    <li><b>Email Risks</b><br>
+                                        <p></p>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 3.1.2 -->
+                        <div id="2_2_2" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">3.1.2 Threats From Web Servers</span>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                </p>
+
+                                <ul>
+                                    <li><b>Malvertising</b><br>
+                                    <p>The random ads seen on popular websites are outsourced by the owner and not always monitored for malware that 
+                                        is in disguise.
+                                    </p>
+                                    </li>
+                                    <li><b>Drive-By Downloads</b><br>
+                                        <p>Viewing a website that is already infected with malware will infect your computer. The attacker is exploiting 
+                                            the websites vulnerability and injecting it with harmful malicious content.
+                                        </p>
+                                    </li>
+                                    <li><b>Cross-Site Scripting (XSS)</b><br>
+                                        <p>An attack using scripting that originates from one site to impact another on the users computer.
+                                        </p>
+                                    </li>
+                                    <li><b>Cross-Site Request Forgery (CSRF)</b><br>
+                                        <p>An attacker takes advantage of an authentication token that a websites send to the user. This can then result 
+                                            in the user doing the work on the attackers behalf.
+                                        </p>
+                                    </li>
+                                </ul>
+                                
+                            </div>
+                        </div>
+                        <!-- Module 3.1.3 -->
+                        <div id="2_2_3" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">3.1.3 Transmission Risks</span>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                    
+                                </p>
+                                <ul>
+                                    <b>Man-in-the-Middle (MITM)</b><br>
+                                    <p> In a MITM attack, a bad actor secretly gets in the middle of a conversation between two parties, 
+                                        like a user and a website. They sneakily listen in on the conversation and can even change what's being said or done. 
+                                        It's like someone eavesdropping on your phone call without you knowing, but in the digital world. These attacks can 
+                                        happen on networks or even on your Wi-Fi connection, so it's important to be cautious, especially when sharing sensitive 
+                                        information online.
+                                    </p>
+                                    <img src="./images/mitm.jpg" alt="MITM Example">
+                                    <br>
+                                    <br>
+                                    <b>Types of MITM Attacks</b>
+                                        <ol>
+                                            <li>Wi-Fi Eavesdropping</li>
+                                            <li>Session Hijacking</li>
+                                            <li>Man-in-the-Browser</li>
+                                            <li>Email Hijacking</li>
+                                            <li>ARP Cache Poisoning</li>
+                                            <li>Session Replay</li>
+                                        </ol>
+                                    
+                                    <br>
+                                </ul>
+                            </div>
+                        </div>
+                        <!-- Module 3.1.4 -->
+                        <div id="2_2_4" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">3.1.4 Common Internet Threats</span>
+                            </div>
+                            <div class="card-body">
+                                <p>
+                                </p>
+                                
+                                <p>
+                                    <b>Malware</b><br>
+                                    <p>
+                                    </p>
+
+                                    <b>Phishing</b><br>
+                                        <p>Fraudulent attempts to obtain sensitive information such as usernames, passwords, and financial data 
+                                            by masquerading as a trustworthy entity in electronic communication.
+                                        </p>
+
+                                    <b>Cyber Attacks</b><br>
+                                        <p>
+                                        </p>
+
+                                    <b>Online Scams</b><br>
+                                        <br>
+                                        
+                                            <li>Identity Theft - A type of cybercrime in which an individual's personal information is stolen and used by someone else for fraudulent 
+                                                purposes. This stolen information can include Social Security numbers, driver's license numbers, credit card numbers, 
+                                                bank account details, and other sensitive data.
+                                            </li>
+                                            <br>
+                                            <li>Fake Websites - <br>
+                                            <br>
+                                            Security Headers is a website that allows you to test and analyze the HTTP security headers of any website. 
+                                            You can enter a website's URL, and the tool will provide a report on the security headers it uses and 
+                                            recommendations for improvement. It's entirely web-based and doesn't require any downloads. <br>
+                                            <br>
+                                            <a href="https://securityheaders.com/">Analyze Your URL</a> <br>
+                                            <br>
+                                        </li>
+                                        <li>Fraudulent Online Transactions - <br>
+                                            <br>
+                                            Fraudulent online transactions occur when someone makes unauthorized purchases or conducts deceptive activities using 
+                                            another person's financial information, such as credit card numbers or bank account details. These transactions can 
+                                            lead to financial losses, identity theft, and other adverse consequences for victims.
+                                        </li>
+                                    </p>
+                                    
+                                </p>
+                            </div>
+                            <center><button  onclick="window.location.href='/quiz2_2'" type="button" style="margin-right: 10px;">Quiz 3.1</button></center>
+                                    </div>
+                             </div>
+                        </div>
+                    </div>
+                        
+
+                    <!--Module 3.2-->
+                     <div id="2_3" class="bg-light border rounded-3 p-3">
+                        <h3>3.2 Internet Defenses</h3>
+                        <p>
+                        </p>
+                        <!-- Module 3.2.1 -->
+                        <div id="2_3_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">3.2.1 Securing the Web Browser</span>
+                            </div>
+                            <div class="card-body">
+                            
+                                    <b>3.2.1.1 Security-Related Indicators </b><br>
+                                    <br>
+                                    <p>Security-related indicators in terms of internet security refer to various signs or signals that can indicate 
+                                        potential security threats, vulnerabilities, or suspicious activities. These indicators are often monitored by 
+                                        security professionals, automated systems, or users themselves to detect and respond to security incidents effectively.
+                                    </p>
+                                    <br>
+                                    <p><b>Indicators:</b></p>
+                                    <ul>
+                                    <li>Unauthorized Access Attempts</li>
+                                    <li>Changes in System Configurations</li>
+                                    <li>Suspicious File or Network Activity</li>
+                                    <li>Certificate Revocation</li>
+                                    <li>Security Alerts from Intrusion Detection Systems/ Intrusion Prevention Systems </li>
+                                    </ul>
+                            
+
+                                    <b>3.2.1.2 Web Browser Security Settings </b><br>
+                                    <br>
+                                    <p>Web browser security settings refer to the configurable options and features within a web browser that help users 
+                                        protect themselves against various online threats and enhance their overall internet security. These settings are 
+                                        designed to mitigate risks such as malware infections, phishing attacks, data breaches, and unauthorized access to 
+                                        sensitive information.
+                                    </p>
+                                    <br>
+                                    <img src="./images/BrowserSecurity.jpg" alt="Managing Extensions Example">
+                                    <br>
+                                    <br>
+
+                                    <b>3.2.1.3 Managing Browser Extensions</b><br>
+                                    <br>
+                                    <p>Managing browser extensions refers to controlling and overseeing the various add-ons, plugins, or extensions installed 
+                                        in your web browser. These extensions can provide additional functionality, such as ad blocking, password management,
+                                        or productivity tools. However, they can also pose security risks if not managed properly.
+                                    </p>
+                                    <br>
+                                    <img src="./images/manage-xtnIMG.png" alt="Managing Extensions Example" width="700" height="450">
+                                    <br>
+                                    <br>
+
+                                    <b>3.2.1.4 Virtual Private Networks (VPNs)</b><br>
+                                    <br>
+                                    <p>A VPN functions as a fortified conduit, establishing a secure connection between your device and the internet. In 
+                                        this secure tunnel, your web traffic is rendered invisible to the prying eyes of hackers, shielding it from any 
+                                        interception attempts.</p>
+                                    <br>
+                                    <p>When you access the internet, your web traffic embarks on a journey that begins with its transmission to the Internet 
+                                        Service Provider (ISP). En route, the traffic takes a detour through the VPN client software, where encryption wraps 
+                                        your data in a protective cloak. This encrypted data then travels a secure tunnel, a virtual passageway safeguarded 
+                                        against unauthorized access, until it reaches the VPN server. At this point, a transformation occurs where your 
+                                        device's IP address and true location undergo a covert change, obscuring your digital footprint. The encrypted 
+                                        message continues its journey through the secure tunnel until it reaches its final destination. It is at this 
+                                        point that the encrypted layers are decrypted, revealing the original web traffic. This thorough process ensures 
+                                        that your online activities remain concealed and secure, sealed from the probing eyes of potential cyber adversaries.
+                                    </p>
+                                    <img src="./images/vpnIMG.webp" alt="vpnDiagram">
+                            </div>
+                        </div>
+                        <!-- Module 3.2.2 -->
+                        <div id="2_3_1" class="card mt-4 shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">3.2.2 Email Defenses</span>
+                            </div>
+                            <div class="card-body">
+                                <p></p>
+                                <ol>
+                                    <li><b>Attachments:</b> <br> 
+                                        <br>
+                                    <p>Attachments are considered risky because they can be used as effective vectors for delivering malware, conducting 
+                                        phishing attacks, exploiting software vulnerabilities, leaking sensitive data, and manipulating users through social 
+                                        engineering tactics. To mitigate these risks, organizations must implement robust email security measures, educate 
+                                        users about the dangers of email attachments, and employ best practices for handling and verifying attachments before 
+                                        opening them.</p></li>
+                                        <a href="https://phishingquiz.withgoogle.com/"> <b>Phishing Quiz</b></a>
+                                    <br>   
+                                    <br>
+                                    <li><b>Spam Filters: </b><br> 
+                                    <br>
+                                    <p>Spam filters are like gatekeepers for your email inbox. They're software tools that help keep out unwanted or harmful 
+                                        emails, like spam. They work by looking at things like who sent the email, what's in the email, and whether it looks suspicious.</p>
+                                    </li>
+                                    <br>
+
+                                    <li><b>Email Security Settings: </b><br> 
+                                    <br>
+                                    <p>Email security settings are configurations and features that help protect your email account from various threats, such as unauthorized 
+                                        access, phishing attacks, malware, and spam. These settings are essential for safeguarding sensitive information and ensuring the 
+                                        integrity and confidentiality of your email communications. Here are some common email security settings:</p>
+                                    <ol>
+                                        <li>Strong Passwords</li>
+                                        <li>Two-Factor Authentication</li>
+                                        <li>Account Recovery Options</li>
+                                        <li>Email Encryption</li>
+                                        <li>Spam Filtering</li>
+                                        <li>Attachment Scanning</li>
+                                        <li>Email Forwarding and Filtering</li>
+                                        <li>Safe Browsing and Lin Protection</li>
+                                        <li>Device Management</li>
+                                        <li>Security Alerts and Notifications</li>
+                                    </ol>
+                                    </li>
+                                </ol>
+                            </div>
+                        </div>
+
+                        
+                    </div>
+
+                    <!--Module 3.3-->
+                    <div id="2_3" class="bg-light border rounded-3 p-3">
+                        <h3>3.3 Cybercrime and Law Enforcement</h3>
+                        <p>
+                        </p>
+                        <!-- Module 3.3.1 -->
+                        <div id="2_3_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">3.3.1 Digital Evidence Collection from Law Enforcement Agencies</span>
+                            </div>
+                            <div class="card-body">
+                                <p>Digital evidence collection is an integral component of internet security, enabling organizations and law enforcement 
+                                    agencies to investigate cybercrimes, respond to security incidents, identify threats, protect against future attacks, 
+                                    and uphold legal and regulatory requirements.
+                                </p>
+                                <ol>
+                                    <li>Investigating Cybercrimes: <br> </li>
+                                    <li>Incident Response and Forensics: <br> </li>
+                                    <li>Identifying Attack Vectors: <br> </li>
+                                    <li>Attribution and Prosecution: <br> </li>
+                                    <li>Compliance and Regulatory Requirements of Internet Security: <br> </li>
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Module 3.4-->
+                    <div id="2_3" class="bg-light border rounded-3 p-3">
+                        <h3>3.3 Helpful Security Tools</h3>
+                        <p>
+                        </p>
+                        <!-- Module 3.4.1 -->
+                        <div id="2_3_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4"></span>
+                            </div>
+                            <div class="card-body">
+                                <ol>
+                                    <li>TryHackMe.com <br>
+                                        <br>
+                                        <p>TryHackMe is an online platform that offers hands-on cybersecurity training through interactive challenges, 
+                                        virtual labs, and guided learning paths. It provides a gamified environment where users can learn and practice 
+                                        various cybersecurity skills, including ethical hacking, penetration testing, network security, and digital forensics.
+                                        </p>
+                                    </li>
+                                    <li>Trendmicro.com <br>
+                                        <br>
+                                        <p>Trend Micro is a global cybersecurity company that provides a wide range of security solutions and services to protect 
+                                        individuals, businesses, and organizations from cyber threats. The company offers a comprehensive portfolio of 
+                                        cybersecurity products, including antivirus software, endpoint protection, network security, cloud security, and 
+                                        threat intelligence solutions.
+                                        </p>
+                                    </li>
+
+                                </ol>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card shadow-lg">
+                        <br>
+                        <br>
+                        <center><button onclick="redirectToQuiz()" type="button">Module 3 Quiz</button></center>
+                        <br>
+                        <br>
+                        <button id="back" class="btn btn-primary btn-lg" style="background-color: #0a5640;"> <b>Back</b> </button><p></p>
+                        <button id="next" class="btn-primary btn-lg" style="background-color: #0a5640;" ><b> Next</b> </button>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+<script src="navBar.js"></script>
+</body>
+
+</html>

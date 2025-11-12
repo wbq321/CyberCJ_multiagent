@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+          integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+            integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+            crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+            integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+            integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+            integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+          href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+          integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+          crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+    <style>
+        body {
+            padding: 20px;
+        }
+        .highlight {
+            background-color: #f8f9fa;
+            padding: 10px;
+            border-radius: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        table, th, td {
+            border: 1px solid black;
+        }
+        th, td {
+            padding: 8px;
+            text-align: center;
+        }
+        th {
+            background-color: #f2f2f2;
+        }
+    </style>
+
+</head>
+
+<body>
+
+<div class="container-fluid ">
+    <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+        <div class="row flex-grow-sm-1 flex-grow-0">
+            <main class="col overflow-auto h-100" >
+                <!--Module 2.0-->
+                <div  class="bg-light border rounded-3 p-3">
+                    <h3>Scenario 2: Segregation of Duties</h3>
+                    <!-- Module 2.0.0 (Introduction) -->
+                    <div id="2_0" class="card shadow-lg">
+                        <div class="card-header">
+                            <span class="fs-4">Example</span>
+                        </div>
+                        <div class="card-body">
+                            <!--                                <h3>Introduction</h3>-->
+                            <p><img src="../images/SOD_logo.jpg" alt="Computer Security for Criminal Justice" style="width: auto; height: 150px; float: right; margin-left: 15%; margin-right: 15%;"/></p>
+                            <p>The access control list listed below is a simplified matrix.  ACL listings can be much larger and more complex.  Our focus is to see if AI can help us identify the SOD violation, skills needed to generate the query, and ease of use of the interface.</p>
+                            <br>
+
+                            <!-- Matrix Section -->
+                            <section class="mt-4">
+                                <h3>Role Matrix</h3>
+
+                                <table>
+                                    <thead>
+                                    <tr>
+                                        <th>Name</th>
+                                        <th>Role</th>
+                                        <th>Create</th>
+                                        <th>Modify</th>
+                                        <th>Delete</th>
+                                        <th>Approve</th>
+                                        <th>Read Only</th>
+                                    </tr>
+                                    </thead>
+                                    <tbody>
+                                    <tr>
+                                        <td>John Smith</td>
+                                        <td>Analysis</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jane Doe</td>
+                                        <td>Analysis</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Michael Johnson</td>
+                                        <td>Analysis</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Emily Davis</td>
+                                        <td>Analysis</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>David Brown</td>
+                                        <td>Analysis</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Sarah Wilson</td>
+                                        <td>Analysis</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>James Taylor</td>
+                                        <td>Analysis</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Gabriel Jones</td>
+                                        <td>Analysis</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Laura Anderson</td>
+                                        <td>Supervisor</td>
+                                        <td></td>
+                                        <td>x</td>
+                                        <td></td>
+                                        <td>x</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Robert Miller</td>
+                                        <td>Supervisor</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>x</td>
+                                        <td></td>
+                                    </tr>
+                                    <tr>
+                                        <td>Jessica Moore</td>
+                                        <td>Manager</td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td></td>
+                                        <td>x</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                            </section>
+
+                            <!-- ChatGPT Interaction Section -->
+                            <section class="mt-4">
+                                <h3>ChatGPT Request</h3>
+                                <p><strong>The request entered into ChatGPT:</strong></p>
+                                <p class="highlight">Can ChatGPT help with segregation of duties. If a person has create, modify, delete access they cannot have approval access. Does anyone have this access violation based on this chart?</p>
+
+                                <p><strong>ChatGPT response:</strong></p>
+                                <div class="highlight">
+                                    <p>I'd be happy to help with that! Please provide the chart or the details of the access assignments, and I can assist in identifying whether anyone has a violation based on the segregation of duties principle you've outlined.</p>
+                                </div>
+                                <br>
+                                <p><strong>The request entered into ChatGPT:</strong></p>
+                                <p class="highlight">&lt;copied and paste the above chart&gt;
+
+                                    Name Role Create Modify Delete Approve Read Only John Smith Analysis x x x Jane Doe Analysis x x x Michael Johnson Analysis x x x Emily Davis Analysis x x x David Brown Analysis x x x Sarah Wilson Analysis x x x James Taylor Analysis x x x Gabriel Jones Analysis x x x Laura Anderson Supervisor x x Robert Miller Supervisor x Jessica Moore Manager x
+                                </p>
+                                <br>
+
+                                <p><strong>ChatGPT response:</strong></p>
+                                <div class="highlight">
+                                    <p>Based on the segregation of duties principle you described — where a person with "Create," "Modify," or "Delete" access should not have "Approve" access — I can analyze the roles and permissions from your chart to identify if anyone has a violation.</p>
+                                    <p><strong>Chart Analysis:</strong></p>
+                                    <p>
+                                        John Smith: Create, Modify, Delete — No Approval access →  <strong>No violation</strong>.<br>
+                                        Jane Doe: Create, Modify, Delete — No Approval access → <strong>No violation</strong>.<br>
+                                        Michael Johnson: Create, Modify, Delete — No Approval access → <strong>No violation</strong>.<br>
+                                        Emily Davis: Create, Modify, Delete — No Approval access → <strong>No violation</strong>.<br>
+                                        David Brown: Create, Modify, Delete — No Approval access → <strong>No violation</strong>.<br>
+                                        Sarah Wilson: Create, Modify, Delete — No Approval access → <strong>No violation</strong>.<br>
+                                        James Taylor: Create, Modify, Delete — No Approval access → <strong>No violation</strong>.<br>
+                                        Gabriel Jones: Create, Modify, Delete — No Approval access → <strong>No violation</strong>.<br>
+                                        Laura Anderson: Modify, Approve — <strong>Violation</strong> (has both Modify and Approve access).<br>
+                                        Robert Miller: Approve only — <strong>No violation</strong>.<br>
+                                        Jessica Moore: Read Only — <strong>No violation</strong>.
+                                    </p>
+
+                                    <p><strong>Conclusion:</strong></p>
+                                    <p><strong>Laura Anderson</strong> has a segregation of duties violation because she has "Modify" and "Approve" access.</p>
+                                </div>
+                                <br>
+
+                                <p>Key takeaways from this interaction include usability, as ChatGPT processed instructions in English without needing computer language or programming concepts. A simple chart was provided, which ChatGPT successfully analyzed using these instructions. It delivered actionable, accurate, and detailed analysis.</p>
+                                <p>In terms of relevance to law enforcement and cybersecurity, AI handled the heavy task of developing an algorithm to analyze the ACL and provided results to the end user. This process made the request and information exchange straightforward and intuitive, requiring no programming skills to initiate or complete. It allowed law enforcement and cybersecurity professionals to focus on their expertise while AI generated the necessary actionable information.</p>
+
+                                <p><strong>The request entered into ChatGPT:</strong></p>
+                                <p class="highlight">
+                                    A list of sample audit log entries was created below.<br>
+
+                                    <strong>Transaction Log</strong><br>
+                                    07312024 Transaction 101 created by John Smith.<br>
+                                    07312024 Transaction 101 modified by James Taylor, change customer last name to Parker.<br>
+                                    08012024 Transaction 102 created by Jane Doe.<br>
+                                    08012024 Transaction 102 modified by John Smith, change customer first name to Joe.<br>
+                                    08012024 Transaction 101 approved by Laura Anderson.<br>
+                                    08022024 Transaction 102 approved by Robert Miller.<br><br>
+
+                                    08032024 Transaction 103 created by Sarah Wilson.<br>
+                                    08032024 Transaction 103 modified by David Brown, change customer last name to Smith.<br>
+                                    08042024 Transaction 104 created by Gabriel Jones.<br>
+                                    08042024 Transaction 104 modified by John Smith, change total to 30.02.<br>
+                                    08052024 Transaction 103 approved by Robert Miller.<br>
+                                    08062024 Transaction 104 approved by Laura Anderson.<br><br>
+
+                                    08072024 Transaction 105 created by Sarah Wilson.<br>
+                                    08082024 Transaction 105 modified by Laura Anderson, change customer last name to Anderson.<br>
+                                    08082024 Transaction 106 created by Sarah Wilson.<br>
+                                    08092024 Transaction 106 modified by John Smith, change customer first name to Wendy.<br>
+                                    08092024 Transaction 105 approved by Laura Anderson.<br>
+                                    08102024 Transaction 106 approved by Laura Anderson.<br><br>
+
+                                    08112024 Transaction 107 created by Jane Doe.<br>
+                                    08122024 Transaction 107 modified by James Taylor, change customer total 100.12.<br>
+                                    08132024 Transaction 108 created by Gabriel Jones.<br>
+                                    08142024 Transaction 108 modified by Emily Davis, change customer first name to Mike.<br>
+                                    08152024 Transaction 107 approved by Robert Miller.<br>
+                                    08162024 Transaction 108 approved by Robert Miller.<br><br>
+
+                                    08172024 Transaction 109 created by Emily Davis.<br>
+                                    08172024 Transaction 109 modified by David Brown, change customer total to 50.21.<br>
+                                    08182024 Transaction 110 created by Sarah Wilson.<br>
+                                    08192024 Transaction 110 read only by Jessica Moore.<br>
+                                    08182024 Transaction 110 deleted by John Smith.<br>
+                                    08192024 Transaction 109 approved by Robert Miller.<br><br>
+
+                                    Has anyone approved a transaction that they created or modified?
+
+                                </p>
+                                <br>
+
+                                <p><strong>ChatGPT response:</strong></p>
+                                <div class="highlight">
+                                <p>Based on the segregation of duties rule, someone who creates or modifies a transaction should not also be approving it. Let’s go through each transaction to identify any violations.</p>
+
+                                    <p><strong>Analysis of Transactions</strong></p>
+                                <ul>
+                                    <li><strong>Transaction 101</strong>
+                                        <ul>
+                                            <li>Created by: John Smith</li>
+                                            <li>Modified by: James Taylor</li>
+                                            <li>Approved by: Laura Anderson</li>
+                                            <li>Status: No violation</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Transaction 102</strong>
+                                        <ul>
+                                            <li>Created by: Jane Doe</li>
+                                            <li>Modified by: John Smith</li>
+                                            <li>Approved by: Robert Miller</li>
+                                            <li>Status: No violation</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Transaction 103</strong>
+                                        <ul>
+                                            <li>Created by: Sarah Wilson</li>
+                                            <li>Modified by: David Brown</li>
+                                            <li>Approved by: Robert Miller</li>
+                                            <li>Status: No violation</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Transaction 104</strong>
+                                        <ul>
+                                            <li>Created by: Gabriel Jones</li>
+                                            <li>Modified by: John Smith</li>
+                                            <li>Approved by: Laura Anderson</li>
+                                            <li>Status: No violation</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Transaction 105</strong>
+                                        <ul>
+                                            <li>Created by: Sarah Wilson</li>
+                                            <li>Modified by: Laura Anderson</li>
+                                            <li>Approved by: Laura Anderson</li>
+                                            <li><span class="violation">Status: Violation - Laura Anderson modified and approved this transaction.</span></li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Transaction 106</strong>
+                                        <ul>
+                                            <li>Created by: Sarah Wilson</li>
+                                            <li>Modified by: John Smith</li>
+                                            <li>Approved by: Laura Anderson</li>
+                                            <li>Status: No violation</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Transaction 107</strong>
+                                        <ul>
+                                            <li>Created by: Jane Doe</li>
+                                            <li>Modified by: James Taylor</li>
+                                            <li>Approved by: Robert Miller</li>
+                                            <li>Status: No violation</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Transaction 108</strong>
+                                        <ul>
+                                            <li>Created by: Gabriel Jones</li>
+                                            <li>Modified by: Emily Davis</li>
+                                            <li>Approved by: Robert Miller</li>
+                                            <li>Status: No violation</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Transaction 109</strong>
+                                        <ul>
+                                            <li>Created by: Emily Davis</li>
+                                            <li>Modified by: David Brown</li>
+                                            <li>Approved by: Robert Miller</li>
+                                            <li>Status: No violation</li>
+                                        </ul>
+                                    </li>
+                                    <li><strong>Transaction 110</strong>
+                                        <ul>
+                                            <li>Created by: Sarah Wilson</li>
+                                            <li>Deleted by: John Smith</li>
+                                            <li>No approval recorded</li>
+                                            <li>Status: No violation</li>
+                                        </ul>
+                                    </li>
+                                </ul>
+
+                                    <p><strong>Summary</strong></p>
+                                <p>The only violation is for <strong>Transaction 105</strong>, where Laura Anderson both modified and approved the transaction, which breaches the segregation of duties rule.</p>
+
+                                    <p><strong>Conclusion</strong></p>
+                                <p>There is only one violation: <strong>Transaction 105</strong>, where Laura Anderson both modified and approved the transaction. This violates the segregation of duties rule.</p>
+                                </div>
+                            </section>
+                            <br>
+
+                            <p>A couple of quick take aways.</p>
+                            <p>The output generate by ChatGPT is impressive. It was able to identify and group transactions
+                                by based on a transaction number. It did this without additional instruction or guidance based
+                                on the query that was provided. It presented the transactions in a systematic manner and easy
+                                to read format that made following its analysis straightforward and intuitive. It was able to
+                                understand the request that was given in an English sentence, interpret the request, and
+                                provide actionable output. ChatGPT (AI) was able to perform the heavy lift of analyzing audit
+                                log data that can be used by a law enforcement organization as part of an investigation.
+                            </p>
+                            <br>
+
+                            <h3>Conclusion</h3>
+                            <!--                                <p><img src="../images/gpt_logo.png" alt="Computer Security for Criminal Justice" style="width: auto; height: 150px; float: right; margin-left: 15%; margin-right: 15%;"/></p>-->
+                            <p>What have we seen with these scenarios?  AI provides the ability to look at and analyze an access matrix to identify gaps in the segregation of duties controls.  It was also able to review a transaction log, analyze the transaction activity, and identify violations of the segregation of duties policy.  This analysis was completed quickly and with little to no programming skills.  It empowered an end user with the ability to generate actionable information without the need of a programmer. </p>
+                            <p>This can be a tremendous help to a cyber security professional and law enforcement.  It provides quick easy means to identify gaps in policy that result in opportunities for someone to commit an unauthorized act.  It also helps an investigation by processing bulk transactional data analysis to identify an occurrence of a violation of policy.  As a result, AI takes care of the mundane and repetitive process in a timely manner that frees up an investigator to focus on the investigation. </p>
+                            <br>
+
+                            <h3>Takeaways</h3>
+                            <ul>
+                                <li>ChatGPT successfully identified and grouped transactions based on transaction numbers, without needing extra guidance.</li>
+                                <li>It presented the data in an organized, easy-to-read format, making the analysis intuitive to follow.</li>
+                                <li>The AI handled complex audit log analysis, providing actionable insights useful for law enforcement investigations.</li>
+                            </ul>
+
+
+                        </div>
+                    </div>
+                </div>
+            </main>
+        </div>
+    </div>
+</div>
+<script src="../js/navBar.js"></script>
+</body>
+</html>

@@ -1,0 +1,437 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cybersecurity for Criminal Justice</title>
+
+    <!-- Bootstrap 5 -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+        crossorigin="anonymous"></script>
+
+    <!-- JQuery -->
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"
+        integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo=" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/ui/1.13.2/jquery-ui.min.js"
+        integrity="sha256-lSjKY0/srUM9BE3dPm+c4fBo1dky2v27Gdjm2uoZaL0=" crossorigin="anonymous"></script>
+
+    <!-- Datatables -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/js/jquery.dataTables.min.js"
+        integrity="sha512-BkpSL20WETFylMrcirBahHfSnY++H2O1W+UnEEO4yNIl+jI2+zowyoGJpbtk6bx97fBXf++WJHSSK2MV4ghPcg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/datatables/1.10.21/css/dataTables.bootstrap.min.css"
+        integrity="sha512-BMbq2It2D3J17/C7aRklzOODG1IQ3+MHw3ifzBHMBwGO/0yUqYmsStgBjI0z5EYlaDEFnvYV7gNYdD3vFLRKsA=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+
+    <!-- Font Awesome -->
+    <script src="https://kit.fontawesome.com/ccb5c60b64.js" crossorigin="anonymous"></script>
+
+    <style>
+        .flip-card {
+        background-color: transparent;
+        width: 300px;
+        height: 200px;
+        perspective: 1000px;
+
+        float: left;
+        margin: 20px; /* Adjust the margin as needed */
+        
+        }
+    
+        .flip-card-inner {
+        position: relative;
+        width: 100%;
+        height: 100%;
+        text-align: center;
+        transition: transform 0.6s;
+        transform-style: preserve-3d;
+        }
+    
+        .flip-card:hover .flip-card-inner {
+        transform: rotateY(180deg);
+        }
+    
+        .flip-card-front, .flip-card-back {
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        backface-visibility: hidden;
+        }
+    
+        .flip-card-front {
+        background-color: #bbb;
+        color: black;
+        }
+    
+        .flip-card-back {
+        background-color: #1f5512;
+        color: white;
+        transform: rotateY(180deg);
+        }
+        .flip-container {
+            clear: both; /* Clear floats */
+            margin-bottom: 20px; /* Add spacing between containers */
+        }
+        </style>
+</head>
+
+<body>
+
+    <div class="container-fluid ">
+        <div class="container-fluid pb-3 flex-grow-1 d-flex flex-column flex-sm-row overflow-auto" >
+            <div class="row flex-grow-sm-1 flex-grow-0">
+                <main class="col overflow-auto h-100" >
+                    <!--Module 2.0-->
+                    <div  class="bg-light border rounded-3 p-3">
+                        <h3>Module 3: Internet Security</h3>
+                        <!-- Module 2.0.0 (Introduction) -->
+                        <div id="2_0" class="card shadow-lg">
+                            <div class="card-header">
+                                <span class="fs-4">Module 3 Review</span>
+                            </div>
+                            <!-- Flip card areas -->
+                            <div class="card-body">
+                                <!-- Dig Evidence -->
+                                <div class="flip-container">
+                                    <h1>Digital Evidence</h1>
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Importance of Digital Evidence</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2>Importance:</h2>
+                                                <p>Enables organizations to investigate cybercrimes, repsond to security incidents, identify threats, 
+                                                    protect against future attacks, and uphold legal requirements</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Identifying Attack Vectors</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>
+                                                    How attackers operate and exploiting their tactics, organizations can better protect themselves against cyber threats
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>What must investigators comply with when collecting/ handling digital evidence?</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>
+                                                    Data protection laws and regulations when collecting and handling digital evidence
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Why is attribution crucial in cybercrime investigations?</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>
+                                                    It is crucial to identify the perpetrators accurately
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>What types of digital traces ar left behind from cybercrimes?</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>
+                                                    Logs, metadata, and electornic communications
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>What types of devices do digital forensic investigators analyze?</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>
+                                                    Computers, smartphones, servers, and other digital devices
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- Internet Layers -->
+                                <div class="flip-container">
+                                    <h1>Internet Layers</h1>
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Surface Web</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Easily accessible and searchable through standard search engines like Google or Bing</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Deep Web</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Not accessible through standard web browsers and often require specific software, configurations, or permissions to access</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                        
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Dark Web</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Hidden portion of the internet that requires specific software, configurations, or permissions to access and acts as a hub for criminal commerce</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    
+                                <!-- Internet Security Risks -->
+                                <div class="flip-container">
+                                    <h1>Internet Security Risks</h1>
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Phishing</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Fraudulent messages that appear to come from reputable sources but are designed to trick recipients into 
+                                                    revealing sensitive information such as passwords, credit card numbers, or personal details</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Spoofing</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Involves forging the sender's email address to make it appear as if the message originates from a trusted source</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Drive-By Downloads</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Viewing a website that is already infected with malware will infect your computer. The attacker is exploiting the 
+                                                    websites vulnerability and injecting it with harmful malicious content.
+                                                </p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Malvertising</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Random ads seen on popular websites are outsourced by the owner and not always monitored for malware that is in disguise</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Email Risks</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Refer to various threats and vulnerabilities associated with the use of email communication</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Browser Dangers</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Refer to various risks and vulnerabilities associated with web browsers, which are the primary tools people use to access the internet</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>DDoS Attack</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Overwhelm a target system, network, or service with a flood of traffic from multiple sources, rendering it inaccessible to legitimate users</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Zero-Day Exploits</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Target vulnerabilities in software or hardware that are unknown to the vendor or have not been patched yet</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Cyber Espionage</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Involves the unauthorized acquisition of sensitive information or intellectual property for espionage purposes</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Social Engineering Attacks</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Manipulate human psychology to trick individuals into divulging sensitive information, performing actions, or compromising security</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+
+
+                                <!-- Internet Defense -->
+                                <div class="flip-container">
+                                    <h1>Internet Security Defense</h1>
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Unautorized Attempts</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Unexpected logins or access attempts to sensitive criminal justice databases or systems</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Phishing Attempts</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Emails or messages requesting sensitive information, such as login credentials or personal details </p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Security Alerts and Incident Reports</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Notifications from security tools or incident reports highlighting unusual activities or potential security incidents</p>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Compliance Violations</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <h2></h2>
+                                                <p>Instances of non-compliance with security policies, data protection regulations, or criminal justice standards</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Unauthorized File Access</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+
+                                                <p>Instances of unauthorized access to confidential case files or evidence repositories</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                
+                                    <div class="flip-card">
+                                        <div class="flip-card-inner">
+                                            <div class="flip-card-front">
+                                                <h2>Suspicious Network Activity</h2>
+                                            </div>
+                                            <div class="flip-card-back">
+                                                <p>Anomalies in network traffic, such as unusual data transfers or connections to suspicious IP addresses</p>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </main>
+            </div>
+        </div>
+    </div>
+<script src="../js/navBar.js"></script>
+</body>
+</html>
