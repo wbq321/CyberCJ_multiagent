@@ -403,7 +403,7 @@
                 <select class="profile-selector" id="userProfile">
                     <option value="general">General User</option>
                     <option value="cj_student">Criminal Justice Student</option>
-                    <option value="police_officer">Police Officer</option>
+                    <option value="criminal justice professionals">Criminal Justice Professionals</option>
                 </select>
                 <select class="module-selector" id="moduleSelector" onchange="startModuleTopic()">
                     <option value="">Select Module</option>
@@ -438,7 +438,7 @@
                         <li><strong>Module-Based Learning:</strong> Choose from structured modules or explore custom topics</li>
                     </ul>
                     <strong>🚀 Getting Started:</strong><br>
-                    1. Select your role above (Student, Police Officer, or General User)<br>
+                    1. Select your role above (Student, Criminal Justice Professionals, or General User)<br>
                     2. Choose a learning module from the dropdown, or<br>
                     3. Simply ask me about any cybersecurity topic!<br><br>
                     Ready to start your strategic learning journey? 💪
@@ -877,7 +877,7 @@
                 console.error('详细错误信息:', error);
                 console.error('错误类型:', error.name);
                 console.error('错误消息:', error.message);
-                
+
                 let errorMessage = '❌ 连接错误。';
                 if (error.name === 'AbortError' || error.message.includes('timeout')) {
                     errorMessage = '⏰ 请求超时。CJ-Mentor可能正在处理复杂问题，请稍后重试。';
@@ -886,7 +886,7 @@
                 } else {
                     errorMessage += `详细信息: ${error.message}`;
                 }
-                
+
                 addMessage('bot', errorMessage, 'Connection Error');
             })
             .finally(() => {
