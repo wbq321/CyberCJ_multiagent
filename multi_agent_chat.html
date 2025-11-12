@@ -842,8 +842,13 @@
                     user_profile: userProfile
                 })
             })
-            .then(response => response.json())
+            .then(response => {
+                console.log('Response status:', response.status);
+                console.log('Response ok:', response.ok);
+                return response.json();
+            })
             .then(data => {
+                console.log('Response data:', data);
                 if (data.error) {
                     addMessage('bot', `❌ Error: ${data.error}`, 'System Error');
                 } else {
@@ -862,15 +867,27 @@
                     }
 
                     // Add bot message with feedback buttons
-                    addMessage('bot', data.answer, metaInfo, true, userQuestion);
+                    addMessage('bot', data.answer || data.response, metaInfo, true, userQuestion);
 
                     // Update UI indicators
                     updateAgentIndicator(agentType);
                 }
             })
             .catch(error => {
-                console.error('Error:', error);
-                addMessage('bot', '❌ Connection error. Please check if the server is running.', 'Connection Error');
+                console.error('详细错误信息:', error);
+                console.error('错误类型:', error.name);
+                console.error('错误消息:', error.message);
+                
+                let errorMessage = '❌ 连接错误。';
+                if (error.name === 'AbortError' || error.message.includes('timeout')) {
+                    errorMessage = '⏰ 请求超时。CJ-Mentor可能正在处理复杂问题，请稍后重试。';
+                } else if (error.message.includes('fetch')) {
+                    errorMessage = '🌐 网络连接问题。请检查您的网络连接后重试。';
+                } else {
+                    errorMessage += `详细信息: ${error.message}`;
+                }
+                
+                addMessage('bot', errorMessage, 'Connection Error');
             })
             .finally(() => {
                 // Hide loading

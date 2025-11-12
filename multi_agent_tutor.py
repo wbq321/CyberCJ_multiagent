@@ -261,7 +261,20 @@ Now, analyze the current situation and generate your strategic CJ-Mentor respons
 """
 
         try:
+            print(f"🤖 CJ-Mentor starting response generation...")
+            print(f"📝 User input length: {len(user_input)} characters")
+            print(f"🎯 Current scaffolding level: {context.scaffolding_level.value}")
+            
+            # Add timing for debugging
+            import time
+            start_time = time.time()
+            
             raw_response = self.llm.invoke(unified_prompt)
+            
+            end_time = time.time()
+            print(f"⏱️ LLM response time: {end_time - start_time:.2f} seconds")
+            print(f"✅ Got LLM response, content length: {len(raw_response.content)}")
+            
             import json
 
             # Enhanced JSON parsing
@@ -320,10 +333,14 @@ Now, analyze the current situation and generate your strategic CJ-Mentor respons
                 }
 
         except Exception as e:
-            print(f"Error in CJ-Mentor Strategic Planning: {e}")
+            print(f"💥 Error in CJ-Mentor Strategic Planning: {e}")
+            print(f"🔍 Error type: {type(e).__name__}")
+            import traceback
+            print(f"📋 Full traceback: {traceback.format_exc()}")
+            
             # Enhanced fallback with planning structure
             return {
-                "internal_thought": f"Error occurred during planning: {str(e)[:50]}. Providing supportive fallback response.",
+                "internal_thought": f"Error occurred during planning: {str(e)[:100]}. Providing supportive fallback response.",
                 "updated_plan": {
                     "plan": ["Understand student's learning goals", "Provide appropriate guidance"],
                     "plan_step": 0,
@@ -533,15 +550,19 @@ class CyberJusticeMultiAgentTutor:
         4. Progress Tracking & Plan Adaptation
         5. Comprehensive Analytics & Feedback
         """
+        print(f"🚀 CJ-Mentor chat started - Session: {session_id}")
+        print(f"📝 User input: {user_input[:100]}...")
+        
         try:
             # Get conversation context (Session Management)
             context = self._get_or_create_context(session_id, user_profile)
 
             # Initialize new sessions with CJ-Mentor planning capability
             if len(context.conversation_history) == 0:
-                print("CJ-Mentor: Initializing strategic learning session with planning capabilities")
+                print("🆕 CJ-Mentor: Initializing strategic learning session with planning capabilities")
 
             # Core CJ-Mentor Strategic Intelligence: THINK-PLAN-ACT cycle
+            print("🧠 Generating agent response...")
             agent_output = self.tutor_agent.generate_response(user_input, context)
 
             # Extract response for student
