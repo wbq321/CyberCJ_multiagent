@@ -154,7 +154,6 @@ def new_topic():
 def set_profile():
     """Handle profile setting requests"""
     try:
-        # MODIFICATION 5: Use get_tutor_system() here as well
         current_tutor_system = get_tutor_system()
 
         data = request.get_json()
@@ -163,7 +162,7 @@ def set_profile():
 
         if current_tutor_system and hasattr(current_tutor_system, 'conversations'):
             if session_id in current_tutor_system.conversations:
-                profile_mapping = {'student': 'cj_student', 'officer': 'police_officer', 'general': 'general'}
+                profile_mapping = {'student': 'cj_student', 'criminal_justice_professional': 'cj_professional', 'general': 'general'}
                 current_tutor_system.conversations[session_id].user_profile = profile_mapping.get(profile, 'general')
 
         return jsonify({'status': 'success', 'profile': profile, 'session_id': session_id})

@@ -90,7 +90,7 @@ Respond with exactly one word: "answering" or "new_question"
 
 class UserProfile(Enum):
     CJ_STUDENT = "cj_student"
-    POLICE_OFFICER = "police_officer"
+    CJ_PROFESSIONAL = "cj_professional"
     GENERAL = "general"
 
 class ScaffoldingLevel(Enum):
@@ -137,7 +137,7 @@ class UnifiedTutorAgent:
         if profile == UserProfile.CJ_STUDENT:
             return """Focus on academic depth, theoretical understanding, and connecting concepts to broader criminal justice principles.
             Emphasize critical thinking, legal analysis, and research methodologies. Connect technical concepts to policy implications."""
-        elif profile == UserProfile.POLICE_OFFICER:
+        elif profile == UserProfile.CJ_PROFESSIONAL:
             return """Emphasize practical applications, operational procedures, and real-world law enforcement scenarios.
             Focus on actionable intelligence, investigative techniques, and court-admissible evidence collection.
             Connect technical knowledge to field operations and case work."""
@@ -264,17 +264,17 @@ Now, analyze the current situation and generate your strategic CJ-Mentor respons
             print(f"🤖 CJ-Mentor starting response generation...")
             print(f"📝 User input length: {len(user_input)} characters")
             print(f"🎯 Current scaffolding level: {context.scaffolding_level.value}")
-            
+
             # Add timing for debugging
             import time
             start_time = time.time()
-            
+
             raw_response = self.llm.invoke(unified_prompt)
-            
+
             end_time = time.time()
             print(f"⏱️ LLM response time: {end_time - start_time:.2f} seconds")
             print(f"✅ Got LLM response, content length: {len(raw_response.content)}")
-            
+
             import json
 
             # Enhanced JSON parsing
@@ -337,7 +337,7 @@ Now, analyze the current situation and generate your strategic CJ-Mentor respons
             print(f"🔍 Error type: {type(e).__name__}")
             import traceback
             print(f"📋 Full traceback: {traceback.format_exc()}")
-            
+
             # Enhanced fallback with planning structure
             return {
                 "internal_thought": f"Error occurred during planning: {str(e)[:100]}. Providing supportive fallback response.",
@@ -434,7 +434,7 @@ class CyberJusticeMultiAgentTutor:
         if session_id not in self.conversations:
             context = ConversationContext()
             context.session_id = session_id
-            context.user_profile = UserProfile(user_profile.lower()) if user_profile.lower() in ['cj_student', 'police_officer'] else UserProfile.GENERAL
+            context.user_profile = UserProfile(user_profile.lower()) if user_profile.lower() in ['cj_student', 'cj_professional'] else UserProfile.GENERAL
             self.conversations[session_id] = context
 
         return self.conversations[session_id]
@@ -552,7 +552,7 @@ class CyberJusticeMultiAgentTutor:
         """
         print(f"🚀 CJ-Mentor chat started - Session: {session_id}")
         print(f"📝 User input: {user_input[:100]}...")
-        
+
         try:
             # Get conversation context (Session Management)
             context = self._get_or_create_context(session_id, user_profile)
