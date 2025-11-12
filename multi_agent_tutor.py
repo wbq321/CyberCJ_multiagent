@@ -369,9 +369,9 @@ class CyberJusticeMultiAgentTutor:
 
     def __init__(self, groq_api_key: str, knowledge_file_path: str, vectorstore_path: str):
         self.groq_api_key = groq_api_key
-        self.knowledge_file_path = knowledge_file_path
-        self.vectorstore_path = vectorstore_path
-
+        base_dir = os.path.dirname(os.path.abspath(__file__))
+        self.knowledge_file_path_abs = os.path.join(base_dir, os.path.basename(knowledge_file_path))
+        self.vectorstore_path_abs = os.path.join(base_dir, os.path.basename(vectorstore_path))
         # Initialize LLM
         self.llm = ChatGroq(
             model="openai/gpt-oss-120b",
@@ -397,15 +397,8 @@ class CyberJusticeMultiAgentTutor:
     def _initialize_rag(self):
         """Initialize RAG system with adaptive fallback"""
         try:
-            # Load and process documents
-            if not os.path.exists(self.knowledge_file_path):
-                raise FileNotFoundError(f"Knowledge file not found: {self.knowledge_file_path}")
-
-            loader = TextLoader(self.knowledge_file_path, encoding='utf-8')
-            documents = loader.load()
-
-            text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
-            split_docs = text_splitter.split_documents(documents)
+            if not os.path.exists(self.vectorstore_path_abs):
+                raise FileNotFoundError(f"CRITICAL: Pre-built FAISS index not found at {self.vectorstore_path_abs}.")
 
             # Use optimized embeddings with reduced memory usage
             embeddings = HuggingFaceEmbeddings(
@@ -415,13 +408,11 @@ class CyberJusticeMultiAgentTutor:
             )
 
             # Load or create vectorstore
-            if os.path.exists(self.vectorstore_path):
-                print(f"Loading vectorstore from {self.vectorstore_path}")
-                vectorstore = FAISS.load_local(self.vectorstore_path, embeddings, allow_dangerous_deserialization=True)
-            else:
-                print(f"Creating new vectorstore at {self.vectorstore_path}")
-                vectorstore = FAISS.from_documents(split_docs, embeddings)
-                vectorstore.save_local(self.vectorstore_path)
+            vectorstore = FAISS.load_local(
+                self.vectorstore_path_abs,
+                embeddings,
+                allow_dangerous_deserialization=True
+            )
 
             return vectorstore.as_retriever(search_kwargs={"k": 5})
 

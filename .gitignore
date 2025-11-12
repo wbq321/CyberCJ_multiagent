@@ -32,7 +32,7 @@ logs/
 .conda/
 
 # Large model files (will be rebuilt on Render)
-faiss_index_cybersecurity_*/
+faiss_index_cybersecurity_hf_*/
 
 # Temporary files
 *.tmp
