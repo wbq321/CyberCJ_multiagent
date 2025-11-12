@@ -75,24 +75,52 @@ def ask():
         if not data or 'question' not in data:
             return jsonify({'error': 'Question is required'}), 400
 
-        user_message = data['question']
+        user_message = data.get('question', '').strip()
+        if not user_message:
+            return jsonify({'error': 'Question cannot be empty'}), 400
+
         session_id = data.get('session_id', 'default')
 
-        # Get response from CJ-Mentor system
-        response_data = tutor_system.chat(user_message, session_id)
+        print(f"[DEBUG] Processing message: {user_message[:50]}... (session: {session_id})")
 
-        return jsonify({
-            'answer': response_data.get('response'),
-            'agent_type': response_data.get('agent_type'),
-            'scaffolding_level': response_data.get('scaffolding_level'),
-            'learning_plan': response_data.get('learning_plan'),
-            'current_plan_step': response_data.get('current_plan_step'),
-            'total_plan_steps': response_data.get('total_plan_steps'),
-            'session_id': session_id
-        })
-
+        # Use threading timeout instead of signal (Render compatible)
+        import threading
+        from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeoutError
+        
+        def get_ai_response():
+            print(f"[DEBUG] Calling tutor_system.chat...")
+            response_data = tutor_system.chat(user_message, session_id)
+            print(f"[DEBUG] Got response: {str(response_data)[:100]}...")
+            return response_data
+        
+        try:
+            # Use thread pool with timeout (works better on cloud platforms)
+            with ThreadPoolExecutor(max_workers=1) as executor:
+                future = executor.submit(get_ai_response)
+                response_data = future.result(timeout=90)  # 90 second timeout
+            
+            return jsonify({
+                'response': response_data.get('response', 'I apologize, but I encountered an issue generating a response.'),
+                'answer': response_data.get('response', 'I apologize, but I encountered an issue generating a response.'),
+                'agent_type': response_data.get('agent_type'),
+                'scaffolding_level': response_data.get('scaffolding_level'),
+                'learning_plan': response_data.get('learning_plan'),
+                'current_plan_step': response_data.get('current_plan_step'),
+                'total_plan_steps': response_data.get('total_plan_steps'),
+                'session_id': session_id
+            })
+        
+        except FutureTimeoutError:
+            print(f"[ERROR] Timeout processing message: {user_message}")
+            return jsonify({
+                'error': 'Request timeout - AI processing took too long',
+                'answer': 'I apologize, but my response is taking longer than expected. Please try asking a simpler question or try again later.'
+            }), 504
+            
     except Exception as e:
-        print(f"Error in ask endpoint: {str(e)}")
+        print(f"[ERROR] Exception in ask endpoint: {str(e)}")
+        import traceback
+        traceback.print_exc()
         return jsonify({
             'error': 'An error occurred while processing your message.',
             'answer': 'I apologize, but I encountered a technical issue. Please try asking your question again.'
@@ -101,7 +129,38 @@ def ask():
 @app.route('/chat_multi_agent', methods=['POST'])
 def chat_multi_agent():
     """Handle multi-agent chat requests - alternative endpoint"""
-    return ask()  # Redirect to the same handler
+    try:
+        data = request.get_json()
+        if not data:
+            return jsonify({'error': 'No data provided'}), 400
+            
+        # Handle different message field names
+        user_message = data.get('message') or data.get('question')
+        if not user_message:
+            return jsonify({'error': 'Message or question is required'}), 400
+            
+        # Create compatible request for ask() function
+        compatible_data = {
+            'question': user_message,
+            'session_id': data.get('session_id', 'default')
+        }
+        
+        # Temporarily replace request data
+        original_get_json = request.get_json
+        request.get_json = lambda: compatible_data
+        
+        try:
+            result = ask()
+            return result
+        finally:
+            request.get_json = original_get_json
+            
+    except Exception as e:
+        print(f"[ERROR] Exception in chat_multi_agent: {str(e)}")
+        return jsonify({
+            'error': 'Failed to process chat request',
+            'response': 'I apologize, but I encountered a technical issue. Please try again.'
+        }), 500
 
 @app.route('/new_topic', methods=['POST'])
 def new_topic():
@@ -198,12 +257,92 @@ def submit_survey():
 
 @app.route('/health', methods=['GET'])
 def health_check():
-    """Health check endpoint"""
-    return jsonify({
-        'status': 'healthy',
-        'tutor_system': 'available' if tutor_system else 'unavailable',
-        'timestamp': datetime.now().isoformat()
-    })
+    """Health check endpoint with detailed diagnostics"""
+    try:
+        import psutil
+        
+        # Basic health info
+        health_info = {
+            'status': 'healthy',
+            'tutor_system': 'available' if tutor_system else 'unavailable',
+            'timestamp': datetime.now().isoformat(),
+            'memory_usage': f"{psutil.virtual_memory().percent:.1f}%",
+            'available_memory_mb': f"{psutil.virtual_memory().available / 1024 / 1024:.1f}",
+            'cpu_count': psutil.cpu_count(),
+            'groq_api_key_set': bool(os.environ.get('GROQ_API_KEY')),
+            'tokenizers_parallelism': os.environ.get('TOKENIZERS_PARALLELISM', 'default')
+        }
+        
+        # Test tutor system
+        if tutor_system:
+            try:
+                # Quick test without actual AI call
+                test_context = tutor_system._get_or_create_context("health_check", "test")
+                health_info['tutor_context_test'] = 'passed'
+            except Exception as e:
+                health_info['tutor_context_test'] = f'failed: {str(e)}'
+        
+        return jsonify(health_info)
+    
+    except Exception as e:
+        return jsonify({
+            'status': 'unhealthy',
+            'error': str(e),
+            'timestamp': datetime.now().isoformat()
+        }), 500
+
+@app.route('/test_ai', methods=['POST'])
+def test_ai():
+    """Quick AI test endpoint for debugging"""
+    try:
+        if not tutor_system:
+            return jsonify({'error': 'Tutor system not available'}), 500
+            
+        print("[TEST] Starting AI test...")
+        
+        # Simple test message
+        test_message = "Hello, can you help me learn about cybersecurity?"
+        test_session = f"test_{int(time.time())}"
+        
+        import threading
+        from concurrent.futures import ThreadPoolExecutor, TimeoutError as FutureTimeoutError
+        import time
+        
+        def quick_ai_test():
+            return tutor_system.chat(test_message, test_session)
+        
+        # Short timeout for testing
+        with ThreadPoolExecutor(max_workers=1) as executor:
+            future = executor.submit(quick_ai_test)
+            response_data = future.result(timeout=30)  # 30 second timeout for testing
+        
+        print("[TEST] AI test completed successfully")
+        
+        return jsonify({
+            'status': 'success',
+            'test_message': test_message,
+            'response_received': bool(response_data.get('response')),
+            'response_length': len(response_data.get('response', '')),
+            'agent_type': response_data.get('agent_type'),
+            'timestamp': datetime.now().isoformat()
+        })
+        
+    except FutureTimeoutError:
+        return jsonify({
+            'status': 'timeout',
+            'error': 'AI test timed out after 30 seconds',
+            'timestamp': datetime.now().isoformat()
+        }), 504
+        
+    except Exception as e:
+        print(f"[TEST ERROR] {str(e)}")
+        import traceback
+        traceback.print_exc()
+        return jsonify({
+            'status': 'error',
+            'error': str(e),
+            'timestamp': datetime.now().isoformat()
+        }), 500
 
 if __name__ == '__main__':
     print("🚀 Starting CyberCJ Website with Multi-Agent Chat Integration...")

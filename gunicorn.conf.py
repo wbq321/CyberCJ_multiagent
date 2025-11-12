@@ -7,12 +7,12 @@ bind = f"0.0.0.0:{os.environ.get('PORT', '5000')}"
 # Worker processes
 workers = 1  # Use only 1 worker to avoid memory issues on Render free tier
 worker_class = "sync"
-worker_connections = 1000
+worker_connections = 500  # Reduced to be more conservative
 
-# Timeouts
-timeout = 120  # Increased timeout for ML model initialization
-keepalive = 5
-graceful_timeout = 120
+# Timeouts - increased for model loading
+timeout = 300  # 5 minutes for initial model loading
+keepalive = 2  # Reduced keepalive
+graceful_timeout = 180  # 3 minutes for graceful shutdown
 
 # Restart workers
 max_requests = 1000

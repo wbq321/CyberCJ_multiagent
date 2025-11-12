@@ -390,11 +390,19 @@ class CyberJusticeMultiAgentTutor:
             text_splitter = RecursiveCharacterTextSplitter(chunk_size=500, chunk_overlap=50)
             split_docs = text_splitter.split_documents(documents)
 
-            # Use optimized embeddings with reduced memory usage
+            # Use optimized embeddings with minimal memory usage
             embeddings = HuggingFaceEmbeddings(
                 model_name="sentence-transformers/all-MiniLM-L6-v2",
-                model_kwargs={'device': 'cpu'},  # Force CPU to avoid GPU memory issues
-                encode_kwargs={'normalize_embeddings': True, 'batch_size': 1}  # Small batch size
+                model_kwargs={
+                    'device': 'cpu',  # Force CPU to avoid GPU memory issues
+                    'torch_dtype': 'float32'  # Use standard precision
+                },
+                encode_kwargs={
+                    'normalize_embeddings': True, 
+                    'batch_size': 1,  # Process one at a time
+                    'show_progress_bar': False,  # Reduce overhead
+                    'convert_to_tensor': False   # Reduce memory usage
+                }
             )
 
             # Load or create vectorstore
