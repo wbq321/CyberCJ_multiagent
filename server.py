@@ -24,13 +24,33 @@ from multi_agent_tutor import create_tutor_system
 app = Flask(__name__)
 CORS(app)
 
-# Initialize the CJ-Mentor system
-try:
-    tutor_system = create_tutor_system()
-    print("✅ CJ-Mentor system initialized successfully!")
-except Exception as e:
-    print(f"❌ Failed to initialize CJ-Mentor system: {e}")
-    tutor_system = None
+
+tutor_system = None
+
+from threading import Lock
+tutor_system_lock = Lock()
+
+def get_tutor_system():
+    """
+    This function gets the tutor system, initializing it on the first call.
+    It uses a lock to ensure thread-safety during initialization.
+    """
+    global tutor_system
+
+    if tutor_system is None:
+        with tutor_system_lock:
+            if tutor_system is None:
+                print("🚀 First request received. Initializing CJ-Mentor system now...")
+                try:
+                    tutor_system = create_tutor_system()
+                    print("✅ CJ-Mentor system initialized successfully!")
+                    print(f"📊 Tutor system type: {type(tutor_system)}")
+                except Exception as e:
+                    print(f"❌ Failed to initialize CJ-Mentor system: {e}")
+                    import traceback
+                    print(f"📋 Full initialization error: {traceback.format_exc()}")
+                    raise e
+    return tutor_system
 
 # Feedback storage
 FEEDBACK_DIR = os.path.join(parent_dir, 'feedback_data')
@@ -66,23 +86,31 @@ def serve_static(filename):
 
 @app.route('/ask', methods=['POST'])
 def ask():
-    """Handle chat requests - compatible with existing multi_agent_chat.html"""
-    if not tutor_system:
-        return jsonify({'error': 'Tutor system not available'}), 500
-
+    """Handle chat requests with lazy loading of the tutor system."""
+    print("=== ASK ENDPOINT CALLED ===")
     try:
+        current_tutor_system = get_tutor_system()
+        print("📥 Receiving request...")
         data = request.get_json()
-        if not data or 'question' not in data:
-            return jsonify({'error': 'Question is required'}), 400
+        print(f"📊 Request data: {data}")
 
-        user_message = data['question']
+        if not data or ('question' not in data and 'message' not in data):
+            return jsonify({'error': 'Question or message is required'}), 400
+
+        user_message = data.get('question') or data.get('message', '')
         session_id = data.get('session_id', 'default')
 
-        # Get response from CJ-Mentor system
-        response_data = tutor_system.chat(user_message, session_id)
+        print(f"📝 User message: {user_message}")
+        print(f"🔑 Session ID: {session_id}")
+        print("🤖 Calling tutor_system.chat()...")
 
+        # Use the instance returned by our function
+        response_data = current_tutor_system.chat(user_message, session_id)
+
+        print(f"✅ Got response: {type(response_data)}")
         return jsonify({
             'answer': response_data.get('response'),
+            'response': response_data.get('response'),
             'agent_type': response_data.get('agent_type'),
             'scaffolding_level': response_data.get('scaffolding_level'),
             'learning_plan': response_data.get('learning_plan'),
@@ -92,35 +120,32 @@ def ask():
         })
 
     except Exception as e:
-        print(f"Error in ask endpoint: {str(e)}")
+        print(f"💥 ERROR in ask endpoint: {str(e)}")
+        import traceback
+        print(f"📋 Full traceback: {traceback.format_exc()}")
         return jsonify({
             'error': 'An error occurred while processing your message.',
-            'answer': 'I apologize, but I encountered a technical issue. Please try asking your question again.'
+            'answer': f'I apologize, but I encountered a technical issue: {str(e)}. Please try asking your question again.',
+            'response': f'Technical error: {str(e)}'
         }), 500
 
 @app.route('/chat_multi_agent', methods=['POST'])
 def chat_multi_agent():
-    """Handle multi-agent chat requests - alternative endpoint"""
-    return ask()  # Redirect to the same handler
+    return ask()
 
 @app.route('/new_topic', methods=['POST'])
 def new_topic():
     """Handle new topic requests"""
     try:
+        current_tutor_system = get_tutor_system()
         data = request.get_json()
         session_id = data.get('session_id', 'default')
 
-        # Clear the conversation for this session
-        if tutor_system and hasattr(tutor_system, 'conversations'):
-            if session_id in tutor_system.conversations:
-                del tutor_system.conversations[session_id]
+        if current_tutor_system and hasattr(current_tutor_system, 'conversations'):
+            if session_id in current_tutor_system.conversations:
+                del current_tutor_system.conversations[session_id]
 
-        return jsonify({
-            'status': 'success',
-            'message': 'New topic session started',
-            'session_id': session_id
-        })
-
+        return jsonify({'status': 'success', 'message': 'New topic session started', 'session_id': session_id})
     except Exception as e:
         print(f"Error in new_topic: {str(e)}")
         return jsonify({'error': 'Failed to start new topic'}), 500
@@ -129,85 +154,62 @@ def new_topic():
 def set_profile():
     """Handle profile setting requests"""
     try:
+        # MODIFICATION 5: Use get_tutor_system() here as well
+        current_tutor_system = get_tutor_system()
+
         data = request.get_json()
         session_id = data.get('session_id', 'default')
         profile = data.get('profile', 'general')
 
-        # Update profile in the conversation context if it exists
-        if tutor_system and hasattr(tutor_system, 'conversations'):
-            if session_id in tutor_system.conversations:
-                # Map profile values
-                profile_mapping = {
-                    'student': 'cj_student',
-                    'officer': 'police_officer',
-                    'general': 'general'
-                }
-                tutor_system.conversations[session_id].user_profile = profile_mapping.get(profile, 'general')
+        if current_tutor_system and hasattr(current_tutor_system, 'conversations'):
+            if session_id in current_tutor_system.conversations:
+                profile_mapping = {'student': 'cj_student', 'officer': 'police_officer', 'general': 'general'}
+                current_tutor_system.conversations[session_id].user_profile = profile_mapping.get(profile, 'general')
 
-        return jsonify({
-            'status': 'success',
-            'profile': profile,
-            'session_id': session_id
-        })
-
+        return jsonify({'status': 'success', 'profile': profile, 'session_id': session_id})
     except Exception as e:
         print(f"Error in set_profile: {str(e)}")
         return jsonify({'error': 'Failed to set profile'}), 500
 
-@app.route('/survey.html')
-def serve_survey():
-    """Serve the survey page"""
-    return send_from_directory('.', 'survey.html')
-
 @app.route('/submit_survey', methods=['POST'])
 def submit_survey():
-    """Handle survey submission"""
     try:
         data = request.get_json()
-        if not data:
-            return jsonify({'error': 'No data provided'}), 400
-
-        # Create survey data directory
+        if not data: return jsonify({'error': 'No data provided'}), 400
         SURVEY_DIR = os.path.join(parent_dir, 'survey_data')
         os.makedirs(SURVEY_DIR, exist_ok=True)
         SURVEY_FILE = os.path.join(SURVEY_DIR, 'cybercj_surveys.jsonl')
-
-        # Add metadata
-        survey_record = {
-            'timestamp': datetime.now().isoformat(),
-            'survey_version': '1.0',
-            'source': 'cybercj_tutor_survey',
-            **data  # Include all survey responses
-        }
-
-        # Save to JSONL file
+        survey_record = {'timestamp': datetime.now().isoformat(), 'survey_version': '1.0', 'source': 'cybercj_tutor_survey', **data}
         with open(SURVEY_FILE, 'a', encoding='utf-8') as f:
             f.write(json.dumps(survey_record, ensure_ascii=False) + '\n')
-
         print(f"📊 New survey response recorded: {len(data)} fields")
-
-        return jsonify({
-            'status': 'success',
-            'message': 'Survey submitted successfully',
-            'response_id': f"survey_{int(datetime.now().timestamp())}"
-        })
-
+        return jsonify({'status': 'success', 'message': 'Survey submitted successfully', 'response_id': f"survey_{int(datetime.now().timestamp())}"})
     except Exception as e:
         print(f"Error submitting survey: {str(e)}")
         return jsonify({'error': 'Failed to submit survey'}), 500
 
 @app.route('/health', methods=['GET'])
 def health_check():
-    """Health check endpoint"""
-    return jsonify({
-        'status': 'healthy',
-        'tutor_system': 'available' if tutor_system else 'unavailable',
-        'timestamp': datetime.now().isoformat()
-    })
+    """Enhanced health check endpoint"""
+    print("🏥 Health check requested")
+    status = {'status': 'healthy', 'timestamp': datetime.now().isoformat()}
+    try:
+        current_tutor_system = get_tutor_system()
+        status['tutor_system'] = 'available'
+        test_response = current_tutor_system.chat("Hello", "health_check")
+        status['tutor_test'] = 'passed'
+        status['test_response_type'] = type(test_response).__name__
+    except Exception as e:
+        status['tutor_system'] = 'unavailable'
+        status['tutor_test'] = 'failed'
+        status['tutor_error'] = str(e)
+        print(f"🚨 Health check tutor test failed: {e}")
+    print(f"🏥 Health status: {status}")
+    return jsonify(status)
 
 if __name__ == '__main__':
     print("🚀 Starting CyberCJ Website with Multi-Agent Chat Integration...")
-    
+
     # Get port from environment variable (Render sets this automatically)
     port = int(os.environ.get('PORT', 5000))
     print(f"📍 CyberCJ Website: http://127.0.0.1:{port}")

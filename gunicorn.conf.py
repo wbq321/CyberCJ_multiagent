@@ -5,9 +5,9 @@ import os
 bind = f"0.0.0.0:{os.environ.get('PORT', '5000')}"
 
 # Worker processes
-workers = 1  # Use only 1 worker to avoid memory issues on Render free tier
-worker_class = "sync"
-worker_connections = 1000
+workers = 5  # Use only 1 worker to avoid memory issues on Render free tier
+worker_class = "gthread"
+threads = 4
 
 # Timeouts
 timeout = 120  # Increased timeout for ML model initialization
@@ -19,7 +19,7 @@ max_requests = 1000
 max_requests_jitter = 100
 
 # Preload app for memory efficiency
-preload_app = True
+preload_app = False
 
 # Logging
 loglevel = "info"
