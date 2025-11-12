@@ -1,46 +1,43 @@
-# CyberJustice Pedagogical Tutor Dependencies - Python 3.11 Compatible
+# CyberJustice Pedagogical Tutor Dependencies
 
 # Core Flask dependencies
 Flask==3.1.2
 Flask-CORS==6.0.1
 gunicorn==21.2.0
 
-# LangChain and AI dependencies (stable versions)
-langchain==0.2.16
-langchain-groq==0.1.9
-langchain-community==0.2.16
-langchain-huggingface==0.0.3
-langchain-core==0.2.38
+# LangChain and AI dependencies
+langchain==0.3.27
+langchain-groq==0.3.7
+langchain-community==0.3.29
+langchain-huggingface==0.3.1
+langchain-core==0.3.75
 
-# Vector database and embeddings (stable versions)
-faiss-cpu==1.8.0
-sentence-transformers==2.7.0
+# Vector database and embeddings
+faiss-cpu==1.12.0
+sentence-transformers==5.1.0
 
-# Machine Learning and AI (compatible versions)
-torch==2.3.1
-transformers==4.44.2
+# Machine Learning and AI
+torch==2.8.0
+transformers==4.56.1
 
 # Utilities
 python-dotenv==1.1.1
 beautifulsoup4==4.13.5
 
-# HTTP and web scraping  
+# HTTP and web scraping
 requests==2.32.5
-httpx==0.27.2
+httpx==0.28.1
 
-# Data processing (stable versions)
+# Data processing
 PyYAML==6.0.2
-pydantic==2.8.2
-numpy==1.26.4
+pydantic==2.11.7
+numpy==2.3.2
 
-# Additional dependencies (stable versions)
-groq==0.9.0
-tenacity==8.5.0
-packaging==24.1
-scikit-learn==1.5.1
+# Additional dependencies
+groq==0.31.1
+tenacity==9.1.2
+packaging==25.0
+scikit-learn==1.7.1
 
-# System monitoring
-psutil==6.0.0
-
-# Note: This configuration is optimized for Python 3.11 and Render deployment
-# Removed async workers to avoid gevent compatibility issues
+# Note: This configuration supports the CyberJustice Pedagogical Tutor
+# which uses Groq's qwen/qwen3-32b model for scaffolding and reflective learning
